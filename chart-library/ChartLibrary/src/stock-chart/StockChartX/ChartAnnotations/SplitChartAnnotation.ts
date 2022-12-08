@@ -4,7 +4,7 @@ import {DummyCanvasContext} from '../Utils/DummyCanvasContext';
 import {IPoint} from '../Graphics/ChartPoint';
 import {Geometry} from '../Graphics/Geometry';
 import {Gesture, WindowEvent} from '../Gestures/Gesture';
-import {ChartAccessorService, ChartTooltipType} from '../../../services/index';
+import {ChartAccessorService, ChartTooltipType} from '../../../services/chart';
 import {ITextTheme} from '../Theme';
 import {Chart} from '../Chart';
 

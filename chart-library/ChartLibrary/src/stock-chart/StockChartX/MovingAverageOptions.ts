@@ -1,4 +1,5 @@
-import {TechnicalIndicator, TechnicalIndicatorType} from '../../components/chart/technical-indicators';
+import {TechnicalIndicator} from "../../components/technical-indicator/technical-indicator";
+import {TechnicalIndicatorType} from "@src/components/technical-indicator/technical-indicator-type";
 
 export interface MovingAverageSettings {
     type: TechnicalIndicator,

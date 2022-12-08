@@ -4,7 +4,7 @@ import {IPoint} from '../Graphics/ChartPoint';
 import {Geometry} from '../Graphics/Geometry';
 import {Gesture, WindowEvent} from '../Gestures/Gesture';
 import {ChartAccessorService, ChartTooltipType} from '../../../services/chart';
-import {CategoryNews} from '../../../services/data/news';
+import {CategoryNews} from '../../../services/news';
 import {Chart} from '../Chart';
 
 export interface INewsConfig extends IChartAnnotationConfig {

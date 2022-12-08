@@ -25,12 +25,10 @@ import {JsUtil} from '../Utils/JsUtil';
 import {ChartPanel} from '../ChartPanels/ChartPanel';
 import {ICloneable} from '../Data/ICloneable';
 import {ClassRegistrar, IConstructor} from '../Utils/ClassRegistrar';
-import {ChannelRequestType, ChartAccessorService, ChartTooltipType} from '../../../services/index';
 import {BrowserUtils, StringUtils, Tc} from '../../../utils';
 import {ShowDrawingSettingsDialogRequest} from '../../../services/shared-channel/channel-request';
 import {ConfirmationCaller, ConfirmationRequest} from '../../../components/modals/popup';
 import {DrawingTheme, LevelThemeElement, LineThemeElement} from './DrawingThemeTypes';
-import {Config} from '../../../config/config';
 import {Theme, ThemeUtils} from '../Theme';
 import {DrawingMarkers} from './DrawingMarkers';
 import {Chart} from '../Chart';
@@ -38,6 +36,7 @@ import {HtmlUtil} from '../../StockChartX/Utils/HtmlUtil';
 import {DrawingLevelsFormatType} from './DrawingLevelsFormatType';
 import {ThemeType} from '../ThemeType';
 import {Geometry} from '../../StockChartX/Graphics/Geometry';
+import {ChartAccessorService, ChartTooltipType} from "../../../services/chart";
 
 const cloneDeep = require('lodash/cloneDeep');
 
@@ -480,10 +479,6 @@ export abstract class Drawing extends ChartPanelObject implements ICloneable<Dra
     }
 
     private _initGestures() {
-        if(Config.isElementBuild()) {
-            this._gestures = new GestureArray([]); // no indicator gesture in viewer
-            return;
-        }
         this._gestures = new GestureArray([
             new DoubleClickGesture({
                 handler: this._handleDoubleClickGesture,

@@ -1,6 +1,7 @@
-import {Interval, Market} from '../../../services/loader';
 import {IntervalUtils} from '../../../utils/interval.utils';
 import {Config} from '../../../config/config';
+import {Interval} from "../../../services/loader/price-loader/interval";
+import {Market} from "../../../services/loader/market/market";
 
 export class ProjectionDebugger {
 

@@ -18,7 +18,6 @@ import {Gesture, GestureState, WindowEvent} from "../Gestures/Gesture";
 import {IPoint} from "../Graphics/ChartPoint";
 import {MouseHoverGesture} from "../Gestures/MouseHoverGesture";
 import {ClickGesture} from "../Gestures/ClickGesture";
-import {ChartTooltipType, ChartAccessorService} from '../../../services/index';
 import {ValueMarkerOwner} from '../ValueMarkerOwner';
 import {Tc} from '../../../utils';
 import {FillPlotTheme, IStrokeTheme, MountainLinePlotTheme, PlotTheme} from '../Theme';

@@ -17,7 +17,6 @@ import {GestureState, WindowEvent} from "../Gestures/Gesture";
 import {IPoint} from "../Graphics/ChartPoint";
 import {Rect} from "../Graphics/Rect";
 import {Tc} from '../../../utils';
-import {Config} from '../../../config/config';
 
 const Class = {
     CONTAINER: 'scxPanelSplitter',
@@ -82,11 +81,6 @@ export class ChartPanelSplitter extends FrameControl {
     }
 
     protected _initGestures(): GestureArray {
-
-        if(Config.isElementBuild()) {
-            return new GestureArray();
-        }
-
         return new GestureArray([
             new MouseHoverGesture({
                 handler: this._handleMouseHoverGesture,

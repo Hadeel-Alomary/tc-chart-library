@@ -23,7 +23,7 @@ import {TradingDrawing} from '../TradingDrawings/TradingDrawing';
 import {TradingOrder, TradingPosition} from '../../../services/trading/broker/models';
 import {IChartPanelState} from './ChartPanelImplementation';
 import {ChartAlertDrawing} from '../AlertDrawings/ChartAlertDrawing';
-import {ChartAlert} from '../../../services/data/alert';
+import {ChartAlert} from '../../../services/alert';
 import {WindowEvent} from '../..';
 
 

@@ -1,7 +1,6 @@
 import {IPlotValueDrawParams} from './Plot';
 import {IPoint} from '../Graphics/ChartPoint';
 import {VolumeProfilerData, VolumeProfilerDataBar} from '../../../services/data/volume-profiler/volume-profiler.service';
-import {Interval, IntervalType} from '../../../services/loader';
 import {DataSeries, DataSeriesSuffix} from '../../StockChartX/Data/DataSeries';
 import {Projection} from '../../StockChartX/Scales/Projection';
 import {IVolumeProfilerSessionPlotConfig, VolumeProfilerBasePlot} from './VolumeProfilerBasePlot';
@@ -9,6 +8,8 @@ import {Geometry} from '../../StockChartX/Graphics/Geometry';
 import {IRect} from '../../StockChartX/Graphics/Rect';
 import {VolumeProfilerPlotTheme} from '../Theme';
 import {Chart} from '../Chart';
+import {Interval} from "../../../services/loader/price-loader/interval";
+import {IntervalType} from "../../../services/loader/price-loader/interval-type";
 
 
 export class VolumeProfilerSessionPlot extends VolumeProfilerBasePlot {

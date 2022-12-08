@@ -7,7 +7,6 @@ import {IPoint} from "../Graphics/ChartPoint";
 import {Gesture, GestureState, WindowEvent} from "../Gestures/Gesture";
 import {ChartEvent} from "../Chart";
 import {BrowserUtils} from '../../../utils';
-import {Browser} from 'selenium-webdriver';
 
 enum ZoomState {
     Active = 1,

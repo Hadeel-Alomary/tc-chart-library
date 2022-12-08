@@ -23,7 +23,6 @@ import {Animation} from "../Graphics/Animation";
 import {ValueScale} from "../Scales/ValueScale";
 import {IMinMaxValues} from "../Data/DataSeries";
 import {ChartPanelValueScaleImplementation} from "../Scales/ChartPanelValueScaleImplementation";
-import {ViewLoaderType, ChartAccessorService, ChartAlert} from '../../../services/index';
 import {BrowserUtils, ColorUtils, Tc} from '../../../utils';
 import {AxisScaleType} from '../Scales/axis-scale-type';
 import {TradingDrawing} from '../TradingDrawings/TradingDrawing';
@@ -43,6 +42,8 @@ import {HtmlUtil} from '../Utils/HtmlUtil';
 import {ChartPanelMenu, IChartPanelMenuConfig} from '../../StockChartX.UI/ChartPanelMenu';
 import {TAIndicator} from '../Indicators/TAIndicator';
 import {ISwipeObject} from '../Graphics/Swipe';
+import {ChartAlert} from "../../../services/alert";
+import {ChartAccessorService, ViewLoaderType} from "../../../services/chart";
 
 const Class = {
     CONTAINER: 'scxChartPanel',

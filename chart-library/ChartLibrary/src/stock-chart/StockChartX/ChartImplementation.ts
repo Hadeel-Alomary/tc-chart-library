@@ -36,7 +36,6 @@ import {IndicatorDeserializer} from './Indicators/IndicatorDeserializer';
 import {ChartPanelsContainerImplementation, IChartPanelsContainerOptions} from './ChartPanels/ChartPanelsContainerImplementation';
 import {CrossHairImplementation} from './CrossHairImplementation';
 import {DateScaleImplementation} from './Scales/DateScaleImplementation';
-import {CategoryNews, ChartAccessorService, ChartAlert, ChartAlertIndicator} from '../../services/index';
 import {BrowserUtils} from '../../utils';
 import {AxisScaleType} from './Scales/axis-scale-type';
 import {TradingOrder, TradingPosition} from '../../services/trading/broker/models';
@@ -51,8 +50,10 @@ import {IndicatorHelper} from './Indicators/IndicatorHelper';
 import {VolumeProfilerSessionVolumeIndicator} from './Indicators/VolumeProfilerSessionVolumeIndicator';
 import {VolumeProfilerVisibleRangeIndicator} from './Indicators/VolumeProfilerVisibleRangeIndicator';
 import {ThemeType} from './ThemeType';
-import {Config} from '../../config/config';
 import {MovingAverageOptions} from './MovingAverageOptions';
+import {ChartAccessorService} from "../../services/chart";
+import {ChartAlert, ChartAlertIndicator} from "../../services/alert";
+import {CategoryNews} from "../../services/news";
 
 const DEFAULT_WIDTH = 800;
 const DEFAULT_HEIGHT = 600;
@@ -1815,24 +1816,6 @@ export class ChartImplementation extends EventableObject implements Chart{
             TouchEvent.END,
             ''
         ];
-
-        // MA for element build, disable scrolling events (similar to TradingView) in order for chart scrolling not to interfere
-        // with external page scrolling.
-        if(Config.isElementBuild()) {
-            events = [
-                MouseEvent.ENTER,
-                MouseEvent.LEAVE,
-                MouseEvent.DOWN,
-                MouseEvent.MOVE,
-                MouseEvent.UP,
-                MouseEvent.CLICK,
-                MouseEvent.DOUBLE_CLICK,
-                TouchEvent.START,
-                TouchEvent.MOVE,
-                TouchEvent.END,
-                ''
-            ];
-        }
 
         if (readOnly) {
             events = [MouseEvent.MOVE]; // only allow mousemove, to show "crosshair"

@@ -11,11 +11,10 @@ import {DateScale} from './DateScale';
 import {ChartPanelValueScale} from './ChartPanelValueScale';
 import {AxisScaleType} from './axis-scale-type';
 import {ChartAccessorService} from '../../../services/chart';
-import {Interval, IntervalType, Market} from '../../../services/loader';
 import {MarketUtils, Tc} from '../../../utils';
-import {IntervalUtils} from '../../../utils/interval.utils';
 import {ProjectionDebugger} from './ProjectionDebugger';
 import {Rect} from '../..';
+import {Interval} from "../../../services/loader/price-loader/interval";
 
 /**
  * Represent projection. Converts records to pixels, pixels to records, etc...

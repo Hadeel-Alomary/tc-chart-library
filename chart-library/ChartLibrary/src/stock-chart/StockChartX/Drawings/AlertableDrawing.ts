@@ -1,7 +1,6 @@
 import {IDrawingState} from './Drawing';
 import {ChartAccessorService} from '../../../services/chart';
-import {TrendLineAlert, TrendLineAlertDrawingDefinition} from '../../../services/data/alert';
-import {Interval} from '../../../services/loader';
+import {TrendLineAlert, TrendLineAlertDrawingDefinition} from '../../../services/alert';
 import {IntervalUtils} from '../../../utils/interval.utils';
 import {AxisScaleType} from '../Scales/axis-scale-type';
 import {ChartEvent} from '../../StockChartX/Chart';
@@ -9,9 +8,9 @@ import {ChartPoint, IPoint} from '../../StockChartX/Graphics/ChartPoint';
 import {BrowserUtils} from '../../../utils';
 import {ThemedDrawing} from './ThemedDrawing';
 import {DrawingTheme} from './DrawingThemeTypes';
-import {Config} from '../../../config/config';
 import {ThemeType} from '../ThemeType';
 import {MathUtils} from '../../../utils/math.utils';
+import {Interval} from "../../../services/loader/price-loader/interval";
 
 export abstract class AlertableDrawing<T extends DrawingTheme> extends ThemedDrawing<T> {
 
@@ -77,9 +76,6 @@ export abstract class AlertableDrawing<T extends DrawingTheme> extends ThemedDra
     }
 
     protected drawAlertBellIfNeeded() {
-        if(Config.isElementBuild()) {
-            return; // no alerts for element build
-        }
         let hasActiveAlert = ChartAccessorService.instance.getAlertService().getTrendLineAlertByDrawingId(this.id) != null;
         let hasAchievedAlert = ChartAccessorService.instance.getAlertService().getAchievedTrendLineAlertByDrawingId(this.id) != null;
         if(hasActiveAlert) {
