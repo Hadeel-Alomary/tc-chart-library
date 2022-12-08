@@ -1,0 +1,40 @@
+/* Chart container */
+
+.scxContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+
+  &.scxDateScaleScroll {
+    cursor: ew-resize;
+  }
+
+  &.scxValueScaleScroll {
+    cursor: ns-resize;
+  }
+
+  &.scxPanelScroll {
+    cursor: url(#{$imgPath}/CursorClosedHand.cur) 11 11, move !important;
+  }
+
+  &.scxSplitterMove {
+    cursor: ns-resize !important;
+  }
+
+  &.scxCrossHair {
+    cursor: url(#{$imgPath}/CursorCross.cur) 10 10, default;
+  }
+}
+
+.scxRootContainer {
+  position: relative;
+
+  &.scxFullWindow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 1px;
+  }
+}

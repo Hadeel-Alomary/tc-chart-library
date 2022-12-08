@@ -1,0 +1,92 @@
+/* Navigation */
+
+.scxNavigation {
+  position: absolute;
+  width: 100%;
+  bottom: 15px;
+  text-align: center;
+
+  & > div {
+    display: inline-block;
+    text-align: center;
+    height: 25px;
+    overflow: hidden;
+
+    &:hover {
+      background-color: $defaultNavigationDivHoverColor;
+    }
+  }
+}
+
+
+.thumbnail-screenshot .scxNavigation,
+.mobile .scxNavigation {
+    /* MA hide navigation for thumbnails */
+    display: none;
+}
+
+.scxNavigation-btn {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  cursor: pointer;
+  &:hover {
+    background-color: $defaultNavigationBtnHoverColor;
+  }
+}
+
+.scxNavigation-btn:before {
+  background-image: url(#{$imgPath}/Navigation.png);
+  content: "";
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
+
+.scxNavigation-btn-scrollLeft:before {
+  background-position: -174px 0;
+}
+
+.scxNavigation-btn-scrollLeft:hover:before {
+  background-position: -324px 0;
+}
+
+.scxNavigation-btn-zoomOut:before {
+  background-position: -199px 0;
+}
+
+.scxNavigation-btn-zoomOut:hover:before {
+  background-position: -349px 0;
+}
+
+.scxNavigation-btn-zoomIn:before {
+  background-position: -224px 0;
+}
+
+.scxNavigation-btn-zoomIn:hover:before {
+  background-position: -374px 0;
+}
+
+.scxNavigation-btn-scrollRight:before {
+  background-position: -249px 0;
+}
+
+.scxNavigation-btn-scrollRight:hover:before {
+  background-position: -399px 0;
+}
+
+.scxNavigation-btn-scrollToLast:before {
+  background-position: -274px;
+}
+
+.scxNavigation-btn-scrollToLast:hover:before {
+  background-position: -424px;
+}
+
+.scxNavigation-btn-scrollToFirst:before {
+  background-position: -149px 0;
+}
+
+.scxNavigation-btn-scrollToFirst:hover:before {
+  background-position: -299px 0;
+}

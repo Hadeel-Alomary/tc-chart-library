@@ -1,0 +1,121 @@
+/* Context menu */
+
+$menuItemWithSubMenuBackground : url("#{$imgPath}/ContextMenuArrow.png") no-repeat right center;
+$menuItemCheckedBackground : url("#{$imgPath}/ContextMenuCheckbox.png") no-repeat left center;
+
+.scxContextMenu {
+  border: 0;
+  border-top: 1px solid rgba(255,255,255,.2);
+  border-left: 1px solid rgba(255,255,255,.2);
+
+  background-color: #181818;
+  box-shadow: $defaultBoxShadow;
+  &.dropdown-menu {
+    font-size: 1em;
+
+    &.arabic{
+      text-align: right;
+    }
+
+    .divider {
+      background-color: #373737;
+    }
+  }
+
+  .scxMenuItemCheckable {
+
+    &.scxMenuItemChecked {
+
+      & > a {
+        background: $menuItemCheckedBackground;
+      }
+
+      &:hover {
+
+        & > a{
+          background: $menuItemCheckedBackground;
+        }
+      }
+    }
+  }
+
+  & >li {
+
+    & > a {
+      color: #FFFFFF;
+
+      &:hover {
+        background-color: $defaultDropdownMenuHoverColor;
+        color: $defaultTextColor;
+      }
+
+    }
+  }
+
+  .mobile & >li {
+
+    /* Abu5, below 4 lines needed to prevent showing iphoone selection toolbar
+     https://css-tricks.com/almanac/properties/u/user-select/
+    */
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+
+  }
+}
+
+.scxMenuItemWithSubMenu {
+  position:relative;
+}
+
+.scxMenuItemWithSubMenu:after {
+  display:block;
+  content:" ";
+  width:0;
+  height:0;
+  border-color:transparent;
+  border-style:solid;
+  position:absolute;
+  top: 8px;
+}
+
+.mobile .scxMenuItemWithSubMenu:after {
+  top: 6px;
+}
+
+.arabic .scxMenuItemWithSubMenu:after{
+  left: 3px;
+  border-width:5px 5px 5px 0px;
+  border-right-color:#888;
+}
+
+.english .scxMenuItemWithSubMenu:after{
+  right: 3px;
+  border-width: 5px 0 5px 5px;
+  border-left-color:#888;
+}
+
+.arabic .scxMenuItemWithSubMenu:hover:after {
+  border-right-color:#000;
+}
+
+.english .scxMenuItemWithSubMenu:hover:after {
+  border-left-color:#000;
+}
+
+.dark.arabic .scxMenuItemWithSubMenu:hover:after {
+  border-right-color: white;
+}
+
+.dark.english .scxMenuItemWithSubMenu:hover:after {
+  border-left-color: white;
+}
+
+.scxMenuItemWithSubMenu > .dropdown-menu {
+  display: none;
+}
+
+.scxMenuItemWithSubMenu.expand > .dropdown-menu {
+  display: block;
+}

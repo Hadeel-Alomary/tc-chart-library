@@ -1,0 +1,47 @@
+import { IPoint } from '../../Graphics/ChartPoint';
+import { PanGesture } from '../../Gestures/PanGesture';
+import { WindowEvent } from '../../Gestures/Gesture';
+import { VolumeProfilerDrawingTheme } from '../DrawingThemeTypes';
+import { ThemedDrawing } from '../ThemedDrawing';
+import { Chart } from '../../Chart';
+export declare class VolumeProfilerDrawing extends ThemedDrawing<VolumeProfilerDrawingTheme> {
+    static get className(): string;
+    private showPointsLine;
+    private volumeProfilerData;
+    private subscription;
+    private volumeProfilerDataRequested;
+    private drawnBars;
+    private guid;
+    constructor(chart: Chart);
+    get pointsNeeded(): number;
+    preDeleteCleanUp(): void;
+    onRemove(): void;
+    startUserDrawing(): void;
+    _panGestureHitTest(point: IPoint): boolean;
+    hitTest(point: IPoint): boolean;
+    barsHitTest(point: IPoint, points: IPoint[]): boolean;
+    onApplySettings(): void;
+    resetDefaultSettings(): void;
+    protected _handlePanGesture(gesture: PanGesture, event: WindowEvent): boolean;
+    onMoveChartPointInUserDrawingState(): void;
+    draw(): void;
+    private preventChartPointsFromGettingOutsidePriceRange;
+    private ensureChartPointsDoNotOverlap;
+    private getLastVisibleRecord;
+    private drawPointsLine;
+    private drawBox;
+    private drawPointOfControlLine;
+    private drawBars;
+    private drawUpDownBars;
+    private xPosForUpBards;
+    private xPosForDownBars;
+    private maximumTotalVolume;
+    private setYForChartPoints;
+    private getMaxPrice;
+    private getMinPrice;
+    private requestVolumeProfilerData;
+    _finishUserDrawing(): void;
+    private doInitialRequestIfNeeded;
+    canControlPointsBeManuallyChanged(): boolean;
+}
+//# sourceMappingURL=VolumeProfilerDrawing.d.ts.map

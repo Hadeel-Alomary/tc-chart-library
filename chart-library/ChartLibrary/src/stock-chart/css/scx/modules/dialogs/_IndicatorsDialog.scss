@@ -1,0 +1,151 @@
+/* Indicators dialog */
+
+#scxIndicators {
+
+  .modal-dialog {
+    max-width: 50em;
+
+    .modal-header {
+
+      #scxIndicators_searchBlock {
+        margin-top: 2px;
+        margin-left: 3em;
+
+        > .input-group {
+
+          > .input-group-addon {
+            background-color: #E6E6E6;
+            border-color: #B7B7B7;
+          }
+        }
+      }
+
+      .scxIndicators_helpControlPanel {
+        background: $defaultBackgroundColor;
+        border-top: 0;
+        height: 2.0833em;
+        width: 6.25em;
+        margin-left: 1em;
+
+        & > * {
+          float: right;
+        }
+      }
+
+      label[for="scxIndicators_chkHelpSwitcher"] {
+        color: $defaultTextColor;
+        padding: 0.25em 0;
+        margin: 0 0.4167em;
+        font-weight: normal;
+      }
+
+      input {
+        &.form-control {
+          font-size: 1em;
+          background-color: $defaultInputBackgroundColor;
+          border-color: $defaultDropdownBtnBorderColor;
+          color: $defaultTextColor;
+        }
+      }
+    }
+
+    .scxIndicators-body {
+      height: 24.999em;
+      overflow: auto;
+      position: relative;
+    }
+  }
+
+  .scxIndicatorsGroup {
+    margin-bottom: 1.6666em;
+  }
+
+  .scxIndicatorsGroup_header {
+    font-size: 1.1666em;
+    font-weight: bold;
+    margin: 0.1429em 0;
+    padding-left: 0.1429em;
+  }
+
+  .scxIndicatorsGroup_indicators {
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .scxIndicatorColumn {
+      width: 15em;
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+
+  .scxIndicatorItem {
+    transition: 0.2s;
+    padding: 0.4167em 0.25em;
+
+    &.active {
+      background-color: $defaultDropdownMenuSelectedColor;
+    }
+
+    &:hover {
+      background-color: $defaultDropdownMenuHoverColor;
+      cursor: pointer;
+    }
+  }
+
+  .scxNoResult {
+    text-align: center;
+  }
+
+  .scxCustomWidth {
+    width: 25em;
+  }
+
+  .scxInline {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .scxIndicators_searchPic {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    padding-top: 8px;
+    width: 2.7em;
+    height: 100%;
+  }
+
+  #scxIndicators_inp_search {
+    padding-left: 3.7em;
+    padding-right: 25px;
+    border-radius: 4px;
+  }
+
+  #scxIndicators_btn_clearInput {
+    cursor: pointer;
+    position: absolute;
+    top: 9px;
+    right: 10px;
+    z-index: 2;
+    height: 12px;
+    width: 12px;
+  }
+}
+
+.scxIndicators_tooltipWrapper {
+  font-size: 0.857em;
+  text-align: justify;
+
+  h1 {
+    font-size: 1.4285em;
+    display: none;
+  }
+
+  .scxIndicatorHelp {
+    font-weight: bold;
+  }
+}

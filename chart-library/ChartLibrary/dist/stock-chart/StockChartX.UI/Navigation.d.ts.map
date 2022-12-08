@@ -1,0 +1,1 @@
+{"version":3,"file":"Navigation.d.ts","sourceRoot":"","sources":["../../../src/stock-chart/StockChartX.UI/Navigation.ts"],"names":[],"mappings":"AASA,OAAO,EAAC,KAAK,EAAC,MAAM,sBAAsB,CAAC;AAG3C,MAAM,WAAW,sBAAsB;IACnC,MAAM,EAAE,MAAM,CAAC;IACf,KAAK,EAAE,KAAK,CAAC;CAChB;AAED,qBAAa,eAAe;gBAEZ,MAAM,EAAE,sBAAsB;IAO1C,OAAO,CAAC,KAAK;CA8ChB"}

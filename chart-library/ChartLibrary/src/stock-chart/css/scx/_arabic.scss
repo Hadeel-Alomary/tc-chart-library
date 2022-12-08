@@ -1,0 +1,366 @@
+.arabic .scxDialog:not(.english-only-dialog) {
+
+  /* general */
+
+  direction: rtl !important;
+  text-align: right !important;
+  font-family: DroidSansArabic;
+
+  .nav-tabs{
+
+    padding-right: 0;
+
+    &>li{
+
+      float: right;
+
+    }
+
+  }
+
+  .close{
+
+    float: left;
+
+  }
+
+  .modal-dialog .modal-content .modal-body{
+
+    table {
+
+      td {
+        .sp-replacer {
+          margin: 0 0 0 0.5833em;
+        }
+      }
+    }
+  }
+
+  .modal-footer{
+
+    .footer-buttons-container{
+
+      float: left !important;
+
+    }
+
+    .footer-default-settings{
+
+      float: right !important;
+
+    }
+
+  }
+
+  .bootstrap-select.btn-group .btn {
+
+    .filter-option{
+
+      text-align: right !important;
+
+    }
+
+    .caret {
+      left: 12px;
+      right: auto;
+    }
+
+  }
+
+  /* Drawing settings dialog */
+
+  &#scxDrawingDialog{
+
+    .modal-body{
+
+      .drawing-control-points-tab table tr td .scxDateField{
+        direction: ltr;
+      }
+
+      .scxButtonGroup{
+        margin-left: 0;
+      }
+
+      #scxDrawingDialog_panel_figure_linePanel {
+
+        td {
+          .scxNumericField-wrapper {
+            margin: 0 0 0 0.7em;
+          }
+        }
+      }
+
+      #scxDrawingDialog_panel_text {
+
+        .scxControls {
+
+          > *:not(.sp-replacer):not(:last-child) {
+            margin: 0 0.5em 0 0.3em;
+          }
+        }
+      }
+
+      #scxDrawingDialog_panel_figure_lineEnabled {
+        margin: 0 0.416639em 0 0;
+      }
+
+      .scxButtonGroup{
+
+        & > label {
+          float: right;
+
+
+          &:not(:first-child):not(:last-child) {
+            margin-left: 0.077em;
+            margin-right: 0.09em;
+          }
+
+        }
+      }
+
+    }
+  }
+
+  /* Fibonacci settings dialog */
+  &#scxFibonacciDrawingDialog{
+
+    .modal-body{
+
+      .drawing-control-points-tab table tr td .scxDateField{
+        direction: ltr;
+      }
+
+      .scxFibonacciDrawingDialog_label_lineWidth{
+        padding-right: 5em;
+        padding-left: 0;
+      }
+
+      .scxFibonacciDrawingDialog_label_lineLevel{
+        padding-right: 4.7em;
+        padding-left: 0;
+      }
+
+      .scxFibonacciDrawingDialog_panel_addLinePanel{
+        float: left;
+      }
+    }
+
+  }
+
+  &#scxGannBoxDrawingDialog{
+
+    .modal-body {
+
+      .scxGannBoxDrawingDialog_label_priceLevels {
+        padding-right: 5.0em;
+        padding-left: 0;
+      }
+
+      .scxGannBoxDrawingDialog_label_timeLevels {
+        padding-right: 8em;
+        padding-left: 0;
+      }
+
+      .scxGannBoxDrawingDialog_panel_figure_priceTimeBackground td {
+        padding-right: 1.4em;
+        padding-left: 7.5em;
+      }
+
+    }
+
+  }
+
+  /* chart elements container dialog */
+
+  &#scxChartElementsContainerDialog .scxChartElementsContainerDialog-body #scxChartElementsContainer .panel .panel-body,
+  &#scxChartElementsContainerDialog .scxChartElementsContainerDialog-body #scxAllTechnicalDrawingsContainer .panel .panel-body,
+  &#scxChartElementsContainerDialog .scxChartElementsContainerDialog-body #scxAlertsContainer .panel .panel-body{
+
+    padding: 0 15px 0 0;
+
+  }
+
+
+  &#scxChartElementsContainerDialog .scxChartElementsContainerDialog-body #scxChartElementsContainer .panel .panel-content .panel-title.with-padding,
+  &#scxChartElementsContainerDialog .scxChartElementsContainerDialog-body #scxAllTechnicalDrawingsContainer .panel .panel-content .panel-title.with-padding,
+  &#scxChartElementsContainerDialog .scxChartElementsContainerDialog-body #scxAlertsContainer .panel .panel-body{
+
+    padding-left: 0;
+    padding-right: 10px;
+
+  }
+
+
+  &#scxChartElementsContainerDialog .scxChartElementsContainerDialog-body #scxChartElementsContainer .panel .indicator-content .panel-title,
+  &#scxChartElementsContainerDialog .scxChartElementsContainerDialog-body #scxChartElementsContainer .panel.chart-panel-content .panel-heading .panel-content > .panel-title{
+
+    direction: ltr !important;
+    font-family: "Arial";
+
+  }
+
+  &#scxChartElementsContainerDialog .scxChartElementsContainerDialog-body #scxAllTechnicalDrawingsContainer .panel-heading .accordion-toggle:after{
+
+    float: left;
+
+  }
+
+   &#scxChartElementsContainerDialog .scxChartElementsContainerDialog-body #scxAllTechnicalDrawingsContainer .panel-heading .accordion-toggle.collapsed:after{
+
+    content: "\e079" !important;
+
+  }
+
+  &#scxChartElementsContainerDialog .scxChartElementsContainerDialog-body #scxAlertsContainer .panel-heading .accordion-toggle:after{
+
+    float: left;
+
+  }
+
+  &#scxChartElementsContainerDialog .scxChartElementsContainerDialog-body #scxAlertsContainer .panel-heading .accordion-toggle.collapsed:after{
+
+    content: "\e079" !important;
+
+  }
+
+  &#scxChartElementsContainerDialog .modal-dialog .modal-content .modal-header > .nav-tabs{
+
+    display: block;
+
+  }
+
+  &#scxChartElementsContainerDialog {
+
+    .scxChartElementsContainerDialog-header {
+
+      .close {
+        margin: 5px 0 0 5px;
+      }
+
+    }
+
+    .scxChartElementsContainerDialog-body {
+
+      #scxAllTechnicalDrawingsContainer {
+
+        .panel-heading .accordion-toggle:after {
+          float: right;
+          margin: 0 0 0 0.5em;
+        }
+
+      }
+
+      #scxAlertsContainer {
+
+        .panel-heading .accordion-toggle:after {
+          float: right;
+          margin: 0 0 0 0.5em;
+        }
+
+      }
+
+      #scxChartElementsContainer,
+      #scxAllTechnicalDrawingsContainer,
+      #scxAlertsContainer {
+
+        .panel {
+
+          .panel-heading {
+            padding: 0 0 0 5px;
+
+            .panel-content {
+              border-right: 4px solid;
+              margin-right: 0;
+              padding-right: 4px;
+              border-left: none;
+              margin-left: 0;
+              padding-left: 0;
+            }
+          }
+
+          .panel-heading .accordion-toggle {
+            font-family: DroidSansArabic;
+          }
+
+          .panel-body{
+            padding: 0 15px 0 0;
+          }
+
+          .panel-content {
+
+            .panel-title {
+
+              &.with-padding{
+
+                padding-right: 10px;
+
+              }
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+  }
+}
+
+/* dropdown menu is not a part of dialogs*/
+
+.arabic .bootstrap-select.arabic > .dropdown-menu > .dropdown-menu.inner{
+  font-family: DroidSansArabic;
+  text-align: right;
+}
+
+/* Chart tooltip */
+
+.arabic .chartTooltip,
+.arabic .chartTooltip#scxAlertTooltip tr td:last-child{
+  direction:rtl;
+}
+
+.arabic .chartTooltip tr td:last-child {
+  text-align: right;
+}
+
+.arabic .chartTooltip tr td:first-child{
+  font-family: DroidArabicKufi-Bold;
+}
+
+/* Context menu */
+
+.arabic .scxContextMenu.dropdown-menu ,
+.arabic .scxMenuItemWithSubMenu .dropdown-menu{
+  left: auto !important;
+  right: 0;
+}
+
+.arabic .scxContextMenu.dropdown-menu li ,
+.arabic .scxMenuItemWithSubMenu .dropdown-menu li {
+  padding:4px 10px 4px 4px;
+  text-align: right;
+}
+
+.arabic .scxContextMenu.dropdown-menu li[data-id="settings"],
+.arabic .scxContextMenu.dropdown-menu li[data-id="trend-line-alert"],
+.arabic .scxContextMenu.dropdown-menu li[data-id="clone"],
+.arabic .scxContextMenu.dropdown-menu li[data-id="delete"],
+.arabic .scxContextMenu.dropdown-menu li[data-id="update"],
+.arabic .scxContextMenu.dropdown-menu li[data-id="visible"],
+.arabic .scxContextMenu.dropdown-menu li[data-id="alert"],
+.arabic .scxContextMenu.dropdown-menu li[data-id="buy"],
+.arabic .scxContextMenu.dropdown-menu li[data-id="sell"],
+.arabic .scxContextMenu.dropdown-menu li[data-id="stop"],
+.arabic .scxContextMenu.dropdown-menu li[data-id="lock"],
+.arabic .scxContextMenu.dropdown-menu li[data-id="lock"].activated{
+  background-position: center right 5px;
+}
+
+/* font family */
+
+.arabic .scxContextMenu.dropdown-menu li a ,
+.arabic .scxMenuItemWithSubMenu .dropdown-menu li a {
+  font-family : DroidSansArabic;
+}

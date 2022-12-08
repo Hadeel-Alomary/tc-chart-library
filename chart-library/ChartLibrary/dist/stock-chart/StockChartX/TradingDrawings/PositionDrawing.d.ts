@@ -1,0 +1,45 @@
+import { TradingPosition } from '../../../services/trading/broker/models';
+import { IPoint } from '../../StockChartX/Graphics/ChartPoint';
+import { IRect } from '../../StockChartX/Graphics/Rect';
+import { Chart } from '../Chart';
+import { Gesture, WindowEvent } from '../../StockChartX/Gestures/Gesture';
+import { TradingPositionTheme } from './TradingDrawingsDefaultSettings';
+import { ThemedTradingDrawing } from './ThemedTradingDrawing';
+export declare class PositionDrawing extends ThemedTradingDrawing<TradingPositionTheme> {
+    static get className(): string;
+    private _cancelBounds;
+    private _quantityBounds;
+    private _reverseBounds;
+    private _costDiffBounds;
+    private _bounds;
+    private _position;
+    private _tradingService;
+    get visible(): boolean;
+    set visible(value: boolean);
+    constructor(chart: Chart, position: TradingPosition);
+    protected bounds(): IRect;
+    protected hitTest(point: IPoint): boolean;
+    draw(): void;
+    drawValueMarkers(): void;
+    private drawLine;
+    private drawCancelBox;
+    private drawReverseBox;
+    private drawReverseArrows;
+    private drawUpArrow;
+    private drawDownArrow;
+    private drawQuantityBox;
+    private drawCostDiffBox;
+    private getTextSize;
+    private getReverseBoxWidth;
+    private getArrowBounds;
+    private setBounds;
+    private getBoundsWidth;
+    private getCancelText;
+    private getQuantityText;
+    private getCostDiffText;
+    private getCostDiffTextColor;
+    protected _handleClickGesture(gesture: Gesture, event: WindowEvent): void;
+    protected _handleDoubleClickGesture(): void;
+    protected _handleMouseHover(gesture: Gesture, event: WindowEvent): void;
+}
+//# sourceMappingURL=PositionDrawing.d.ts.map

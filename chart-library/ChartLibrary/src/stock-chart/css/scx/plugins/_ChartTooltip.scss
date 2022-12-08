@@ -1,0 +1,122 @@
+@import "../vars";
+
+.chartTooltip{
+  position:absolute;
+  background:rgba(255,250,250,0.8);
+  color:black;
+  display:none;
+  border:1px solid #666;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.chartTooltip#scxAlertTooltip{
+  background:rgba(255,255,255,0.8);
+  color:black;
+  border:1px solid #e55456;
+}
+
+.chartTooltip#scxAlertTooltip.shown{
+  display:table;
+}
+
+.chartTooltip#scxAlertTooltip #scxAlertTooltip-text {
+  text-align: center;
+}
+
+.chartTooltip.shown{
+  display:block;
+}
+
+.chartTooltip tr td{
+  padding:2px 3px;
+}
+
+.chartTooltip tr td:first-child {
+    font-family: Tahoma Black;
+    font-size: 1.0rem;
+}
+
+.chartTooltip tr td.english:first-child,
+.chartTooltip tr td:last-child {
+    font-family: Arial;
+    font-weight: bold;
+    font-size:1.1rem;
+}
+
+.chartTooltip tr td:last-child {
+  direction: ltr;
+  text-align: left;
+}
+
+.chartTooltip tr.hidden{
+  display: none;
+}
+
+/* Drawing tooltip */
+
+.chartTooltip#scxDrawingTooltip{
+  direction: ltr;
+
+  tr td.scxDrawingTooltip-icon {
+    width: 24px;
+    height: 22px;
+
+    &:before {
+      background-position:bottom center;
+      background-repeat: no-repeat;
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+    }
+
+    &.scxDrawingTooltip-change-icon:before{
+      background-image:url("#{$imgPath}/drawing-tooltip/change.png");
+    }
+
+    &.scxDrawingTooltip-bars-icon:before{
+      background-image:url("#{$imgPath}/drawing-tooltip/candlestick.png");
+    }
+
+    &.scxDrawingTooltip-angle-icon:before{
+      background-image:url("#{$imgPath}/drawing-tooltip/angle.png");
+    }
+  }
+
+  tr td.english{
+    text-align: left;
+    font-family: Arial;
+    font-weight: bold;
+    font-size:1.1rem;
+    line-height: 20px;
+  }
+}
+
+/* Loading Image Tooltip */
+.chartTooltip#scxLoadingImageTooltip.shown,
+.chartTooltip#scxNewsTooltip.shown{
+  display: table;
+  pointer-events: all;
+}
+
+.chartTooltip#scxLoadingImageTooltip tr,
+.chartTooltip#scxNewsTooltip tr{
+  display: table-row;
+}
+
+.chartTooltip#scxLoadingImageTooltip tr td,
+.chartTooltip#scxNewsTooltip tr td{
+  display: table-cell;
+  text-align: center;
+}
+
+.chartTooltip #scxLoadingImageTooltip-image:before {
+  background-image: url("~img/loading-data-white-bg.gif");
+  content: "";
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}

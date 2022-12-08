@@ -1,0 +1,42 @@
+import { Field } from './Field';
+import { Recordset } from './Recordset';
+export declare class Oscillator {
+    momentum(pSource: Field, iPeriods: number, sAlias: string): Recordset;
+    TRIX(pSource: Field, iPeriods: number, sAlias: string): Recordset;
+    ultimateOscillator(pOHLCV: Recordset, iCycle1: number, iCycle2: number, iCycle3: number, sAlias: string): Recordset;
+    verticalHorizontalFilter(pSource: Field, iPeriods: number, sAlias: string): Recordset;
+    williamsPctR(pOHLCV: Recordset, iPeriods: number, sAlias: string): Recordset;
+    williamsAccumulationDistribution(pOHLCV: Recordset, Alias: string): Recordset;
+    accumulationDistribution(pOHLCV: Recordset, Alias: string): Recordset;
+    volumeOscillator(Volume: Field, ShortTerm: number, LongTerm: number, PointsOrPercent: number, Alias: string): Recordset;
+    volumeChange(pOHLCV: Recordset, iPeriods: number, sAlias: string): Recordset;
+    chaikinVolatility(pOHLCV: Recordset, Periods: number, ROC: number, MAType: number, Alias: string): Recordset;
+    volatilityRatio(pOHLCV: Recordset, Period: number, Alias: string): Recordset;
+    stochasticOscillator(pOHLCV: Recordset, KPeriods: number, KSlowingPeriods: number, DPeriods: number, MAType: number): Recordset;
+    fastStochastic(pOHLCV: Recordset, KPeriods: number, DPeriods: number, MAType: number): Recordset;
+    psLandisReversal(pOHLCV: Recordset, Alias: string): Recordset;
+    priceOscillator(pSource: Field, LongCycle: number, ShortCycle: number, MAType: number, Alias: string): Recordset;
+    MACD(pSource: Field, SignalPeriods: number, LongCycle: number, ShortCycle: number, MAType: number, Alias: string): Recordset;
+    macdHistogram(pSource: Field, SignalPeriods: number, LongCycle: number, ShortCycle: number, MAType: number, Alias: string): Recordset;
+    easeOfMovement(pOHLCV: Recordset, Periods: number, MAType: number, Alias: string): Recordset;
+    detrendedPriceOscillator(pSource: Field, Periods: number, MAType: number, Alias: string): Recordset;
+    parabolicSAR(HighPrice: Field, LowPrice: Field, MinAF: number, MaxAF: number, Alias: string): Recordset;
+    averageDirectionalIndex(pOHLCV: Recordset, Periods: number): Recordset;
+    trueRange(pOHLCV: Recordset, Alias: string): Recordset;
+    aroon(pOHLCV: Recordset, Periods: number): Recordset;
+    rainbowOscillator(pSource: Field, Levels: number, MAType: number, Alias: string): Recordset;
+    fractalChaosOscillator(pOHLCV: Recordset, Periods: number, Alias: string): Recordset;
+    primeNumberOscillator(pSource: Field, Alias: string): Recordset;
+    elderRay(pOHLCV: Recordset, Periods: number, MAType: number, Alias: string): Recordset;
+    ehlerFisherTransform(pOHLCV: Recordset, Periods: number, Alias: string): Recordset;
+    schaffTrendCycle(pSource: Field, Periods: number, ShortCycle: number, LongCycle: number, MAType: number, Alias: string): Recordset;
+    centerOfGravity(pSource: Field, Periods: number, Alias: string): Recordset;
+    coppockCurve(pSource: Field, Alias: string): Recordset;
+    chandeForecastOscillator(pSource: Field, Periods: number, Alias: string): Recordset;
+    klingerVolumeOscillator(pOHLCV: Recordset, SignalPeriods: number, LongCycle: number, ShortCycle: number, MAType: number, Alias: string): Recordset;
+    prettyGoodOscillator(pOHLCV: Recordset, Periods: number, Alias: string): Recordset;
+    donchianChannels(pOHLCV: Recordset, Periods: number): Recordset;
+    psychologicalLine(close: Field, Periods: number, Alias: string): Recordset;
+    bullishBarishIndicator(close: Field, period1: number, period2: number, period3: number, period4: number, Alias: string): Recordset;
+}
+//# sourceMappingURL=Oscillator.d.ts.map

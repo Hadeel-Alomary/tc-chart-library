@@ -1,0 +1,271 @@
+/* Chart panel */
+
+.scxChartPanel {
+  position: absolute;
+  overflow: hidden;
+}
+
+.scxChartPanel.plot-mouse-hover,
+.scxChartPanel.drawing-mouse-hover,
+.scxChartPanel.trading-drawing-mouse-hover,
+.scxChartPanel.alert-drawing-mouse-hover,
+.scxChartPanel.chart-annotation-mouse-hover{
+  cursor: pointer;
+}
+
+.scxChartPanel.zoom-pointer{
+  cursor:zoom-in;
+}
+
+.scxChartPanel.change-indicator-panel{
+  cursor: url(#{$imgPath}/hand.ico) 11 11, default !important;
+}
+
+.scxChartPanel.change-indicator-panel.new-panel{
+  cursor: url(#{$imgPath}/move-indicator-panel.ico) 11 11, default !important;
+}
+
+.scxWatermark {
+  display: table;
+  position: absolute;
+  opacity: 0.1;
+}
+
+.scxWatermarkContent {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.thumbnail-screenshot .scxWatermarkContent {
+    /* MA hide watermark for thumbnails */
+    display: none;
+}
+
+.scxWatermark .scxWatermarkContent .scxWatermarkInfo {
+    /* MA next two lines needed to show Arabic text correct */
+    /* https://github.com/niklasvh/html2canvas/issues/226#issuecomment-20232693 */
+    display: inline-block;
+    text-align: justify;
+}
+
+.scxWatermark .scxWatermarkContent .scxWatermarkLogo {
+    width: 250px;
+    height: 26px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+
+.scxWatermark .scxWatermarkContent .scxWatermarkLogo:before {
+  background-image: url("#{$imgPath}/tickerchart-logo-gray.png");
+  width: 100%;
+  height: 100%;
+  content: "";
+  display: inline-block;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.scxPanelTitle {
+  position: absolute;
+  padding: 1px 15px 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+
+  & > * {
+    display: block;
+    vertical-align: middle;
+  }
+
+  & > div {
+
+    & > * {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  .scxPanelTitleCaption {
+    padding-right: 5px;
+  }
+}
+
+.scxPanelTitle .scxPanelTitleValue.scxPanelMenu {
+  float: right;
+  margin-right: 6px;
+}
+
+.chart-viewer {
+    .scxPanelTitle {
+        .scxIndicatorRemoveIcon, .scxIndicatorSettingsIcon, .scxIndicatorVisibleIcon {
+            display: none;
+        }
+    }
+}
+
+.mobile {
+
+  .scxPanelTitle {
+    padding: 1px 2px 0;
+    font-size:0.9rem !important; /* set by style dynamically, override for mobile */
+    font-weight: bold !important; /* set by style dynamically, override for mobile */
+    .scxPanelTitleCaption {
+      /* display: none; */
+    }
+  }
+
+}
+
+.tablet {
+  .scxPanelTitle {
+    font-size:1.2rem !important;
+    font-weight: bold !important; /* set by style dynamically, override for mobile */
+  }
+}
+
+.scxPanelTitleValue {
+  margin-left: 5px;
+  cursor: default;
+}
+
+.scxPanelTitleIcon {
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  margin-right: 3px;
+}
+
+.scxPanelTitleIcon:before {
+  background-image: url("#{$imgPath}/panel-title-icons.png?v=1");
+  background-position: center;
+  background-repeat: no-repeat;
+  content: "";
+  display:inline-block;
+  width: 100%;
+  height:100%;
+}
+
+.scxIndicatorRemoveIcon:before {
+  background-position: 0 -24px;
+  opacity: 0.65;
+}
+
+.scxIndicatorRemoveIcon:hover:before {
+  background-position: 0 0;
+  opacity: 1;
+}
+
+.scxIndicatorSettingsIcon:before {
+  background-position: 0 -168px;
+  opacity: 0.65;
+}
+
+.scxIndicatorSettingsIcon:hover:before {
+  background-position: 0 -144px;
+  opacity: 1;
+}
+
+.scxIndicatorVisibleIcon:before {
+  background-position: 0 -120px;
+  opacity: 0.65;
+}
+
+.scxIndicatorVisibleIcon:hover:before {
+  background-position: 0 -96px;
+  opacity: 1;
+}
+
+.scxIndicatorVisibleIcon.activated:before {
+    background-position: 0 -96px;
+}
+
+.scxPanelOptions {
+    float: right;
+    opacity:1.0;
+}
+
+
+.chart-viewer {
+    .scxPanelOptions {
+        .scxPanelMoveUp, .scxPanelMoveDown, .scxPanelMaximize , .scxPanelMenu {
+            display: none !important;
+        }
+    }
+}
+
+.scxChartPanel.maximized .scxPanelOptions {
+    margin-right:15px; /* add padding to not overlap with mydrawings button */
+}
+
+.mobile .scxChartPanel.maximized .scxPanelOptions {
+    margin-right:0px; /* in mobile, no mydrawings button is shown */
+}
+
+
+.scxChartPanel.maximized .scxPanelOptions .scxPanelMoveUp,
+.scxChartPanel.maximized .scxPanelOptions .scxPanelMoveDown {
+    display: none !important; /* hide those buttons on maximize */
+}
+
+.scxPanelMoveDown:before {
+  background-position: 0 -72px;
+  opacity: 0.65;
+}
+.scxPanelMoveDown:hover:before {
+  background-position: 0 -48px;
+  opacity: 1;
+}
+
+.scxPanelMenu:before {
+  background-position: 0 -360px;
+  opacity: 0.65;
+}
+.scxPanelMenu:hover:before {
+  background-position: 0 -336px;
+  opacity: 1;
+}
+
+.scxChartPanel .scxPanelMaximize {
+    width: 14px;
+    height: 14px;
+    opacity: 0.65;
+    &:hover{
+        opacity:1;
+    }
+}
+
+.scxChartPanel .scxPanelMaximize:before {
+  background-image: url("#{$imgPath}/panel-title-icons.png?v=1");
+  background-position: 0 -312px;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  content: "";
+}
+.scxChartPanel .scxPanelMaximize:hover:before {
+  background-position: 0 -288px;
+}
+
+.scxChartPanel.maximized .scxPanelMaximize:before {
+  background-position: 0 -264px;
+}
+
+.scxChartPanel.maximized .scxPanelMaximize:hover:before {
+  background-position: 0 -240px;
+}
+
+.scxPanelMoveUp:before {
+  background-position: 0 -216px;
+  opacity: 0.65;
+}
+
+.scxPanelMoveUp:hover:before {
+  background-position: 0 -192px;
+  opacity: 1;
+}
+
+
+

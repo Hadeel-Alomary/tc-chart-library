@@ -1,0 +1,200 @@
+/*GannBox Drawing dialog */
+
+#scxGannBoxDrawingDialog {
+
+  overflow: visible;
+  z-index: 1051;
+
+  .modal-dialog {
+    width: 33.3em;
+  }
+
+  .modal-body {
+    overflow: auto;
+    max-height: 90vh;
+
+    table {
+
+      td {
+        padding: 0.5em;
+      }
+    }
+  }
+
+  .scxGannBoxDrawingDialog-body {
+
+    overflow-x:visible;
+    overflow-y: auto;
+
+    height: 38em;
+
+    table {
+
+      td {
+        .sp-replacer {
+          margin: 0 0.5833em;
+        }
+      }
+    }
+
+    .scxGannBoxDrawingDialog_panel_figure ,
+    .scxGannBoxDrawingDialog_panel_figure_gridLine{
+      @include dialogsPanelFigure();
+    }
+
+
+    .scxGannBoxDrawingDialog_input_gridLineWidth {
+      display: inline-block;
+      width: 3.65572em;
+    }
+
+    .scxGannBoxDrawingDialog_label_gridLine {
+      text-align: center;
+      width: 3em;
+      margin-bottom: 0;
+    }
+
+    .scxGannBoxDrawingDialog_input_gridLineStyle{
+
+      &:disabled {
+
+        & + .bootstrap-select {
+          background-color: $defaultDropdownDisabledColor;
+        }
+      }
+    }
+
+    .scxLineStyleSelector {
+      background-color: $defaultInputBackgroundColor;
+      margin: 0 0.5833em;
+      width: 10.0em;
+
+      &:active {
+        background-color: #000000;
+      }
+    }
+
+
+    .scxGannBoxDrawingDialog_panel_figure_linePanel,
+    .scxGannBoxDrawingDialog_panel_figure_timeLinePanel,
+    .scxGannBoxDrawingDialog_panel_figure_gridLine{
+
+      td {
+
+        &:last-child {
+
+          & > * {
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+
+    .scxGannBoxDrawingDialog_label_priceLevels {
+      padding-left: 5.0em;
+    }
+
+    .scxGannBoxDrawingDialog_label_timeLevels {
+      padding-left: 8em;
+    }
+
+
+    .scxGannBoxDrawingDialog_panel_figure_priceLevelsPanel,
+    .scxGannBoxDrawingDialog_panel_figure_timeLevelsPanel {
+      padding-right: 1em;
+      padding-top: 0;
+    }
+
+    .scxGannBoxDrawingDialog_panel_figure_priceTimeBackground td {
+      padding-left: 1.1em;
+      padding-right: 8.8em;
+    }
+
+    .scxGannBoxDrawingDialog_reverse {
+      display: inline-block;
+    }
+
+    .scxGannBoxDrawingDialog_topBottomLabels {
+      margin-bottom: 1.3em;
+    }
+
+    .scxGannBoxDrawingDialog_panel_figure_lineEnabled ,
+    .scxGannBoxDrawingDialog_panel_figure_gridLinesEnabled {
+      margin: 0.416639em;
+    }
+
+    .scxGannBoxDrawingDialog_input_lineLevel ,
+    .scxGannBoxDrawingDialog_input_timeLineLevel {
+      display: inline-block;
+      width: 5.18572em;
+    }
+
+    input[type=number].scxNumericField::-webkit-inner-spin-button,
+    input[type=number].scxNumericField::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      margin: 0;
+    }
+
+    input[type=number].scxNumericField{
+      -moz-appearance:textfield;
+    }
+
+
+    #GannBox_drawing_control_points{
+
+      .scxGannBoxDrawingDialog-control-point-row{
+
+        table {
+
+          tr {
+
+            td:first-child{
+
+              label{
+                font-weight:bolder;
+              }
+
+            }
+
+            td {
+
+              label {
+                padding-top: 7px;
+              }
+
+              .scxNumericField {
+                width: 6em;
+                font-size: 1.1em;
+              }
+
+              /* Webkit browsers like Safari and Chrome */
+              input[type=number].scxNumericField::-webkit-inner-spin-button,
+              input[type=number].scxNumericField::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                margin: 0;
+              }
+
+              input[type=number].scxNumericField{
+                -moz-appearance:textfield;
+              }
+
+              .scxDateField {
+                width: 9.1em;
+                padding: 0;
+                height: 1.77em;
+                border-radius: 5px;
+                font-size: 1.1em;
+              }
+
+            }
+          }
+        }
+
+      }
+    }
+
+  }
+}

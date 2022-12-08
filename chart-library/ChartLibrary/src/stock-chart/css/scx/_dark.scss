@@ -1,0 +1,91 @@
+/* dark theme */
+
+/* scxContextMenu */
+.dark .scxContextMenu.dropdown-menu li[data-id="buy"]:before {
+  background: url('~img/trading/buy-dark.png') no-repeat center;
+  filter: none;
+}
+
+.dark .scxContextMenu.dropdown-menu li[data-id="sell"]:before {
+  background: url('~img/trading/sell-dark.png') no-repeat center;
+  filter: none;
+}
+
+.dark .scxContextMenu.dropdown-menu li[data-id="stop"]:before {
+  background: url('~img/trading/stop-letter-dark.png') no-repeat center;
+  filter: none;
+}
+
+
+
+/* scxWatermark */
+
+.dark .scxWatermark .scxWatermarkContent .scxWatermarkLogo:before {
+  background-image: url("~img/chart/tickerchart-logo-white.png");
+  filter: none;
+}
+
+
+/* scxPanelTitle */
+.dark .scxPanelTitle *:before{
+  filter: none;
+}
+
+/* chartTooltip */
+.dark .chartTooltip #scxLoadingImageTooltip-image:before {
+  background-image: url("~img/loading-data-gray-bg.gif");
+  filter: none;
+}
+
+.dark .chartTooltip#scxAlertTooltip.shown {
+  color: lightgray;
+  background-color: #444;
+  border-color: #666;
+  font-family: normal;
+}
+
+/* scxContextMenu */
+.dark .scxContextMenu.dropdown-menu ,
+.dark .scxMenuItemWithSubMenu .dropdown-menu {
+  background-color: #444;
+  border-color: #777;
+  box-shadow: none;
+}
+
+.dark .scxContextMenu.dropdown-menu li a ,
+.dark .scxMenuItemWithSubMenu .dropdown-menu li a{
+  color: white;
+  border-color: transparent;
+}
+
+.dark .scxContextMenu.dropdown-menu li:hover ,
+.dark .scxMenuItemWithSubMenu .dropdown-menu li:hover ,
+.dark .scxContextMenu.dropdown-menu li>a:hover ,
+.dark .scxMenuItemWithSubMenu .dropdown-menu li>a:hover,
+.dark .scxContextMenu.dropdown-menu li>a:focus:hover ,
+.dark .scxMenuItemWithSubMenu .dropdown-menu li>a:focus:hover{
+  background-color: #333 !important;
+  border-color: #666;
+}
+
+.dark .scxContextMenu.dropdown-menu li>a:focus ,
+.dark .scxMenuItemWithSubMenu .dropdown-menu li>a:focus{
+  background-color: #444 !important;
+  border-color: #777;
+}
+
+
+/* scxNavigation */
+
+.dark .scxNavigation *:before {
+  filter: none;
+}
+
+.dark .scxNavigation > div {
+  opacity: 0.3;
+  background-color: #2d2d2d;
+}
+
+.dark .scxNavigation > div:hover {
+  opacity: 1;
+}

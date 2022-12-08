@@ -1,0 +1,27 @@
+/* ComboBox */
+
+.scxComboBox {
+
+  .dropdown-menu {
+    background-color: $defaultInputBackgroundColor;
+    color: $defaultToolbarTextColor;
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.175);
+
+    @include dropdownMenu();
+
+    & > li {
+      &:hover {
+        background-color: $defaultDropdownMenuHoverColor;
+
+        &.selected {
+          background-color: $defaultDropdownMenuSelectedColor;
+          color: #4a4a4a;
+        }
+      }
+      &:active {
+        background-color: $defaultDropdownMenuSelectedColor;
+        color: $defaultTextColorOnHover;
+      }
+    }
+  }
+}

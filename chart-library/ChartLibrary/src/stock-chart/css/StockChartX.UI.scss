@@ -1,0 +1,337 @@
+@import "scx/vars";
+@import "scx/utils";
+@import "scx/layout";
+@import "scx/state";
+@import "scx/modules";
+@import "scx/overrides";
+@import "scx/arabic";
+
+/******* custom settings added by us  ********/
+
+/* styling of context menu */
+
+.english .scxContextMenu.dropdown-menu ,
+.english .scxMenuItemWithSubMenu .dropdown-menu{
+    right: auto !important;
+}
+
+.scxContextMenu.dropdown-menu ,
+.scxMenuItemWithSubMenu .dropdown-menu {
+    background:#f0f0f0;
+    border: 1px solid #aeaeae;
+    right: auto;
+    left: 0;
+}
+
+.scxContextMenu.dropdown-menu li ,
+.scxMenuItemWithSubMenu .dropdown-menu li {
+    margin:2px;
+    border:transparent 1px solid;
+}
+
+.english .scxContextMenu.dropdown-menu li {
+  margin-right: 5px;
+}
+
+.scxContextMenu.dropdown-menu li ,
+.scxMenuItemWithSubMenu .dropdown-menu li {
+    padding:4px 4px 4px 10px;
+    text-align: left;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.english .scxContextMenu.dropdown-menu li {
+  padding:4px 7px 4px 10px;
+}
+
+.english .scxContextMenu.dropdown-menu li ,
+.english .scxMenuItemWithSubMenu .dropdown-menu li{
+  flex-direction: row;
+}
+
+.scxContextMenu.dropdown-menu>li>a ,
+.scxMenuItemWithSubMenu .dropdown-menu>li>a {
+  padding: 0px 10px;
+}
+
+.scxContextMenu.dropdown-menu li:hover ,
+.scxMenuItemWithSubMenu .dropdown-menu li:hover {
+    border:#555555 solid 1px;
+    border-radius:4px;
+}
+
+.scxContextMenu.dropdown-menu li a ,
+.scxMenuItemWithSubMenu .dropdown-menu li a{
+    color:Black;
+    font-family: Arial;
+    font-size:1.2rem;
+}
+.scxContextMenu.dropdown-menu li a:hover ,
+.scxMenuItemWithSubMenu .dropdown-menu li a:hover {
+    background: none;
+}
+
+.scxContextMenu.dropdown-menu li:hover ,
+.scxMenuItemWithSubMenu .dropdown-menu li:hover{
+  border: 1px solid var(--button-border-color-hover);
+  border-radius: 5px;
+  background-color: white !important;
+}
+
+.scxContextMenu.dropdown-menu li .english ,
+.scxMenuItemWithSubMenu .dropdown-menu li .english {
+  font-family:Arial;
+  font-weight: bold;
+}
+
+.scxContextMenu.dropdown-menu li:before ,
+.scxMenuItemWithSubMenu .dropdown-menu li:before {
+  background-position:center;
+  background-repeat: no-repeat;
+  content: "";
+  display:inline-block;
+  width: 16px;
+  height: 16px;
+}
+
+.scxMenuItemWithSubMenu.moving-average .dropdown-menu li:before {
+  content: none;
+}
+
+.scxContextMenu.dropdown-menu li[data-id="settings"]:before{
+    background-image:url("#{$imgPath}/chart-context-menu-settings.png");
+}
+.scxContextMenu.dropdown-menu li[data-id="trend-line-alert"]:before{
+  background-image:url("#{$imgPath}/alert.png");
+}
+.scxContextMenu.dropdown-menu li[data-id="clone"]:before{
+  background-image:url("#{$imgPath}/chart-context-menu-clone.png");
+}
+.scxContextMenu.dropdown-menu li[data-id="delete"]:before{
+  background-image:url("#{$imgPath}/chart-context-menu-remove.png");
+}
+.scxContextMenu.dropdown-menu li[data-id="update"]:before{
+  background-image:url("#{$imgPath}/chart-context-alert-edit.png");
+}
+.scxContextMenu.dropdown-menu li[data-id="visible"]:before{
+  background-image:url("#{$imgPath}/chart-context-menu-visibility.png");
+}
+.scxContextMenu.dropdown-menu li[data-id="lock"]:before{
+  background-image:url("~img/chart-technical-drawings-Lock.png");
+}
+.scxContextMenu.dropdown-menu li[data-id="lock"].activated:before{
+  background-image:url("~img/chart-technical-drawings-Lock-active.png");
+}
+.scxContextMenu.dropdown-menu li[data-id="alert"]:before{
+  background-image: url('~img/alert-mw-header.png');
+}
+.scxContextMenu.dropdown-menu li[data-id="buy"]:before{
+  background-image: url('~img/trading/buy.png');
+}
+.scxContextMenu.dropdown-menu li[data-id="sell"]:before{
+  background-image: url('~img/trading/sell.png');
+}
+.scxContextMenu.dropdown-menu li[data-id="stop"]:before{
+  background-image: url('~img/trading/stop-letter.png');
+}
+.scxContextMenu.dropdown-menu li[data-id="chart-elements"]:before{
+  background-image: url('~img/chart-technical-drawings-object-tree.png');
+}
+.scxContextMenu.dropdown-menu li.moving-average:before{
+  background-image: url('~img/toolbar-chartcenter-moving-averages.png');
+}
+
+.scxContextMenu.dropdown-menu .divider {
+  height: 1px;
+  background-color: silver;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.scxContextMenu.dropdown-menu li[data-id="buy"].hidden,
+.scxContextMenu.dropdown-menu li[data-id="sell"].hidden,
+.scxContextMenu.dropdown-menu li[data-id="stop"].hidden{
+  display: none;
+}
+
+/* hiding disabled color pickers in indicator dialog */
+
+#scxIndicatorDialog.scxDialog .sp-replacer.sp-disabled {
+    opacity: 0;    
+}
+
+/* custom design for bootstrap date time picker */
+.bootstrap-datetimepicker-widget {
+
+    direction: ltr;
+
+    table {
+
+        & thead tr:first-child th {
+            &:hover {
+                color: dimgray;
+            }
+        }
+        & td {
+            &.day:hover,
+            &.hour:hover,
+            &.minute:hover,
+            &.second:hover,
+            &.active:hover{
+                color: dimgray;
+            }
+
+            &.active:hover{
+                color:#eee;
+            }
+
+            & span {
+                &:hover {
+                    color: dimgray;
+                }
+            }
+        }
+    }
+}
+
+
+/* Modal header, body and footer padding */
+.scxDialog .modal-dialog{
+
+    .modal-header,
+    .modal-body,
+    .modal-footer{
+        padding: 0.5em;
+    }
+}
+
+/* Modal Close button */
+.scxDialog .modal-dialog{
+    .modal-header{
+
+        .close{
+            margin-top: 2px;
+        }
+    }
+}
+
+/* Design tabs into modal */
+.scxDialog {
+
+    .modal-dialog {
+
+        .modal-content {
+
+            .modal-header {
+
+                .nav-tabs {
+                    display: block;
+                    border-bottom: 1px solid #eee;
+
+                    & > li {
+
+                        &.active {
+
+                            & > a,
+                            & > a:hover,
+                            & > a:focus {
+                                color: white;
+                                background-color: #2b2b2b;
+                                border: none;
+                                border-bottom: 2px solid #0FFDF0;
+                            }
+                        }
+
+                        & > a {
+                            border: none;
+
+                            &:hover {
+                                border: none;
+                                color: cyan;
+                                background-color: #383838;
+                            }
+
+                            &:focus {
+                                color: #fff;
+                                background-color: #2b2b2b;
+                                border: none;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+/* Modal body form control */
+.scxDialog .modal-body input.form-control {
+    text-align: center;
+}
+
+/* Modal backdrop*/
+.modal-backdrop.no-background{
+    background: transparent;
+}
+
+/* Modal default settings select */
+
+.scxDialog .modal-footer{
+    //NK copy from bootstrap.min.css
+    .bootstrap-select:not([class*=span]):not([class*=col-]):not([class*=form-control]):not(.input-group-btn){
+        width: 14em;
+        text-align: left;
+    }
+}
+
+/* bootstrap select */
+.chart-select .dropdown-menu{
+    font-size: 0.927em;
+
+    a,
+    a:focus,
+    a:hover{
+        outline: none;
+    }
+}
+
+/* scxNumeric field */
+.scxDialog .modal-dialog .modal-content .modal-body input.scxNumericField{
+    padding: 0;
+    text-align: center;
+    height: 1.77em;
+}
+
+.scxDialog .modal-dialog .modal-content .modal-body{
+
+    .scxNumericField-arrowWrapper {
+        border-left: 0;
+        background: transparent;
+        padding-top: 0 !important;
+    }
+
+    .scxNumericField-arrowDown,
+    .scxNumericField-arrowUp {
+        right: 1px;
+    }
+
+    .scxNumericField-arrowDown {
+        .scxNumericFieldArrow {
+            border-width: 4px 4px 0 4px;
+        }
+    }
+
+    .scxNumericField-arrowUp {
+        .scxNumericFieldArrow {
+            border-width: 0 4px 4px 4px;
+        }
+    }
+}
+
+/* Light theme dialog */
+
+.lighttheme.scxDialog .modal-dialog .modal-content{
+    padding: 0;
+}
