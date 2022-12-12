@@ -1,26 +1,27 @@
 import {Broker, BrokerAccount, BrokerType} from './broker';
-import {Company, Market} from '../../loader/loader/index';
+import {Company, Market} from '../../loader/index';
 import {
-    SnbcapitalOrder,
-    SnbcapitalOrderDetails,
-    SnbcapitalOrderExecution,
-    SnbcapitalOrdersService,
-    SnbcapitalOrderStatus,
-    SnbcapitalOrderStatusGroupType,
-    SnbcapitalOrderType,
-    SnbcapitalPortfolio,
-    SnbcapitalPositionsService,
-    SnbcapitalService
+  SnbcapitalBuySellChannelRequest,
+  SnbcapitalOrder,
+  SnbcapitalOrderDetails,
+  SnbcapitalOrderExecution,
+  SnbcapitalOrdersService,
+  SnbcapitalOrderStatus,
+  SnbcapitalOrderStatusGroupType,
+  SnbcapitalOrderType,
+  SnbcapitalPortfolio,
+  SnbcapitalPositionsService,
+  SnbcapitalService
 } from '../snbcapital/index';
 import {ChannelRequester, ChannelRequestType, SharedChannel} from '../../shared-channel/index';
-import {GridBoxType} from '../../../components/shared/grid-box/grid-box-type';
+// import {GridBoxType} from '../../../components/shared/grid-box/grid-box-type';
 import {BehaviorSubject, Subject} from 'rxjs/index';
 import {SnbcapitalPosition} from '../snbcapital/snbcapital-position/snbcapital-position';
 import {TradingOrder, TradingOrderSide, TradingOrderStatus, TradingOrderTypeWrapper, TradingPosition} from './models';
 import {TradingOrderSideType} from './models/trading-order-side';
 import {TradingOrderType} from './models/trading-order-type';
 import {TradingOrderStatusType} from './models/trading-order-status';
-import {MessageBoxRequest, SnbcapitalBuySellChannelRequest} from '../../../components/modals';
+import {MessageBoxRequest} from "../../../services/shared-channel/channel-request";
 
 export class SnbcapitalBroker implements Broker {
 
@@ -168,11 +169,11 @@ export class SnbcapitalBroker implements Broker {
             let portfolio:SnbcapitalPortfolio = this.snbcapitalService.getPortfolio(snbcapitalOrder.portfolioId);
             this.snbcapitalOrdersService.deleteOrder(snbcapitalOrder,portfolio)
                 .subscribe(
-                    response => {
+                  (response:any) => {
                         this.showMessageBox('تم إرسال طلب الإلغاء بنجاح');
                         this.snbcapitalService.refreshPortfolioAfterSecond(portfolio);
                     },
-                    error => {});
+                  (error:any) => {});
         }
     }
 
@@ -205,17 +206,17 @@ export class SnbcapitalBroker implements Broker {
         return false;
     }
 
-    public getTradingOrdersGridBoxType(): GridBoxType {
-        return GridBoxType.SnbcapitalOrders;
-    }
-
-    public getTradingPositionsGridBoxType(): GridBoxType {
-        return GridBoxType.SnbcapitalWallet;
-    }
-
-    getTradingAccountBalanceGridBoxType(): GridBoxType {
-        return GridBoxType.SnbcapitalAccountBalance;
-    }
+    // public getTradingOrdersGridBoxType(): GridBoxType {
+    //     return GridBoxType.SnbcapitalOrders;
+    // }
+    //
+    // public getTradingPositionsGridBoxType(): GridBoxType {
+    //     return GridBoxType.SnbcapitalWallet;
+    // }
+    //
+    // getTradingAccountBalanceGridBoxType(): GridBoxType {
+    //     return GridBoxType.SnbcapitalAccountBalance;
+    // }
 
     public getSessionStream(): BehaviorSubject<boolean> {
         return this.sessionStream;

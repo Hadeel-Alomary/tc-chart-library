@@ -1,5 +1,3 @@
-import {CategoryNewsResponse} from '../loader/news-loader';
-
 export class CategoryNews {
     constructor(
         public id: number,
@@ -19,3 +17,10 @@ export class CategoryNews {
         return result;
     }
 }
+
+export interface CategoryNewsResponse {
+  news_id: number,
+  daily_date: string,
+  company_id: number
+}
+

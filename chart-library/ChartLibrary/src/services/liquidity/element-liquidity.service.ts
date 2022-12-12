@@ -2,10 +2,10 @@ import {Injectable} from '@angular/core';
 import {LiquidityPoint} from './liquidity-point';
 import {Subject} from 'rxjs';
 import {LiquidityPointsGrouper} from './liquidity-points-grouper';
-import {Interval, LiquidityLoaderService} from '../../loader';
+import {Interval, LiquidityLoaderService} from '../loader';
 import {LiquidityHistoryLoadingState} from './liquidity.service';
 import {LiquidityIntervalUtils} from './liquidity-interval-utils';
-import {MarketUtils, Tc} from '../../../utils';
+import {MarketUtils, Tc} from '../../utils';
 
 @Injectable()
 export class ElementLiquidityService {

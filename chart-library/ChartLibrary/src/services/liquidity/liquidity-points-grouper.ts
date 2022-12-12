@@ -1,7 +1,7 @@
-import {Interval, IntervalType} from '../../loader';
-import {LiquidityPoint} from '../../data/liquidity';
-import {Tc} from '../../../utils';
-import {IntervalUtils} from '../../../utils/interval.utils';
+import {Interval, IntervalType} from '../loader';
+import {LiquidityPoint} from '../liquidity';
+import {Tc} from '../../utils';
+import {IntervalUtils} from '../../utils/interval.utils';
 
 const last = require("lodash/last");
 const cloneDeep = require("lodash/cloneDeep");

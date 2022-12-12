@@ -1,5 +1,5 @@
 import {Broker, BrokerAccount, BrokerType} from './broker';
-import {Company, Market} from '../../loader/loader/index';
+import {Company, Market} from '../../loader/index';
 import {
     DerayahOrder,
     DerayahOrderDetails,
@@ -13,14 +13,14 @@ import {
 } from '../derayah/index';
 import {ChannelRequester, ChannelRequestType, SharedChannel} from '../../shared-channel/index';
 import {DerayahUtils} from '../../../utils/index';
-import {GridBoxType} from '../../../components/shared/grid-box/grid-box-type';
+// import {GridBoxType} from '../../../components/shared/grid-box/grid-box-type';
 import {BehaviorSubject, Subject} from 'rxjs/index';
 import {DerayahPosition} from '../derayah/derayah-position/derayah-position';
 import {TradingOrder, TradingOrderSide, TradingOrderStatus, TradingOrderTypeWrapper, TradingPosition} from './models';
 import {TradingOrderSideType} from './models/trading-order-side';
 import {TradingOrderType} from './models/trading-order-type';
 import {TradingOrderStatusType} from './models/trading-order-status';
-import {DerayahBuySellChannelRequest} from '../../../components/modals/trading/derayah/derayah-buy-sell';
+import {DerayahBuySellChannelRequest} from "../../../services/trading/derayah/derayah-channel-request";
 
 export class DerayahBroker implements Broker {
 
@@ -187,17 +187,17 @@ export class DerayahBroker implements Broker {
         return true;
     }
 
-    public getTradingOrdersGridBoxType(): GridBoxType {
-        return GridBoxType.DerayahOrders;
-    }
-
-    public getTradingPositionsGridBoxType(): GridBoxType {
-        return GridBoxType.DerayahWallet;
-    }
-
-    getTradingAccountBalanceGridBoxType(): GridBoxType {
-        return undefined;
-    }
+    // public getTradingOrdersGridBoxType(): GridBoxType {
+    //     return GridBoxType.DerayahOrders;
+    // }
+    //
+    // public getTradingPositionsGridBoxType(): GridBoxType {
+    //     return GridBoxType.DerayahWallet;
+    // }
+    //
+    // getTradingAccountBalanceGridBoxType(): GridBoxType {
+    //     return undefined;
+    // }
 
     public getSessionStream(): BehaviorSubject<boolean> {
         return this.sessionStream;

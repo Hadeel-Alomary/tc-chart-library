@@ -1,6 +1,6 @@
-import {Company, Market, MarketsManager} from '../../loader/index';
+import {Company, Market} from '../../loader/index';
 import {Broker, BrokerAccount, BrokerType} from './broker';
-import {GridBoxType} from '../../../components/shared/grid-box/grid-box-type';
+// import {GridBoxType} from '../../../components/shared/grid-box/grid-box-type';
 import {BehaviorSubject, Subject} from 'rxjs/index';
 import {ChannelRequester, ChannelRequestType, SharedChannel} from '../../shared-channel';
 import {
@@ -25,8 +25,7 @@ export class VirtualTradingBroker implements Broker {
     constructor(private vtService:VirtualTradingService,
                 private virtualTradingPositionsService: VirtualTradingPositionsService,
                 private virtualTradingOrdersService: VirtualTradingOrdersService,
-                private sharedChannel:SharedChannel,
-                private marketsManager: MarketsManager){
+                private sharedChannel:SharedChannel){
 
         this.sessionStream = new BehaviorSubject(false);
         this.positionsLoadedStream = new Subject();
@@ -107,23 +106,23 @@ export class VirtualTradingBroker implements Broker {
         return false;
     }
 
-    public openBuyScreen(company: Company, price?: number): void {
-        this.openVTBuyAndSale('BUY', company, price, null, VirtualTradingOrderType.fromValue('LIMIT'))
+    public openBuyScreen(market:Market,company: Company, price?: number): void {
+        this.openVTBuyAndSale('BUY',market, company, price, null, VirtualTradingOrderType.fromValue('LIMIT'))
     }
 
-    public openSellScreen(company: Company, price?: number): void {
-        this.openVTBuyAndSale('SELL', company, price, null, VirtualTradingOrderType.fromValue('LIMIT'))
+    public openSellScreen(market:Market,company: Company, price?: number): void {
+        this.openVTBuyAndSale('SELL',market, company, price, null, VirtualTradingOrderType.fromValue('LIMIT'))
     }
 
-    public openStopScreen(company: Company, price?: number): void {
-        this.openVTBuyAndSale('SELL', company, price, null, VirtualTradingOrderType.fromValue('STOP'))
+    public openStopScreen(market:Market,company: Company, price?: number): void {
+        this.openVTBuyAndSale('SELL', market,company, price, null, VirtualTradingOrderType.fromValue('STOP'))
     }
 
-    public openSellAllSharesScreen(company: Company): void {
+    public openSellAllSharesScreen(market:Market,company: Company): void {
         let positions = this.virtualTradingPositionsService.getPositionsStream().getValue();
         let position = positions.find(position => position.symbol == company.symbol);
         if(position) {
-            this.openVTBuyAndSale('SELL', company, null, position.quantity, VirtualTradingOrderType.fromValue('LIMIT'));
+            this.openVTBuyAndSale('SELL', market,company, null, position.quantity, VirtualTradingOrderType.fromValue('LIMIT'));
         }
     }
 
@@ -197,26 +196,25 @@ export class VirtualTradingBroker implements Broker {
         return true;
     }
 
-    public getTradingOrdersGridBoxType(): GridBoxType {
-        return GridBoxType.VirtualTradingOrders;
-    }
-
-    public getTradingPositionsGridBoxType(): GridBoxType {
-        return GridBoxType.VirtualTradingPositions;
-    }
-
-    getTradingAccountBalanceGridBoxType(): GridBoxType {
-        return undefined;
-    }
+    // public getTradingOrdersGridBoxType(): GridBoxType {
+    //     return GridBoxType.VirtualTradingOrders;
+    // }
+    //
+    // public getTradingPositionsGridBoxType(): GridBoxType {
+    //     return GridBoxType.VirtualTradingPositions;
+    // }
+    //
+    // getTradingAccountBalanceGridBoxType(): GridBoxType {
+    //     return undefined;
+    // }
 
     public getSessionStream(): BehaviorSubject<boolean> {
         return this.sessionStream;
     }
 
-    private openVTBuyAndSale(side: string, company: Company, price: number, quantity?: number, orderType?: VirtualTradingOrderType): void {
+    private openVTBuyAndSale(side: string,market:Market, company: Company, price: number, quantity?: number, orderType?: VirtualTradingOrderType): void {
         let accountId: number = this.vtService.getAccountStream().getValue().id;
         let commission: number = this.vtService.getAccountStream().getValue().commission;
-        let market: Market = this.marketsManager.getMarketBySymbol(company.symbol);
         let order = VirtualTradingOrder.newOrder(side, company.symbol, company.name, accountId, commission, market);
         if(quantity) {
             order.quantity = quantity;

@@ -6,7 +6,7 @@ import {DerayahPosition} from "../derayah-position/derayah-position";
 import {DerayahOrderLastActionStatus, DerayahOrderLastActionStatusType} from './derayah-order-last-action-status';
 import {DerayahOrderDetails} from '../derayah-order-details/index';
 import {MarketUtils, DerayahUtils} from '../../../../utils/index';
-import {DerayahOrders} from '../../../loader/trading/derayah-loader/derayah-loader.service';
+import {DerayahOrders} from '../../trading/derayah-loader/derayah-loader.service';
 import {MarketGridData} from '../../../../components/shared/grid-box/market-box';
 
 export class DerayahOrder implements MarketGridData {

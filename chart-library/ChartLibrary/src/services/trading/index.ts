@@ -28,7 +28,8 @@ export {
     DerayahOrderType,
     DerayahPortfolio,
     DerayahPosition,
-    DerayahPositionsService
+    DerayahPositionsService,
+   DerayahBuySellChannelRequest,
 } from './derayah/index';
 
 export {
@@ -61,7 +62,8 @@ export {
     SnbcapitalPortfolio,
     SnbcapitalPosition,
     SnbcapitalPositionsService,
-    SnbcapitalCurrencyInfo
+    SnbcapitalCurrencyInfo,
+    SnbcapitalBuySellChannelRequest
 } from './snbcapital/index';
 
 
@@ -113,5 +115,6 @@ export {
     TradestationTrailingStop,
     TradestationTrailingStopType,
     TradestationOrdersGroupedStatus,
-    TradestationAccountsService
+    TradestationAccountsService,
+    TradestationBuySellChannelRequest
 } from './tradestation/index'

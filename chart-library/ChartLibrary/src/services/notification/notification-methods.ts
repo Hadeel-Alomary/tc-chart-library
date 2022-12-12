@@ -1,5 +1,5 @@
 // TODO use it with the trading objects.
-import {EnumUtils} from '../../../utils/enum.utils';
+import {EnumUtils} from '../../utils/enum.utils';
 
 export class NotificationMethods {
     private methods: {[method: number]: string} = {};

@@ -1,5 +1,5 @@
-import {Company} from '../loader/loader';
-import {LanguageService} from '../../state/language';
+import {Company} from '../loader';
+import {LanguageService} from '../language';
 import {AlertType} from './alert-type';
 import {NotificationMethods} from '../notification/notification-methods';
 import {AlertTriggerType} from './alert-trigger';

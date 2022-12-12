@@ -169,5 +169,10 @@ export {
   VolumeProfilerRequest,
   LiquidityService ,
   LiquidityPoint,
-  ChartStateService
+  ChartStateService,
+  AlertLoader,
+  LanguageLoaderService,
+  LiquidityLoaderService,
+  ProxiedUrlLoader,
+  ProxyService
 } from './services/index';

@@ -1,4 +1,4 @@
-import {IndicatorHelper} from '../../../stock-chart/StockChartX/Indicators/IndicatorHelper';
+import {IndicatorHelper} from '../../stock-chart/StockChartX/Indicators/IndicatorHelper';
 
 export class ChartAlertIndicator {
 

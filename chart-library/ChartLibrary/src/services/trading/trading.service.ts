@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
-import {Company, Loader, Market, MarketsManager} from '../loader/index';
+import {Company, Market} from '../loader/index';
 import {Tc} from '../../utils/index';
 import {DerayahOrdersService, DerayahPositionsService, DerayahService} from './derayah/index';
 import {SnbcapitalOrdersService, SnbcapitalPositionsService, SnbcapitalService} from './snbcapital/index';
 import {ChannelRequester, SharedChannel} from '../shared-channel/index';
-import {GridBoxType} from '../../components/shared/grid-box/grid-box-type';
+// import {GridBoxType} from '../../components/shared/grid-box/grid-box-type';
 import {Broker, BrokerType} from './broker/broker';
 import {DerayahBroker} from './broker/derayah-broker';
 import {SnbcapitalBroker} from './broker/snbcapital-broker';
@@ -35,9 +35,7 @@ export class TradingService {
     private brokerRefreshStream: Subject<void>;
     private brokerRefreshSubscription:ISubscription;
 
-    constructor(private loader: Loader,
-                private marketsManager: MarketsManager,
-                private derayahService: DerayahService,
+    constructor(private derayahService: DerayahService,
                 private derayahOrdersService: DerayahOrdersService,
                 private derayahPositionService: DerayahPositionsService,
                 private snbcapitalService: SnbcapitalService,
@@ -59,10 +57,10 @@ export class TradingService {
         this.brokerSelectionStream = new BehaviorSubject(BrokerType.None);
         this.broker = this.createBroker(BrokerType.None); // default is no broker (which will be changed later once markets are loaded)
         this.brokerRefreshStream = new Subject();
-
-        this.loader.isLoadingDoneStream()
-            .subscribe((doneLoading: boolean) => {
-                if (doneLoading) {
+        //
+        // this.loader.isLoadingDoneStream()
+        //     .subscribe((doneLoading: boolean) => {
+        //         if (doneLoading) {
                     if(!this.tradingStateService.getSelectedBroker()){
                         this.tradingStateService.setSelectedBroker(Tc.enumString(BrokerType, BrokerType.None));
                     }
@@ -72,8 +70,8 @@ export class TradingService {
                         let selectedBroker:BrokerType = EnumUtils.enumStringToValue(BrokerType, this.tradingStateService.getSelectedBroker()) as BrokerType;
                         this.selectBroker(selectedBroker, true);
                     }, 0);
-                }
-            });
+                // }
+            // });
 
         this.brokerWatchlistManager = new BrokerWatchlistManager(watchlistService, sharedChannel);
 
@@ -133,12 +131,12 @@ export class TradingService {
     }
 
     /* buy and sell */
-    public openBuyScreen(symbol:string, price?: number):void{
+    public openBuyScreen(market:Market,symbol:string, price?: number):void{
         let company = this.marketsManager.getCompanyBySymbol(symbol);
         this.broker.openBuyScreen(company, price);
     }
 
-    public openSellScreen(symbol:string, price?: number):void{
+    public openSellScreen(market:Market,symbol:string, price?: number):void{
         let company = this.marketsManager.getCompanyBySymbol(symbol);
         this.broker.openSellScreen(company, price);
     }
@@ -335,17 +333,17 @@ export class TradingService {
     }
 
     /* grid box types */
-    public getTradingOrdersGridBoxType():GridBoxType{
-        return this.broker.getTradingOrdersGridBoxType();
-    }
-
-    public getTradingPositionsGridBoxType():GridBoxType{
-        return this.broker.getTradingPositionsGridBoxType();
-    }
-
-    public getTradingAccountBalanceGridBoxType(): GridBoxType{
-        return this.broker.getTradingAccountBalanceGridBoxType();
-    }
+    // public getTradingOrdersGridBoxType():GridBoxType{
+    //     return this.broker.getTradingOrdersGridBoxType();
+    // }
+    //
+    // public getTradingPositionsGridBoxType():GridBoxType{
+    //     return this.broker.getTradingPositionsGridBoxType();
+    // }
+    //
+    // public getTradingAccountBalanceGridBoxType(): GridBoxType{
+    //     return this.broker.getTradingAccountBalanceGridBoxType();
+    // }
 
     public getBrokerType(): BrokerType {
         return this.broker.getBrokerType();
@@ -390,7 +388,7 @@ export class TradingService {
             case BrokerType.Snbcapital:
                 return new SnbcapitalBroker(this.snbcapitalService, this.snbcapitalPositionService, this.snbcapitalOrdersService, this.sharedChannel);
             case BrokerType.VirtualTrading:
-                return new VirtualTradingBroker(this.virtualTradingService, this.virtualTradingPositionsService, this.virtualTradingOrdersService, this.sharedChannel, this.marketsManager);
+                return new VirtualTradingBroker(this.virtualTradingService, this.virtualTradingPositionsService, this.virtualTradingOrdersService, this.sharedChannel);
             case BrokerType.Tradestation:
                 return new TradestationBroker(this.tradestationService, this.sharedChannel, this.tradestationAccountsService, this.tradestationLogoutService, this.tradestationOrdersService,this.tradestationPositionsService);
             case BrokerType.None:

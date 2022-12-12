@@ -1,8 +1,8 @@
 import {AlertOperator} from './alert-operator';
-import {LanguageService} from '../../state/language';
+import {LanguageService} from '../language';
 import {AlertField} from './alert-field';
 import {AbstractAlert, AlertHistory} from './abstract-alert';
-import {Company} from '../loader/loader/market';
+import {Company} from '../loader/market';
 import {AlertType} from './alert-type';
 import {NotificationMethods} from '../notification';
 import {AlertTriggerType} from './alert-trigger';

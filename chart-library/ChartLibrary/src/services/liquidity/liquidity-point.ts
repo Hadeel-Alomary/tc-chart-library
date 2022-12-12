@@ -1,4 +1,4 @@
-import {LiquidityMessage} from '../../streaming/shared';
+import {LiquidityMessage} from '../streaming/shared';
 
 export class LiquidityPoint {
     constructor(

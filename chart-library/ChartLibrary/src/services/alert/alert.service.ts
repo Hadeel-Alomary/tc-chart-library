@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
 import {Subject} from 'rxjs';
-import {AlertMessage, Streamer} from '../../streaming/index';
-import {AlertLoader, Loader} from '../loader/index';
+import {AlertMessage, Streamer} from '../streaming/index';
+import {AlertLoader} from '../loader/index';
 import {AbstractAlert} from './abstract-alert';
-import {BrowserUtils, Tc, TcTracker} from '../../../utils/index';
-import {CredentialsStateService} from '../../state/index';
-import {AuthorizationService} from '../../auhtorization';
-import {FeatureType} from '../../auhtorization/feature';
+import {BrowserUtils, Tc, TcTracker} from '../../utils/index';
+// import {CredentialsStateService} from '../../index';
+// import {AuthorizationService} from '../../auhtorization';
+// import {FeatureType} from '../../auhtorization/feature';
 import {TrendLineAlert} from './trend-line-alert';
 import {BehaviorSubject} from 'rxjs/internal/BehaviorSubject';
 import {ChartAlert} from './chart-alert';
@@ -20,22 +20,22 @@ export class AlertService {
     private alertUpdatedStream: Subject<AbstractAlert>;
     private alertsHistoryLoadedStream: BehaviorSubject<Boolean>;
 
-    constructor(private alertLoader:AlertLoader, streamer:Streamer, private credentialsService:CredentialsStateService,
-                private loader:Loader, private authorizationService:AuthorizationService) {
+    constructor(private alertLoader:AlertLoader, streamer:Streamer) {
         this.alertUpdatedStream = new Subject();
         this.alertsHistoryLoadedStream = new BehaviorSubject(false);
 
-        this.loader.isLoadingDoneStream().subscribe(loadingDone => {
-            if(loadingDone && BrowserUtils.isDesktop()) {
-                authorizationService.authorizeService(FeatureType.ALERT, () => {
+        // this.loader.isLoadingDoneStream().subscribe(loadingDone => {
+        //     if(loadingDone && BrowserUtils.isDesktop()) {
+        //         authorizationService.authorizeService(FeatureType.ALERT, () => {
+         let userName : string = null;
                     this.alertLoader.loadAlerts().subscribe((alerts: AbstractAlert[]) => {
                         this.onLoadHistoricalAlerts(alerts);
-                        streamer.getGeneralPurposeStreamer().subscribeAlerts(this.credentialsService.username);
+                        streamer.getGeneralPurposeStreamer().subscribeAlerts(userName);
                         streamer.getGeneralPurposeStreamer().getAlertsStream().subscribe((message) => this.onAlertFromStreamer(message));
                     });
-                });
-            }
-        });
+                // });
+            // }
+        // });
     }
 
     public createAlert(alert:AbstractAlert){

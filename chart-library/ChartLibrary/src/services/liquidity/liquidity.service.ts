@@ -1,16 +1,15 @@
 import {Injectable} from '@angular/core';
-import {Interval} from '../../loader/price-loader/interval';
-import {LiquidityLoaderService} from '../../loader/liquidity-loader/liquidity-loader.service';
+import {Interval} from '../loader/price-loader/interval';
+import {LiquidityLoaderService} from '../loader/liquidity-loader/liquidity-loader.service';
 import {LiquidityPoint} from './liquidity-point';
-import {IntervalType, Loader, LoaderConfig, LoaderUrlType, MarketsManager} from '../../loader';
 import {LiquidityPointsGrouper} from './liquidity-points-grouper';
-import {Streamer} from '../../streaming/streamer';
-import {LiquidityMessage} from '../../streaming/shared/message';
+import {Streamer} from '../streaming/streamer';
+import {LiquidityMessage} from '../streaming/shared/message';
 import {LiquidityIntervalUtils} from './liquidity-interval-utils';
 import {bufferTime} from 'rxjs/operators';
 import {Subject} from 'rxjs/internal/Subject';
-import {Tc} from '../../../utils';
-import {AuthorizationService} from '../../auhtorization';
+import {Tc} from '../../utils';
+// import {AuthorizationService} from '../../auhtorization';
 
 const uniqBy = require("lodash/uniqBy");
 
@@ -22,27 +21,27 @@ export class LiquidityService {
     private symbolLiquidityUpdateStream: Subject<{symbol:string, interval:Interval}>;
     private liquidityPointsGrouper:LiquidityPointsGrouper;
 
-    constructor(private liquidityLoaderService: LiquidityLoaderService, private marketsManager: MarketsManager, private loader:Loader, private streamer: Streamer, private authorizationService: AuthorizationService){
+    constructor(private liquidityLoaderService: LiquidityLoaderService, private streamer: Streamer,){
         this.symbolLiquidityUpdateStream = new Subject();
         this.liquidityPointsGrouper = new LiquidityPointsGrouper();
         // MA do buffering to avoid over-updating by liquidity updates
 
-        this.loader.isLoadingDoneStream().subscribe(loadingDone => {
-            if(loadingDone) {
+        // this.loader.isLoadingDoneStream().subscribe(loadingDone => {
+        //     if(loadingDone) {
                 this.streamer.getTechnicalReportsStreamer().getLiquidityStreamer().pipe(bufferTime(750)).subscribe(
                     (messages: LiquidityMessage[]) => {
-                        if (!this.authorizationService.isPremiumSubscriber()) {
-                            //Must be premium subscriber to get liquidity values.
-                            //If user has a premium subscriber then his subscription is ended : avoid him to take liquidity on chart.
-                            return;
-                        }
+                        // if (!this.authorizationService.isPremiumSubscriber()) {
+                        //     //Must be premium subscriber to get liquidity values.
+                        //     //If user has a premium subscriber then his subscription is ended : avoid him to take liquidity on chart.
+                        //     return;
+                        // }
                         if(0 < messages.length) {
                             this.processStreamerMessages(messages);
                         }
                     }
                 );
-            }
-        });
+            // }
+        // });
     }
 
     private processStreamerMessages(messages: LiquidityMessage[]) {
@@ -84,11 +83,11 @@ export class LiquidityService {
     }
 
     public requestToLoadSymbolHistory(symbol: string, interval: Interval): void {
-        if (!this.authorizationService.isPremiumSubscriber()) {
-            //Must be premium subscriber to get liquidity values.
-            //If user has a premium subscriber then his subscription is ended : avoid him to take liquidity on chart.
-            return;
-        }
+        // if (!this.authorizationService.isPremiumSubscriber()) {
+        //     //Must be premium subscriber to get liquidity values.
+        //     //If user has a premium subscriber then his subscription is ended : avoid him to take liquidity on chart.
+        //     return;
+        // }
 
         Tc.assert(this.getSymbolHistoryLoadState(symbol, interval) == LiquidityHistoryLoadingState.NOT_LOADED,
             "request to load history while it is already loading/loaded");
@@ -98,14 +97,14 @@ export class LiquidityService {
         let baseInterval: Interval = LiquidityIntervalUtils.getBaseInterval(interval);
         let baseIntervalString = LiquidityIntervalUtils.toIntervalString(baseInterval);
         let baseKey = `${symbol}.${baseIntervalString}`;
-        let market = this.marketsManager.getMarketBySymbol(symbol).abbreviation;
+        let market = null;
 
         // if no data for interval nor base interval, then get base interval history and subscribe for updates
         this.prepareCaching(baseKey);
         this.streamer.getTechnicalReportsStreamer().subscribeLiquidity(baseIntervalString, market);
 
         let threeYearsAgo:string = moment().subtract(3, 'years').format('YYYY-MM-DD');
-        let url: string = LoaderConfig.url(this.loader.getConfig(), LoaderUrlType.HistoricalLiquidity);
+        let url: string = '';
         this.liquidityLoaderService.loadSymbolHistory(url, symbol, market, baseIntervalString, threeYearsAgo).subscribe(
             (liquidityPoints: LiquidityPoint[]) => {
                 this.symbolLiquidityPoints[baseKey] = liquidityPoints;
@@ -127,7 +126,7 @@ export class LiquidityService {
         let baseInterval: Interval = LiquidityIntervalUtils.getBaseInterval(interval);
         let baseIntervalString = LiquidityIntervalUtils.toIntervalString(baseInterval);
         let baseKey = `${symbol}.${baseIntervalString}`;
-        let market = this.marketsManager.getMarketBySymbol(symbol).abbreviation;
+        let market = null;
         if(this.liquidityPointsGrouper.needGrouping(interval) && (baseKey in this.symbolLiquidityPoints)) {
             return this.liquidityPointsGrouper.groupLiquidityPoints(market,symbol, this.symbolLiquidityPoints[baseKey], interval);
         }

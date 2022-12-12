@@ -1,14 +1,14 @@
 import {Injectable} from '@angular/core';
 import {Subject} from 'rxjs';
-import {NewsMessage, Streamer} from '../../streaming/index';
-import {Loader, MarketsManager, NewsLoader} from '../loader/index';
+import {NewsMessage, Streamer} from '../streaming/index';
 import {MarketSummaryService, MarketSummary, MarketSummaryStatus} from '../market-summary/index';
 import {News} from './news';
-import {MiscStateService} from '../../state/index';
+// import {MiscStateService} from '../../state/index';
 import {CategoryNews} from './category-news';
 import {Observable} from 'rxjs/internal/Observable';
 import {of} from 'rxjs/internal/observable/of';
 import {tap} from 'rxjs/operators';
+import {NewsLoader} from "../../services/loader/news-loader";
 
 const remove = require("lodash/remove");
 
@@ -21,24 +21,22 @@ export class NewsService {
     private marketCategoryNews: {[id: string]: CategoryNews[]} = {};
     private newsTitles: {[id: number]: string} = {};
     
-    constructor(private stateService:MiscStateService,
+    constructor(
                 private marketSummaryService:MarketSummaryService,
-                private marketsManager:MarketsManager,
                 private newsLoader: NewsLoader,
-                loader:Loader,
                 streamer:Streamer) {
         
         this.newsStreamer = new Subject();
         this.newsCache = [];
 
-        loader.isLoadingDoneStream().subscribe(loadingDone => {
-            if(loadingDone) {
-                this.marketsManager.getAllSubscribedMarkets().forEach(market => {
-                    streamer.getGeneralPurposeStreamer().subscribeNews(market.abbreviation);
-                    streamer.getGeneralPurposeStreamer().getNewsStreamer().subscribe(message => this.onStreamerMessage(message));
-                })
-            }
-        });
+        // loader.isLoadingDoneStream().subscribe(loadingDone => {
+        //     if(loadingDone) {
+        //         this.marketsManager.getAllSubscribedMarkets().forEach(market => {
+        //             streamer.getGeneralPurposeStreamer().subscribeNews(market.abbreviation);
+        //             streamer.getGeneralPurposeStreamer().getNewsStreamer().subscribe(message => this.onStreamerMessage(message));
+                // })
+            // }
+        // });
 
         marketSummaryService.getMarketStatusChangeStream().subscribe(status => this.onMarketStatusChange(status));
         
@@ -80,14 +78,14 @@ export class NewsService {
     public markAsViewed(news:News) {
         if(!news.viewed) {
             news.viewed = true;
-            this.stateService.addViewedNews(news.id);
+            // this.stateService.addViewedNews(news.id);
             this.newsStreamer.next(news);
         }
     }
     
     private onStreamerMessage(message:NewsMessage){
 
-        let market = this.marketsManager.getMarketByAbbreviation(message.MARKET_ABRV);
+        let market = null;
         let news = News.fromStreamer(message, market);
 
         if(news.deleted){
@@ -96,9 +94,9 @@ export class NewsService {
             return;
         }
         
-        if(this.stateService.isViewedNews(news.id)){
-            news.viewed = true; // news already viewed by user
-        }
+        // if(this.stateService.isViewedNews(news.id)){
+        //     news.viewed = true; // news already viewed by user
+        // }
         
         this.newsCache.push(news);
         this.newsStreamer.next(news);
@@ -118,7 +116,7 @@ export class NewsService {
         // MA house keeping, on "open" of market, flush viewedNews state (to reduce its size)
         // note that functionality doesn't depend on flushing this
         if(marketSummary.status == MarketSummaryStatus.OPEN) {
-            this.stateService.resetViewedNews();
+            // this.stateService.resetViewedNews();
         }
         
     }

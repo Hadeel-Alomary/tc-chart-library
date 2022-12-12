@@ -1,4 +1,4 @@
-import {LanguageService} from "../../state/language/index";
+import {LanguageService} from "../../language/index";
 
 export enum ViewLoaderType{
     IndicatorSettingsDialog,

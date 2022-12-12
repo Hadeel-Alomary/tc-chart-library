@@ -1,6 +1,6 @@
 import {Company, Market} from '../../loader/index';
 import {BrokerType, Broker, BrokerAccount} from './broker';
-import {GridBoxType} from '../../../components/shared/grid-box/index';
+// import {GridBoxType} from '../../../components/shared/grid-box/index';
 import {Tc} from '../../../utils/index';
 import {BehaviorSubject, Subject} from 'rxjs/index';
 import {TradingOrder, TradingPosition} from './models';
@@ -122,20 +122,20 @@ export class NoBroker implements Broker {
     public getBrokerType(): BrokerType {
         return BrokerType.None;
     }
-
-    public getTradingOrdersGridBoxType(): GridBoxType {
-        Tc.error("should not be here")
-        return undefined;
-    }
-
-    public getTradingPositionsGridBoxType(): GridBoxType {
-        Tc.error("should not be here")
-        return undefined;
-    }
-
-    getTradingAccountBalanceGridBoxType(): GridBoxType {
-        return undefined;
-    }
+    //
+    // public getTradingOrdersGridBoxType(): GridBoxType {
+    //     Tc.error("should not be here")
+    //     return undefined;
+    // }
+    //
+    // public getTradingPositionsGridBoxType(): GridBoxType {
+    //     Tc.error("should not be here")
+    //     return undefined;
+    // }
+    //
+    // getTradingAccountBalanceGridBoxType(): GridBoxType {
+    //     return undefined;
+    // }
 
     public getSessionStream(): BehaviorSubject<boolean> {
         return this.sessionStream;

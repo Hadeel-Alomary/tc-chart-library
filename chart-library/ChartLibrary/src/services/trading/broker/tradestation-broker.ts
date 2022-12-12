@@ -1,14 +1,21 @@
 import {Broker, BrokerAccount, BrokerType} from './broker';
 import {BehaviorSubject, Subject} from 'rxjs';
 import {TradingOrder,TradingPosition} from './models';
-import {GridBoxType} from '../../../components/shared/grid-box/grid-box-type';
-import {Company, Market} from '../../loader/loader';
+// import {GridBoxType} from '../../../components/shared/grid-box/grid-box-type';
+import {Company, Market} from '../../loader';
 import {ChannelRequester, ChannelRequestType, SharedChannel} from '../../shared-channel';
-import {TradestationOrder, TradestationOrdersService, TradestationOrderType, TradestationPositionsService, TradestationService, TradestationAccountsService} from '../tradestation';
+import {
+  TradestationOrder,
+  TradestationOrdersService,
+  TradestationOrderType,
+  TradestationPositionsService,
+  TradestationService,
+  TradestationAccountsService,
+  TradestationBuySellChannelRequest
+} from '../tradestation';
 import {TradestationUtils} from '../../../utils/tradestation.utils';
 import {TradestationLogoutService} from '../tradestation/tradestation-logout-service';
 import {TradestationPosition} from '../tradestation/tradestation-position/tradestation-position';
-import {TradestationBuySellChannelRequest} from '../../../components/modals/trading/tradestation/tradestation-buy-sell/tradestation-buy-sell.component';
 import {TradestationOrderSideType} from '../../trading/tradestation/tradestation-order/tradestation-order-side-type';
 
 export class TradestationBroker implements Broker{
@@ -135,22 +142,22 @@ export class TradestationBroker implements Broker{
     getTradingOrders(): TradingOrder[] {
         return this.tradingOrders;
     }
-
-    getTradingOrdersGridBoxType(): GridBoxType {
-        return GridBoxType.TradestationOrders;
-    }
-
-    getTradingAccountBalanceGridBoxType(): GridBoxType {
-        return GridBoxType.TradestationAccountBalance;
-    }
+    //
+    // getTradingOrdersGridBoxType(): GridBoxType {
+    //     return GridBoxType.TradestationOrders;
+    // }
+    //
+    // getTradingAccountBalanceGridBoxType(): GridBoxType {
+    //     return GridBoxType.TradestationAccountBalance;
+    // }
 
     getTradingPositions(): TradingPosition[] {
             return this.tradingPositions;
     }
 
-    getTradingPositionsGridBoxType(): GridBoxType {
-        return GridBoxType.TradestationPositions;
-    }
+    // getTradingPositionsGridBoxType(): GridBoxType {
+    //     return GridBoxType.TradestationPositions;
+    // }
 
     isStopOrderSupported(): boolean {
         return true;

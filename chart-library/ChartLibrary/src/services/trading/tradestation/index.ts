@@ -32,3 +32,5 @@ export {TradestationBalance , TradestationClosedPosition} from './tradestation-b
 export {TradestationBalancesService} from './tradestation-balances-service'
 
 export {TradestationAccountsService} from './tradestation-accounts-service'
+
+export {TradestationBuySellChannelRequest} from  './tradestation-channel-request'

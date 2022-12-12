@@ -1,3 +1,4 @@
+
 export{SnbcapitalService, SnbcapitalResponse, SnbcapitalPurchasePower} from './snbcapital.service';
 export {
     SnbcapitalOrder,
@@ -49,3 +50,7 @@ export {
 export {
     SnbcapitalSecurityAccountStatus
 } from './snbcapital-security-account-status';
+
+export {
+  SnbcapitalBuySellChannelRequest
+} from './snbcapital-channel-request'

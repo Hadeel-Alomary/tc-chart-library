@@ -26,3 +26,4 @@ export {DerayahOrdersService} from './derayah-orders-service';
 export {DerayahClientService} from './derayah-client.service';
 export {DerayahHttpClientService} from './derayah-http-client.service';
 export {DerayahLogoutService} from './derayah-logout.service';
+export {DerayahBuySellChannelRequest} from './derayah-channel-request'

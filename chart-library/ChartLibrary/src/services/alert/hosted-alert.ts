@@ -1,7 +1,7 @@
 import {AlertTriggerType} from './alert-trigger';
 import {AbstractAlert, AlertHistory} from './abstract-alert';
 import {AlertType} from './alert-type';
-import {Company} from '../loader/loader';
+import {Company} from '../loader';
 import {NotificationMethods} from '../notification';
 import {IntervalType} from '../loader/price-loader/interval-type';
 

@@ -41,7 +41,12 @@ export {
   PeriodType,
   PriceGrouper,
   PriceData,
-  PriceLoader, GroupedPriceData, Split
+  PriceLoader, GroupedPriceData, Split,
+  AlertLoader,
+  LanguageLoaderService,
+  LiquidityLoaderService,
+  ProxiedUrlLoader,
+  ProxyService
 } from './loader/index';
 
 export {MarketsTickSizeService , MarketTick} from './markets-tick-size/index';
@@ -154,7 +159,10 @@ export {
   TradestationTrailingStop,
   TradestationTrailingStopType,
   TradestationOrdersGroupedStatus,
-  TradestationAccountsService
+  TradestationAccountsService,
+  DerayahBuySellChannelRequest,
+  SnbcapitalBuySellChannelRequest,
+  TradestationBuySellChannelRequest
 } from './trading/index'
 
 export {

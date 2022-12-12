@@ -1,5 +1,5 @@
 import {Company, Market} from '../../loader/index';
-import {GridBoxType} from '../../../components/shared/grid-box/index';
+// import {GridBoxType} from '../../../components/shared/grid-box/index';
 import {BehaviorSubject} from 'rxjs/internal/BehaviorSubject';
 import {Subject} from 'rxjs/internal/Subject';
 import {TradingOrder, TradingPosition} from './models';
@@ -7,13 +7,13 @@ import {ChannelRequester} from '../../shared-channel';
 
 export interface Broker {
 
-    openBuyScreen(company: Company, price?: number): void;
+    openBuyScreen(market:Market , company: Company, price?: number): void;
 
-    openSellScreen(company: Company, price?: number): void;
+    openSellScreen(market:Market ,company: Company, price?: number): void;
 
-    openStopScreen(company: Company, price?: number): void;
+    openStopScreen(market:Market ,company: Company, price?: number): void;
 
-    openSellAllSharesScreen(company: Company): void;
+    openSellAllSharesScreen(market:Market ,company: Company): void;
 
     openEditOrderScreen(orderId: string, price?: number, requester?: ChannelRequester): void;
 
@@ -55,11 +55,11 @@ export interface Broker {
 
     getBrokerType():BrokerType;
 
-    getTradingOrdersGridBoxType(): GridBoxType;
-
-    getTradingPositionsGridBoxType(): GridBoxType;
-
-    getTradingAccountBalanceGridBoxType(): GridBoxType;
+    // getTradingOrdersGridBoxType(): GridBoxType;
+    //
+    // getTradingPositionsGridBoxType(): GridBoxType;
+    //
+    // getTradingAccountBalanceGridBoxType(): GridBoxType;
 
     getSessionStream(): BehaviorSubject<boolean>;
 

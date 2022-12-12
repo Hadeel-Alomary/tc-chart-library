@@ -1,4 +1,4 @@
-import {Tc} from '../../../utils';
+import {Tc} from '../../utils';
 
 export class TrendLineAlertOperation {
     constructor(

@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {LanguageType} from './language-type';
-import {LanguageLoaderService} from '../../loader/language-loader/index';
-import {StringUtils, Tc} from '../../../utils/index';
+import {LanguageLoaderService} from '../loader/language-loader/index';
+import {StringUtils, Tc} from '../../utils/index';
 
 enum TranslateType {
     Element = 'translate',

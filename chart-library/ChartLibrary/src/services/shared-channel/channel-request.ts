@@ -1,11 +1,4 @@
-import {GridBoxType} from '../../components/shared/index';
-import {Chart, Drawing, Indicator} from '../../stock-chart';
-import {ChartElementsContainerTabType} from '../../components/modals/chart/chart-elements-container/chart-elements-container-tab-type';
-import {ChartElementsContainer} from '../../components/chart/chart-elements-container';
-import {PublishedIdea} from '../publisher/published-chart';
-import {ChartTheme} from '../../stock-chart/StockChartX/Theme';
-import {ChartSettingsContainer} from '../../components/chart/chart-settings-container';
-import {AddIntervalCaller} from '../../components/modals/add-interval/add-interval.component';
+import {Drawing, Indicator} from '../../stock-chart';
 
 
 export enum ChannelRequestType {
@@ -97,20 +90,7 @@ export enum ChannelRequestType {
 }
 
 export interface ChannelRequest {
-    type:ChannelRequestType
-}
-
-interface OpenRequest extends ChannelRequest {
-    gridBoxType:GridBoxType;
-    param?: string|boolean
-}
-
-export interface SymbolBoxOpenRequest extends OpenRequest{
-    symbol:string
-}
-
-export interface MarketBoxOpenRequest extends OpenRequest{
-    watchlistId:string
+  type: ChannelRequestType
 }
 
 export interface ActionableChannelRequest extends ChannelRequest{
@@ -121,38 +101,13 @@ export interface ShowDrawingSettingsDialogRequest extends ChannelRequest {
     drawing : Drawing;
 }
 
+export interface MessageBoxRequest extends ActionableChannelRequest {
+  messageLine: string,
+  messageLine2?:string,
+}
+
 export interface ShowIndicatorSettingsDialogRequest extends ChannelRequest {
     indicator : Indicator;
-}
-
-export interface ShowDrawingToolbarRequest extends ChannelRequest {
-    drawing : Drawing;
-    visible :boolean;
-}
-
-export interface ChartScreenshotRequest extends ChannelRequest {
-    chart: Chart;
-    backgroundScreenshot?:boolean;
-    backgroundScreenshotCb?: (imageBas64Data:string) => void
-}
-
-
-export interface ChartSignatureRequest extends ChannelRequest {
-    chart: Chart;
-}
-
-export interface ShowPublishIdeaModalRequest extends ChannelRequest {
-    publishedIdea: PublishedIdea;
-}
-
-
-export interface ShowObjectTreeDialogRequest extends ChannelRequest {
-    activeTab: ChartElementsContainerTabType,
-    container: ChartElementsContainer
-}
-
-export interface ShowChartSettingsDialogRequest extends ChannelRequest {
-    container: ChartSettingsContainer;
 }
 
 export interface ForceScreenReloadRequest extends ChannelRequest {
@@ -182,11 +137,6 @@ export interface TradestationConfirmCaller {
 export interface TradestationCaller {
     onCancelConnection():void;
 }
-
-export interface AddIntervalRequest extends ChannelRequest {
-    caller: AddIntervalCaller
-}
-
 
 export interface ChannelRequester {
     onRequestComplete():void;

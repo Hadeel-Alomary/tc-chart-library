@@ -1,5 +1,5 @@
-import {Interval, IntervalType} from '../../loader';
-import {Tc} from '../../../utils';
+import {Interval, IntervalType} from '../loader';
+import {Tc} from '../../utils';
 
 export class LiquidityIntervalUtils {
 
