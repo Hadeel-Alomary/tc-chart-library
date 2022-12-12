@@ -32,6 +32,8 @@
   },
   "homepage": "https://github.com/.../...",
   "dependencies": {
+    "@angular/common": "^15.0.3",
+    "@angular/core": "^15.0.3",
     "@types/jquery": "^3.5.14",
     "jquery": "^3.6.1",
     "rxjs": "^7.5.7"

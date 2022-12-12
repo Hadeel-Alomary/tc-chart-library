@@ -1,6 +1,6 @@
 import {IPlotValueDrawParams} from './Plot';
 import {IPoint} from '../Graphics/ChartPoint';
-import {VolumeProfilerData, VolumeProfilerDataBar} from '../../../services/data/volume-profiler/volume-profiler.service';
+import {VolumeProfilerData, VolumeProfilerDataBar} from '../../../services/volume-profiler/volume-profiler.service';
 import {DataSeries, DataSeriesSuffix} from '../../StockChartX/Data/DataSeries';
 import {Projection} from '../../StockChartX/Scales/Projection';
 import {IVolumeProfilerSessionPlotConfig, VolumeProfilerBasePlot} from './VolumeProfilerBasePlot';

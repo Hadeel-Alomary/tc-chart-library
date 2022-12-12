@@ -1,11 +1,15 @@
 import {Injectable} from '@angular/core';
-import {Interval, IntervalType, Period, PriceData, PriceLoader} from '../../loader';
 import {Subject} from 'rxjs/internal/Subject';
 import {SubscriptionLike as ISubscription} from 'rxjs/internal/types';
 import {ArrayUtils, DateUtils, MarketUtils, Tc, TcTracker} from '../../utils';
 import {MarketsTickSizeService} from '../markets-tick-size';
 import {VolumeProfilerRequest, VolumeProfilerRequestBuilder} from './volume-profiler-request-builder';
-import {MarketsManager} from '../../loader/loader/markets-manager';
+import {PriceData} from "../../services/loader/price-loader/price-data";
+import {IntervalType} from "../../services/loader/price-loader/interval-type";
+import {Interval} from "../../services/loader/price-loader/interval";
+import {Period} from "../../services/loader/price-loader/period";
+import {PriceLoader} from "../../services/loader/price-loader/price-loader.service";
+import {Company} from "@src/services";
 
 const isEqual = require('lodash/isEqual');
 
@@ -20,10 +24,9 @@ export class VolumeProfilerService {
     private readonly PRICE_UNIT:number  = 0.00001;
 
     constructor(private priceLoader:PriceLoader,
-                private marketsTickSizeService:MarketsTickSizeService,
-                private marketsManager:MarketsManager){
+                private marketsTickSizeService:MarketsTickSizeService){
 
-        this.requestBuilder = new VolumeProfilerRequestBuilder(this.marketsManager);
+        this.requestBuilder = new VolumeProfilerRequestBuilder();
 
     }
 
@@ -72,9 +75,10 @@ export class VolumeProfilerService {
 
         Tc.assert(!(requestData.requestedId in this.requests), "request is already made");
         let fromDate = requestData.from.substr(0, 10);
-        let market = this.marketsManager.getMarketBySymbol(requestData.symbol);
+        let market = requestData.market;
         let pricesUrl = market.historicalPricesUrl;
-        let subscription = this.priceLoader.loadPriceData(pricesUrl, requestData.symbol,
+        let userName = '';
+        let subscription = this.priceLoader.loadPriceData(pricesUrl, userName , requestData.symbol,
             this.getDataInterval(fromDate),
             Period.getClosestPeriodContainingDate(market.abbreviation, fromDate)).subscribe(value => {
             delete this.requestSubscriptions[requestData.requestedId];
@@ -168,10 +172,11 @@ export class VolumeProfilerService {
         let rowType = requestData.volumeProfilerSettings.rowLayout;
         let rowSize = requestData.volumeProfilerSettings.rowSize;
         let symbol = requestData.symbol;
+	    let company = requestData.company;
 
         let levels:number[] = rowType == VolumeProfilerSettingsRowType.NUMBER_OF_ROWS ?
             this.getProfileLevelsByNumber(minPrice, maxPrice, rowSize) :
-            this.getProfileLevelsByTicks(symbol, minPrice, maxPrice, rowSize);
+            this.getProfileLevelsByTicks(company,symbol, minPrice, maxPrice, rowSize);
 
         if(levels.length == 1) {
             levels[1] = levels[0] + 0.01; // if we have "single" price dash candles, then add an upper price level
@@ -193,8 +198,8 @@ export class VolumeProfilerService {
         return result.map(value => Math.round(value * 100000)/100000);
     }
 
-    private getProfileLevelsByTicks(symbol:string, minPrice: number, maxPrice: number, rowSize: number) {
-        let tick = this.getTickSize(symbol, minPrice);
+    private getProfileLevelsByTicks(company:Company,symbol:string, minPrice: number, maxPrice: number, rowSize: number) {
+        let tick = this.getTickSize(company ,symbol, minPrice);
         let step = tick * rowSize;
         let numberOfLevels = Math.floor((maxPrice - minPrice) / step);
         let result:number[] = [minPrice];
@@ -207,8 +212,7 @@ export class VolumeProfilerService {
 
     }
 
-    private getTickSize(symbol: string, minPrice: number) {
-        let company = this.marketsManager.getCompanyBySymbol(symbol);
+    private getTickSize(company: Company, symbol:string, minPrice: number) {
         if(company.index) {
             // MA abu5 suggested to use TickSize of 1 for indices, as they have large values and a small tick sizes may cause
             // excessive slowness.

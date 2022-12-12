@@ -4,7 +4,7 @@ import {Geometry} from '../../StockChartX/Graphics/Geometry';
 import {IRect} from '../../StockChartX/Graphics/Rect';
 import {IPoint} from '../../StockChartX/Graphics/ChartPoint';
 import {Tc} from '../../../utils';
-import {VolumeProfilerData} from '../../../services/data/volume-profiler/volume-profiler.service';
+import {VolumeProfilerData} from '../../../services/volume-profiler/volume-profiler.service';
 import {VolumeProfilerPlotTheme} from '../Theme';
 
 export class VolumeProfilerVisibleRangePlot extends VolumeProfilerBasePlot {

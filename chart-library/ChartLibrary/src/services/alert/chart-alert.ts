@@ -1,6 +1,5 @@
-import {LanguageService} from '../../state/language';
+import {LanguageService} from '../language';
 import {AlertHistory} from './abstract-alert';
-import {Company} from '../loader/loader';
 import {AlertType} from './alert-type';
 import {NotificationMethods} from '../notification';
 import {ChartAlertFunction, ChartAlertFunctionType} from './chart-alert-function';
@@ -9,8 +8,9 @@ import {IntervalType} from '../loader/price-loader/interval-type';
 import {AlertTriggerType} from './alert-trigger';
 import {Interval} from '../loader/price-loader/interval';
 import {HostedAlert} from './hosted-alert';
-import {StringUtils, Tc} from '../../../utils';
-import {MathUtils} from '../../../utils/math.utils';
+import {StringUtils, Tc} from '../../utils';
+import {MathUtils} from '../../utils/math.utils';
+import {Company} from "../../services/loader/market/market";
 
 export class ChartAlert extends HostedAlert {
 

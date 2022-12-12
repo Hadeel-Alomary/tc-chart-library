@@ -1,10 +1,10 @@
-import {Interval, MarketsManager} from '../../loader';
+import {Company, Interval, Market} from '../loader';
 import {VolumeProfilerSettings} from './volume-profiler.service';
-import {DateUtils} from '../../../utils';
+import {DateUtils} from '../../utils';
 
 export class VolumeProfilerRequestBuilder {
 
-    public constructor(private marketsManager:MarketsManager){}
+    public constructor(){}
 
     public prepareSessionBasedVolumeProfilerRequest(requesterId: string,
                                                     symbol: string,
@@ -51,7 +51,9 @@ export class VolumeProfilerRequestBuilder {
             from: from,
             to: to,
             durationInDays:durationInDays,
-            segmentPerSession: segmentPerSession
+            segmentPerSession: segmentPerSession,
+            market:null,
+		    company:null,
         };
 
     }
@@ -74,5 +76,8 @@ export interface VolumeProfilerRequest {
     from:string,
     to:string,
     durationInDays:number,
-    segmentPerSession:boolean
+    segmentPerSession:boolean,
+
+  market:Market,
+  company:Company,
 }

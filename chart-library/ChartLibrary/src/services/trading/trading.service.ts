@@ -49,7 +49,6 @@ export class TradingService {
                 private sharedChannel: SharedChannel,
                 private tradingStateService:TradingStateService,
                 private credentialsStateService:CredentialsStateService,
-                private watchlistService:WatchlistService,
                 private tradestationService:TradestationService,
                 private tradestationAccountsService: TradestationAccountsService,
                 private tradestationLogoutService: TradestationLogoutService,

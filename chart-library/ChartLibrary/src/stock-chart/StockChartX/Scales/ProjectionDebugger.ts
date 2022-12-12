@@ -1,5 +1,4 @@
 import {IntervalUtils} from '../../../utils/interval.utils';
-import {Config} from '../../../config/config';
 import {Interval} from "../../../services/loader/price-loader/interval";
 import {Market} from "../../../services/loader/market/market";
 
@@ -11,9 +10,9 @@ export class ProjectionDebugger {
 
         return; // enable debugger when needed
 
-        if(Config.isProd()) {
-            return;
-        }
+        // if(Config.isProd()) {
+        //     return;
+        // }
 
         let dateAsString = IntervalUtils.getGroupingMomentTime(market.abbreviation, interval, moment(date)).format('YYYY-MM-DD HH:mm:ss');
         let seriesDateAsString = moment(seriesLastDate).format('YYYY-MM-DD HH:mm:ss');
@@ -47,10 +46,10 @@ export class ProjectionDebugger {
     static validateFutureDateComputation(market: Market, interval: Interval, seriesLastDate: Date, numberOfCandles: number, futureDate: Date) {
 
         return; // enable debugger when needed
-
-        if(Config.isProd()) {
-            return;
-        }
+        //
+        // if(Config.isProd()) {
+        //     return;
+        // }
 
         let recomputedNumberOfCandles = market.findProjectNumberOfCandlesBetweenDates(seriesLastDate, futureDate, interval);
         let seriesDateAsString = moment(seriesLastDate).format('YYYY-MM-DD HH:mm:ss');

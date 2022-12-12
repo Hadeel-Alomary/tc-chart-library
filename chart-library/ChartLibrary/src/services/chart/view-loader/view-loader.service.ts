@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {ICallbackFunction, ViewLoader, ViewLoaderType} from './view-loader';
-import {LanguageService} from "../../state/index";
+import {LanguageService} from "../../language/index";
 
 
 @Injectable()

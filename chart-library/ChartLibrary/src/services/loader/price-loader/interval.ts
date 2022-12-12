@@ -3,7 +3,7 @@ import {Period, PeriodString} from './period';
 import {PeriodType} from './period-type';
 import {BaseIntervalType, IntervalType} from './interval-type';
 import {TimeSpan} from '../../../stock-chart/StockChartX/Data/TimeFrame';
-import {LanguageService} from '../../state';
+import {LanguageService} from '../../language';
 
 export class Interval {
 

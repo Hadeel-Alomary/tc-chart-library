@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {ChartTooltip, ChartTooltipConfig, ChartTooltipDataAndPositionConfig, ChartTooltipType} from './tooltip';
 import {HtmlLoader} from '../../../stock-chart/StockChartX.UI/HtmlLoader';
-import {LanguageService} from '../../state/language/index';
+import {LanguageService} from "../../../services/language";
 
 @Injectable()
 

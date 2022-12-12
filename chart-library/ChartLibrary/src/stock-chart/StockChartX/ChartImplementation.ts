@@ -645,7 +645,7 @@ export class ChartImplementation extends EventableObject implements Chart{
             throw new Error('Chart host id is not specified.');
 
         if(!config.theme)
-            config.theme = ChartAccessorService.instance.getThemeDefaultSettings();
+            config.theme = ChartAccessorService.getThemeDefaultSettings();
 
         if(config.theme)
             this._themeType = config.theme.name == Theme.Light.name ? ThemeType.Light : ThemeType.Dark;
@@ -1711,7 +1711,7 @@ export class ChartImplementation extends EventableObject implements Chart{
     }
 
     public resetDefaultSettings():void {
-        ChartAccessorService.instance.setThemeDefaultSettings(null);
+        ChartAccessorService.setThemeDefaultSettings(null);
         this._options.theme = $.extend(true, {}, this.getDefaultTheme());
         this.theme = this._options.theme;
     }
@@ -1721,7 +1721,7 @@ export class ChartImplementation extends EventableObject implements Chart{
     }
 
     public saveAsDefaultSettings():void {
-        ChartAccessorService.instance.setThemeDefaultSettings(this._options.theme);
+        ChartAccessorService.setThemeDefaultSettings(this._options.theme);
     }
 
 

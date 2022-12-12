@@ -1,83 +1,140 @@
-import {Tc} from '../../utils/index';
-import {ViewLoadersService} from './view-loader/index';
-import {TooltipService} from './tooltip/index';
+import {Injectable} from '@angular/core';
+import {LanguageService} from '../language';
+import {ViewLoadersService} from './view-loader';
+import {TooltipService} from './tooltip';
 import {TradingService} from '../trading';
-import {NewsService} from '../data/news';
-import {Company, Market} from '../loader/loader';
-import {AlertService} from '../data/alert';
-import {LiquidityPoint} from '../data/liquidity';
-import {MarketsTickSizeService} from '../data';
-import {ChannelRequest} from '../shared-channel';
-import {ChartTheme} from '../../stock-chart/StockChartX/Theme';
+import {NewsService} from '../news';
+import {AlertService} from '../alert';
+import {LiquidityPoint, LiquidityService} from '../liquidity';
+import {VolumeProfilerService} from '../volume-profiler';
+import {ChannelRequest, SharedChannel} from '../shared-channel';
+import {ChartStateService} from '../state';
 import {DrawingDefaultSettings} from '../../stock-chart/StockChartX/Drawings/DrawingsDefaultSettings';
 import {IndicatorSettings} from '../../stock-chart/StockChartX/Indicators/IndicatorsDefaultSettings';
-import {Interval} from '../loader';
-import {LiquidityHistoryLoadingState} from '../data/liquidity/liquidity.service';
+import {ChartTheme} from '../../stock-chart/StockChartX/Theme';
+import {Interval, MarketsTickSizeService} from '../index';
+import {LiquidityHistoryLoadingState} from '../liquidity/liquidity.service';
 import {Subject} from 'rxjs';
-import {VolumeProfilerRequest, VolumeProfilerRequestBuilder} from '../data/volume-profiler/volume-profiler-request-builder';
-import {VolumeProfilerResult} from '../data/volume-profiler/volume-profiler.service';
-import {AppChartAccessorService} from './app-chart-accessor.service';
+import {VolumeProfilerRequest, VolumeProfilerRequestBuilder} from '../volume-profiler/volume-profiler-request-builder';
+import {VolumeProfilerResult} from '../volume-profiler/volume-profiler.service';
 
-
+@Injectable()
 export abstract class ChartAccessorService {
-    public static get instance():ChartAccessorService{
-        Tc.assert(ChartAccessorService._instance !== null, "Trying to access chart accessor before initialize it");
-        return ChartAccessorService._instance;
-    }
-    protected static _instance:ChartAccessorService | null = null;
 
-    public abstract sendSharedChannelRequest(request:ChannelRequest):void;
+  constructor(
+	private languageService:LanguageService,
+	private viewLoadersService:ViewLoadersService,
+	private chartTooltipService: TooltipService,
+	private tradingService: TradingService,
+	private newsService: NewsService,
+	private alertService: AlertService,
+	private liquidityService: LiquidityService,
+	private volumeProfilerService:VolumeProfilerService,
+	private sharedChannel: SharedChannel,
+	private chartStateService:ChartStateService ,
+	public marketsTickSizeService: MarketsTickSizeService,
+  ){}
 
-    public abstract translate(arabic:string):string;
+  public sendSharedChannelRequest(request:ChannelRequest) {
+	this.sharedChannel.request(request);
+  }
 
-    public abstract translateHtml(element:JQuery):void;
+  public translate(arabic:string){
+	return this.languageService.translate(arabic);
+  }
 
-    public abstract getAlertService():AlertService;
+  public translateHtml(element:JQuery){
+	return this.languageService.translateHtml(element);
+  }
 
-    public abstract getNewsService():NewsService;
+  public getAlertService():AlertService {
+	return this.alertService;
+  }
 
-    public abstract getViewLoaderService():ViewLoadersService;
+  public getNewsService():NewsService {
+	return this.newsService;
+  }
 
-    public abstract getChartTooltipService():TooltipService;
+  public getViewLoaderService():ViewLoadersService {
+	return this.viewLoadersService;
+  }
 
-    public abstract getTradingService():TradingService;
+  public getChartTooltipService():TooltipService {
+	return this.chartTooltipService;
+  }
 
-    public abstract getCompanyBySymbol(symbol: string):Company;
+  public getTradingService():TradingService {
+	return this.tradingService;
+  }
 
-    public abstract isArabic():boolean;
+  public getMarketsTickSizeService():MarketsTickSizeService {
+	return this.marketsTickSizeService;
+  }
 
-    public abstract getMarketBySymbol(symbol: string):Market;
+  isArabic():boolean {
+	return this.languageService.arabic;
+  }
 
-    public abstract cleanVolumeProfilerData(requesterId:string):void;
-    public abstract isVolumeProfilerRequested(requestData: VolumeProfilerRequest):boolean;
-    public abstract requestVolumeProfilerData(requestParams:VolumeProfilerRequest): void;
-    public abstract getVolumeProfilerRequestBuilder():VolumeProfilerRequestBuilder;
-    public abstract getVolumeProfilerResultStream():Subject<VolumeProfilerResult>;
+  public cleanVolumeProfilerData(requesterId:string):void {
+	this.volumeProfilerService.cleanData(requesterId);
+  }
 
-    public abstract getSymbolLiquidityPoints(symbol: string, interval: Interval): LiquidityPoint[];
-    public abstract getSymbolLiquidityHistoryLoadState(symbol: string, interval: Interval):LiquidityHistoryLoadingState;
-    public abstract requestToLoadSymbolLiquidityHistory(symbol: string, interval: Interval): void;
-    public abstract getSymbolLiquidityUpdateStream(): Subject<{symbol:string, interval:Interval}>;
+  public isVolumeProfilerRequested(requestData: VolumeProfilerRequest):boolean {
+	return this.volumeProfilerService.isRequested(requestData);
+  }
 
-    public abstract getMarketByAbbreviation(marketAbbreviation:string):Market;
+  public requestVolumeProfilerData(requestParams:VolumeProfilerRequest): void {
+	this.volumeProfilerService.requestVolumeProfilerData(requestParams);
+  }
 
-    public abstract getDefaultMarket():Market;
+  public getVolumeProfilerRequestBuilder():VolumeProfilerRequestBuilder {
+	return this.volumeProfilerService.getRequestBuilder();
+  }
 
-    public abstract getMarketsTickSizeService():MarketsTickSizeService;
+  public getVolumeProfilerResultStream():Subject<VolumeProfilerResult> {
+	return this.volumeProfilerService.getResultStream();
+  }
 
-    public abstract getThemeDefaultSettings():ChartTheme;
-    public abstract setThemeDefaultSettings(theme:ChartTheme):void;
-    public abstract getDrawingDefaultSettings():{[drawingClassName: string]:DrawingDefaultSettings};
-    public abstract setDrawingDefaultSettings(drawings:{[drawingClassName: string]:DrawingDefaultSettings}):void;
-    public abstract getIndicatorDefaultSettings():{[indicatorNumber: number]: IndicatorSettings};
-    public abstract setIndicatorDefaultSettings(indicators:{[indicatorNumber: number]: IndicatorSettings}):void;
+  public getSymbolLiquidityPoints(symbol: string, interval: Interval): LiquidityPoint[] {
+	return this.liquidityService.getSymbolLiquidityPoints(symbol, interval);
+  }
+
+  public getSymbolLiquidityHistoryLoadState(symbol: string, interval: Interval):LiquidityHistoryLoadingState {
+	return this.liquidityService.getSymbolHistoryLoadState(symbol, interval);
+  }
+
+  public requestToLoadSymbolLiquidityHistory(symbol: string, interval: Interval , marketAbbr:string): void {
+	if (marketAbbr !== 'USA' && marketAbbr !== 'FRX') {
+	  this.liquidityService.requestToLoadSymbolHistory(symbol, interval);
+	}
+  }
+
+  public getSymbolLiquidityUpdateStream(): Subject<{symbol:string, interval:Interval}>{
+	return this.liquidityService.getSymbolLiquidityUpdateStream();
+  }
+
+  public getDrawingDefaultSettings(): {[drawingClassName: string]:DrawingDefaultSettings} {
+	return this.chartStateService.getDrawingDefaultSettings();
+  }
+
+  public getIndicatorDefaultSettings(): {[indicatorNumber: number]: IndicatorSettings} {
+	return this.chartStateService.getIndicatorDefaultSettings();
+  }
+
+  public getThemeDefaultSettings(): ChartTheme {
+	return this.chartStateService.getThemeDefaultSettings();
+  }
+
+  public setDrawingDefaultSettings(drawings:{[drawingClassName: string]:DrawingDefaultSettings}):void {
+	this.chartStateService.setDrawingDefaultSettings(drawings);
+  }
+
+  public setIndicatorDefaultSettings(indicators:{[indicatorNumber: number]: IndicatorSettings} ):void {
+	this.chartStateService.setIndicatorDefaultSettings(indicators);
+  }
+
+  public setThemeDefaultSettings(theme:ChartTheme):void {
+	this.chartStateService.setThemeDefaultSettings(theme);
+  }
 
 }
-
-
-
-
-
-
-
-
