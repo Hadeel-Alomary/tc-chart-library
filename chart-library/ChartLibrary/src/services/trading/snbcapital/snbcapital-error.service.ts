@@ -1,8 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Subject} from 'rxjs';
-import {SnbcapitalPortfoliosResponse, SnbcapitalPositionResponse, SnbcapitalLoginResponse} from '../../loader/trading/snbcapital-loader';
-import {SnbcapitalOrderResponse, SnbcapitalPreConfirmResponse, SnbcapitalPurchasePowerResponse, SnbcapitalQuantityCalculationResponse, SnbcapitalSuccessVerifyOtpResponse, SnbcapitalUpdatedOrderResponse, SnbcapitalUpdatePreConfirmOrderResponse, SnbcapitalWrongVerifyOtpResponse} from '../../loader/trading/snbcapital-loader/snbcapital-loader.service';
-import {LanguageService} from '../../state/language';
+import {LanguageService} from '../../language';
 
 @Injectable()
 export class SnbcapitalErrorService{

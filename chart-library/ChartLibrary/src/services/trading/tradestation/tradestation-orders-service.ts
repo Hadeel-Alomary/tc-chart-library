@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Subject, Observable, of , concat } from 'rxjs';
-import {LanguageService} from '../../state/language';
+import {LanguageService} from '../../language';
 import {ChannelRequestType, SharedChannel} from '../../shared-channel';
 import {TradestationOrder} from './tradestation-order';
 import {TradestationService} from './tradestation.service';
@@ -9,7 +9,6 @@ import {TradestationLoaderService} from '../../loader/trading/tradestation';
 import {TradestationOrderConfirmationResponse, TradestationOrderResponse, TradestationPostOrderResponse} from '../../loader/trading/tradestation/tradestation-loader.service';
 import {catchError, map, toArray} from 'rxjs/operators';
 import {TradestationUtils} from '../../../utils/tradestation.utils';
-import {MarketsManager} from '../../loader';
 import {Tc, TcTracker} from '../../../utils';
 import {TradestationStateService} from '../../state/trading/tradestation';
 import {TradestationAccountsService} from './tradestation-accounts-service';
@@ -22,7 +21,7 @@ export class TradestationOrdersService {
     private orders: TradestationOrder[] = [];
     private groupedOrders: TradestationOrder[] = [];
 
-    constructor(private tradestationService: TradestationService, private tradestationLoaderService: TradestationLoaderService, private tradestationStateService: TradestationStateService, private tradestationAccountsService: TradestationAccountsService, private sharedChannel:SharedChannel, private languageService:LanguageService, private marketsManager: MarketsManager) {
+    constructor(private tradestationService: TradestationService, private tradestationLoaderService: TradestationLoaderService, private tradestationStateService: TradestationStateService, private tradestationAccountsService: TradestationAccountsService, private sharedChannel:SharedChannel, private languageService:LanguageService) {
         this.ordersStream = new Subject();
 
         this.tradestationAccountsService.getAccountStream().subscribe(() => {
@@ -61,8 +60,8 @@ export class TradestationOrdersService {
         if (orders && orders.length > 0) {
             for (let order of orders) {
                 let symbol = TradestationUtils.getSymbolWithMarketFromTradestation(order.Symbol);
-                let company = this.marketsManager.getCompanyBySymbol(symbol);
-                tradestationOrders.push(TradestationOrder.mapResponseToTradestationOrder(order,company.name,company.symbol));
+                // let company = this.marketsManager.getCompanyBySymbol(symbol);
+                // tradestationOrders.push(TradestationOrder.mapResponseToTradestationOrder(order,company.name,company.symbol));
             }
         }
         return tradestationOrders;

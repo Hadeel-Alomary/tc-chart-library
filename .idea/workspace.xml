@@ -2,399 +2,97 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="473ece33-e321-4047-bd2b-141f4add5f82" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/core.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/index.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/public_api.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/application_init.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/application_module.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/application_ref.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/application_tokens.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/change_detection.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/change_detection/change_detection.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/change_detection/change_detector_ref.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/change_detection/constants.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/change_detection/differs/default_iterable_differ.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/change_detection/differs/default_keyvalue_differ.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/change_detection/differs/iterable_differs.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/change_detection/differs/keyvalue_differs.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/change_detection/pipe_transform.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/compiler/compiler_facade.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/compiler/compiler_facade_interface.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/console.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/core.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/core_private_export.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/core_render3_private_export.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/debug/debug_node.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/create_injector.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/forward_ref.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/index.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/initializer_token.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/inject_switch.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/injectable.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/injection_token.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/injector.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/injector_compatibility.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/injector_marker.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/injector_token.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/interface/defs.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/interface/injector.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/interface/provider.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/internal_tokens.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/jit/environment.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/jit/injectable.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/jit/util.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/metadata.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/metadata_attr.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/null_injector.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/provider_collection.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/provider_token.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/r3_injector.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/reflective_errors.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/reflective_injector.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/reflective_key.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/reflective_provider.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/di/scope.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/error_details_base_url.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/error_handler.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/errors.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/event_emitter.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/i18n/locale_data_api.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/i18n/locale_en.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/i18n/localization.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/i18n/tokens.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/interface/lifecycle_hooks.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/interface/simple_change.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/interface/type.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/linker.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/linker/compiler.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/linker/component_factory.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/linker/component_factory_resolver.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/linker/element_ref.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/linker/ng_module_factory.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/linker/ng_module_factory_loader.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/linker/ng_module_factory_loader_impl.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/linker/ng_module_registration.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/linker/query_list.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/linker/template_ref.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/linker/view_container_ref.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/linker/view_ref.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/metadata.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/metadata/di.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/metadata/directives.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/metadata/do_boostrap.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/metadata/ng_module.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/metadata/ng_module_def.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/metadata/resource_loading.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/metadata/schema.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/metadata/view.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/platform_core_providers.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/r3_symbols.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/reflection/platform_reflection_capabilities.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/reflection/reflection_capabilities.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render/api.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render/api_flags.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/assert.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/bindings.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/collect_native_nodes.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/component.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/component_ref.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/context_discovery.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/definition.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/definition_factory.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/di.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/di_setup.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/errors.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/errors_di.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/features/copy_definition_feature.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/features/host_directives_feature.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/features/inherit_definition_feature.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/features/ng_onchanges_feature.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/features/providers_feature.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/features/standalone_feature.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/fields.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/global_utils_api.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/hooks.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/i18n/i18n_apply.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/i18n/i18n_debug.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/i18n/i18n_insert_before_index.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/i18n/i18n_locale_id.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/i18n/i18n_parse.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/i18n/i18n_postprocess.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/i18n/i18n_tree_shaking.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/i18n/i18n_util.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/index.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/advance.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/all.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/attribute.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/attribute_interpolation.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/change_detection.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/class_map_interpolation.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/di.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/di_attr.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/element.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/element_container.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/element_validation.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/get_current_view.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/host_property.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/i18n.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/i18n_icu_container_visitor.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/interpolation.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/listener.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/namespace.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/next_context.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/projection.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/property.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/property_interpolation.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/shared.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/storage.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/style_map_interpolation.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/style_prop_interpolation.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/styling.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/template.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/text.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/instructions/text_interpolation.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/interfaces/container.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/interfaces/context.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/interfaces/definition.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/interfaces/document.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/interfaces/i18n.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/interfaces/injector.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/interfaces/lview_tracking.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/interfaces/node.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/interfaces/projection.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/interfaces/public_definitions.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/interfaces/query.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/interfaces/renderer.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/interfaces/renderer_dom.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/interfaces/sanitization.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/interfaces/styling.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/interfaces/type_checks.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/interfaces/view.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/jit/directive.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/jit/environment.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/jit/jit_options.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/jit/module.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/jit/module_patch.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/jit/partial.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/jit/pipe.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/jit/util.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/metadata.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/namespaces.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/ng_module_ref.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/node_assert.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/node_manipulation.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/node_manipulation_i18n.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/node_selector_matcher.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/pipe.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/profiler.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/pure_function.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/query.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/state.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/styling/class_differ.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/styling/static_styling.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/styling/style_binding_list.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/styling/styling_parser.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/tokens.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/util/attrs_utils.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/util/change_detection_utils.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/util/debug_utils.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/util/discovery_utils.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/util/global_utils.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/util/injector_utils.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/util/misc_utils.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/util/stringify_utils.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/util/view_traversal_utils.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/util/view_utils.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/view_engine_compatibility_prebound.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/render3/view_ref.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/sanitization/bypass.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/sanitization/html_sanitizer.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/sanitization/iframe_attrs_validation.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/sanitization/inert_body.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/sanitization/sanitization.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/sanitization/sanitizer.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/sanitization/security.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/sanitization/url_sanitizer.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/testability/testability.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/array_utils.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/assert.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/char_code.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/closure.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/coercion.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/comparison.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/decorators.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/dom.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/empty.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/errors.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/global.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/is_dev_mode.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/iterable.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/lang.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/microtask.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/ng_dev_mode.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/ng_i18n_closure_mode.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/ng_jit_mode.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/ng_reflect.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/noop.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/property.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/raf.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/security/trusted_type_defs.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/security/trusted_types.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/security/trusted_types_bypass.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/stringify.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/util/symbol.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/version.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/view/index.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/view/provider_flags.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/zone.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/zone/async-stack-tagging.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/src/zone/ng_zone.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/testing/index.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/testing/public_api.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/testing/src/async.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/testing/src/component_fixture.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/testing/src/fake_async.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/testing/src/lang_utils.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/testing/src/logger.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/testing/src/metadata_override.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/testing/src/metadata_overrider.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/testing/src/ng_zone_mock.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/testing/src/resolvers.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/testing/src/styling.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/testing/src/test_bed.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/testing/src/test_bed_common.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/testing/src/test_bed_compiler.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/testing/src/test_hooks.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/testing/src/testing.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/testing/src/testing_internal.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/esm2020/testing/testing.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/fesm2015/core.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/fesm2015/core.mjs.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/fesm2015/testing.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/fesm2015/testing.mjs.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/fesm2020/core.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/fesm2020/core.mjs.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/fesm2020/testing.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/fesm2020/testing.mjs.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/migrations.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/migrations/entry-components/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/migrations/entry-components/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/migrations/entry-components/util.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/migrations/entry-components/util.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/migrations/path-match-type/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/migrations/path-match-type/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/migrations/path-match-type/transform.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/migrations/path-match-type/transform.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/migrations/path-match-type/update_recorder.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/migrations/path-match-type/update_recorder.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/migrations/path-match-type/util.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/migrations/path-match-type/util.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/migrations/relative-link-resolution/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/migrations/relative-link-resolution/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/migrations/relative-link-resolution/util.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/migrations/relative-link-resolution/util.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/migrations/router-link-with-href/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/migrations/router-link-with-href/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/migrations/router-link-with-href/util.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/migrations/router-link-with-href/util.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/migrations/typed-forms/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/migrations/typed-forms/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/migrations/typed-forms/util.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/migrations/typed-forms/util.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/import_manager.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/import_manager.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/line_mappings.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/line_mappings.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/load_esm.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/load_esm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/ng_component_template.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/ng_component_template.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/ng_decorators.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/ng_decorators.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/parse_html.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/parse_html.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/project_tsconfig_paths.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/project_tsconfig_paths.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/template_ast_visitor.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/template_ast_visitor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/typescript/class_declaration.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/typescript/class_declaration.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/typescript/compiler_host.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/typescript/compiler_host.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/typescript/decorators.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/typescript/decorators.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/typescript/find_base_classes.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/typescript/find_base_classes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/typescript/functions.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/typescript/functions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/typescript/imports.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/typescript/imports.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/typescript/nodes.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/typescript/nodes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/typescript/parse_tsconfig.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/typescript/parse_tsconfig.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/typescript/property_name.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/typescript/property_name.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/typescript/symbol.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/schematics/utils/typescript/symbol.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/node_modules/@angular/core/testing/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/components/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/components/technical-indicator/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/language/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/language/language-type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/language/language.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/liquidity/element-liquidity.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/liquidity/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/liquidity/liquidity-interval-utils.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/liquidity/liquidity-point.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/liquidity/liquidity-points-grouper.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/liquidity/liquidity.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/market/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/price-loader/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/markets-tick-size/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/markets-tick-size/market-tick.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/markets-tick-size/markets-tick-size.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/notification/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/notification/notification-methods.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/notification/virtual-trading-notification-methods.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/shared-channel/channel-request.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/shared-channel/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/shared-channel/shared-channel.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/state/chart/chart-state.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/state/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/volume-profiler/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/data-types/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/analysis-center/analysis-center.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/analysis-center/analysis.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/analysis-center/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/debug-mode/debug-mode.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/debug-mode/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/analysis-center-loader/analysis-center-loader.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/analysis-center-loader/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/loader-config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/streamer-loader/streamer-loader.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/technical-scope-loader/technical-scope-loader.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/trading/derayah-loader/derayah-loader.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/trading/derayah-loader/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/trading/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/trading/snbcapital-loader/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/trading/snbcapital-loader/snbcapital-loader.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/trading/tradestation/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/trading/tradestation/tradestation-loader.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/trading/virtual-trading/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/trading/virtual-trading/virtual-trading-loader.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/quote/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/quote/quote-updater/alert-quote-updater.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/quote/quote-updater/analysis-quote-updater.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/quote/quote-updater/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/quote/quote-updater/news-quote-updater.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/quote/quote-updater/quote-updater.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/quote/quote-updater/streamer-quote-updater.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/quote/quote-updater/technical-indicator-quote-updater.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/quote/quote-updater/technical-scope-quote-updater.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/quote/quote.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/quote/quote.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/state/trading/derayah/derayah-state.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/state/trading/derayah/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/state/trading/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/state/trading/snbcapital/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/state/trading/snbcapital/snbcapital-state.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/state/trading/tradestation/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/state/trading/tradestation/tradestation-state.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/state/trading/trading-state-service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/technical-indicator/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/technical-indicator/technical-indicator-columns.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/technical-indicator/technical-indicator-quote.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/technical-indicator/technical-scope-quote.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/technical-scope/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/technical-scope/technical-scope-signal.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/technical-scope/technical-scope.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/watchlist/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/watchlist/watchlist.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/watchlist/watchlist.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/client/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/client/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/alert/chart-alert.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/alert/chart-alert.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/chart/app-chart-accessor.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/chart/chart-accessor.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/chart/chart-accessor.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/chart/element-chart-accessor.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/chart/tooltip/tooltip.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/chart/tooltip/tooltip.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/chart/view-loader/view-loader.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/chart/view-loader/view-loader.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/price-loader/interval.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/price-loader/interval.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/price-loader/interval.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/price-loader/interval.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/price-loader/price-loader.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/price-loader/price-loader.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/trading.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/trading.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/volume-profiler/volume-profiler-request-builder.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/volume-profiler/volume-profiler-request-builder.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/volume-profiler/volume-profiler.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/volume-profiler/volume-profiler.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/ChartImplementation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/ChartImplementation.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/Drawings/Drawing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/Drawings/Drawing.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/Plots/VolumeProfilerSessionPlot.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/Plots/VolumeProfilerSessionPlot.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/Plots/VolumeProfilerVisibleRangePlot.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/Plots/VolumeProfilerVisibleRangePlot.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/Scales/ProjectionDebugger.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/Scales/ProjectionDebugger.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/proxied-url-loader.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/proxied-url-loader.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/shared-channel/channel-request.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/shared-channel/channel-request.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/state/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/state/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/streaming/streamer/market-streamer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/streaming/streamer/market-streamer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/streaming/streamer/streamer.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/streaming/streamer/streamer.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/streaming/streamer/technical-indicator-streamer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/streaming/streamer/technical-indicator-streamer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/streaming/streamer/technical-reports-streamer.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/streaming/streamer/technical-reports-streamer.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/broker/derayah-broker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/broker/derayah-broker.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/broker/no-broker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/broker/no-broker.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/broker/snbcapital-broker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/broker/snbcapital-broker.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/broker/tradestation-broker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/broker/tradestation-broker.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/derayah/derayah-client.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/derayah/derayah-client.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/derayah/derayah-http-client.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/derayah/derayah-http-client.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/derayah/derayah-logout.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/derayah/derayah-logout.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/derayah/derayah-order/derayah-order.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/derayah/derayah-order/derayah-order.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/derayah/derayah-orders-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/derayah/derayah-orders-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/derayah/derayah-positions.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/derayah/derayah-positions.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/derayah/derayah.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/derayah/derayah.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/snbcapital/snbcapital-error.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/snbcapital/snbcapital-error.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/snbcapital/snbcapital-http-client-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/snbcapital/snbcapital-http-client-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/snbcapital/snbcapital-order/snbcapital-order.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/snbcapital/snbcapital-order/snbcapital-order.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/snbcapital/snbcapital-orders-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/snbcapital/snbcapital-orders-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/snbcapital/snbcapital-positions.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/snbcapital/snbcapital-positions.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/snbcapital/snbcapital.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/snbcapital/snbcapital.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-balance/tradestation-balance.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-balance/tradestation-balance.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-balances-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-balances-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-order/tradestation-order.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-order/tradestation-order.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-orders-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-orders-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-position/tradestation-position.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-position/tradestation-position.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-positions-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-positions-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-models/virtual-trading-account.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-models/virtual-trading-account.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-models/virtual-trading-order.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-models/virtual-trading-order.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-models/virtual-trading-position.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-models/virtual-trading-position.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-models/virtual-trading-transaction.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-models/virtual-trading-transaction.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-orders.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-orders.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-positions.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-positions.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading.service.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -417,26 +115,26 @@
         <counts>
           <entry key="js" value="1" />
           <entry key="json" value="8" />
-          <entry key="ts" value="271" />
+          <entry key="ts" value="645" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="3" />
           <entry key="JavaScript" value="1" />
-          <entry key="TypeScript" value="271" />
+          <entry key="TypeScript" value="645" />
           <entry key="tsconfig" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="json" value="17" />
-          <entry key="ts" value="799" />
+          <entry key="ts" value="2214" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="TypeScript" value="799" />
+          <entry key="TypeScript" value="2214" />
           <entry key="tsconfig" value="17" />
         </counts>
       </usages-collector>
@@ -445,62 +143,33 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/ChartImplementation.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13652">
-              <caret line="1723" column="28" selection-start-line="1723" selection-start-column="28" selection-end-line="1723" selection-end-column="28" />
-              <folding>
-                <element signature="e#31#74#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/CrossHair.ts">
+        <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-error.service.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#416#480#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/Scales/ProjectionDebugger.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#60#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/Drawings/Drawing.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="907">
-              <caret line="430" column="53" lean-forward="true" selection-start-line="430" selection-start-column="53" selection-end-line="430" selection-end-column="53" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#416#556#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/chart/chart-accessor.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="32" column="41" lean-forward="true" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
-              <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-orders.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1067">
+              <caret line="39" column="11" lean-forward="true" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
+              <folding>
+                <element signature="e#0#49#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-positions.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2243">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -508,52 +177,63 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/broker-watchlist-manager.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-442">
-              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation.http-client-service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="255">
+              <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#0#81#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/volume-profiler/volume-profiler-request-builder.ts">
+        <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/watchlist/index.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="54" column="24" lean-forward="true" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#54#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="34">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/index.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="392">
+              <caret line="219" column="68" selection-start-line="219" selection-start-column="68" selection-end-line="219" selection-end-column="68" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/volume-profiler/volume-profiler.service.ts">
+        <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/index.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="175" lean-forward="true" selection-start-line="175" selection-end-line="175" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="375">
+              <caret line="205" column="45" selection-start-line="205" selection-start-column="45" selection-end-line="205" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/utils/market.utils.ts">
+        <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/technical-scope/index.ts">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/watchlist/watchlist.service.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+              <caret line="4" column="18" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/watchlist/watchlist.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -582,6 +262,20 @@
       <find>AccessorService</find>
       <find>ChartStateService</find>
       <find>noImplicitAny</find>
+      <find>DerayahBuySellChannelRequest</find>
+      <find>GridBoxType</find>
+      <find>loade</find>
+      <find>authorizationService</find>
+      <find>state</find>
+      <find>DerayahLoginChannelRequest</find>
+      <find>loader</find>
+      <find>TechnicalScopeQuoteService</find>
+      <find>AnalysisSortType</find>
+      <find>TechnicalIndicatorQuoteService</find>
+      <find>lang</find>
+      <find>MarketAlertsConfig</find>
+      <find>marke</find>
+      <find>DerayahOrders</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -590,50 +284,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/client/chart-client.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/AlertDrawings/AlertDrawingsDefaultSettings.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/AlertDrawings/ChartAlertDrawing.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/ChartAnnotations/NewsChartAnnotation.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/ChartAnnotations/SplitChartAnnotation.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/ChartPanels/ChartPanel.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/ChartPanels/ChartPanelSplitter.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/Drawings/AlertableDrawing.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/ChartPanels/ChartPanelImplementation.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/ChartExtensions.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/Tools/ZoomTool.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/MovingAverageOptions.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/components/technical-indicator/technical-indicator.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/Scales/Projection.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/Plots/Plot.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/Plots/VolumeProfilerVisibleRangePlot.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/markets-tick-size/index.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/Plots/VolumeProfilerSessionPlot.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/alert/chart-alert.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/chart/tooltip/tooltip.service.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/chart/app-chart-accessor.service.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/chart/view-loader/view-loader.service.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/market/index.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/price-loader/index.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/derayah/derayah-client.service.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/derayah/derayah-http-client.service.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/derayah/derayah-logout.service.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/derayah/derayah-orders-service.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/derayah/derayah-positions.service.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/quote/quote-updater/alert-quote-updater.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/quote/quote-updater/analysis-quote-updater.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/quote/quote-updater/news-quote-updater.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/quote/quote-updater/streamer-quote-updater.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/quote/quote.service.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/quote/index.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/data-types/index.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/analysis-center/analysis-center.service.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/analysis-center-loader/analysis-center-loader.service.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/analysis-center/analysis.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/technical-indicator/technical-indicator-quote.service.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/technical-indicator/technical-scope-quote.service.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/quote/quote-updater/technical-indicator-quote-updater.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/quote/quote-updater/technical-scope-quote-updater.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/technical-scope/technical-scope-signal.ts" />
         <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/index.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/volume-profiler/index.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/chart/index.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/components/technical-indicator/index.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/components/index.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/client/index.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/state/index.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/technical-scope-loader/technical-scope-loader.service.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/loader-config.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/quote/quote.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/streaming/streamer/market-streamer.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/technical-scope/technical-scope.service.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/derayah/derayah-order/derayah-order.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/snbcapital/snbcapital-order/snbcapital-order.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/shared-channel/channel-request.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/snbcapital/snbcapital.service.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/snbcapital/snbcapital-error.service.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/snbcapital/snbcapital-http-client-service.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/snbcapital/snbcapital-orders-service.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/snbcapital/snbcapital-positions.service.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-balance/tradestation-balance.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-order/tradestation-order.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-position/tradestation-position.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation.service.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-balances-service.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-orders-service.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/data-types/types.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-positions-service.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-models/virtual-trading-account.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-models/virtual-trading-order.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-models/virtual-trading-position.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading.service.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-orders.service.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-positions.service.ts" />
+        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/watchlist/watchlist.service.ts" />
         <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/index.ts" />
         <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/index.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/price-loader/interval.service.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/price-loader/interval.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/tsconfig.json" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/price-loader/price-loader.service.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/trading.service.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/ChartImplementation.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/Scales/ProjectionDebugger.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/Drawings/Drawing.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/chart/chart-accessor.service.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/volume-profiler/volume-profiler-request-builder.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/volume-profiler/volume-profiler.service.ts" />
       </list>
     </option>
   </component>
@@ -688,15 +389,7 @@
               <item name="chart-library" type="462c0819:PsiDirectoryNode" />
               <item name="ChartLibrary" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tc-chart-library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tc-chart-library" type="462c0819:PsiDirectoryNode" />
-              <item name="chart-library" type="462c0819:PsiDirectoryNode" />
-              <item name="ChartLibrary" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="data-types" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tc-chart-library" type="b2602c69:ProjectViewProjectNode" />
@@ -713,7 +406,7 @@
               <item name="ChartLibrary" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="chart" type="462c0819:PsiDirectoryNode" />
+              <item name="analysis-center" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tc-chart-library" type="b2602c69:ProjectViewProjectNode" />
@@ -722,7 +415,7 @@
               <item name="ChartLibrary" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="language" type="462c0819:PsiDirectoryNode" />
+              <item name="shared-channel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tc-chart-library" type="b2602c69:ProjectViewProjectNode" />
@@ -731,7 +424,7 @@
               <item name="ChartLibrary" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="liquidity" type="462c0819:PsiDirectoryNode" />
+              <item name="technical-scope" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tc-chart-library" type="b2602c69:ProjectViewProjectNode" />
@@ -740,7 +433,7 @@
               <item name="ChartLibrary" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="volume-profiler" type="462c0819:PsiDirectoryNode" />
+              <item name="trading" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tc-chart-library" type="b2602c69:ProjectViewProjectNode" />
@@ -748,7 +441,9 @@
               <item name="chart-library" type="462c0819:PsiDirectoryNode" />
               <item name="ChartLibrary" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="stock-chart" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="trading" type="462c0819:PsiDirectoryNode" />
+              <item name="virtual-trading" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tc-chart-library" type="b2602c69:ProjectViewProjectNode" />
@@ -756,8 +451,10 @@
               <item name="chart-library" type="462c0819:PsiDirectoryNode" />
               <item name="ChartLibrary" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="stock-chart" type="462c0819:PsiDirectoryNode" />
-              <item name="StockChartX" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="trading" type="462c0819:PsiDirectoryNode" />
+              <item name="virtual-trading" type="462c0819:PsiDirectoryNode" />
+              <item name="virtual-trading-models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tc-chart-library" type="b2602c69:ProjectViewProjectNode" />
@@ -765,17 +462,8 @@
               <item name="chart-library" type="462c0819:PsiDirectoryNode" />
               <item name="ChartLibrary" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="stock-chart" type="462c0819:PsiDirectoryNode" />
-              <item name="StockChartX" type="462c0819:PsiDirectoryNode" />
-              <item name="Drawings" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tc-chart-library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tc-chart-library" type="462c0819:PsiDirectoryNode" />
-              <item name="chart-library" type="462c0819:PsiDirectoryNode" />
-              <item name="ChartLibrary" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="watchlist" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -797,11 +485,11 @@
       <recent name="E:\tc-chart-library\chart-library\ChartLibrary\src\services" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\tc-chart-library\chart-library\ChartLibrary\src\services\state" />
       <recent name="E:\tc-chart-library\chart-library\ChartLibrary\src\services" />
+      <recent name="E:\tc-chart-library\chart-library\ChartLibrary\src\services\loader" />
+      <recent name="E:\tc-chart-library\chart-library\ChartLibrary\src\services\state" />
       <recent name="E:\tc-chart-library\chart-library\ChartLibrary\src\services\loader\market" />
       <recent name="E:\tc-chart-library\chart-library\ChartLibrary\src\components\technical-indicator" />
-      <recent name="E:\tc-chart-library\chart-library\ChartLibrary\src\types" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -831,7 +519,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14816000" />
+    <option name="totallyTimeSpent" value="25132000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="0" />
@@ -856,307 +544,83 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/chart/tooltip/tooltip.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/chart/tooltip/tooltip.service.ts">
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/snbcapital/snbcapital-http-client-service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+        <state relative-caret-position="-798">
+          <caret line="39" column="12" lean-forward="true" selection-start-line="37" selection-start-column="7" selection-end-line="39" selection-end-column="12" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#52#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/chart/view-loader/view-loader.service.ts">
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/snbcapital/snbcapital-orders-service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="323">
+          <caret line="19" column="40" lean-forward="true" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/chart/view-loader/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="48" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/market/market.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-357">
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/market/market-date-projector.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/price-loader/price-grouper.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/price-loader/price-data.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/price-loader/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/alert/index.ts">
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/snbcapital/snbcapital-positions.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <caret line="12" column="55" lean-forward="true" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/chart/index.ts">
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/snbcapital/snbcapital-security-account-status.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-accounts/tradestation-account.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-balance/tradestation-balance.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="15" selection-end-column="62" />
+        <state relative-caret-position="-747">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/language/index.ts">
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-order/tradestation-order.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" selection-end-column="51" />
+        <state relative-caret-position="119">
+          <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="11" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-order/tradestation-order-execution.ts">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/markets-tick-size/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="2" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-order/tradestation-order-expiration.ts">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/news/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="3" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-order/tradestation-order-routing.ts">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/notification/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="2" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-order/tradestation-order-side-type.ts">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="112" column="29" lean-forward="true" selection-end-line="117" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-order/tradestation-order-status.ts">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/volume-profiler/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="8" selection-end-column="102" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-order/tradestation-order-type-wrapper.ts">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/components/technical-indicator/technical-indicator.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2257">
-          <caret line="7" column="31" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#66#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-order/tradestation-trailing-stop.ts">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/components/technical-indicator/technical-indicator-group-type.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="39" selection-start-column="12" selection-end-column="39" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-position/index.ts">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/components/technical-indicator/technical-indicator-type.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1631">
-          <caret column="34" selection-start-column="12" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/client/index.ts">
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-position/tradestation-position.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/components/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="47" selection-start-column="47" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/components/technical-indicator/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/market/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/client/chart-client.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="26" lean-forward="true" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/liquidity/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/shared-channel/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" selection-end-column="157" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/state/chart/chart-state.service.ts">
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/index.ts">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/state/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="173" column="25" selection-start-line="173" selection-start-column="8" selection-end-line="173" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="171" column="19" selection-start-line="171" selection-start-column="19" selection-end-line="171" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/price-loader/interval.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="8" selection-start-line="12" selection-start-column="3" selection-end-line="14" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/price-loader/interval.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2074">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/price-loader/interval-type.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/price-loader/period.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-357" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/price-loader/price-loader.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" column="55" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/trading.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="254" column="56" selection-start-line="254" selection-start-column="30" selection-end-line="254" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/broker-watchlist-manager.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-442">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation.http-client-service.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -1167,81 +631,229 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/ChartImplementation.ts">
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13652">
-          <caret line="1723" column="28" selection-start-line="1723" selection-start-column="28" selection-end-line="1723" selection-end-column="28" />
-          <folding>
-            <element signature="e#31#74#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="170">
+          <caret line="10" column="57" lean-forward="true" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/CrossHair.ts">
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-account-type.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-accounts-service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#416#480#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/Scales/ProjectionDebugger.ts">
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-balances-service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+        <state relative-caret-position="697">
+          <caret line="41" column="33" lean-forward="true" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-channel-request.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-client-service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-logout-service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-orders-service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1655">
+          <caret line="63" column="31" lean-forward="true" selection-start-line="62" selection-start-column="14" selection-end-line="63" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/data-types/types.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="122" column="1" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/tradestation/tradestation-positions-service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-models/virtual-trading-account.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="78" selection-start-column="78" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-models/virtual-trading-currency.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-models/virtual-trading-order.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-models/virtual-trading-order-action.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-models/virtual-trading-order-action-type.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-models/virtual-trading-order-details.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
             <element signature="e#0#60#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/chart/chart-accessor.service.ts">
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-models/virtual-trading-order-side.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-models/virtual-trading-order-status.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-models/virtual-trading-order-type.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-models/virtual-trading-position.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="32" column="41" lean-forward="true" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+        <state relative-caret-position="34">
+          <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-models/virtual-trading-transaction.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255">
+          <folding>
+            <element signature="e#0#94#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-models/virtual-trading-transaction-action-type.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-485">
+          <caret line="111" column="52" lean-forward="true" selection-start-line="111" selection-start-column="52" selection-end-line="111" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-error.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/Drawings/Drawing.ts">
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-orders.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="907">
-          <caret line="430" column="53" lean-forward="true" selection-start-line="430" selection-start-column="53" selection-end-line="430" selection-end-column="53" />
+        <state relative-caret-position="-1067">
+          <caret line="39" column="11" lean-forward="true" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#416#556#0" expanded="true" />
+            <element signature="e#0#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/volume-profiler/volume-profiler-request-builder.ts">
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/virtual-trading/virtual-trading-positions.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="54" column="24" lean-forward="true" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
+        <state relative-caret-position="-2243">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/trading/broker-watchlist-manager.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
           <folding>
-            <element signature="e#0#54#0" expanded="true" />
+            <element signature="e#0#81#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/utils/market.utils.ts">
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/watchlist/watchlist.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/volume-profiler/volume-profiler.service.ts">
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/watchlist/watchlist.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="175" lean-forward="true" selection-start-line="175" selection-end-line="175" />
+        <state>
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#40#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/watchlist/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/technical-scope/index.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/services/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="219" column="68" selection-start-line="219" selection-start-column="68" selection-end-line="219" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="205" column="45" selection-start-line="205" selection-start-column="45" selection-end-line="205" selection-end-column="45" />
         </state>
       </provider>
     </entry>

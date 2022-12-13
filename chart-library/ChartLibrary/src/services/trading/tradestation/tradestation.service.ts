@@ -3,12 +3,12 @@ import {TradestationLoaderService} from '../../loader/trading/tradestation';
 import {TradestationAuthorizeResponse} from '../../loader/trading/tradestation/tradestation-loader.service';
 import {TradestationStateService} from '../../state/trading/tradestation';
 import {TradestationAccountType} from './tradestation-account-type';
-import {Loader, Market} from '../../loader';
+import {Market} from '../../loader';
 import {Tc} from '../../../utils';
 import {TradestationHttpClientService} from './tradestation.http-client-service';
 import {TradestationClientService} from './tradestation-client-service';
 import {TradestationLogoutService} from './tradestation-logout-service';
-import {LoaderConfig, LoaderUrlType} from '../../loader/loader';
+import {LoaderConfig, LoaderUrlType} from '../../loader';
 import {TradestationAccountsService} from './tradestation-accounts-service';
 
 @Injectable()
@@ -26,21 +26,21 @@ export class TradestationService implements OnDestroy{
                 private tradestationStateService: TradestationStateService,
                 private tradestationAccountsService: TradestationAccountsService,
                 private tradestationHttpClientService: TradestationHttpClientService,
-                private loader:Loader) {
-
-        this.loader.getMarketStream().subscribe((market: Market) => {
-            if(market.abbreviation == 'USA'){
-                this.isReadyMarketsManager = true;
-                this.autoRefresh();
-            }
-        });
-
-        this.loader.getConfigStream()
-            .subscribe((loaderConfig:LoaderConfig) => {
-                if(loaderConfig){
-                    this.onLoaderConfig(loaderConfig);
-                }
-            });
+               ) {
+        //
+        // this.loader.getMarketStream().subscribe((market: Market) => {
+        //     if(market.abbreviation == 'USA'){
+        //         this.isReadyMarketsManager = true;
+        //         this.autoRefresh();
+        //     }
+        // });
+        //
+        // this.loader.getConfigStream()
+        //     .subscribe((loaderConfig:LoaderConfig) => {
+        //         if(loaderConfig){
+        //             this.onLoaderConfig(loaderConfig);
+        //         }
+        //     });
     }
 
     private onLoaderConfig(loaderConfig:LoaderConfig): void{

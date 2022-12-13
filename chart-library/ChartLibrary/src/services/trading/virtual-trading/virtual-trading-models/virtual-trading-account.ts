@@ -1,4 +1,4 @@
-import {NotificationMethods, VirtualTradingNotificationMethods} from '../../../data/notification';
+import {NotificationMethods, VirtualTradingNotificationMethods} from '../../../notification';
 import {VirtualTradingAccountResponse} from '../../../loader/trading/virtual-trading';
 
 export class VirtualTradingAccount {

@@ -1,5 +1,5 @@
 import {Tc} from '../../utils';
-import {ProxyService} from './loader/proxy.service';
+import {ProxyService} from './proxy.service';
 
 export abstract class ProxiedUrlLoader {
 

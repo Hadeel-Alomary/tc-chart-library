@@ -1,7 +1,6 @@
 import {BehaviorSubject, Observable} from 'rxjs';
 import {map, tap} from 'rxjs/operators';
 import {Injectable} from '@angular/core';
-import {CredentialsStateService} from '../../state/index';
 import {Tc, TcTracker,} from '../../../utils/';
 
 import {
@@ -11,9 +10,9 @@ import {
 } from './virtual-trading-models';
 import {VirtualTradingLoader} from '../../loader/trading/virtual-trading/virtual-trading-loader.service';
 import {ChannelRequestType, SharedChannel} from '../../shared-channel';
-import {Market} from '../../loader/loader';
+import {Market} from '../../loader';
 import {Streamer} from '../../streaming/streamer';
-import {VirtualTradingNotificationMethods} from '../../data/notification';
+import {VirtualTradingNotificationMethods} from '../../notification';
 
 
 @Injectable()
@@ -23,7 +22,6 @@ export class VirtualTradingService {
     private account: VirtualTradingAccount;
 
     constructor(
-        private credentialsStateService: CredentialsStateService,
         private virtualTradingLoaderService: VirtualTradingLoader,
         private sharedChannel: SharedChannel,
         private streamer: Streamer) {
@@ -34,9 +32,10 @@ export class VirtualTradingService {
     }
 
     private login(): Observable<void> {
-        let username = this.credentialsStateService.username;
-        let password = this.credentialsStateService.password;
-        return this.virtualTradingLoaderService.login(username, password);
+        // let username = this.credentialsStateService.username;
+        // let password = this.credentialsStateService.password;
+        // return this.virtualTradingLoaderService.login(username, password);
+	  return this.virtualTradingLoaderService.login(null, null);
     }
 
     private loadAccount(): Observable<VirtualTradingAccount> {
@@ -112,7 +111,8 @@ export class VirtualTradingService {
                 TcTracker.trackConnectedToVirtualTrading();
                 this.loadAccount().subscribe(() => {
                     this.connect();
-                    this.streamer.getGeneralPurposeStreamer().subscribeVirtualTrading(this.credentialsStateService.username);
+                    // this.streamer.getGeneralPurposeStreamer().subscribeVirtualTrading(this.credentialsStateService.username);
+				  this.streamer.getGeneralPurposeStreamer().subscribeVirtualTrading(null);
                 });
             }
         );

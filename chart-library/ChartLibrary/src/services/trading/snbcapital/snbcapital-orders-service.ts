@@ -7,10 +7,6 @@ import {
 } from './snbcapital-order-details/index';
 
 import {
-    MarketsManager
-} from '../../loader/index';
-
-import {
     MarketUtils,
     Tc
 } from '../../../utils/index';
@@ -23,12 +19,21 @@ import {
     SnbcapitalPositionsService
 } from './snbcapital-positions.service';
 
-
 import {map} from 'rxjs/operators';
-import {SnbcapitalLoaderService, SnbcapitalOrderDetailsResponse, SnbcapitalOrderListResponse, SnbcapitalOrderResponse, SnbcapitalPreConfirmResponse, SnbcapitalQuantityCalculationResponse, SnbcapitalSecurityAccountCodeResponse, SnbcapitalUpdatedOrderResponse, SnbcapitalUpdatePreConfirmOrderResponse} from '../../loader/trading/snbcapital-loader/snbcapital-loader.service';
+import {
+  OrderSearchStatus,
+  SnbcapitalLoaderService,
+  SnbcapitalOrderDetailsResponse,
+  SnbcapitalOrderListResponse,
+  SnbcapitalOrderResponse,
+  SnbcapitalPreConfirmResponse,
+  SnbcapitalQuantityCalculationResponse,
+  SnbcapitalSecurityAccountCodeResponse,
+  SnbcapitalUpdatedOrderResponse,
+  SnbcapitalUpdatePreConfirmOrderResponse
+} from '../../loader/trading/snbcapital-loader/snbcapital-loader.service';
 import {Subscription} from 'rxjs/internal/Subscription';
 import {SnbcapitalErrorHttpResponse, SnbcapitalErrorService} from './snbcapital-error.service';
-import {OrderSearchStatus} from '../../../components/trading/snbcapital/snbcapital-order-search/snbcapital-order-search.component';
 
 @Injectable()
 export class SnbcapitalOrdersService implements OnDestroy{
@@ -39,7 +44,7 @@ export class SnbcapitalOrdersService implements OnDestroy{
 
     private ordersStream:BehaviorSubject<{[portfolio:string]:SnbcapitalOrder[]}>;
 
-    constructor(private snbcapitalLoaderService:SnbcapitalLoaderService, private marketsManager:MarketsManager,
+    constructor(private snbcapitalLoaderService:SnbcapitalLoaderService,
                 private snbcapitalService:SnbcapitalService, private snbcapitalPositionsService:SnbcapitalPositionsService , private snbcapitalErrorService:SnbcapitalErrorService){
         this.ordersStream = new BehaviorSubject(null);
 
@@ -319,10 +324,10 @@ export class SnbcapitalOrdersService implements OnDestroy{
         for (let item of orders) {
             if (item.strum) {
                 let symbol = item.strum.secCode + '.TAD';
-                let company = this.marketsManager.getCompanyBySymbol(symbol);
-                if (company) {
-                    snbcapitalOrders.push(SnbcapitalOrder.mapResponseToSnbcapitalOrder(item, company.name, company.symbol));
-                }
+                // let company = this.marketsManager.getCompanyBySymbol(symbol);
+                // if (company) {
+                //     snbcapitalOrders.push(SnbcapitalOrder.mapResponseToSnbcapitalOrder(item, company.name, company.symbol));
+                // }
             }
         }
         return snbcapitalOrders;

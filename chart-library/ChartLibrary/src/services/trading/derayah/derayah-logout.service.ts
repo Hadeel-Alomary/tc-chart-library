@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Subject} from 'rxjs';
 import {ChannelRequestType, SharedChannel} from '../../shared-channel';
 import {DerayahStateService} from '../../state/trading/derayah';
-import {DerayahLoginChannelRequest} from '../../../components/modals/trading/derayah/derayah-login/derayah-login.component';
+import {DerayahLoginChannelRequest} from "@src/services/shared-channel/channel-request";
 
 @Injectable()
 

@@ -1,6 +1,6 @@
 import {StringUtils} from '../../../../utils';
 import {TradestationBalanceResponse, ClosedPositionResponse} from '../../../loader/trading/tradestation/tradestation-loader.service';
-import {Market} from '../../../loader/loader';
+import {Market} from '../../../loader';
 import {TradestationUtils} from '../../../../utils/tradestation.utils';
 
 export interface TradestationClosedPosition {

@@ -1,4 +1,3 @@
-import {MarketGridData} from '../../../../components/shared/grid-box/market-box';
 import {TradestationOrderResponse} from '../../../loader/trading/tradestation/tradestation-loader.service';
 import {TradestationOrderSideType, TradestationOrderSideWrapper} from './tradestation-order-side-type';
 import {TradestationOrdersGroupedStatus, TradestationOrderStatus, TradestationOrderStatusType} from './tradestation-order-status';
@@ -7,6 +6,7 @@ import {TradestationPosition} from '../tradestation-position';
 import {TradestationOrderExpiration, TradestationOrderExpirationType} from './tradestation-order-expiration';
 import {TradestationOrderRouting, TradestationOrderRoutingType} from './tradestation-order-routing';
 import {TradestationTrailingStopType} from './tradestation-trailing-stop';
+import {MarketGridData} from "../../../../data-types/types";
 
 export class TradestationOrder implements MarketGridData {
 

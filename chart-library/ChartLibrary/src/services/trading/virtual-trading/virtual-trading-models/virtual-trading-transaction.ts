@@ -1,5 +1,4 @@
 import {VirtualTradingTransactionActionType} from './virtual-trading-transaction-action-type';
-import {MarketsManager} from '../../../loader/loader';
 import {VirtualTradingTransactionResponse} from '../../../loader/trading/virtual-trading';
 
 export class VirtualTradingTransaction {
@@ -17,7 +16,7 @@ export class VirtualTradingTransaction {
         public market: string
     ) {}
 
-    public static mapResponseToVirtualTradingTransactions(response: VirtualTradingTransactionResponse[], marketsManager: MarketsManager): VirtualTradingTransaction[] {
+    public static mapResponseToVirtualTradingTransactions(response: VirtualTradingTransactionResponse[]): VirtualTradingTransaction[] {
         let result: VirtualTradingTransaction[] = [];
         for (let responseObject of response) {
 
@@ -25,7 +24,8 @@ export class VirtualTradingTransaction {
             let name = null;
             if(responseObject.trading_order_id) {
                 symbol = `${responseObject.symbol}.${responseObject.market}`;
-                name = marketsManager.getCompanyBySymbol(symbol).name;
+                // name = marketsManager.getCompanyBySymbol(symbol).name;
+              name = null;
             }
             result.push(new VirtualTradingTransaction(
                 responseObject.id,

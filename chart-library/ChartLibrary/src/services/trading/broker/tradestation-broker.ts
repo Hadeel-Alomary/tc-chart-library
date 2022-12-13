@@ -227,7 +227,7 @@ export class TradestationBroker implements Broker{
         this.sharedChannel.request(openRequest);
     }
 
-    openSellAllSharesScreen(company: Company): void { }
+    openSellAllSharesScreen(market:Market ,company: Company): void { }
 
     public onBoundPositionClicked(position:TradingPosition):void {
         let positions = this.tradestationPositionsService.getPositionsStream().getValue();
@@ -252,15 +252,15 @@ export class TradestationBroker implements Broker{
         this.tradestationPositionsService.onReversePosition(filteredPosition);
     };
 
-    public openBuyScreen(company: Company, price?: number): void {
+    public openBuyScreen(market:Market ,company: Company, price?: number): void {
         this.openTradestationBuyAndSale('Buy', company, price , null , TradestationOrderType.Limit)
     }
 
-    public openSellScreen(company: Company, price?: number): void {
+    public openSellScreen(market:Market ,company: Company, price?: number): void {
         this.openTradestationBuyAndSale('Sell', company, price , null , TradestationOrderType.Limit)
     }
 
-    public openStopScreen(company: Company, price?: number): void {
+    public openStopScreen(market:Market ,company: Company, price?: number): void {
         this.openTradestationBuyAndSale('Sell', company, price , null , TradestationOrderType.StopMarket)
     }
 

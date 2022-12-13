@@ -3,10 +3,10 @@ import {SnbcapitalOrderType, SnbcapitalOrderTypeWrapper} from './snbcapital-orde
 import {SnbcapitalPosition} from "../snbcapital-position/snbcapital-position";
 import {SnbcapitalOrderDetails} from '../snbcapital-order-details/index';
 import {SnbcapitalDateTimeResponse, SnbcapitalOrderListResponse,} from '../../../loader/trading/snbcapital-loader/snbcapital-loader.service';
-import {MarketGridData} from '../../../../components/shared/grid-box/market-box';
 import {SnbcapitalOrderExecution, SnbcapitalOrderExecutionType} from './snbcapital-order-execution';
 import {SnbcapitalPortfolio} from './snbcapital-portfolio';
 import {SnbcapitalOrderExpiration, SnbcapitalOrderExpirationType} from './snbcapital-order-expiration';
+import {MarketGridData} from "../../../../data-types/types";
 
 export class SnbcapitalOrder implements MarketGridData {
 

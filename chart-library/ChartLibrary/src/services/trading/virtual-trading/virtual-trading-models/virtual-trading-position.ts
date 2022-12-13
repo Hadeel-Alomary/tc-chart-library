@@ -1,6 +1,6 @@
-import {Market, MarketsManager} from '../../../loader/loader';
+import {Market,} from '../../../loader';
 import {VirtualTradingPositionResponse} from '../../../loader/trading/virtual-trading';
-import {MarketGridData} from '../../../../components/shared/grid-box/market-box';
+import {MarketGridData} from "../../../../data-types/types";
 
 export class VirtualTradingPosition implements MarketGridData{
     id: string;
@@ -16,16 +16,19 @@ export class VirtualTradingPosition implements MarketGridData{
     costDiff: number;
     freeQuantity: number;
 
-    public static mapResponseToVirtualTradingPositions(response: VirtualTradingPositionResponse[], marketsManager: MarketsManager): VirtualTradingPosition[] {
+    public static mapResponseToVirtualTradingPositions(response: VirtualTradingPositionResponse[]): VirtualTradingPosition[] {
         let result: VirtualTradingPosition[] = [];
         for (let responseObject of response) {
-            let company = marketsManager.getCompanyBySymbol(`${responseObject.symbol}.${responseObject.market}`);
+            let company = null;
+            // let company = marketsManager.getCompanyBySymbol(`${responseObject.symbol}.${responseObject.market}`);
             result.push({
                 id: responseObject.id.toString(),
                 accountId: responseObject.trading_account_id,
-                market: marketsManager.getMarketByAbbreviation(responseObject.market),
+                market:null,
+                // market: marketsManager.getMarketByAbbreviation(responseObject.market),
                 symbol: `${responseObject.symbol}.${responseObject.market}`,
-                name: company.name,
+                // name: company.name,
+                name:null,
                 averagePrice: +responseObject.average_price,
                 quantity: +responseObject.quantity,
                 currentPrice: 0,

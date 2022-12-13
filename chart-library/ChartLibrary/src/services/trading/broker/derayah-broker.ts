@@ -82,18 +82,18 @@ export class DerayahBroker implements Broker {
     }
 
 
-    public openBuyScreen(company: Company, price?: number): void {
+    public openBuyScreen(market:Market ,company: Company, price?: number): void {
         this.openDerayahBuyAndSale(DerayahOrderType.Buy, company, price)
     }
 
-    public openSellScreen(company: Company, price?: number): void {
+    public openSellScreen(market:Market ,company: Company, price?: number): void {
         this.openDerayahBuyAndSale(DerayahOrderType.Sell, company, price)
     }
 
-    public openStopScreen(company: Company, price?: number): void {
+    public openStopScreen(market:Market ,company: Company, price?: number): void {
     }
 
-    public openSellAllSharesScreen(company: Company): void {
+    public openSellAllSharesScreen(market:Market ,company: Company): void {
         let derayahPosition = this.derayahPositionService.getPositions().find(position => position.symbol == company.symbol);
         if(derayahPosition) {
             let isNomuMarket:boolean = company.categoryId == 303;

@@ -1,10 +1,10 @@
 import {VirtualTradingPosition} from './virtual-trading-position';
-import {Market, MarketsManager} from '../../../loader/loader';
+import {Market} from '../../../loader';
 import {VirtualTradingOrderType} from './virtual-trading-order-type';
 import {VirtualTradingOrderStatus} from './virtual-trading-order-status';
 import {VirtualTradingOrderSide} from './virtual-trading-order-side';
 import {VirtualTradingOrderResponse} from '../../../loader/trading/virtual-trading';
-import {MarketGridData} from '../../../../components/shared/grid-box/market-box';
+import {MarketGridData} from "../../../../data-types/types";
 
 export class VirtualTradingOrder implements MarketGridData {
 
@@ -56,23 +56,27 @@ export class VirtualTradingOrder implements MarketGridData {
         );
     }
 
-    public static mapResponseToVirtualTradingOrders(response: VirtualTradingOrderResponse[], marketsManager:MarketsManager): VirtualTradingOrder[] {
+    public static mapResponseToVirtualTradingOrders(response: VirtualTradingOrderResponse[]): VirtualTradingOrder[] {
         let result: VirtualTradingOrder[] = [];
         for (let responseObject of response) {
-            let company = marketsManager.getCompanyBySymbol(`${responseObject.symbol}.${responseObject.market}`);
+            let company = null;
+            // let company = marketsManager.getCompanyBySymbol(`${responseObject.symbol}.${responseObject.market}`);
             result.push(
-                VirtualTradingOrder.mapResponseToVirtualTradingOrder(responseObject, company.name, marketsManager)
+                // VirtualTradingOrder.mapResponseToVirtualTradingOrder(responseObject, company.name)
+			  VirtualTradingOrder.mapResponseToVirtualTradingOrder(responseObject, null)
             );
         }
         return result;
     }
 
-    public static mapDetailsResponseToVirtualTradingOrder(response: VirtualTradingOrderResponse, marketsManager:MarketsManager): VirtualTradingOrder {
-        let company = marketsManager.getCompanyBySymbol(`${response.symbol}.${response.market}`);
-        return VirtualTradingOrder.mapResponseToVirtualTradingOrder(response, company.name, marketsManager);
+    public static mapDetailsResponseToVirtualTradingOrder(response: VirtualTradingOrderResponse): VirtualTradingOrder {
+        // let company = marketsManager.getCompanyBySymbol(`${response.symbol}.${response.market}`);
+      let company = null;
+        // return VirtualTradingOrder.mapResponseToVirtualTradingOrder(response, company.name);
+	  return VirtualTradingOrder.mapResponseToVirtualTradingOrder(response,null);
     }
 
-    public static mapResponseToVirtualTradingOrder(response: VirtualTradingOrderResponse, companyName: string, marketsManager:MarketsManager): VirtualTradingOrder {
+    public static mapResponseToVirtualTradingOrder(response: VirtualTradingOrderResponse, companyName: string): VirtualTradingOrder {
         return new VirtualTradingOrder(
             response.id.toString(),
             VirtualTradingOrderSide.fromValue(response.order_side),
@@ -80,7 +84,8 @@ export class VirtualTradingOrder implements MarketGridData {
             response.trading_account_id,
             `${response.symbol}.${response.market}`,
             companyName,
-            marketsManager.getMarketByAbbreviation(response.market),
+          null,
+            // marketsManager.getMarketByAbbreviation(response.market),
             +response.quantity,
             +response.price,
             +response.stop_price,

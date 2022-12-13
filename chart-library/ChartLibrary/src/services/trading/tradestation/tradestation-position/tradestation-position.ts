@@ -1,7 +1,6 @@
-import {MarketGridData} from '../../../../components/shared/grid-box/market-box';
-import {StringUtils} from '../../../../utils';
 import {TradestationPositionResponse} from '../../../loader/trading/tradestation/tradestation-loader.service';
 import {TradestationOrderSideWrapper} from '../tradestation-order';
+import {MarketGridData} from "../../../../data-types/types";
 
 export class TradestationPosition implements MarketGridData {
     id: string;

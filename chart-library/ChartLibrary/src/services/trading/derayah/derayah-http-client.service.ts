@@ -6,7 +6,7 @@ import {Observable, of} from 'rxjs';
 import {catchError, map, switchMap} from 'rxjs/operators';
 import {Tc} from '../../../utils';
 import {DerayahLogoutService} from './derayah-logout.service';
-import {LanguageService} from '../../state/language';
+import {LanguageService} from '../../language';
 import {DerayahAuthorizeResponse} from '../../loader/trading/derayah-loader/derayah-loader.service';
 
 @Injectable()
@@ -111,7 +111,8 @@ export class DerayahHttpClientService {
         };
 
         let data: string = `client_id=${this.derayahClientService.getClientId()}&client_secret=${this.derayahClientService.getClientSecretId()}&grant_type=refresh_token&refresh_token=${this.getRefreshToken()}`
-        return this.post(this.derayahClientService.getDerayahTokenUrl(),data,headers).pipe(map((response: DerayahAuthorizeResponse) => {
+	  return this.post(null,data,headers).pipe(map((response: DerayahAuthorizeResponse) => {
+        // return this.post(this.derayahClientService.getDerayahTokenUrl(),data,headers).pipe(map((response: DerayahAuthorizeResponse) => {
             if(response.access_token){
                 this.derayahStateService.setDerayahToken(response.access_token);
                 this.derayahStateService.setDerayahRefreshToken(response.refresh_token);

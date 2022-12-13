@@ -1,16 +1,15 @@
 import {AbstractStreamer} from './abstract-streamer';
 import {Subject} from 'rxjs';
 import {HeartbeatManager} from './heartbeat-manager';
-import {Market} from '../../loader/loader';
+import {Market} from '../../loader';
 import {HeartbeatMessage, MessageType} from '../shared';
 import {Tc} from '../../../utils';
 import {DebugModeService} from '../../debug-mode';
-import {AuthorizationService} from '../../auhtorization';
 
 export class TechnicalIndicatorStreamer extends AbstractStreamer {
     private technicalIndicatorStreamer: Subject<Object>;
 
-    constructor(heartbeatManager:HeartbeatManager, private streamerMarket:Market, private debugModeService:DebugModeService, private authorizationService: AuthorizationService) {
+    constructor(heartbeatManager:HeartbeatManager, private streamerMarket:Market, private debugModeService:DebugModeService) {
         super(heartbeatManager, streamerMarket.abbreviation);
 
         this.technicalIndicatorStreamer = new Subject<Object>();
@@ -31,7 +30,7 @@ export class TechnicalIndicatorStreamer extends AbstractStreamer {
     }
 
     public subscribeTechnicalIndicatorTopic(topic: string) {
-        if (!this.authorizationService.isSubscriber()) {return}
+        // if (!this.authorizationService.isSubscriber()) {return}
         this.subscribeTopic(topic);
     }
 
@@ -46,7 +45,7 @@ export class TechnicalIndicatorStreamer extends AbstractStreamer {
                 this.processTechnicalIndicatorMessage(message  as {[key: string]:string});
                 break;
             case MessageType.HEARTBEAT:
-                this.processHeartbeatMessage(message as HeartbeatMessage);
+                this.processHeartbeatMessage(message as unknown as HeartbeatMessage);
                 break;
             default:
                 Tc.error('unknown message type: ' + MessageType[messageType]);

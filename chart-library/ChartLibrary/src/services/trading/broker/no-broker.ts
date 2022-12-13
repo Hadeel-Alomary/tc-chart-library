@@ -33,19 +33,19 @@ export class NoBroker implements Broker {
 
     public setToolbarPosition(value: { top: number; left: number }): void {}
 
-    public openBuyScreen(company: Company, price?: number): void {
+    public openBuyScreen(market:Market ,company: Company, price?: number): void {
         Tc.error("should not be here")
     }
 
-    public openSellScreen(company: Company, price?: number): void {
+    public openSellScreen(market:Market ,company: Company, price?: number): void {
         Tc.error("should not be here")
     }
 
-    public openStopScreen(company: Company, price?: number): void {
+    public openStopScreen(market:Market ,company: Company, price?: number): void {
         Tc.error("should not be here")
     }
 
-    public openSellAllSharesScreen(company: Company): void {
+    public openSellAllSharesScreen(market:Market ,company: Company): void {
         Tc.error("should not be here");
     }
 

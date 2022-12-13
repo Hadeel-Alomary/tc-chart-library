@@ -8,11 +8,11 @@ import {DerayahPortfolio} from './derayah-order/index';
 
 import {DerayahResponse, DerayahService} from './derayah.service';
 
-import {Company, DerayahLoaderService, MarketsManager} from '../../loader/index';
+import {Company, DerayahLoaderService} from '../../loader/index';
 
 import {DerayahUtils, Tc} from '../../../utils/index';
 
-import {Quotes, QuoteService} from '../../data/quote/index';
+import {Quotes, QuoteService} from '../../quote/index';
 import {Subject} from 'rxjs/internal/Subject';
 import {DerayahAccountPositionInfoList, DerayahHttpResponse, DerayahPositionResponse} from '../../loader/trading/derayah-loader/derayah-loader.service';
 
@@ -30,7 +30,6 @@ export class DerayahPositionsService {
 
     constructor(private derayahService:DerayahService,
                 private derayahLoaderService:DerayahLoaderService,
-                private marketsManager:MarketsManager,
                 private quoteService:QuoteService){
 
         this.positionsStream = new BehaviorSubject(null);
@@ -206,10 +205,10 @@ export class DerayahPositionsService {
         if(result && result.length > 0) {
             result.forEach((item:DerayahPositionResponse) => {
                 let symbol:string = DerayahUtils.getSymbolWithMarketFromDerayah(item.exchangecode, item.symbol);
-                let company:Company = this.marketsManager.getCompanyBySymbol(symbol);
-                if(company){
-                    positions.push(DerayahPosition.mapResponseToDerayahPosition(item, company.name, symbol, portfolio));
-                }
+                // let company:Company = this.marketsManager.getCompanyBySymbol(symbol);
+                // if(company){
+                //     positions.push(DerayahPosition.mapResponseToDerayahPosition(item, company.name, symbol, portfolio));
+                // }
             });
         }
         return {result:positions};

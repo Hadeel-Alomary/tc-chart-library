@@ -3,17 +3,16 @@ import {TradestationService} from './tradestation.service';
 import {TradestationPosition} from './tradestation-position/tradestation-position';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {ChannelRequestType, SharedChannel} from '../../shared-channel';
-import {LanguageService} from '../../state/language';
+import {LanguageService} from '../../language';
 import {MarketUtils} from '../../../utils';
 import {TradestationConfirmationMessageChannelRequest, TradestationConfirmCaller, TradestationMessageChannelRequest} from '../../shared-channel/channel-request';
 import {TradestationOrder, TradestationOrderSideType, TradestationOrderSideWrapper, TradestationOrderType} from './tradestation-order';
 import {TradestationLoaderService, TradestationOrderConfirmationResponse, TradestationPositionResponse, TradestationPostOrderResponse} from '../../loader/trading/tradestation/tradestation-loader.service';
 import {map} from 'rxjs/operators';
 import {TradestationUtils} from '../../../utils/tradestation.utils';
-import {MarketsManager} from '../../loader/loader';
-import {TradestationClosePositionsType} from '../../../components/trading/tradestation/tradestation-positions/tradestation-close-positions';
 import {TradestationOrdersService} from './tradestation-orders-service';
 import {TradestationAccountsService} from './tradestation-accounts-service';
+import {TradestationClosePositionsType} from "../../../data-types/types";
 
 @Injectable()
 export class TradestationPositionsService {
@@ -23,7 +22,7 @@ export class TradestationPositionsService {
 
     private positionsStream: BehaviorSubject<TradestationPosition[]>;
 
-    constructor(private tradestationService: TradestationService, private tradestationLoaderService: TradestationLoaderService, private tradestationOrdersService: TradestationOrdersService, private tradestationAccountsService: TradestationAccountsService, private sharedChannel:SharedChannel, private languageService:LanguageService, private marketsManager: MarketsManager) {
+    constructor(private tradestationService: TradestationService, private tradestationLoaderService: TradestationLoaderService, private tradestationOrdersService: TradestationOrdersService, private tradestationAccountsService: TradestationAccountsService, private sharedChannel:SharedChannel, private languageService:LanguageService) {
         this.positionsStream = new BehaviorSubject([]);
 
         this.tradestationAccountsService.getAccountStream().subscribe(() => {
@@ -64,8 +63,8 @@ export class TradestationPositionsService {
         if (positions && positions.length > 0) {
             for (let item of positions) {
                 let symbol = TradestationUtils.getSymbolWithMarketFromTradestation(item.Symbol);
-                let company = this.marketsManager.getCompanyBySymbol(symbol);
-                tradestationPositions.push(TradestationPosition.mapResponseToTradestationPosition(item,company.name,company.symbol));
+                // let company = this.marketsManager.getCompanyBySymbol(symbol);
+                // tradestationPositions.push(TradestationPosition.mapResponseToTradestationPosition(item,company.name,company.symbol));
             }
         }
         return tradestationPositions;

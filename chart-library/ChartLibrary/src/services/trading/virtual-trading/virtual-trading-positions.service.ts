@@ -1,11 +1,10 @@
 import {BehaviorSubject} from 'rxjs';
 import {Injectable} from '@angular/core';
 import {VirtualTradingPosition} from './virtual-trading-models';
-import {Quotes, QuoteService} from '../../data/quote';
+import {Quotes, QuoteService} from '../../quote';
 import {VirtualTradingLoader} from '../../loader/trading/virtual-trading';
 import {VirtualTradingService} from './virtual-trading.service';
 import {Observable} from 'rxjs/internal/Observable';
-import {tap} from 'rxjs/operators';
 import {SharedChannel} from '../../shared-channel';
 import {Subject} from 'rxjs/internal/Subject';
 

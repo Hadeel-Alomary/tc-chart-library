@@ -6,12 +6,15 @@ import {VirtualTradingLoader} from '../../loader/trading/virtual-trading';
 import {VirtualTradingService} from './virtual-trading.service';
 import {TradingMessage} from '../../streaming/shared';
 import {Streamer} from '../../streaming/streamer';
-import {MessageBoxRequest} from '../../../components/modals/popup/message-box';
 import {ChannelRequestType, SharedChannel} from '../../shared-channel';
-import {Company, MarketsManager} from '../../loader/loader';
-import {LanguageService} from '../../state/language';
+import {Company} from '../../loader';
+import {LanguageService} from '../../language';
 import {TcTracker} from '../../../utils';
+import {MessageBoxRequest} from "../../../services/shared-channel/channel-request";
 
+
+class MarketsManager {
+}
 
 @Injectable()
 export class VirtualTradingOrdersService {
@@ -39,15 +42,15 @@ export class VirtualTradingOrdersService {
         this.streamer.getGeneralPurposeStreamer().getTradingStreamer().subscribe(
             (tradingMessage: TradingMessage) => {
                 let order: VirtualTradingOrder = this.ordersStream.value.find(order => order.id == tradingMessage.id.toString());
-                let company: Company = this.marketsManager.getCompanyBySymbol(tradingMessage.ticker);
-                let quantityString: string = this.getQuantityString(order.quantity);
-
-                let message = this.languageService.translate(`تم تنفيذ الأمر رقم: `) + `${tradingMessage.id}`;
-                let message2Arabic = `${order.orderSide.arabic} ${quantityString} من شركة ${company.arabic} بسعر ${tradingMessage.price} ${VirtualTradingCurrency.fromValue(this.account.currency).arabic}`;
-                let message2English = `${order.orderSide.english} ${quantityString} from ${company.english} on ${tradingMessage.price} ${VirtualTradingCurrency.fromValue(this.account.currency).english}`;
-                let message2 = this.languageService.arabic ? message2Arabic : message2English;
-                this.showMessageBox(message, message2);
-                this.virtualTradingService.refreshState();
+                // let company: Company = this.marketsManager.getCompanyBySymbol(tradingMessage.ticker);
+                // let quantityString: string = this.getQuantityString(order.quantity);
+                //
+                // let message = this.languageService.translate(`تم تنفيذ الأمر رقم: `) + `${tradingMessage.id}`;
+                // let message2Arabic = `${order.orderSide.arabic} ${quantityString} من شركة ${company.arabic} بسعر ${tradingMessage.price} ${VirtualTradingCurrency.fromValue(this.account.currency).arabic}`;
+                // let message2English = `${order.orderSide.english} ${quantityString} from ${company.english} on ${tradingMessage.price} ${VirtualTradingCurrency.fromValue(this.account.currency).english}`;
+                // let message2 = this.languageService.arabic ? message2Arabic : message2English;
+                // this.showMessageBox(message, message2);
+                // this.virtualTradingService.refreshState();
             }
         );
     }

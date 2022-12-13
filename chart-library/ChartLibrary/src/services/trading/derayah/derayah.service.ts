@@ -1,16 +1,14 @@
 import {throwError as observableThrowError, BehaviorSubject, Observable, Subject} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {Injectable, OnDestroy} from '@angular/core';
-import {DerayahStateService, CredentialsStateService} from '../../state/index';
+import {DerayahStateService} from '../../state/index';
 import {DerayahLoaderService} from '../../loader/index';
 import {DerayahPortfolio} from './derayah-order/index';
 import {Tc, TcTracker,} from '../../../utils/index';
 import {DerayahError, DerayahErrorService,} from './derayah-error.service';
-import {Loader} from '../../loader/loader/index';
 import {SharedChannel} from '../../shared-channel';
 import {DerayahAuthorizeResponse, DerayahHttpResponse, DerayahPurchasePowerResponse, PortfolioQueueResponse} from '../../loader/trading/derayah-loader/derayah-loader.service';
 import {DerayahLogoutService} from './derayah-logout.service';
-import {LoaderConfig, LoaderUrlType} from '../../loader/loader';
 import {DerayahStreamer} from '../../streaming/streamer/trading/derayah/derayah-streamer';
 import {DerayahPortfolioQueue} from './derayah-order/derayah-portfolio';
 
@@ -48,8 +46,6 @@ export class DerayahService implements OnDestroy {
     constructor(private derayahLoaderService: DerayahLoaderService,
                 private derayahStateService: DerayahStateService,
                 private derayahErrorService: DerayahErrorService,
-                private loader: Loader,
-                private credentialsStateService: CredentialsStateService,
                 private sharedChannel: SharedChannel,
                 private derayahLogoutService: DerayahLogoutService,
     ) {
@@ -68,17 +64,17 @@ export class DerayahService implements OnDestroy {
         this.derayahLogoutService.getLogoutStream()
             .subscribe(() => this.disconnectDerayahStreamer());
 
-        this.loader.getConfigStream()
-            .subscribe((loaderConfig: LoaderConfig) => {
-                if (loaderConfig) {
-                    this.onLoaderConfig(loaderConfig);
-                }
-            });
+        // this.loader.getConfigStream()
+        //     .subscribe((loaderConfig: LoaderConfig) => {
+        //         if (loaderConfig) {
+        //             this.onLoaderConfig(loaderConfig);
+        //         }
+        //     });
     }
 
-    private onLoaderConfig(loaderConfig: LoaderConfig): void {
-        this.derayahStreamerUrl = 'https://' + LoaderConfig.url(loaderConfig, LoaderUrlType.DerayahNotifications) + '/streamhub/';
-    }
+    // private onLoaderConfig(loaderConfig: LoaderConfig): void {
+    //     this.derayahStreamerUrl = 'https://' + LoaderConfig.url(loaderConfig, LoaderUrlType.DerayahNotifications) + '/streamhub/';
+    // }
 
     public getToken(): string {
         return this.derayahStateService.getDerayahToken();
@@ -270,12 +266,14 @@ export class DerayahService implements OnDestroy {
 
     private subscribeToDerayahTopics(derayahPortfolioQueueIds: string[]){
         for(let portfolioQueueId of derayahPortfolioQueueIds) {
-            this.derayahStreamer.subscribeDerayahTopic(portfolioQueueId, this.credentialsStateService.username);
+            // this.derayahStreamer.subscribeDerayahTopic(portfolioQueueId, this.credentialsStateService.username);
+		  this.derayahStreamer.subscribeDerayahTopic(portfolioQueueId, null);
         }
     }
 
     disconnectDerayahStreamer() {
-        this.derayahStreamer.unSubscribederayahTopics(this.getStoragePortfoliosQueueIds(), this.credentialsStateService.username);
+	  this.derayahStreamer.unSubscribederayahTopics(this.getStoragePortfoliosQueueIds(), null);
+        // this.derayahStreamer.unSubscribederayahTopics(this.getStoragePortfoliosQueueIds(), this.credentialsStateService.username);
         this.derayahStreamer.disconnect();
     }
 
@@ -298,7 +296,8 @@ export class DerayahService implements OnDestroy {
             this._currentTryToCreateQueueIndex++;
 
             window.setTimeout(() => {
-                this.derayahStreamer.unSubscribederayahTopics(this.getStoragePortfoliosQueueIds(), this.credentialsStateService.username);
+			  this.derayahStreamer.unSubscribederayahTopics(this.getStoragePortfoliosQueueIds(), null);
+                // this.derayahStreamer.unSubscribederayahTopics(this.getStoragePortfoliosQueueIds(), this.credentialsStateService.username);
                 let getQueueIdsFromStorage: boolean = false;
                 this.handleDerayahTopicSubscriptions(getQueueIdsFromStorage);
                 this._notFoundQueueInProgress = false;

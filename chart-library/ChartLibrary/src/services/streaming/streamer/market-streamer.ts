@@ -13,7 +13,6 @@ import {
 import {AbstractStreamer} from "./abstract-streamer";
 import {DebugModeService} from '../../debug-mode/index';
 import {RealTimeChartUpdaterMessage} from '../shared/message';
-import {AuthorizationService} from '../../auhtorization';
 
 export class MarketStreamer extends AbstractStreamer {
 
@@ -34,7 +33,7 @@ export class MarketStreamer extends AbstractStreamer {
 
     private market:Market;
 
-    constructor(heartbeatManager:HeartbeatManager, private streamerMarket:Market, private debugModeService:DebugModeService,private authorizationService:AuthorizationService){
+    constructor(heartbeatManager:HeartbeatManager, private streamerMarket:Market, private debugModeService:DebugModeService){
 
         super(heartbeatManager, streamerMarket.abbreviation);
 
@@ -94,7 +93,7 @@ export class MarketStreamer extends AbstractStreamer {
     }
 
     subscribeTimeAndSale(symbol:string) {
-        if (this.authorizationService.isVisitor()) {return}
+        // if (this.authorizationService.isVisitor()) {return}
         let topic:string = `TAS.${symbol}`;
         this.subscribeTopic(topic);
     }
@@ -113,22 +112,22 @@ export class MarketStreamer extends AbstractStreamer {
     }
 
     subscribeMarketDepthByOrder(symbol:string) {
-        if (this.authorizationService.isVisitor()) {return}
+        // if (this.authorizationService.isVisitor()) {return}
         this.subscribeTopic(`${this.marketDepthByOrderTopic}.${symbol}`);
     }
 
     subscribeMarketDepthByPrice(symbol:string) {
-        if (this.authorizationService.isVisitor()) {return}
+        // if (this.authorizationService.isVisitor()) {return}
         this.subscribeTopic(`${this.marketDepthByPriceTopic}.${symbol}`);
     }
 
     subscribeMarketAlerts() {
-        if (this.authorizationService.isVisitor()) {return}
+        // if (this.authorizationService.isVisitor()) {return}
         this.subscribeTopic(`MA.MA.${this.market.abbreviation}`);
     }
 
     subscribeBigTrade() {
-        if (this.authorizationService.isVisitor()) {return}
+        // if (this.authorizationService.isVisitor()) {return}
         this.subscribeTopic(`BT.BT.${this.market.abbreviation}`);
     }
 

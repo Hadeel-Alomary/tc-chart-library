@@ -1,7 +1,7 @@
-import {Watchlist, WatchlistService, WatchlistType} from '../settings/watchlist';
 import {Broker, BrokerType} from './broker/broker';
 import {ChannelRequestType, SharedChannel} from '../shared-channel';
 import {EnumUtils} from '../../utils/enum.utils';
+import {Watchlist, WatchlistService, WatchlistType} from "../../services";
 
 export class BrokerWatchlistManager {
 

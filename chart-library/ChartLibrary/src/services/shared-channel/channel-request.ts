@@ -130,6 +130,22 @@ export interface TradestationConfirmationMessageChannelRequest extends ChannelRe
     warningMessageLines? :string[]
 }
 
+export interface DerayahLoginChannelRequest extends ChannelRequest{
+  isReconnectMode: boolean;
+}
+
+export interface ConfirmationCaller {
+  onConfirmation(confirmed:boolean, param:unknown):void;
+}
+
+export interface ConfirmationRequest extends ChannelRequest {
+  caller: ConfirmationCaller,
+  messageLine: string,
+  messageLine2?:string,
+  messageLine3?:string,
+  param?: unknown
+}
+
 export interface TradestationConfirmCaller {
     onConfirmation(confirmed:boolean):void;
 }

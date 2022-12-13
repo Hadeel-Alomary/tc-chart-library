@@ -1,18 +1,16 @@
 import {Subject} from "rxjs";
 import {Injectable} from "@angular/core";
 import {TcTracker} from "../../../utils/index";
-import {Loader, StreamerLoader, Market, MarketsManager} from '../../loader/index';
+import {StreamerLoader, Market} from '../../loader/index';
 import {HeartbeatManager} from "./heartbeat-manager";
 import {SharedChannel, ChannelRequestType} from "../../shared-channel/index";
 import {QuoteMessage, TimeAndSaleMessage, MarketSummaryMessage, MarketDepthMessage, MarketAlertMessage} from "../shared/index";
-import {LogoutService} from "../../logout/logout.service";
 import {MarketStreamer} from './market-streamer';
 import {GeneralPurposeStreamer} from "./general-purpose-streamer.service";
 import {DebugModeService} from '../../debug-mode/index';
 import {ForceScreenReloadRequest} from '../../shared-channel/channel-request';
 import {TechnicalReportsStreamer} from './technical-reports-streamer.service';
 import {RealTimeChartUpdaterMessage} from '../shared/message';
-import {AuthorizationService} from '../../auhtorization';
 import {TechnicalIndicatorStreamer} from './technical-indicator-streamer';
 
 @Injectable()
@@ -24,29 +22,25 @@ export class Streamer {
     private technicalIndicatorStreamer: {[marketAbbreviation: string]: TechnicalIndicatorStreamer} = {};
 
 
-    constructor(private loader:Loader,
-                private streamerLoader:StreamerLoader,
+    constructor(private streamerLoader:StreamerLoader,
                 private sharedChannel:SharedChannel,
-                private logoutService:LogoutService,
-                private marketsManager:MarketsManager,
-                private debugModeService: DebugModeService,
-                private authorizationService:AuthorizationService) {
+                private debugModeService: DebugModeService) {
 
-        this.heartbeatManager = new HeartbeatManager(this, this.logoutService);
-        this.loader.getMarketStream().subscribe((market:Market) => {
-            this.marketStreamers[market.abbreviation] = new MarketStreamer(this.heartbeatManager, market, this.debugModeService, this.authorizationService);
-            this.technicalIndicatorStreamer['I_' + market.abbreviation] = new TechnicalIndicatorStreamer(this.heartbeatManager, market, this.debugModeService, this.authorizationService);
-        });
+        this.heartbeatManager = new HeartbeatManager(this);
+        // this.loader.getMarketStream().subscribe((market:Market) => {
+        //     this.marketStreamers[market.abbreviation] = new MarketStreamer(this.heartbeatManager, market, this.debugModeService, this.authorizationService);
+        //     this.technicalIndicatorStreamer['I_' + market.abbreviation] = new TechnicalIndicatorStreamer(this.heartbeatManager, market, this.debugModeService, this.authorizationService);
+        // });
 
         this.generalPurposeStreamer = new GeneralPurposeStreamer(this.heartbeatManager);
         this.technicalReportsStreamer = new TechnicalReportsStreamer(this.heartbeatManager);
-
-        this.loader.isLoadingDoneStream().subscribe(loadingDone => {
-            if(loadingDone) {
-                this.generalPurposeStreamer.initChannel(loader.getGeneralPurposeStreamerUrl(), true);
-                this.technicalReportsStreamer.initChannel(loader.getTechnicalReportsStreamerUrl(), false);
-            }
-        });
+        //
+        // this.loader.isLoadingDoneStream().subscribe(loadingDone => {
+        //     if(loadingDone) {
+        //         this.generalPurposeStreamer.initChannel(loader.getGeneralPurposeStreamerUrl(), true);
+        //         this.technicalReportsStreamer.initChannel(loader.getTechnicalReportsStreamerUrl(), false);
+        //     }
+        // });
     }
 
     onDestroy() {
@@ -91,33 +85,27 @@ export class Streamer {
         this.marketStreamers[market].unSubscribeQuotes(symbols);
     }
 
-    subscribeTimeAndSale(symbol:string){
-        let market:Market = this.marketsManager.getMarketBySymbol(symbol);
+    subscribeTimeAndSale(market:Market , symbol:string){
         this.marketStreamers[market.abbreviation].subscribeTimeAndSale(symbol);
     }
 
-    unSubscribeTimeAndSale(symbol:string){
-        let market:Market = this.marketsManager.getMarketBySymbol(symbol);
+    unSubscribeTimeAndSale(market:Market , symbol:string){
         this.marketStreamers[market.abbreviation].unSubscribeTimeAndSale(symbol);
     }
 
-    subscribeChartIntraday(symbol:string){
-        let market:Market = this.marketsManager.getMarketBySymbol(symbol);
+    subscribeChartIntraday(market:Market , symbol:string){
         this.marketStreamers[market.abbreviation].subscribeChartIntrday(symbol);
     }
 
-    unSubscribeChartIntraday(symbol:string) {
-        let market:Market = this.marketsManager.getMarketBySymbol(symbol);
+    unSubscribeChartIntraday(market:Market , symbol:string) {
         this.marketStreamers[market.abbreviation].unSubscribeChartIntrday(symbol);
     }
 
-    subscribeChartDaily(symbol:string){
-        let market:Market = this.marketsManager.getMarketBySymbol(symbol);
+    subscribeChartDaily(market:Market ,symbol:string){
         this.marketStreamers[market.abbreviation].subscribeChartDaily(symbol);
     }
 
-    unSubscribeChartDaily(symbol:string) {
-        let market:Market = this.marketsManager.getMarketBySymbol(symbol);
+    unSubscribeChartDaily(market:Market ,symbol:string) {
         this.marketStreamers[market.abbreviation].unSubscribeChartDaily(symbol);
     }
 
@@ -125,13 +113,11 @@ export class Streamer {
         this.marketStreamers[market].subscribeMarketSummary();
     }
 
-    subscribeMarketDepthByOrder(symbol:string) {
-        let market:Market = this.marketsManager.getMarketBySymbol(symbol);
+    subscribeMarketDepthByOrder(market:Market , symbol:string) {
         this.marketStreamers[market.abbreviation].subscribeMarketDepthByOrder(symbol);
     }
 
-    subscribeMarketDepthByPrice(symbol:string) {
-        let market:Market = this.marketsManager.getMarketBySymbol(symbol);
+    subscribeMarketDepthByPrice(market:Market , symbol:string) {
         this.marketStreamers[market.abbreviation].subscribeMarketDepthByPrice(symbol);
     }
 

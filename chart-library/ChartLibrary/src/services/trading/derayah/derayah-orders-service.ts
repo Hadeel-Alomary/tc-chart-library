@@ -12,7 +12,6 @@ import {
 
 import {
     DerayahLoaderService,
-    MarketsManager,
     Company
 } from '../../loader/index';
 
@@ -48,7 +47,7 @@ export class DerayahOrdersService {
 
     private ordersStream:BehaviorSubject<{[portfolio:string]:DerayahOrder[]}>;
 
-    constructor(private derayahLoaderService:DerayahLoaderService, private marketsManager:MarketsManager,
+    constructor(private derayahLoaderService:DerayahLoaderService,
                 private derayahService:DerayahService, private derayahPositionsService:DerayahPositionsService){
         this.ordersStream = new BehaviorSubject(null);
 
@@ -175,10 +174,11 @@ export class DerayahOrdersService {
         if(orders && orders.length > 0) {
             for (let item of orders) {
                 let symbol:string = DerayahUtils.getSymbolWithMarketFromDerayah(item.exchangeCode, item.symbol);
-                let company:Company = this.marketsManager.getCompanyBySymbol(symbol);
-                if (company) {
-                    derayahOrders.push(DerayahOrder.mapResponseToDerayahOrder(item, company.name, company.symbol, portfolio));
-                }
+                // let company:Company = this.marketsManager.getCompanyBySymbol(symbol);
+              let company = null;
+                // if (company) {
+                //     derayahOrders.push(DerayahOrder.mapResponseToDerayahOrder(item, company.name, company.symbol, portfolio));
+                // }
             }
         }
 

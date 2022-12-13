@@ -2,19 +2,18 @@ import {Injectable} from '@angular/core';
 import {throwError as observableThrowError, BehaviorSubject, Subject, Observable} from 'rxjs';
 import {catchError, map, switchMap} from 'rxjs/operators';
 import {HttpErrorResponse} from '@angular/common/http';
-import {SnbcapitalStateService, CredentialsStateService, LanguageService} from '../../state/index';
 import {SnbcapitalPortfolio, SnbcapitalCurrencyInfo} from './snbcapital-order/index'
 import {Tc, TcTracker} from '../../../utils/index';
 import {SnbcapitalErrorService, SnbcapitalError, SnbcapitalErrorHttpResponse} from './snbcapital-error.service';
-import {Loader} from '../../loader/loader/index';
 import {ChannelRequestType, SharedChannel} from '../../shared-channel';
 import {SnbcapitalCashAccountResponse, SnbcapitalCurrency, SnbcapitalPortfoliosResponse, SnbcapitalSecuritySubAccountResponse, SnbcapitalRegisterApiResponse, SnbcapitalPurchasePowerResponse, SnbcapitalPositionResponse, SnbcapitalIntegrationTcLayerResponse, SnbcapitalLoginResponse, SnbcapitalWrongVerifyOtpResponse, SnbcapitalOrderResponse, SnbcapitalSuccessVerifyOtpResponse, SnbcapitalPreConfirmResponse, SnbcapitalUpdatePreConfirmOrderResponse, SnbcapitalUpdatedOrderResponse, SnbcapitalQuantityCalculationResponse, SnbcapitalLoaderService} from '../../loader/trading/snbcapital-loader/snbcapital-loader.service';
 import {SnbcapitalSecurityAccountStatus} from './snbcapital-security-account-status';
 import {RSA} from '../../../utils/RSA';
 import {SnbcapitalHttpClientService} from './snbcapital-http-client-service';
 import {SnbcapitalPurchasePowerStreamerMessage, SnbcapitalStreamer} from '../../streaming/streamer/trading/snbcapital/snbcapital-streamer';
-import {ConfirmationCaller, ConfirmationRequest} from '../../../components/modals/popup';
 import {TimeSpan} from '../../../stock-chart/StockChartX/Data/TimeFrame';
+import {ConfirmationCaller, ConfirmationRequest} from "../../../services/shared-channel/channel-request";
+import {LanguageService, SnbcapitalStateService} from "../../../services";
 
 const find = require("lodash/find");
 
@@ -63,8 +62,6 @@ export class SnbcapitalService {
                 private snbcapitalStateService:SnbcapitalStateService,
                 private snbcapitalErrorService:SnbcapitalErrorService,
                 private snbcapitalHttpClientService: SnbcapitalHttpClientService,
-                private loader:Loader,
-                private credentialsStateService:CredentialsStateService,
                 private sharedChannel: SharedChannel,
                 private languageService: LanguageService){
 
@@ -87,12 +84,12 @@ export class SnbcapitalService {
         this.snbcapitalHttpClientService.getSessionExpiredStream()
             .subscribe(()=> {
                 this.snbcapitalStreamer.disconnect();
-                if(this.loader.getSnbcapitalLoginInfo().subscribed){
-                    //Any time Snbcapital Subscriber session is expired => reload app
-                    let sessionExpiredMessage: string = this.snbcapitalErrorService.getSessionExpiredError().message;
-                    this.snbcapitalStateService.setSessionExpiredMessage(sessionExpiredMessage);
-                    this.sharedChannel.request({type: ChannelRequestType.Reload});
-                }
+                // if(this.loader.getSnbcapitalLoginInfo().subscribed){
+                //     //Any time Snbcapital Subscriber session is expired => reload app
+                //     let sessionExpiredMessage: string = this.snbcapitalErrorService.getSessionExpiredError().message;
+                //     this.snbcapitalStateService.setSessionExpiredMessage(sessionExpiredMessage);
+                //     this.sharedChannel.request({type: ChannelRequestType.Reload});
+                // }
             });
 
     }
@@ -106,7 +103,7 @@ export class SnbcapitalService {
     }
 
     public appLogout(){
-        this.credentialsStateService.logout();
+        // this.credentialsStateService.logout();
         this.sharedChannel.request({type: ChannelRequestType.Reload});
     }
 
@@ -272,7 +269,8 @@ export class SnbcapitalService {
     }
 
     private getSnbcapitalStreamerUrl() {
-        return 'https://' + this.loader.getSnbcapitalLoginInfo().domainStreamer + '/streamhub/';
+        return '';
+        // return 'https://' + this.loader.getSnbcapitalLoginInfo().domainStreamer + '/streamhub/';
     }
 
     private onSuccessLogin(): void {

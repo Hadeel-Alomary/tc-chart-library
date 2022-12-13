@@ -8,9 +8,9 @@ import {SnbcapitalPortfolio} from './snbcapital-order/index';
 
 import {SnbcapitalService} from './snbcapital.service';
 
-import {Company, MarketsManager, SnbcapitalPositionResponse} from '../../loader/index';
+import {Company, SnbcapitalPositionResponse} from '../../loader/index';
 
-import {Quotes, QuoteService} from '../../data/quote/index';
+import {Quotes, QuoteService} from '../../quote/index';
 import {Subject} from 'rxjs/internal/Subject';
 import {SnbcapitalErrorHttpResponse, SnbcapitalErrorService} from './snbcapital-error.service';
 import {SnbcapitalLoaderService} from '../../loader/trading/snbcapital-loader/snbcapital-loader.service';
@@ -28,7 +28,6 @@ export class SnbcapitalPositionsService implements OnDestroy{
 
     constructor(private snbcapitalService:SnbcapitalService,
                 private snbcapitalLoaderService:SnbcapitalLoaderService,
-                private marketsManager:MarketsManager,
                 private quoteService:QuoteService,
                 private snbcapitalErrorService:SnbcapitalErrorService){
 
@@ -214,10 +213,10 @@ export class SnbcapitalPositionsService implements OnDestroy{
         for(let holding of response.holdings){
             for(let positionResponse of holding.positions){
                 let symbol: string = positionResponse.strum.secCode + '.TAD';
-                let company:Company = this.marketsManager.getCompanyBySymbol(symbol);
-                if(company){
-                    positions.push(SnbcapitalPosition.mapResponseToSnbcapitalPosition(positionResponse, company.name ,company.symbol));
-                }
+                // let company:Company = this.marketsManager.getCompanyBySymbol(symbol);
+                // if(company){
+                //     positions.push(SnbcapitalPosition.mapResponseToSnbcapitalPosition(positionResponse, company.name ,company.symbol));
+                // }
             }
         }
         return positions;

@@ -4,8 +4,6 @@ import {map} from 'rxjs/operators';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {SnbcapitalErrorService} from './snbcapital-error.service';
 import {SnbcapitalStateService} from '../../state/trading/snbcapital';
-import {Loader, LoaderConfig} from '../../loader/loader';
-import {Config} from '../../../config/config';
 
 @Injectable()
 export class SnbcapitalHttpClientService implements OnDestroy {
@@ -17,17 +15,17 @@ export class SnbcapitalHttpClientService implements OnDestroy {
     private timerId: number;
     private keepAliveLastCallSeconds: number = 0;
 
-    constructor(private http: HttpClient, private snbcapitalStateService: SnbcapitalStateService, private snbcapitalErrorService: SnbcapitalErrorService, private loader: Loader) {
+    constructor(private http: HttpClient, private snbcapitalStateService: SnbcapitalStateService, private snbcapitalErrorService: SnbcapitalErrorService) {
 
         this.fillBasicUrl();
         this.snbcapitalSessionExpiredStream = new Subject();
 
-        this.loader.getConfigStream()
-            .subscribe((loaderConfig: LoaderConfig) => {
-                if(loaderConfig){
-                    this.initializeKeepAliveTimer();
-                }
-            });
+        // this.loader.getConfigStream()
+        //     .subscribe((loaderConfig: LoaderConfig) => {
+        //         if(loaderConfig){
+        //             this.initializeKeepAliveTimer();
+        //         }
+        //     });
     }
 
     public getSessionExpiredStream() {
@@ -37,9 +35,9 @@ export class SnbcapitalHttpClientService implements OnDestroy {
     private fillBasicUrl(){
         //Todo return back this to get from loader.
         this.basicUrl = '/IntegrationLayerTC/tcbridge';
-        if(!Config.isProd()) {
-            this.basicUrl = `https://tickerchart-web/IntegrationLayerTC/tcbridge`;
-        }
+        // if(!Config.isProd()) {
+        //     this.basicUrl = `https://tickerchart-web/IntegrationLayerTC/tcbridge`;
+        // }
     }
 
     private getHeaders() {

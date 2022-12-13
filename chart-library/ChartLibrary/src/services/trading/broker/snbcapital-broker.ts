@@ -83,18 +83,18 @@ export class SnbcapitalBroker implements Broker {
     }
 
 
-    public openBuyScreen(company: Company, price?: number): void {
+    public openBuyScreen(market:Market ,company: Company, price?: number): void {
         this.openSnbcapitalBuyAndSale(SnbcapitalOrderType.Buy, company, price)
     }
 
-    public openSellScreen(company: Company, price?: number): void {
+    public openSellScreen(market:Market ,company: Company, price?: number): void {
         this.openSnbcapitalBuyAndSale(SnbcapitalOrderType.Sell, company, price)
     }
 
-    public openStopScreen(company: Company, price?: number): void {
+    public openStopScreen(market:Market ,company: Company, price?: number): void {
     }
 
-    public openSellAllSharesScreen(company: Company): void {
+    public openSellAllSharesScreen(market:Market ,company: Company): void {
         let filteredPosition = this.snbcapitalPositionService.getPositions().find(position => position.symbol == company.symbol);;
         let openRequest:SnbcapitalBuySellChannelRequest = {type: ChannelRequestType.SnbcapitalBuySell, order: SnbcapitalOrder.fromPosition(filteredPosition, company.name)};
 
