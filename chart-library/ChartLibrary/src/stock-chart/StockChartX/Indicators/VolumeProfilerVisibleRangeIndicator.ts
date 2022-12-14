@@ -1,8 +1,8 @@
 import {VolumeProfilerBaseIndicator} from './VolumeProfilerBaseIndicator';
 import {Interval} from '../../../services/loader';
-import {VolumeProfilerSettings} from '../../../services/data/volume-profiler/volume-profiler.service';
+import {VolumeProfilerSettings} from '../../../services/volume-profiler/volume-profiler.service';
 import {ChartAccessorService} from '../../../services/chart';
-import {VolumeProfilerRequest} from '../../../services/data/volume-profiler/volume-profiler-request-builder';
+import {VolumeProfilerRequest} from '../../../services/volume-profiler/volume-profiler-request-builder';
 import {ITAIndicatorConfig} from './TAIndicator';
 import {VolumeProfilerVisibleRangePlot} from '../Plots/VolumeProfilerVisibleRangePlot';
 import {Gesture, WindowEvent} from '../../StockChartX/Gestures/Gesture';

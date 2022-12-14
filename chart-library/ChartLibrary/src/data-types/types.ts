@@ -1,3 +1,4 @@
+import {Company} from "../services";
 
 export interface MarketAlertsConfig {
   [key:string]: {
@@ -6,7 +7,6 @@ export interface MarketAlertsConfig {
 	arabic: string
   }
 }
-
 
 export interface MarketAlertConfig {
   key:string,
@@ -24,7 +24,6 @@ export interface MarketGridData {
   symbol:string
 }
 
-import {Company} from '../../loader/loader';
 
 export interface CommunityIdea {
   name: string,

@@ -91,8 +91,10 @@ export class CrossHairImplementation extends ChartComponent implements CrossHair
                 let isSymbolTradable = ChartAccessorService.instance.getTradingService().isSymbolTradableByBroker(this.chart.instrument.symbol);
                 let isStopSupported = ChartAccessorService.instance.getTradingService().isStopOrderSupportedByBroker();
                 let isViewInMainPanel = this._view.isInMainPanel();
-                let market = ChartAccessorService.instance.getMarketBySymbol(this.chart.instrument.symbol);
-                let priceStep = ChartAccessorService.instance.getMarketsTickSizeService().getTickSize(market.abbreviation, this._currentPositionPrice);
+                let market = null;
+			    let priceStep = null;
+                // let market = ChartAccessorService.instance.getMarketBySymbol(this.chart.instrument.symbol);
+                // let priceStep = ChartAccessorService.instance.getMarketsTickSizeService().getTickSize(market.abbreviation, this._currentPositionPrice);
                 let tradingPrice = MathUtils.roundToNearestStep(this._currentPositionPrice, priceStep);
                 if(isSymbolTradable && isViewInMainPanel) {
                     this._chartSideContextMenu.showTradingOptions( this._currentPositionPrice , tradingPrice);

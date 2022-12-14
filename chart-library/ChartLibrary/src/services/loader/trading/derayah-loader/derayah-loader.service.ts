@@ -17,15 +17,18 @@ export class DerayahLoaderService {
     }
 
     private getDerayahAuthUrl(): string {
-        return this.derayahClientService.getDerayahAuthUrl();
+        // return this.derayahClientService.getDerayahAuthUrl();
+      return null;
      }
 
     protected getDerayahOauthUrl(): string {
-        return this.derayahClientService.getDerayahOauthUrl();
+        // return this.derayahClientService.getDerayahOauthUrl();
+	  return null;
     }
 
     private getDerayahTokenUrl(): string {
-        return this.derayahClientService.getDerayahTokenUrl();
+        // return this.derayahClientService.getDerayahTokenUrl();
+	  return null;
     }
 
     /* verify methods */
@@ -75,7 +78,8 @@ export class DerayahLoaderService {
     public callDerayahIntegrationLink(portfolioNum: number) {
         let userName: string =null;
         let version: string =null;
-        let url = TcUrlUtils.url(this.derayahClientService.getDerayahIntegrationLink() + `?version=web_${version}`);
+        // let url = TcUrlUtils.url(this.derayahClientService.getDerayahIntegrationLink() + `?version=web_${version}`);
+      let url = null;
         return this.http.post(url, {user_name: userName, p1: portfolioNum});
     }
 

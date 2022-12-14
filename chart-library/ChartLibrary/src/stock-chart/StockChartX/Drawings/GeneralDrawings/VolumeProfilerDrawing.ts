@@ -3,7 +3,7 @@ import {Geometry} from '../../Graphics/Geometry';
 import {IPoint} from '../../Graphics/ChartPoint';
 import {PanGesture} from '../../Gestures/PanGesture';
 import {GestureState, WindowEvent} from '../../Gestures/Gesture';
-import {VolumeProfilerData, VolumeProfilerSettingsRowType} from '../../../../services/data/volume-profiler/volume-profiler.service';
+import {VolumeProfilerData, VolumeProfilerSettingsRowType} from '../../../../services/volume-profiler/volume-profiler.service';
 import {Interval} from '../../../../services/loader';
 import {ChartAccessorService} from '../../../../services/chart';
 import {Subscription} from 'rxjs/internal/Subscription';

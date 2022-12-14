@@ -254,8 +254,9 @@ export class HorizontalLineDrawing extends AlertableDrawing<LineWithTextDrawingT
         let firstPoint = this.chartPoints[0];
         let interval = Interval.fromChartInterval(this.chart.timeInterval);
         let symbol = this.chart.instrument.symbol;
-        let market = ChartAccessorService.instance.getMarketBySymbol(symbol);
-        let nextCandleDate = market.findProjectedFutureDate(firstPoint.date, 1, interval);
+        // let market = ChartAccessorService.instance.getMarketBySymbol(symbol);
+        // let nextCandleDate = market.findProjectedFutureDate(firstPoint.date, 1, interval);
+	  let nextCandleDate = null;
         return new ChartPoint({
             date: nextCandleDate,
             value: firstPoint.value

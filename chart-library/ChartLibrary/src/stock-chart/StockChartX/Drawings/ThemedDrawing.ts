@@ -1,6 +1,5 @@
 import {Drawing} from './Drawing';
 import {BorderedTextDrawingTheme, DrawingTheme, FillThemeElement, LineThemeElement, TextThemeElement} from './DrawingThemeTypes';
-import {Line} from 'tslint/lib/verify/lines';
 
 export abstract class ThemedDrawing<T extends DrawingTheme> extends Drawing {
 

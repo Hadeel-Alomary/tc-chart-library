@@ -26,8 +26,7 @@ import {ChartPanel} from '../ChartPanels/ChartPanel';
 import {ICloneable} from '../Data/ICloneable';
 import {ClassRegistrar, IConstructor} from '../Utils/ClassRegistrar';
 import {BrowserUtils, StringUtils, Tc} from '../../../utils';
-import {ChannelRequestType, ShowDrawingSettingsDialogRequest} from '../../../services/shared-channel/channel-request';
-import {ConfirmationCaller, ConfirmationRequest} from '../../../components/modals/popup';
+import {ChannelRequestType, ConfirmationCaller, ConfirmationRequest, ShowDrawingSettingsDialogRequest} from '../../../services/shared-channel/channel-request';
 import {DrawingTheme, LevelThemeElement, LineThemeElement} from './DrawingThemeTypes';
 import {Theme, ThemeUtils} from '../Theme';
 import {DrawingMarkers} from './DrawingMarkers';
@@ -427,14 +426,14 @@ export abstract class Drawing extends ChartPanelObject implements ICloneable<Dra
     }
 
     private _onDeleteDrawing() {
-        if(this.canAddAlerts() && ChartAccessorService.getAlertService().getTrendLineAlertByDrawingId(this.id)) {
+        if(this.canAddAlerts() && ChartAccessorService.instance.getAlertService().getTrendLineAlertByDrawingId(this.id)) {
             let openRequest: ConfirmationRequest =  {
                 type: ChannelRequestType.Confirmation,
-                messageLine: ChartAccessorService.translate('حذف الرسم سيؤدي إلى حذف التنبيه المرتبط به'),
-                messageLine2: ChartAccessorService.translate('هل أنت متأكد من الحذف؟'),
+                messageLine: ChartAccessorService.instance.translate('حذف الرسم سيؤدي إلى حذف التنبيه المرتبط به'),
+                messageLine2: ChartAccessorService.instance.translate('هل أنت متأكد من الحذف؟'),
                 caller: this
             };
-            ChartAccessorService.sendSharedChannelRequest(openRequest);
+            ChartAccessorService.instance.sendSharedChannelRequest(openRequest);
         } else {
             this.chartPanel.deleteDrawings(this);
         }

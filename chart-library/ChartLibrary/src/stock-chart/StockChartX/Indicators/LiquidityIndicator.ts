@@ -14,8 +14,8 @@ import {Field} from '../../TASdk/Field';
 import {ChartAccessorService} from '../../../services/chart';
 import {Interval, IntervalType} from '../../../services/loader';
 import {Subscription} from 'rxjs/internal/Subscription';
-import {LiquidityPoint} from '../../../services/data/liquidity';
-import {LiquidityHistoryLoadingState} from '../../../services/data/liquidity/liquidity.service';
+import {LiquidityPoint} from '../../../services/liquidity';
+import {LiquidityHistoryLoadingState} from '../../../services/liquidity/liquidity.service';
 import {DataSeries, DataSeriesSuffix} from '../../StockChartX/Data/DataSeries';
 import {IntlNumberFormat} from '../..';
 
@@ -119,7 +119,7 @@ export class LiquidityIndicator extends TAIndicator {
             switch(ChartAccessorService.instance.getSymbolLiquidityHistoryLoadState(this._activeSymbol, this._activeInterval)){
                 case LiquidityHistoryLoadingState.NOT_LOADED:
                     // MA history is not loaded, so request to load it
-                    ChartAccessorService.instance.requestToLoadSymbolLiquidityHistory(this._activeSymbol, this._activeInterval);
+                    // ChartAccessorService.instance.requestToLoadSymbolLiquidityHistory(this._activeSymbol, this._activeInterval);
                     break;
                 case LiquidityHistoryLoadingState.REQUESTED:
                     // MA do nothing, as we are waiting for history to finish loading and be notified by LiquidityUpdateStream

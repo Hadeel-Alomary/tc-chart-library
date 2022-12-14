@@ -57,9 +57,10 @@ export {
   VirtualTradingOrderActionResponse,
   VirtualTradingTransactionResponse,
   TradestationLoaderService,
-  LoaderUrlType , LoaderConfig , MarketAlertsConfig,
+  LoaderUrlType , LoaderConfig ,
   AnalysisCenterLoaderService,
-  TechnicalScopeLoader
+  TechnicalScopeLoader,
+  WatchlistLoader
 } from './loader/index';
 
 export {MarketsTickSizeService , MarketTick} from './markets-tick-size/index';

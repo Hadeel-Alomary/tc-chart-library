@@ -32,11 +32,14 @@ import {ChannelRequestType, ChartAccessorService, ChartAlert, ViewLoaderType} fr
 import {IndicatorField, IndicatorParam, IndicatorPlotTypes} from './IndicatorConst';
 import {BrowserUtils} from '../../../utils';
 import {IndicatorHelper} from './IndicatorHelper';
-import {ConfirmationCaller, ConfirmationRequest} from '../../../components/modals/popup';
 import {TAIndicatorParameters} from './TAIndicatorParameters';
 import {LineParameter} from './IndicatorsDefaultSettings';
 import {Recordset} from '../..';
-import {ShowIndicatorSettingsDialogRequest} from '../../../services/shared-channel/channel-request';
+import {
+  ConfirmationCaller,
+  ConfirmationRequest,
+  ShowIndicatorSettingsDialogRequest
+} from '../../../services/shared-channel/channel-request';
 import {
     ColumnPlotTheme,
     LabelConnectedPlotTheme,
@@ -46,7 +49,6 @@ import {
     PointPlotTheme,
     VolumeProfilerPlotTheme
 } from '../Theme';
-import {Config} from '../../../config/config';
 import {ThemeType} from '../ThemeType';
 import {MathUtils} from '../../../utils/math.utils';
 
@@ -1201,10 +1203,10 @@ export abstract class Indicator implements ConfirmationCaller{
     /* Gestures methods */
 
     protected _initGestures() {
-        if(Config.isElementBuild()) {
-            this._gestures = new GestureArray([]); // no indicator gesture in viewer
-            return;
-        }
+        // if(Config.isElementBuild()) {
+        //     this._gestures = new GestureArray([]); // no indicator gesture in viewer
+        //     return;
+        // }
         this._gestures = new GestureArray([
             new DoubleClickGesture({
                 handler: this._handleDoubleClick,

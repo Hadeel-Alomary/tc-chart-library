@@ -102,7 +102,8 @@ export abstract class AlertableDrawing<T extends DrawingTheme> extends ThemedDra
     createTrendLineAlert(): TrendLineAlert {
         let drawingId: string = this.id;
         let symbol = this.chart.instrument.symbol;
-        let company = ChartAccessorService.instance.getCompanyBySymbol(symbol);
+        let company = null;
+        // let company = ChartAccessorService.instance.getCompanyBySymbol(symbol);
         let interval = Interval.fromChartInterval(this.chart.timeInterval);
 
         return TrendLineAlert.createNewAlert(interval.type, company, this.getTrendLineAlertDefinition(interval),
@@ -119,9 +120,12 @@ export abstract class AlertableDrawing<T extends DrawingTheme> extends ThemedDra
         let secondChartPoint = this.getAlertSecondChartPoint();
 
         let symbol = this.chart.instrument.symbol;
-        let market = ChartAccessorService.instance.getMarketBySymbol(symbol);
-        let date1 = IntervalUtils.getGroupingTime(market.abbreviation, interval, moment(firstChartPoint.date).format('YYYY-MM-DD HH:mm:ss'));
-        let date2 = IntervalUtils.getGroupingTime(market.abbreviation, interval, moment(secondChartPoint.date).format('YYYY-MM-DD HH:mm:ss'));
+	    let market = null;
+        // let market = ChartAccessorService.instance.getMarketBySymbol(symbol);
+	    let date1 = null;
+	    let date2 = null;
+        // let date1 = IntervalUtils.getGroupingTime(market.abbreviation, interval, moment(firstChartPoint.date).format('YYYY-MM-DD HH:mm:ss'));
+        // let date2 = IntervalUtils.getGroupingTime(market.abbreviation, interval, moment(secondChartPoint.date).format('YYYY-MM-DD HH:mm:ss'));
         let price1 = MathUtils.roundAccordingMarket(firstChartPoint.value, this.chart.instrument.symbol);
         let price2 = MathUtils.roundAccordingMarket(secondChartPoint.value, this.chart.instrument.symbol);
         let logarithmic = this.chartPanel.getAxisScale() == AxisScaleType.Logarithmic;

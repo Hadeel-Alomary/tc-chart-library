@@ -1,7 +1,7 @@
 import {ITAIndicatorConfig, TAIndicator} from './TAIndicator';
 import {ChartAccessorService, Interval, IntervalType} from '../../../services/index';
-import {VolumeProfilerRequest} from '../../../services/data/volume-profiler/volume-profiler-request-builder';
-import {VolumeProfilerData, VolumeProfilerSettings} from '../../../services/data/volume-profiler/volume-profiler.service';
+import {VolumeProfilerRequest} from '../../../services/volume-profiler/volume-profiler-request-builder';
+import {VolumeProfilerData, VolumeProfilerSettings} from '../../../services/volume-profiler/volume-profiler.service';
 import {IndicatorParam} from './IndicatorConst';
 import {Subscription} from 'rxjs/internal/Subscription';
 import {GestureArray} from '../Gestures/GestureArray';
@@ -14,7 +14,6 @@ import {DataSeries, DataSeriesSuffix} from '../../StockChartX/Data/DataSeries';
 import {IPoint} from '../../StockChartX/Graphics/ChartPoint';
 import {ContextMenuGesture} from '../../StockChartX/Gestures/ContextMenuGesture';
 import {DoubleClickGesture} from '../../StockChartX/Gestures/DoubleClickGesture';
-import {Config} from '../../../config/config';
 
 const isEqual = require('lodash/isEqual');
 
@@ -128,10 +127,10 @@ export abstract class VolumeProfilerBaseIndicator extends TAIndicator {
     }
 
     protected _initGestures() {
-        if(Config.isElementBuild()) {
-            this._gestures = new GestureArray([]); // no indicator gesture in viewer
-            return;
-        }
+        // if(Config.isElementBuild()) {
+        //     this._gestures = new GestureArray([]); // no indicator gesture in viewer
+        //     return;
+        // }
         this._gestures = new GestureArray([
             new MouseHoverGesture({
                 handler: this._handleMoveHoverGesture,

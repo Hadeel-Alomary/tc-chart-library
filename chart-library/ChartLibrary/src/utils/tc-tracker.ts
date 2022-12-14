@@ -2,16 +2,9 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {EnumUtils} from './enum.utils';
 import {TcUrlUtils} from './tc.url.utils';
-import {PriceStyleType} from '../components/chart/price-style/price-style-type';
-import {TechnicalIndicatorType} from '../components/chart/technical-indicators/technical-indicator-type';
-import {GridBoxType} from "../components/shared/grid-box/grid-box-type";
-import {Config} from '../config/config';
-import {CredentialsStateService} from "../services/state/credentials/credentials-state.service";
-import {ForceLogoutType} from "../services/logout/force-logout-type";
-import {FontSize} from "../services/state/misc/misc-state.service";
 import {IntervalType} from '../services/loader/price-loader/interval-type';
 import {PeriodType} from '../services/loader/price-loader/period-type';
-import {BrowserUtils} from './browser.utils';
+import {TechnicalIndicatorType} from "../components";
 
 @Injectable()
 export class TcTracker  {
@@ -20,7 +13,7 @@ export class TcTracker  {
 
     private static instance:TcTracker;
 
-    constructor(private http:HttpClient, private credentialsService:CredentialsStateService) {
+    constructor(private http:HttpClient) {
         window.setInterval(() => this.sendToServer(), 30 * 1000);
         TcTracker.instance = this;
         window.setInterval(() => TcTracker.trackConnected(), 5 * 60 * 1000);
@@ -47,13 +40,13 @@ export class TcTracker  {
         TcTracker.instance.track('logout');
     }
 
-    static trackForceLogout(type:ForceLogoutType) {
-        TcTracker.instance.track('logout', 'error', EnumUtils.enumValueToString(ForceLogoutType, type).toLowerCase());
-    }
+    // static trackForceLogout(type:ForceLogoutType) {
+    //     TcTracker.instance.track('logout', 'error', EnumUtils.enumValueToString(ForceLogoutType, type).toLowerCase());
+    // }
 
-    static trackFontSize(fontSize:FontSize) {
-        TcTracker.instance.track('font', EnumUtils.enumValueToString(FontSize, fontSize).toLowerCase());
-    }
+    // static trackFontSize(fontSize:FontSize) {
+    //     TcTracker.instance.track('font', EnumUtils.enumValueToString(FontSize, fontSize).toLowerCase());
+    // }
 
     static trackCampaignId(campaignId: string, trackingId:string) {
         TcTracker.instance.track('cid', campaignId);
@@ -118,9 +111,9 @@ export class TcTracker  {
     static trackChartScreenshot() {
         TcTracker.instance.track('chart', 'screenshot');
     }
-    static trackChartPriceStyle(type:PriceStyleType) {
-        TcTracker.instance.track('chart', 'pricestyle', EnumUtils.enumValueToString(PriceStyleType, type).toLowerCase());
-    }
+    // static trackChartPriceStyle(type:PriceStyleType) {
+    //     TcTracker.instance.track('chart', 'pricestyle', EnumUtils.enumValueToString(PriceStyleType, type).toLowerCase());
+    // }
     static trackChartPeriod(type:PeriodType){
         TcTracker.instance.track('chart', 'period', EnumUtils.enumValueToString(PeriodType, type).toLowerCase());
     }
@@ -156,12 +149,12 @@ export class TcTracker  {
     }
 
     /* track open screen */
-    static trackAddBox(type:GridBoxType) {
-        TcTracker.instance.track('grid', 'add-box', EnumUtils.enumValueToString(GridBoxType, type).toLowerCase());
-    }
-    static trackCloseBox(type:GridBoxType) {
-        TcTracker.instance.track('grid', 'close-box', EnumUtils.enumValueToString(GridBoxType, type).toLowerCase());
-    }
+    // static trackAddBox(type:GridBoxType) {
+    //     TcTracker.instance.track('grid', 'add-box', EnumUtils.enumValueToString(GridBoxType, type).toLowerCase());
+    // }
+    // static trackCloseBox(type:GridBoxType) {
+    //     TcTracker.instance.track('grid', 'close-box', EnumUtils.enumValueToString(GridBoxType, type).toLowerCase());
+    // }
     static trackOpenWatchlistProperties() {
         TcTracker.instance.track('watchlist', 'properties');
     }
@@ -499,17 +492,17 @@ export class TcTracker  {
     }
 
     private sendToServer() {
-        if(this.tracks.length) {
-            let username:string = this.credentialsService.trackingId;
-            let version:string = Config.getVersion();
-            if(Config.isProd()) {
-                let loggingDomain = BrowserUtils.isMobile() ? 'https://netmobile-log.tickerchart.net' : 'https://netdesktop-log.tickerchart.net';
-                this.http.post(TcUrlUtils.url(loggingDomain + `/l/r/v/${version}/u/${username}`), JSON.stringify(this.tracks)).subscribe(() => {}, error => {});
-            } else {
-                console.log("track: " + JSON.stringify(this.tracks));
-            }
-            this.tracks = [];
-        }
+        // if(this.tracks.length) {
+        //     let username:string = this.credentialsService.trackingId;
+        //     let version:string = Config.getVersion();
+        //     if(Config.isProd()) {
+        //         let loggingDomain = BrowserUtils.isMobile() ? 'https://netmobile-log.tickerchart.net' : 'https://netdesktop-log.tickerchart.net';
+        //         this.http.post(TcUrlUtils.url(loggingDomain + `/l/r/v/${version}/u/${username}`), JSON.stringify(this.tracks)).subscribe(() => {}, error => {});
+        //     } else {
+        //         console.log("track: " + JSON.stringify(this.tracks));
+        //     }
+        //     this.tracks = [];
+        // }
     }
 
 

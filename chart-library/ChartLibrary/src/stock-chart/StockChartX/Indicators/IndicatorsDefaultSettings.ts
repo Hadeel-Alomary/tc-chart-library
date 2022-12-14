@@ -109,7 +109,7 @@ import {
     PSLandisReversal
 } from '../../TASdk/TASdk';
 import {IchimokuIndicatorParam, IndicatorParam, IndicatorParamValue, vwapIndicatorParam} from './IndicatorConst';
-import {VolumeProfilerSettingsRowType} from '../../../services/data/volume-profiler/volume-profiler.service';
+import {VolumeProfilerSettingsRowType} from '../../../services/volume-profiler/volume-profiler.service';
 import {HorizontalLine} from './HorizontalLine';
 import {ParameterValueType} from './Indicator';
 import {ChartAccessorService} from '../../../services/chart';

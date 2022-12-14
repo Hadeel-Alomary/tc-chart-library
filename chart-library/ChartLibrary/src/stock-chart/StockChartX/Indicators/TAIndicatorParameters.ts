@@ -1,4 +1,4 @@
-import {VolumeProfilerSettingsRowType} from '../../../services/data/volume-profiler/volume-profiler.service';
+import {VolumeProfilerSettingsRowType} from '../../../services/volume-profiler/volume-profiler.service';
 
 export interface TAIndicatorParameters {
     source?:string,

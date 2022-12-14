@@ -1,12 +1,11 @@
 import {Injectable} from '@angular/core';
 import {Watchlist, WatchlistType} from './watchlist';
 import {StringUtils, Tc, TcTracker} from '../../utils/index';
-import {WatchlistLoader} from '../../loader/watchlist-loader';
-import {CompanyTag, Market} from '../loader/market';
+import {Market} from '../loader/market';
 import {LanguageService,} from '../language/index';
 import {ArrayUtils} from '../../utils/array.utils';
 import {ChannelRequestType, MessageBoxRequest} from "../../services/shared-channel/channel-request";
-import {SharedChannel} from "../../services";
+import {SharedChannel, WatchlistLoader} from "../../services";
 
 const remove = require("lodash/remove");
 const isEqual = require("lodash/isEqual");

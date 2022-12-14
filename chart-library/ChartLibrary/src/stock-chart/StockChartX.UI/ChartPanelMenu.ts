@@ -1,8 +1,8 @@
 import {ContextMenu, IContextMenuConfig} from "./ContextMenu";
 import {HtmlLoader} from "./HtmlLoader";
-import {ChartAccessorService, LanguageService} from '../../services/index';
+import {ChartAccessorService} from '../../services/index';
 import {ChartPanel} from '..';
-import {TechnicalIndicatorType} from '../../components/chart/technical-indicators/technical-indicator-type';
+import {TechnicalIndicatorType} from "../../components";
 
 const ContextMenuOptionItem = {
     ALERT: 'alert',

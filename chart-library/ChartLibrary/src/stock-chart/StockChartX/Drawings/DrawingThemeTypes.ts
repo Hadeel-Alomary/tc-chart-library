@@ -1,4 +1,4 @@
-import {VolumeProfilerSettingsRowType} from '../../../services/data/volume-profiler/volume-profiler.service';
+import {VolumeProfilerSettingsRowType} from "../../../services";
 
 export interface DrawingTheme {
 }

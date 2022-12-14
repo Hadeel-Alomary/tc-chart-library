@@ -1,8 +1,6 @@
 import {Injectable, ErrorHandler} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {Tc} from './tc.utils';
-import {CredentialsStateService} from '../services/state/credentials/credentials-state.service';
-import {Config} from '../config/config';
 import {Subject} from "rxjs";
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -17,7 +15,7 @@ export class TcErrorHandler implements ErrorHandler {
 
     private unauthorizedRequestStream:Subject<void>;
     
-    constructor(private http:HttpClient, private credentialsService:CredentialsStateService) {
+    constructor(private http:HttpClient) {
         window.setInterval(() => this._processExceptions(), 30 * 1000);
         this.unauthorizedRequestStream = new Subject<void>();
     }
@@ -99,14 +97,14 @@ export class TcErrorHandler implements ErrorHandler {
     }
 
     private _processExceptions() {        
-        if(this.logLines.length && this.credentialsService.isLoggedIn()) {            
-            let username:string = this.credentialsService.username;
-            let version:string = Config.getVersion();
-            if(Config.isProd()) {
-                this.http.post(Tc.url(`/l/error/v/${version}/u/${username}`), JSON.stringify(this.logLines)).subscribe(() => {}, error => {});
-            }
-            this.logLines = [];
-        }        
+        // if(this.logLines.length && this.credentialsService.isLoggedIn()) {
+        //     let username:string = this.credentialsService.username;
+        //     let version:string = Config.getVersion();
+        //     if(Config.isProd()) {
+        //         this.http.post(Tc.url(`/l/error/v/${version}/u/${username}`), JSON.stringify(this.logLines)).subscribe(() => {}, error => {});
+        //     }
+        //     this.logLines = [];
+        // }
     }
     
 }

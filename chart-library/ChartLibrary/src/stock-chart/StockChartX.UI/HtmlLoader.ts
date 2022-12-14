@@ -8,7 +8,6 @@
  */
 
 import {Dictionary} from '../StockChartX/Data/Dictionary';
-import {Config} from '../../config/config';
 import {HtmlViews} from './HtmlViews';
 
 export interface ICallbackFunction {

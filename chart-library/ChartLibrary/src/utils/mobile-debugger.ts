@@ -1,8 +1,6 @@
 import {TcUrlUtils} from './tc.url.utils';
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {CredentialsStateService} from '../services/state';
-import {Config} from '../config/config';
 import {Tc} from './tc.utils';
 
 @Injectable()
@@ -18,9 +16,9 @@ export class MobileDebugger {
     }
 
     public static log(message:string) {
-        if(Config.isProd()) {
-            return;
-        }
+        // if(Config.isProd()) {
+        //     return;
+        // }
         if(!MobileDebugger.instance) {
             Tc.debug("mobile debugger is turned off and can be enabled by injecting it in chart component");
             return;

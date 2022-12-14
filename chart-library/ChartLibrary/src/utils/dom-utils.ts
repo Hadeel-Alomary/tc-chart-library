@@ -1,5 +1,5 @@
 import {Renderer2} from '@angular/core';
-import {LanguageType} from "../services/state/language/language-type";
+import {LanguageType} from "../services";
 
 export class DomUtils {
 

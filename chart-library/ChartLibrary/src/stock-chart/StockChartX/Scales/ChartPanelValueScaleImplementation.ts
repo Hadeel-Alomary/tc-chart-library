@@ -24,7 +24,6 @@ import {BrowserUtils} from '../../../utils';
 import {AxisScaleType} from './axis-scale-type';
 import {HtmlUtil} from '../Utils/HtmlUtil';
 import {ValueScaleNumberFormat} from '../Data/ValueScaleNumberFormat';
-import {Config} from '../../../config/config';
 
 
 // Abu5, for forex with prices range below 0.1, zooming y-axis is not working
@@ -948,9 +947,9 @@ export class ChartPanelValueScaleImplementation extends Control implements IStat
                 // MA for element build, scroll is disabled. zoomOnPixels is only activated by scroll, and therefore, it is disabled too.
                 // However, since zoomOnPixels could be more useful than scrollOnPixels, we activate it instead on panning for element
                 // build, which is similar to functionality provided by tradingview.
-                if(Config.isElementBuild()) {
-                    func = this.zoomOnPixels;
-                }
+                // if(Config.isElementBuild()) {
+                //     func = this.zoomOnPixels;
+                // }
 
                 this._zoomOrScrollWithUpdate(offset, func);
                 this.chartPanel.chart.setAllowsAutoScaling(false);

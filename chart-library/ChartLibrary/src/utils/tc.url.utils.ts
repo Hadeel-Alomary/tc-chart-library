@@ -1,5 +1,4 @@
 import {SecurityUtils} from './security.utils';
-import {Config} from "../config/config";
 
 export class TcUrlUtils{
 
@@ -11,8 +10,8 @@ export class TcUrlUtils{
             url += '?' + randomNumberAsString;
         }
 
-        let timestamp:string = "t=" + Config.urlSigningDate;
-        url += '&' + timestamp;
+        // let timestamp:string = "t=" + Config.urlSigningDate;
+        // url += '&' + timestamp;
 
         url = TcUrlUtils.hashUrl(url);
 

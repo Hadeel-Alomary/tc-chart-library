@@ -8,7 +8,6 @@
  */
 
 import {Gesture, GestureConfig, GestureState, WindowEvent, MouseEvent, TouchEvent, GestureEvent} from './Gesture';
-import {passBoolean} from 'protractor/built/util';
 import {BrowserUtils} from '../../../utils';
 
 export interface IContextMenuGestureConfig extends GestureConfig {

@@ -1,7 +1,7 @@
 import {Market, Company} from '../loader/index';
-import {NewsMessage} from '../../streaming/index';
+import {NewsMessage} from '../streaming/index';
 
-import {TcTracker, Tc}from '../../../utils/index';
+import {TcTracker, Tc}from '../../utils/index';
 
 export class News{
 

@@ -1,5 +1,3 @@
-import {Tc} from "../../../utils/index";
-import {Sector} from "../../../services/index";
 
 export enum WatchlistType {
     All = 1,

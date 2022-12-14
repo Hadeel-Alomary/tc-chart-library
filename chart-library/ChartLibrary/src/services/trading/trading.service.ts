@@ -10,18 +10,18 @@ import {Broker, BrokerType} from './broker/broker';
 import {DerayahBroker} from './broker/derayah-broker';
 import {SnbcapitalBroker} from './broker/snbcapital-broker';
 import {NoBroker} from './broker/no-broker';
-import {CredentialsStateService, TradingStateService} from '../state/index';
+import {TradingStateService} from '../state/index';
 import {VirtualTradingBroker} from './broker/virtual-trading-broker';
 import {VirtualTradingOrdersService, VirtualTradingPositionsService, VirtualTradingService} from './virtual-trading';
 import {EnumUtils} from '../../utils/enum.utils';
 import {BrokerWatchlistManager} from './broker-watchlist-manager';
-import {WatchlistService} from '../settings/watchlist';
 import {ChannelRequestType} from '../shared-channel';
 import {SubscriptionLike as ISubscription} from 'rxjs/index';
 import {Subject} from 'rxjs/internal/Subject';
 import {TradingOrder, TradingPosition} from './broker/models';
 import {TradestationBroker} from './broker/tradestation-broker';
 import {TradestationAccountsService, TradestationLogoutService, TradestationOrdersService, TradestationPositionsService, TradestationService} from './tradestation';
+import {WatchlistService} from "../../services";
 
 @Injectable()
 export class TradingService {
@@ -46,7 +46,7 @@ export class TradingService {
                 private virtualTradingOrdersService: VirtualTradingOrdersService,
                 private sharedChannel: SharedChannel,
                 private tradingStateService:TradingStateService,
-                private credentialsStateService:CredentialsStateService,
+                private watchlistService:WatchlistService,
                 private tradestationService:TradestationService,
                 private tradestationAccountsService: TradestationAccountsService,
                 private tradestationLogoutService: TradestationLogoutService,
@@ -61,15 +61,15 @@ export class TradingService {
         // this.loader.isLoadingDoneStream()
         //     .subscribe((doneLoading: boolean) => {
         //         if (doneLoading) {
-                    if(!this.tradingStateService.getSelectedBroker()){
-                        this.tradingStateService.setSelectedBroker(Tc.enumString(BrokerType, BrokerType.None));
-                    }
+        //             if(!this.tradingStateService.getSelectedBroker()){
+        //                 this.tradingStateService.setSelectedBroker(Tc.enumString(BrokerType, BrokerType.None));
+        //             }
                     // MA need timeout in order for GridContainers to init before sending broker selection (in case no broker is selected and
                     // GridContainer wants to remove the trading boxes)
-                    window.setTimeout(() => {
-                        let selectedBroker:BrokerType = EnumUtils.enumStringToValue(BrokerType, this.tradingStateService.getSelectedBroker()) as BrokerType;
-                        this.selectBroker(selectedBroker, true);
-                    }, 0);
+                    // window.setTimeout(() => {
+                    //     let selectedBroker:BrokerType = EnumUtils.enumStringToValue(BrokerType, this.tradingStateService.getSelectedBroker()) as BrokerType;
+                    //     this.selectBroker(selectedBroker, true);
+                    // }, 0);
                 // }
             // });
 
@@ -132,23 +132,23 @@ export class TradingService {
 
     /* buy and sell */
     public openBuyScreen(market:Market,symbol:string, price?: number):void{
-        let company = this.marketsManager.getCompanyBySymbol(symbol);
-        this.broker.openBuyScreen(company, price);
+        // let company = this.marketsManager.getCompanyBySymbol(symbol);
+        // this.broker.openBuyScreen(company, price);
     }
 
     public openSellScreen(market:Market,symbol:string, price?: number):void{
-        let company = this.marketsManager.getCompanyBySymbol(symbol);
-        this.broker.openSellScreen(company, price);
+        // let company = this.marketsManager.getCompanyBySymbol(symbol);
+        // this.broker.openSellScreen(company, price);
     }
 
     public openStopScreen(symbol:string, price?: number):void{
-        let company = this.marketsManager.getCompanyBySymbol(symbol);
-        this.broker.openStopScreen(company, price);
+        // let company = this.marketsManager.getCompanyBySymbol(symbol);
+        // this.broker.openStopScreen(company, price);
     }
 
     public openSellAllSharesScreen(symbol:string):void{
-        let company = this.marketsManager.getCompanyBySymbol(symbol);
-        this.broker.openSellAllSharesScreen(company);
+        // let company = this.marketsManager.getCompanyBySymbol(symbol);
+        // this.broker.openSellAllSharesScreen(company);
     }
 
     public onBoundPositionClicked(position:TradingPosition) {
@@ -218,18 +218,20 @@ export class TradingService {
             return false;
         }
 
-        let market:Market = this.marketsManager.getMarketBySymbol(symbol);
-        if(!market){
-            return;
-        }
+        // let market:Market = this.marketsManager.getMarketBySymbol(symbol);
+        // if(!market){
+        //     return;
+        // }
+        //
+        // let company: Company = this.marketsManager.getCompanyBySymbol(symbol);
+        // if (!company || company.index) {
+        //     //NK company has removed, it's symbol changed or it's and index
+        //     return false;
+        // }
 
-        let company: Company = this.marketsManager.getCompanyBySymbol(symbol);
-        if (!company || company.index) {
-            //NK company has removed, it's symbol changed or it's and index
-            return false;
-        }
+        // return this.broker.isSupportedMarket(market);
 
-        return this.broker.isSupportedMarket(market);
+      return null;
 
     }
 
@@ -292,7 +294,8 @@ export class TradingService {
     }
 
     public hasSelectedBroker(): boolean {
-        return this.tradingStateService.getSelectedBroker() != EnumUtils.enumValueToString(BrokerType, BrokerType.None);
+        return false;
+        // return this.tradingStateService.getSelectedBroker() != EnumUtils.enumValueToString(BrokerType, BrokerType.None);
     }
 
     public getBrokerRefreshStream(): Subject<void> {
@@ -312,9 +315,9 @@ export class TradingService {
     private onBrokerSessionEstablished(established: boolean) {
         if (established) {
             let brokerTypeAsString: string = EnumUtils.enumValueToString(BrokerType, this.getBrokerType());
-            if (brokerTypeAsString != this.tradingStateService.getSelectedBroker()) {
-                this.tradingStateService.setSelectedBroker(brokerTypeAsString);
-            }
+            // if (brokerTypeAsString != this.tradingStateService.getSelectedBroker()) {
+            //     this.tradingStateService.setSelectedBroker(brokerTypeAsString);
+            // }
         }
     }
 
@@ -368,13 +371,13 @@ export class TradingService {
     public listAvailableBrokers():BrokerType[] {
 
         let brokerTypes:BrokerType[] = [BrokerType.VirtualTrading];
-        if(this.marketsManager.isSubscribedInMarket("TAD")) {
-           brokerTypes.push(BrokerType.Derayah);
-           brokerTypes.push(BrokerType.Snbcapital);
-        }
-        if(this.marketsManager.isSubscribedInMarket('USA')){
-            brokerTypes.push(BrokerType.Tradestation);
-        }
+        // if(this.marketsManager.isSubscribedInMarket("TAD")) {
+        //    brokerTypes.push(BrokerType.Derayah);
+        //    brokerTypes.push(BrokerType.Snbcapital);
+        // }
+        // if(this.marketsManager.isSubscribedInMarket('USA')){
+        //     brokerTypes.push(BrokerType.Tradestation);
+        // }
         return brokerTypes;
 
     }

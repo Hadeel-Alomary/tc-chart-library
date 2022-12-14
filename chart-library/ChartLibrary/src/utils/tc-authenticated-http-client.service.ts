@@ -1,23 +1,22 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Loader, LoaderConfig, LoaderUrlType} from '../services/loader/loader';
+import {LoaderConfig, LoaderUrlType} from '../services/loader';
 import {Observable, of} from 'rxjs';
 import {map, switchMap} from 'rxjs/operators';
 import {TcTracker} from './tc-tracker';
 import {Tc} from './tc.utils';
-import {CredentialsStateService} from '../services/state';
 
 @Injectable()
 export class TcAuthenticatedHttpClient {
     private renewTokenUrl: string;
 
-    constructor(private loader:Loader, private credentialsService: CredentialsStateService, private http: HttpClient) {
-        this.loader.getConfigStream()
-            .subscribe((loaderConfig: LoaderConfig) => {
-                if (loaderConfig) {
-                    this.onLoaderConfig(loaderConfig);
-                }
-            });
+    constructor( private http: HttpClient) {
+        // this.loader.getConfigStream()
+        //     .subscribe((loaderConfig: LoaderConfig) => {
+        //         if (loaderConfig) {
+        //             this.onLoaderConfig(loaderConfig);
+        //         }
+        //     });
     }
 
     private onLoaderConfig(loaderConfig: LoaderConfig): void {
@@ -76,8 +75,8 @@ export class TcAuthenticatedHttpClient {
 
     private renewToken(): Observable<boolean> {
         let data: { [key: string]: string } = {
-            username: this.credentialsService.username,
-            password: btoa(this.credentialsService.password)
+            // username: this.credentialsService.username,
+            // password: btoa(this.credentialsService.password)
         };
         return this.post(Tc.url(this.renewTokenUrl), data, this.getTcAuthOptions()).pipe(map((response: RenewTokenResponse) => {
             if (!response.success) {
@@ -91,7 +90,8 @@ export class TcAuthenticatedHttpClient {
     private getTcAuthOptions(): Object {
         return {
             headers: new HttpHeaders({
-                'Authorization': this.loader.getToken()
+                // 'Authorization': this.loader.getToken()
+			  'Authorization': null
             })
         }
     }

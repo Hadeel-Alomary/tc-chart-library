@@ -222,15 +222,18 @@ export class Projection {
 
             let marketAbbreviation = this.getMarketAbbreviation();
 
-            let market = ChartAccessorService.instance.getMarketByAbbreviation(marketAbbreviation);
+            // let market = ChartAccessorService.instance.getMarketByAbbreviation(marketAbbreviation);
 
             let interval = Interval.fromChartInterval(this._dateScale.chart.timeInterval);
 
             let numberOfCandles = record - dates.length + 1;
 
-            let futureDate = market.findProjectedFutureDate(<Date> dates[dates.length - 1], numberOfCandles, interval);
+            // let futureDate = market.findProjectedFutureDate(<Date> dates[dates.length - 1], numberOfCandles, interval);
 
-            ProjectionDebugger.validateFutureDateComputation(market, interval, <Date> dates[dates.length - 1], numberOfCandles, futureDate);
+          let market = null;
+		  let futureDate = null;
+
+			ProjectionDebugger.validateFutureDateComputation(market, interval, <Date> dates[dates.length - 1], numberOfCandles, futureDate);
 
             return futureDate;
 
@@ -300,8 +303,10 @@ export class Projection {
             index = Math.floor(leftTimeDiff / dateScale.chart.timeInterval);
         } else if (index >= dateDataSeries.length) {
             let marketAbbreviation = this.getMarketAbbreviation();
-            let market = ChartAccessorService.instance.getMarketByAbbreviation(marketAbbreviation);
-            let numberOfFutureCandles =  market.findProjectNumberOfCandlesBetweenDates(<Date> dateDataSeries.values[dateDataSeries.length - 1], date, interval);
+		  let market = null;
+		  let numberOfFutureCandles = 0;
+            // let market = ChartAccessorService.instance.getMarketByAbbreviation(marketAbbreviation);
+            // let numberOfFutureCandles =  market.findProjectNumberOfCandlesBetweenDates(<Date> dateDataSeries.values[dateDataSeries.length - 1], date, interval);
             index = dateDataSeries.length - 1 + numberOfFutureCandles;
             ProjectionDebugger.validateNumberOfFutureCandlesComputation(market, interval, <Date> dateDataSeries.values[dateDataSeries.length - 1], date, numberOfFutureCandles);
         }
@@ -311,9 +316,9 @@ export class Projection {
 
     private getMarketAbbreviation() {
         // MA if instrument is not set (as in mini-chart component), then return the default market abbreviation.
-        return this._dateScale.chart.instrument ?
-            MarketUtils.marketAbbr(this._dateScale.chart.instrument.symbol) :
-            ChartAccessorService.instance.getDefaultMarket().abbreviation;
+        // return this._dateScale.chart.instrument ?
+	  return  MarketUtils.marketAbbr(this._dateScale.chart.instrument.symbol)
+          // : ChartAccessorService.instance.getDefaultMarket().abbreviation;
     }
 
     /**

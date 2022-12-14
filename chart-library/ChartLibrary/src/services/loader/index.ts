@@ -36,6 +36,8 @@ export {
 
 export {AnalysisCenterLoaderService} from './analysis-center-loader'
 
-export {LoaderUrlType , LoaderConfig , MarketAlertsConfig} from './loader-config'
+export {LoaderUrlType , LoaderConfig} from './loader-config'
 
 export {TechnicalScopeLoader} from './technical-scope-loader/technical-scope-loader.service'
+
+export {WatchlistLoader} from './watchlist-loader/index'
