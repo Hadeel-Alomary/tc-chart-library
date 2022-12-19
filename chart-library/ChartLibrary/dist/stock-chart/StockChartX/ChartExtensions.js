@@ -3,10 +3,10 @@ import { PriceTooltip } from '../StockChartX.UI/Tooltips/PriceTooltip';
 import { IndicatorTooltip } from '../StockChartX.UI/Tooltips/IndicatorTooltip';
 import { SplitTooltip } from '../StockChartX.UI/Tooltips/SplitTooltip';
 import { DrawingTooltip } from '../StockChartX.UI/Tooltips/DrawingTooltip';
-import { ChartAccessorService } from '../../services/index';
 import { TradingTooltip } from '../StockChartX.UI/Tooltips/TradingTooltip';
 import { NewsTooltip } from '../StockChartX.UI/Tooltips/NewsTooltip';
 import { AlertTooltip } from '../StockChartX.UI/Tooltips/AlertTooltip';
+import { ChartAccessorService } from "@src/services/chart";
 $.fn.extend({
     StockChartX: function (config) {
         config = config || {};

@@ -92,7 +92,7 @@ var ToolbarDropDownButton = (function () {
         this._items.removeClass('active');
         if (!this._canFireFromHead) {
             this._items.parent()
-                .find("[" + DATA_VALUE + "=\"" + val + "\"]")
+                .find("[".concat(DATA_VALUE, "=\"").concat(val, "\"]"))
                 .addClass('active');
             this._btnActivate.attr(DATA_VALUE, val);
         }

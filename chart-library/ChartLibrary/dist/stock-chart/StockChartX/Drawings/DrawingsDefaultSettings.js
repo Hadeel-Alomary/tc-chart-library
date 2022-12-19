@@ -1,6 +1,6 @@
 import { FibonacciLevelLineExtension } from './FibonacciDrawings/FibonacciDrawingLevelLineExtension';
 import { DrawingTextHorizontalPosition, DrawingTextVerticalPosition } from './DrawingTextPosition';
-import { VolumeProfilerSettingsRowType } from '../../../services/data/volume-profiler/volume-profiler.service';
+import { VolumeProfilerSettingsRowType } from '../../../services/volume-profiler/volume-profiler.service';
 import { ChartAccessorService } from '../../../services/chart';
 import { ThemeType } from '../ThemeType';
 var DrawingsDefaultSettings = (function () {

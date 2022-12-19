@@ -1,4 +1,18 @@
-import { __extends } from "tslib";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 import { TAIndicator } from './TAIndicator';
 import { ChartAccessorService, Interval } from '../../../services/index';
 import { IndicatorParam } from './IndicatorConst';
@@ -9,7 +23,6 @@ import { ChartEvent } from '../Chart';
 import { DataSeriesSuffix } from '../../StockChartX/Data/DataSeries';
 import { ContextMenuGesture } from '../../StockChartX/Gestures/ContextMenuGesture';
 import { DoubleClickGesture } from '../../StockChartX/Gestures/DoubleClickGesture';
-import { Config } from '../../../config/config';
 var isEqual = require('lodash/isEqual');
 var VolumeProfilerBaseIndicator = (function (_super) {
     __extends(VolumeProfilerBaseIndicator, _super);
@@ -92,10 +105,6 @@ var VolumeProfilerBaseIndicator = (function (_super) {
         return this.volumeProfilerIndicatorData;
     };
     VolumeProfilerBaseIndicator.prototype._initGestures = function () {
-        if (Config.isElementBuild()) {
-            this._gestures = new GestureArray([]);
-            return;
-        }
         this._gestures = new GestureArray([
             new MouseHoverGesture({
                 handler: this._handleMoveHoverGesture,

@@ -31,7 +31,7 @@ var Rect = (function () {
         return rect && this.left === rect.left && this.top === rect.top && this.width === rect.width && this.height === rect.height;
     };
     Rect.prototype.toString = function () {
-        return "[left: " + this.left + ", top: " + this.top + ", width: " + this.width + ", height: " + this.height + "]";
+        return "[left: ".concat(this.left, ", top: ").concat(this.top, ", width: ").concat(this.width, ", height: ").concat(this.height, "]");
     };
     Rect.prototype.containsPoint = function (point) {
         return point.x >= this.left && point.x <= this.right && point.y >= this.top && point.y <= this.bottom;

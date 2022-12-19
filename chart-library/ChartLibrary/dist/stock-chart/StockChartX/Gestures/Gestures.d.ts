@@ -1,1 +1,0 @@
-//# sourceMappingURL=Gestures.d.ts.map

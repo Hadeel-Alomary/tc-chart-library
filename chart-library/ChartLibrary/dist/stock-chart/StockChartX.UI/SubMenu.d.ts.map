@@ -1,1 +1,0 @@
-{"version":3,"file":"SubMenu.d.ts","sourceRoot":"","sources":["../../../src/stock-chart/StockChartX.UI/SubMenu.ts"],"names":[],"mappings":"AAMA,qBAAa,OAAO;IAChB,OAAO,CAAC,SAAS,CAAkB;IACnC,OAAO,CAAC,SAAS,CAAS;gBAEd,cAAc,EAAE,MAAM;IASlC,OAAO,CAAC,IAAI;IAMZ,OAAO,CAAC,IAAI;IAIZ,OAAO,CAAC,eAAe;IAIvB,QAAQ;IAcR,aAAa;IAYb,aAAa;IAWb,OAAO,CAAC,wBAAwB;IAahC,OAAO,CAAC,8BAA8B;CAgBzC"}

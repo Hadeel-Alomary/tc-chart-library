@@ -1,2 +1,2 @@
-export { ChartClient } from '@src/client/chart-client';
+export { ChartClient } from './chart-client';
 //# sourceMappingURL=index.js.map

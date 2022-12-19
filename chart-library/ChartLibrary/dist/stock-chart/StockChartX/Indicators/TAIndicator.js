@@ -1,4 +1,18 @@
-import { __extends } from "tslib";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 import { Indicator } from './Indicator';
 import { AccumulativeSwingIndex, AccumulationDistribution, Aroon, AroonOscillator, AverageTrueRange, BollingerBands, BullishBarishIndicator, CenterOfGravity, ChaikinMoneyFlow, ChaikinVolatility, ChandeForecastOscillator, ChandeMomentumOscillator, CommodityChannelIndex, ComparativeRelativeStrength, Const, CoppockCurve, DetrendedPriceOscillator, DoubleExponentialMovingAverage, DirectionalMovementAverage, DirectionalMovementIndex, DirectionalDivergenceIndex, AverageDirectionalIndex, FastStochastic, PSLandisReversal, DonchianChannels, EaseOfMovement, EhlerFisherTransform, ElderForceIndex, ElderRay, ElderThermometer, ExponentialMovingAverage, TripleExponentialMovingAverage, HullMovingAverage, FractalChaosBands, FractalChaosOscillator, GopalakrishnanRangeIndex, HHV, HighLowBands, HighMinusLow, HistoricalVolatility, IntradayMomentumIndex, KeltnerChannel, KlingerVolumeOscillator, LinearRegressionForecast, LinearRegressionIntercept, LinearRegressionRSquared, LinearRegressionSlope, LLV, MACD, MACDHistogram, MarketFacilitationIndex, MassIndex, MaximumValue, MedianPrice, MomentumOscillator, MoneyFlowIndex, MovingAverageEnvelope, NegativeVolumeIndex, OnBalanceVolume, ParabolicSAR, PerformanceIndex, PositiveVolumeIndex, PrettyGoodOscillator, PriceOscillator, PriceROC, PriceVolumeTrend, PrimeNumberBands, PrimeNumberOscillator, PsychologicalLine, QStick, RainbowOscillator, RandomWalkIndex, RAVI, RelativeStrengthIndex, SchaffTrendCycle, SimpleMovingAverage, StandardDeviation, STARC, StochasticMomentumIndex, StochasticOscillator, StochasticRSI, SwingIndex, TimeSeriesForecast, TimeSeriesMovingAverage, TradeVolumeIndex, TriangularMovingAverage, TRIX, TrueRange, TwiggsMoneyFlow, TypicalPrice, UltimateOscillator, Unknown, VariableMovingAverage, VerticalHorizontalFilter, VIDYA, VolatilityRatio, VolumeChange, VolumeIndicator, VolumeMACD, VolumeOscillator, VolumeProfilerSessionVolume, VolumeProfilerVisibleRange, VolumeROC, WeightedClose, WeightedMovingAverage, WellesWilderSmoothing, WilliamsAccumulationDistribution, WilliamsPctR, ZigZag, ZigZagLabel, VolumeWeightedAveragePrice } from '../../TASdk/TASdk';
 import { IndicatorsDefaultSettings } from './IndicatorsDefaultSettings';
@@ -368,11 +382,11 @@ var TAIndicator = (function (_super) {
         var parameters = this.getParameters();
         switch (this.indicatorTypeId) {
             case BollingerBands:
-                return ["$" + parameters.source.toUpperCase() + "$", parameters.periods, parameters.standardDeviations];
+                return ["$".concat(parameters.source.toUpperCase(), "$"), parameters.periods, parameters.standardDeviations];
             case PriceOscillator:
-                return ["$" + parameters.source.toUpperCase() + "$", parameters.longCycle, parameters.shortCycle];
+                return ["$".concat(parameters.source.toUpperCase(), "$"), parameters.longCycle, parameters.shortCycle];
             case StandardDeviation:
-                return ["$" + parameters.source.toUpperCase() + "$", parameters.periods, parameters.standardDeviations];
+                return ["$".concat(parameters.source.toUpperCase(), "$"), parameters.periods, parameters.standardDeviations];
             case MovingAverageEnvelope:
                 return [parameters.periods, parameters.shift];
             case MACD:
@@ -388,19 +402,19 @@ var TAIndicator = (function (_super) {
             case EaseOfMovement:
                 return [parameters.periods];
             case RelativeStrengthIndex:
-                return ["$" + parameters.source.toUpperCase() + "$", parameters.periods];
+                return ["$".concat(parameters.source.toUpperCase(), "$"), parameters.periods];
             case ExponentialMovingAverage:
-                return ["$" + parameters.source.toUpperCase() + "$", parameters.periods];
+                return ["$".concat(parameters.source.toUpperCase(), "$"), parameters.periods];
             case DoubleExponentialMovingAverage:
-                return ["$" + parameters.source.toUpperCase() + "$", parameters.periods];
+                return ["$".concat(parameters.source.toUpperCase(), "$"), parameters.periods];
             case MomentumOscillator:
-                return ["$" + parameters.source.toUpperCase() + "$", parameters.periods];
+                return ["$".concat(parameters.source.toUpperCase(), "$"), parameters.periods];
             case OnBalanceVolume:
-                return ["$" + parameters.source.toUpperCase() + "$"];
+                return ["$".concat(parameters.source.toUpperCase(), "$")];
             case SimpleMovingAverage:
-                return ["$" + parameters.source.toUpperCase() + "$", parameters.periods];
+                return ["$".concat(parameters.source.toUpperCase(), "$"), parameters.periods];
             case WeightedMovingAverage:
-                return ["$" + parameters.source.toUpperCase() + "$", parameters.periods];
+                return ["$".concat(parameters.source.toUpperCase(), "$"), parameters.periods];
             case TRIX:
                 return [parameters.periods];
             case KeltnerChannel:

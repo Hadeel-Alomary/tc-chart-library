@@ -1,4 +1,18 @@
-import { __extends } from "tslib";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 import '../StockChartX.UI/jQueryExtension';
 import '../StockChartX.UI/scxNumericField';
 import { TimeSpan } from './Data/TimeFrame';
@@ -29,7 +43,6 @@ import { IndicatorDeserializer } from './Indicators/IndicatorDeserializer';
 import { ChartPanelsContainerImplementation } from './ChartPanels/ChartPanelsContainerImplementation';
 import { CrossHairImplementation } from './CrossHairImplementation';
 import { DateScaleImplementation } from './Scales/DateScaleImplementation';
-import { ChartAccessorService, ChartAlertIndicator } from '../../services/index';
 import { BrowserUtils } from '../../utils';
 import { TradingOrderStatusType } from '../../services/trading/broker/models/trading-order-status';
 import { TradingOrderSideType } from '../../services/trading/broker/models/trading-order-side';
@@ -41,8 +54,9 @@ import { IndicatorHelper } from './Indicators/IndicatorHelper';
 import { VolumeProfilerSessionVolumeIndicator } from './Indicators/VolumeProfilerSessionVolumeIndicator';
 import { VolumeProfilerVisibleRangeIndicator } from './Indicators/VolumeProfilerVisibleRangeIndicator';
 import { ThemeType } from './ThemeType';
-import { Config } from '../../config/config';
 import { MovingAverageOptions } from './MovingAverageOptions';
+import { ChartAccessorService } from "../../services/chart";
+import { ChartAlertIndicator } from "../../services/alert";
 var DEFAULT_WIDTH = 800;
 var DEFAULT_HEIGHT = 600;
 var Class = {
@@ -1272,21 +1286,6 @@ var ChartImplementation = (function (_super) {
             TouchEvent.END,
             ''
         ];
-        if (Config.isElementBuild()) {
-            events = [
-                MouseEvent.ENTER,
-                MouseEvent.LEAVE,
-                MouseEvent.DOWN,
-                MouseEvent.MOVE,
-                MouseEvent.UP,
-                MouseEvent.CLICK,
-                MouseEvent.DOUBLE_CLICK,
-                TouchEvent.START,
-                TouchEvent.MOVE,
-                TouchEvent.END,
-                ''
-            ];
-        }
         if (readOnly) {
             events = [MouseEvent.MOVE];
         }

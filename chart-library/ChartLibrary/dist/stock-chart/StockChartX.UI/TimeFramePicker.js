@@ -37,7 +37,7 @@ var TimeFramePicker = (function () {
                 if (Periodicity.hasOwnProperty(i)) {
                     if (periodicities.indexOf(Periodicity[i]) >= 0) {
                         var value = TimeFrame.periodicityToString(Periodicity[i]);
-                        items.push($("<option value=\"" + Periodicity[i] + "\">" + value + "</option>"));
+                        items.push($("<option value=\"".concat(Periodicity[i], "\">").concat(value, "</option>")));
                     }
                 }
             }

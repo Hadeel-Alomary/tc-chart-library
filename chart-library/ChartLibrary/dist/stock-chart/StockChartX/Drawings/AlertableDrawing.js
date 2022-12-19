@@ -1,15 +1,27 @@
-import { __extends } from "tslib";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 import { ChartAccessorService } from '../../../services/chart';
-import { TrendLineAlert } from '../../../services/data/alert';
-import { Interval } from '../../../services/loader';
-import { IntervalUtils } from '../../../utils/interval.utils';
+import { TrendLineAlert } from '../../../services/alert';
 import { AxisScaleType } from '../Scales/axis-scale-type';
 import { ChartEvent } from '../../StockChartX/Chart';
 import { BrowserUtils } from '../../../utils';
 import { ThemedDrawing } from './ThemedDrawing';
-import { Config } from '../../../config/config';
 import { ThemeType } from '../ThemeType';
 import { MathUtils } from '../../../utils/math.utils';
+import { Interval } from "../../../services/loader/price-loader/interval";
 var AlertableDrawing = (function (_super) {
     __extends(AlertableDrawing, _super);
     function AlertableDrawing() {
@@ -71,9 +83,6 @@ var AlertableDrawing = (function (_super) {
         }
     };
     AlertableDrawing.prototype.drawAlertBellIfNeeded = function () {
-        if (Config.isElementBuild()) {
-            return;
-        }
         var hasActiveAlert = ChartAccessorService.instance.getAlertService().getTrendLineAlertByDrawingId(this.id) != null;
         var hasAchievedAlert = ChartAccessorService.instance.getAlertService().getAchievedTrendLineAlertByDrawingId(this.id) != null;
         if (hasActiveAlert) {
@@ -94,7 +103,7 @@ var AlertableDrawing = (function (_super) {
     AlertableDrawing.prototype.createTrendLineAlert = function () {
         var drawingId = this.id;
         var symbol = this.chart.instrument.symbol;
-        var company = ChartAccessorService.instance.getCompanyBySymbol(symbol);
+        var company = null;
         var interval = Interval.fromChartInterval(this.chart.timeInterval);
         return TrendLineAlert.createNewAlert(interval.type, company, this.getTrendLineAlertDefinition(interval), this.chart.hostId, drawingId, ChartAccessorService.instance.isArabic() ? 'arabic' : 'english');
     };
@@ -102,15 +111,15 @@ var AlertableDrawing = (function (_super) {
         var firstChartPoint = this.getAlertFirstChartPoint();
         var secondChartPoint = this.getAlertSecondChartPoint();
         var symbol = this.chart.instrument.symbol;
-        var market = ChartAccessorService.instance.getMarketBySymbol(symbol);
-        var date1 = IntervalUtils.getGroupingTime(market.abbreviation, interval, moment(firstChartPoint.date).format('YYYY-MM-DD HH:mm:ss'));
-        var date2 = IntervalUtils.getGroupingTime(market.abbreviation, interval, moment(secondChartPoint.date).format('YYYY-MM-DD HH:mm:ss'));
+        var market = null;
+        var date1 = null;
+        var date2 = null;
         var price1 = MathUtils.roundAccordingMarket(firstChartPoint.value, this.chart.instrument.symbol);
         var price2 = MathUtils.roundAccordingMarket(secondChartPoint.value, this.chart.instrument.symbol);
         var logarithmic = this.chartPanel.getAxisScale() == AxisScaleType.Logarithmic;
         if (Interval.isDaily(interval)) {
-            date1 = date1 + " 00:00:00";
-            date2 = date2 + " 00:00:00";
+            date1 = "".concat(date1, " 00:00:00");
+            date2 = "".concat(date2, " 00:00:00");
         }
         var extendsLeft = this.canAlertExtendLeft();
         var extendsRight = this.canAlertExtendRight();

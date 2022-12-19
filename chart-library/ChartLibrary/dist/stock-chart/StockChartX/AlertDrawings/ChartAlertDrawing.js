@@ -1,4 +1,18 @@
-import { __extends } from "tslib";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 import { ChartPanelObject } from '../ChartPanels/ChartPanelObject';
 import { ChartPoint } from '../Graphics/ChartPoint';
 import { MouseHoverGesture } from '../Gestures/MouseHoverGesture';
@@ -311,7 +325,7 @@ var ChartAlertDrawing = (function (_super) {
     ChartAlertDrawing.prototype._drawValueMarker = function (point, value) {
         if (!this.visible)
             return;
-        var context = this.chartPanel.context, text = "" + this.chartPanel.formatValue(MathUtils.roundAccordingMarket(value, this.chart.instrument.symbol)), theme = this.actualTheme, textSize = theme.valueMarketText.fontSize, padding = 2, frame = this.chartPanel.contentFrame, width = Math.round(this.chartPanel.valueScale.rightFrame.width), height = Math.round(textSize + (2 * padding)), halfHeight = Math.round(height / 2), x = Math.round(frame.left + frame.width), y = Math.round(point.y - halfHeight);
+        var context = this.chartPanel.context, text = "".concat(this.chartPanel.formatValue(MathUtils.roundAccordingMarket(value, this.chart.instrument.symbol))), theme = this.actualTheme, textSize = theme.valueMarketText.fontSize, padding = 2, frame = this.chartPanel.contentFrame, width = Math.round(this.chartPanel.valueScale.rightFrame.width), height = Math.round(textSize + (2 * padding)), halfHeight = Math.round(height / 2), x = Math.round(frame.left + frame.width), y = Math.round(point.y - halfHeight);
         context.beginPath();
         context.rect(x, y, width, height);
         context.scxFillStroke(theme.valueMarkerFill, theme.line);

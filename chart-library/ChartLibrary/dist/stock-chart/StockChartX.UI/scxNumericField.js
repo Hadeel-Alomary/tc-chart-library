@@ -302,9 +302,9 @@ function getCommaCount(value) {
     return Math.ceil(value.toString().length / 3) - 1;
 }
 function generateFieldWithArrows(inputObj) {
-    var wrapperObj = $("<div class=\"" + Classes.FIELD_WRAPPER + "\">");
-    var arrowUp = $("<div class=\"" + Classes.ARROW_WRAPPER + " " + Classes.ARROW_UP + "\"><span class=\"" + Classes.ARROW + "\"></span></div>");
-    var arrowDown = $("<div class=\"" + Classes.ARROW_WRAPPER + " " + Classes.ARROW_DOWN + "\"><span class=\"" + Classes.ARROW + "\"></span></div>");
+    var wrapperObj = $("<div class=\"".concat(Classes.FIELD_WRAPPER, "\">"));
+    var arrowUp = $("<div class=\"".concat(Classes.ARROW_WRAPPER, " ").concat(Classes.ARROW_UP, "\"><span class=\"").concat(Classes.ARROW, "\"></span></div>"));
+    var arrowDown = $("<div class=\"".concat(Classes.ARROW_WRAPPER, " ").concat(Classes.ARROW_DOWN, "\"><span class=\"").concat(Classes.ARROW, "\"></span></div>"));
     var height = inputObj.outerHeight(true);
     var width = inputObj.outerWidth();
     wrapperObj.height(height);

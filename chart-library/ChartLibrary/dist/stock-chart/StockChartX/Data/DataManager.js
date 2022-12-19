@@ -102,7 +102,7 @@ var DataManager = (function () {
         if (!name || typeof name !== 'string')
             throw new TypeError("Data series name must be non-empty string.");
         if (this.getDataSeries(name) && !replaceIfExists)
-            throw new Error("Data series '" + name + "' exists already.");
+            throw new Error("Data series '".concat(name, "' exists already."));
         this._dataSeries[name] = dataSeries;
         return dataSeries;
     };

@@ -25,15 +25,15 @@ var WaitingBar = (function () {
         this._destroy();
     };
     WaitingBar.prototype._createDom = function () {
-        this._container = $("<div class=\"" + Class.CONTAINER + "\"></div>")
+        this._container = $("<div class=\"".concat(Class.CONTAINER, "\"></div>"))
             .appendTo(this._parentContainer);
-        $("<span class=\"" + Class.LOADING_TEXT + "\">" + this._config.text + "</span>")
+        $("<span class=\"".concat(Class.LOADING_TEXT, "\">").concat(this._config.text, "</span>"))
             .appendTo(this._container);
-        var dotsContainer = $("<div class=\"" + Class.DOTS_CONTAINER + "\"></div>")
+        var dotsContainer = $("<div class=\"".concat(Class.DOTS_CONTAINER, "\"></div>"))
             .appendTo(this._container);
         var dots = [];
         for (var i = 0; i < this._config.dotsCount; i++)
-            dots.push($("<div class=\"" + Class.DOT + "\"></div>"));
+            dots.push($("<div class=\"".concat(Class.DOT, "\"></div>")));
         dotsContainer.append(dots);
     };
     WaitingBar.prototype._destroy = function () {

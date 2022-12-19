@@ -1,4 +1,18 @@
-import { __extends } from "tslib";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 import { TAIndicator } from './TAIndicator';
 import { AccumulatedLiquidityByNetValue, AccumulatedLiquidityByNetVolume, LiquidityByNetValue, LiquidityByNetVolume, LiquidityByValue, LiquidityByVolume } from '../../TASdk/TASdk';
 import { Recordset } from '../../TASdk/Recordset';
@@ -6,7 +20,7 @@ import { IndicatorField, IndicatorPlotTypes } from './IndicatorConst';
 import { Field } from '../../TASdk/Field';
 import { ChartAccessorService } from '../../../services/chart';
 import { Interval, IntervalType } from '../../../services/loader';
-import { LiquidityHistoryLoadingState } from '../../../services/data/liquidity/liquidity.service';
+import { LiquidityHistoryLoadingState } from '../../../services/liquidity/liquidity.service';
 import { DataSeriesSuffix } from '../../StockChartX/Data/DataSeries';
 var LiquidityIndicator = (function (_super) {
     __extends(LiquidityIndicator, _super);
@@ -87,7 +101,6 @@ var LiquidityIndicator = (function (_super) {
             this._activeInterval = chartInterval;
             switch (ChartAccessorService.instance.getSymbolLiquidityHistoryLoadState(this._activeSymbol, this._activeInterval)) {
                 case LiquidityHistoryLoadingState.NOT_LOADED:
-                    ChartAccessorService.instance.requestToLoadSymbolLiquidityHistory(this._activeSymbol, this._activeInterval);
                     break;
                 case LiquidityHistoryLoadingState.REQUESTED:
                     break;

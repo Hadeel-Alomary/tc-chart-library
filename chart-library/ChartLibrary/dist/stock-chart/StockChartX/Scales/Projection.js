@@ -1,8 +1,7 @@
 import { AxisScaleType } from './axis-scale-type';
-import { ChartAccessorService } from '../../../services/chart';
-import { Interval } from '../../../services/loader';
 import { MarketUtils } from '../../../utils';
 import { ProjectionDebugger } from './ProjectionDebugger';
+import { Interval } from "../../../services/loader/price-loader/interval";
 var Projection = (function () {
     function Projection(dateScale, valueScale) {
         this._dateScale = dateScale;
@@ -75,10 +74,10 @@ var Projection = (function () {
         }
         if (record >= dates.length) {
             var marketAbbreviation = this.getMarketAbbreviation();
-            var market = ChartAccessorService.instance.getMarketByAbbreviation(marketAbbreviation);
             var interval = Interval.fromChartInterval(this._dateScale.chart.timeInterval);
             var numberOfCandles = record - dates.length + 1;
-            var futureDate = market.findProjectedFutureDate(dates[dates.length - 1], numberOfCandles, interval);
+            var market = null;
+            var futureDate = null;
             ProjectionDebugger.validateFutureDateComputation(market, interval, dates[dates.length - 1], numberOfCandles, futureDate);
             return futureDate;
         }
@@ -115,17 +114,15 @@ var Projection = (function () {
         }
         else if (index >= dateDataSeries.length) {
             var marketAbbreviation = this.getMarketAbbreviation();
-            var market = ChartAccessorService.instance.getMarketByAbbreviation(marketAbbreviation);
-            var numberOfFutureCandles = market.findProjectNumberOfCandlesBetweenDates(dateDataSeries.values[dateDataSeries.length - 1], date, interval);
+            var market = null;
+            var numberOfFutureCandles = 0;
             index = dateDataSeries.length - 1 + numberOfFutureCandles;
             ProjectionDebugger.validateNumberOfFutureCandlesComputation(market, interval, dateDataSeries.values[dateDataSeries.length - 1], date, numberOfFutureCandles);
         }
         return index;
     };
     Projection.prototype.getMarketAbbreviation = function () {
-        return this._dateScale.chart.instrument ?
-            MarketUtils.marketAbbr(this._dateScale.chart.instrument.symbol) :
-            ChartAccessorService.instance.getDefaultMarket().abbreviation;
+        return MarketUtils.marketAbbr(this._dateScale.chart.instrument.symbol);
     };
     Projection.prototype.dateByColumn = function (column) {
         var record = this.recordByColumn(column);

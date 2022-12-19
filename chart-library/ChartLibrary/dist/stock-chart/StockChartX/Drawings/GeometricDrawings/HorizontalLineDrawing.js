@@ -1,11 +1,24 @@
-import { __extends } from "tslib";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 import { Drawing } from '../Drawing';
 import { Geometry } from '../../Graphics/Geometry';
 import { ChartPoint } from '../../Graphics/ChartPoint';
 import { DummyCanvasContext } from '../../Utils/DummyCanvasContext';
 import { HtmlUtil } from '../../Utils/HtmlUtil';
 import { DrawingTextHorizontalPosition, DrawingTextVerticalPosition } from '../DrawingTextPosition';
-import { ChartAccessorService } from '../../../../services/chart';
 import { AlertableDrawing } from '../AlertableDrawing';
 import { Interval } from '../../../../services/loader';
 import { BrowserUtils } from '../../../../utils';
@@ -160,8 +173,7 @@ var HorizontalLineDrawing = (function (_super) {
         var firstPoint = this.chartPoints[0];
         var interval = Interval.fromChartInterval(this.chart.timeInterval);
         var symbol = this.chart.instrument.symbol;
-        var market = ChartAccessorService.instance.getMarketBySymbol(symbol);
-        var nextCandleDate = market.findProjectedFutureDate(firstPoint.date, 1, interval);
+        var nextCandleDate = null;
         return new ChartPoint({
             date: nextCandleDate,
             value: firstPoint.value

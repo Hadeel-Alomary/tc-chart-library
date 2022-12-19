@@ -1,4 +1,18 @@
-import { __extends } from "tslib";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 import { PanelEvent, PanelMoveDirection, PanelMoveKind } from "./ChartPanel";
 import { FrameControl } from "../Controls/FrameControl";
 import { GestureArray } from "../Gestures/GestureArray";
@@ -14,7 +28,6 @@ import { Drawing } from "../Drawings/Drawing";
 import { Rect } from "../Graphics/Rect";
 import { Animation } from "../Graphics/Animation";
 import { ChartPanelValueScaleImplementation } from "../Scales/ChartPanelValueScaleImplementation";
-import { ViewLoaderType, ChartAccessorService } from '../../../services/index';
 import { BrowserUtils, ColorUtils, Tc } from '../../../utils';
 import { OrderDrawing } from '../TradingDrawings/OrderDrawing';
 import { PositionDrawing } from '../TradingDrawings/PositionDrawing';
@@ -27,6 +40,7 @@ import { ThemeType } from '../ThemeType';
 import { HtmlUtil } from '../Utils/HtmlUtil';
 import { ChartPanelMenu } from '../../StockChartX.UI/ChartPanelMenu';
 import { TAIndicator } from '../Indicators/TAIndicator';
+import { ChartAccessorService, ViewLoaderType } from "../../../services/chart";
 var Class = {
     CONTAINER: 'scxChartPanel',
     SCROLL: 'scxPanelScroll',

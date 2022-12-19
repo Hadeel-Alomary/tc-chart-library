@@ -18,7 +18,6 @@ import { ChannelRequestType, ChartAccessorService } from '../../../services/inde
 import { IndicatorField, IndicatorParam, IndicatorPlotTypes } from './IndicatorConst';
 import { BrowserUtils } from '../../../utils';
 import { IndicatorHelper } from './IndicatorHelper';
-import { Config } from '../../../config/config';
 import { ThemeType } from '../ThemeType';
 import { MathUtils } from '../../../utils/math.utils';
 var Class = {
@@ -873,10 +872,6 @@ var Indicator = (function () {
         return this._getOverlayIndicatorDefaultSource();
     };
     Indicator.prototype._initGestures = function () {
-        if (Config.isElementBuild()) {
-            this._gestures = new GestureArray([]);
-            return;
-        }
         this._gestures = new GestureArray([
             new DoubleClickGesture({
                 handler: this._handleDoubleClick,
