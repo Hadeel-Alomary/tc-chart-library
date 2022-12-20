@@ -24,10 +24,18 @@ const isExternal = (id, parentId) => {
   return entryPointPaths.includes(relativePath);
 };
 
+const undefinedWarning = (warning) => {
+    if (warning.code === 'THIS_IS_UNDEFINED') {
+        return;
+    }
+    console.warn(warning.message);
+};
+
 const prepareBundle = dirs => {
   const dir = path.join('./dist', ...dirs);
   return {
     input: `${dir}/index.js`,
+    onwarn: undefinedWarning,
     external: isExternal,
     output: {
       file: `${dir}/index.cjs.js`,
@@ -38,6 +46,7 @@ const prepareBundle = dirs => {
     },
     plugins: [
       resolve(),
+
     ],
   };
 };
