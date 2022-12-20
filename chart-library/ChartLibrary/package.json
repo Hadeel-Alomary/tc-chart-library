@@ -21,30 +21,7 @@
     "prepare": "npm run build",
     "clean": "rimraf -r dist"
   },
-  "dependencies": {
-    "@angular/animations": "^7.2.16",
-    "@angular/common": "^7.2.16",
-    "@angular/compiler": "^7.2.16",
-    "@angular/core": "^7.2.16",
-    "@types/node": "^18.11.17",
-    "core-js": "^2.6.12",
-    "lodash": "^4.17.21",
-    "rxjs": "^6.6.7",
-    "tslib": "^1.14.1",
-    "typescript": "^4.9.4",
-    "web-animations-js": "^2.3.2",
-    "zone.js": "^0.8.29"
-  },
-  "devDependencies": {
-    "@angular-devkit/build-angular": "^0.11.4",
-    "@angular-devkit/core": "^0.6.0",
-    "@angular/cli": "^7.3.10",
-    "@angular/compiler-cli": "^7.2.16",
-    "@angular/language-service": "^7.2.16",
-    "@types/lodash": "^4.14.191",
-    "ts-node": "^6.0.5",
-    "tslint": "^5.10.0"
-  },
+
   "publishConfig": {
     "access": "public"
   }
