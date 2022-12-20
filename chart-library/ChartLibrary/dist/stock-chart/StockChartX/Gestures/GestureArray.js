@@ -21,7 +21,7 @@ var GestureArray = (function () {
         get: function () {
             return this._gestures;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     GestureArray.prototype.add = function (gesture) {

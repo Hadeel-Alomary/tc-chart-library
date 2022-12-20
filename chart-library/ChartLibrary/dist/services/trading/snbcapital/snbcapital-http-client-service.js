@@ -57,7 +57,7 @@ var SnbcapitalHttpClientService = (function () {
     };
     SnbcapitalHttpClientService.prototype.callKeepAlive = function () {
         var _this = this;
-        this.http.post(this.basicUrl, "NameXsl=KEEPALIVE&JavaClient=JSON&GUserTrace=".concat(this.customerCode), this.getHeaders())
+        this.http.post(this.basicUrl, "NameXsl=KEEPALIVE&JavaClient=JSON&GUserTrace=" + this.customerCode, this.getHeaders())
             .subscribe(function (response) { return _this.onKeepAliveResponse(response); });
     };
     SnbcapitalHttpClientService.prototype.onKeepAliveResponse = function (response) {

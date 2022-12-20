@@ -11,7 +11,7 @@ var PriceStyleRegistrar = (function () {
         get: function () {
             return this._priceStyles.registeredItems;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     PriceStyleRegistrar.register = function (typeOrClassName, constructor) {
@@ -43,14 +43,14 @@ var PriceStyle = (function () {
         get: function () {
             return '';
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(PriceStyle.prototype, "plot", {
         get: function () {
             return this._plot;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(PriceStyle.prototype, "chart", {
@@ -63,14 +63,14 @@ var PriceStyle = (function () {
                 this._chart = value;
             }
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(PriceStyle.prototype, "chartPanel", {
         get: function () {
             return this._plot && this._plot.chartPanel;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     PriceStyle.prototype.saveState = function () {

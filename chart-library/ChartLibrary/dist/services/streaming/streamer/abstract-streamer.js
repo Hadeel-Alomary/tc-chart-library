@@ -28,7 +28,7 @@ var AbstractStreamer = (function () {
         this.heartbeatManager.monitorMarket(this.marketAbbr);
     };
     AbstractStreamer.prototype.getHeartBeatTopic = function () {
-        return "HB.HB.".concat(this.marketAbbr);
+        return "HB.HB." + this.marketAbbr;
     };
     AbstractStreamer.prototype.getMessageType = function (topic) {
         if (topic.startsWith('QO.')) {

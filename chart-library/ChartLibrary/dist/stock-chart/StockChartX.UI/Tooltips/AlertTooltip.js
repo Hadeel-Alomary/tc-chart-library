@@ -2,12 +2,10 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    };
+    }
     return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -32,7 +30,7 @@ var AlertTooltip = (function (_super) {
             }
             return AlertTooltip._instance;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     AlertTooltip.prototype.show = function (config) {
@@ -42,8 +40,8 @@ var AlertTooltip = (function (_super) {
         $(IDS.TABLE_ID).addClass('shown');
         this.shown = true;
         config.position.y -= AbstractTooltip.offset;
-        $(IDS.TABLE_ID).css('width', "".concat(AbstractTooltip.defaultWidth, "px"));
-        this.setPosition(config.chartPanel, config.position, "#".concat(IDS.TOOLTIP_ID), AbstractTooltip.defaultWidth, true);
+        $(IDS.TABLE_ID).css('width', AbstractTooltip.defaultWidth + "px");
+        this.setPosition(config.chartPanel, config.position, "#" + IDS.TOOLTIP_ID, AbstractTooltip.defaultWidth, true);
     };
     AlertTooltip.prototype.hide = function () {
         if (!this.shown)

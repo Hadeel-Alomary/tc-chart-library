@@ -45,28 +45,28 @@ var DerayahService = (function () {
         get: function () {
             return this.derayahStateService.getDerayahToken();
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DerayahService.prototype, "connected", {
         get: function () {
             return this.token != null;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DerayahService.prototype, "portfolios", {
         get: function () {
             return this.derayahStateService.getDerayahPortfolios();
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DerayahService.prototype, "validSession", {
         get: function () {
             return this.derayahStateService.isValidDerayahSession();
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     DerayahService.prototype.getToken = function () {

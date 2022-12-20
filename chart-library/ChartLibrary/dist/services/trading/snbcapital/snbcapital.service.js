@@ -53,21 +53,21 @@ var SnbcapitalService = (function () {
         get: function () {
             return this.snbCapitalPortfolios;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(SnbcapitalService.prototype, "validSession", {
         get: function () {
             return this.snbcapitalStateService.isValidSnbcapitalSession();
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(SnbcapitalService.prototype, "snbcapitalUserName", {
         get: function () {
             return this.snbcapitalStateService.getSnbcapitalUserName();
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     SnbcapitalService.prototype.activate = function () {

@@ -48,7 +48,7 @@ var DrawingsDefaultSettings = (function () {
             }
             return DrawingsDefaultSettings.savedDefaultSettings;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     DrawingsDefaultSettings.writeDrawingDefaultSettings = function () {

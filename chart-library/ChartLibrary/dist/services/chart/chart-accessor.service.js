@@ -7,7 +7,7 @@ var ChartAccessorService = (function () {
             Tc.assert(ChartAccessorService._instance !== null, "Trying to access chart accessor before initialize it");
             return ChartAccessorService._instance;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     ChartAccessorService._instance = null;

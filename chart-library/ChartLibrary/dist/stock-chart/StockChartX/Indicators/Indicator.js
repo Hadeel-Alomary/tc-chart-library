@@ -100,7 +100,7 @@ var Indicator = (function () {
         get: function () {
             return null;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Indicator.prototype, "chart", {
@@ -113,14 +113,14 @@ var Indicator = (function () {
             if (value && this._options.valueScaleIndex)
                 this.valueScale = this._chart.valueScales[this._options.valueScaleIndex];
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Indicator.prototype, "chartPanel", {
         get: function () {
             return this._panel;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Indicator.prototype, "valueScale", {
@@ -130,21 +130,21 @@ var Indicator = (function () {
         set: function (value) {
             this._valueScale = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Indicator.prototype, "isOverlay", {
         get: function () {
             return this._isOverlay;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Indicator.prototype, "panelHeightRatio", {
         get: function () {
             return this._options.panelHeightRatio;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Indicator.prototype, "showValueMarkers", {
@@ -158,7 +158,7 @@ var Indicator = (function () {
                 this.updateTitleControlsVisibility();
             }
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Indicator.prototype, "showValuesInTitle", {
@@ -172,7 +172,7 @@ var Indicator = (function () {
                 this.updateTitleControlsVisibility();
             }
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Indicator.prototype, "showParamsInTitle", {
@@ -186,7 +186,7 @@ var Indicator = (function () {
                 this.updateTitleControlsVisibility();
             }
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Indicator.prototype, "parameters", {
@@ -196,14 +196,14 @@ var Indicator = (function () {
         set: function (value) {
             this._options.parameters = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Indicator.prototype, "fieldNames", {
         get: function () {
             return this._fieldNames;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Indicator.prototype, "plots", {
@@ -215,7 +215,7 @@ var Indicator = (function () {
             }
             return plots;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Indicator.prototype, "visible", {
@@ -231,14 +231,14 @@ var Indicator = (function () {
                     plot.visible = value;
             }
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Indicator.prototype, "isInitialized", {
         get: function () {
             return this._plotItems.length > 0;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Indicator.prototype, "plotItems", {
@@ -247,14 +247,14 @@ var Indicator = (function () {
                 return [];
             return this._plotItems;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Indicator.prototype, "horizontalLines", {
         get: function () {
             return this._options.horizontalLines;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Indicator.prototype, "customSourceIndicatorId", {
@@ -264,7 +264,7 @@ var Indicator = (function () {
         set: function (value) {
             this._options.customSourceIndicatorId = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Indicator.prototype, "id", {
@@ -274,14 +274,14 @@ var Indicator = (function () {
         set: function (value) {
             this._options.id = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Indicator.prototype, "titleControl", {
         get: function () {
             return this._titleControls;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Indicator.prototype.isValidAlertParameters = function () {

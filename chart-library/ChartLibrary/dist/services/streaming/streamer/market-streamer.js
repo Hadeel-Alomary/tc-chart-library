@@ -2,12 +2,10 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    };
+    }
     return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -50,69 +48,69 @@ var MarketStreamer = (function (_super) {
         _super.prototype.onDestroy.call(this);
     };
     MarketStreamer.prototype.subscribeQuote = function (symbol) {
-        var topic = "QO.".concat(symbol);
+        var topic = "QO." + symbol;
         this.subscribeTopic(topic);
     };
     MarketStreamer.prototype.subscribeQuotes = function (symbols) {
         var topics = [];
         symbols.forEach(function (symbol) {
-            topics.push("QO.".concat(symbol));
+            topics.push("QO." + symbol);
         });
         this.subscribeTopics(topics);
     };
     MarketStreamer.prototype.unSubscribeQuote = function (symbol) {
-        var topic = "QO.".concat(symbol);
+        var topic = "QO." + symbol;
         this.unSubscribeTopic(topic);
     };
     MarketStreamer.prototype.unSubscribeQuotes = function (symbols) {
         var topics = [];
         symbols.forEach(function (symbol) {
-            topics.push("QO.".concat(symbol));
+            topics.push("QO." + symbol);
         });
         this.unSubscribeTopics(topics);
     };
     MarketStreamer.prototype.subscribeTimeAndSale = function (symbol) {
-        var topic = "TAS.".concat(symbol);
+        var topic = "TAS." + symbol;
         this.subscribeTopic(topic);
     };
     MarketStreamer.prototype.unSubscribeTimeAndSale = function (symbol) {
-        var topic = "TAS.".concat(symbol);
+        var topic = "TAS." + symbol;
         this.unSubscribeTopic(topic);
     };
     MarketStreamer.prototype.subscribeMarketSummary = function () {
         if (this.market.abbreviation == 'TAD') {
-            this.subscribeTopic("MSE.MSE.".concat(this.market.abbreviation));
+            this.subscribeTopic("MSE.MSE." + this.market.abbreviation);
         }
         else {
-            this.subscribeTopic("MS.MS.".concat(this.market.abbreviation));
+            this.subscribeTopic("MS.MS." + this.market.abbreviation);
         }
     };
     MarketStreamer.prototype.subscribeMarketDepthByOrder = function (symbol) {
-        this.subscribeTopic("".concat(this.marketDepthByOrderTopic, ".").concat(symbol));
+        this.subscribeTopic(this.marketDepthByOrderTopic + "." + symbol);
     };
     MarketStreamer.prototype.subscribeMarketDepthByPrice = function (symbol) {
-        this.subscribeTopic("".concat(this.marketDepthByPriceTopic, ".").concat(symbol));
+        this.subscribeTopic(this.marketDepthByPriceTopic + "." + symbol);
     };
     MarketStreamer.prototype.subscribeMarketAlerts = function () {
-        this.subscribeTopic("MA.MA.".concat(this.market.abbreviation));
+        this.subscribeTopic("MA.MA." + this.market.abbreviation);
     };
     MarketStreamer.prototype.subscribeBigTrade = function () {
-        this.subscribeTopic("BT.BT.".concat(this.market.abbreviation));
+        this.subscribeTopic("BT.BT." + this.market.abbreviation);
     };
     MarketStreamer.prototype.subscribeChartIntrday = function (symbol) {
-        var topic = "CMIN.".concat(symbol);
+        var topic = "CMIN." + symbol;
         this.subscribeTopic(topic);
     };
     MarketStreamer.prototype.unSubscribeChartIntrday = function (symbol) {
-        var topic = "CMIN.".concat(symbol);
+        var topic = "CMIN." + symbol;
         this.unSubscribeTopic(topic);
     };
     MarketStreamer.prototype.subscribeChartDaily = function (symbol) {
-        var topic = "CDAY.".concat(symbol);
+        var topic = "CDAY." + symbol;
         this.subscribeTopic(topic);
     };
     MarketStreamer.prototype.unSubscribeChartDaily = function (symbol) {
-        var topic = "CDAY.".concat(symbol);
+        var topic = "CDAY." + symbol;
         this.unSubscribeTopic(topic);
     };
     MarketStreamer.prototype.getQuoteMessageStream = function () {

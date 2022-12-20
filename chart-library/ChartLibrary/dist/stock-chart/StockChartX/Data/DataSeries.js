@@ -39,7 +39,7 @@ var DataSeries = (function () {
         set: function (value) {
             this._name = value || '';
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DataSeries.prototype, "values", {
@@ -49,14 +49,14 @@ var DataSeries = (function () {
         set: function (value) {
             this._values = value || [];
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DataSeries.prototype, "length", {
         get: function () {
             return this._values.length;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DataSeries.prototype, "nameSuffix", {
@@ -64,28 +64,28 @@ var DataSeries = (function () {
             var name = this.name, idx = name.lastIndexOf(".");
             return idx >= 0 ? name.substr(idx) : null;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DataSeries.prototype, "isValueDataSeries", {
         get: function () {
             return this.nameSuffix !== DataSeriesSuffix.DATE;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DataSeries.prototype, "isDateDataSeries", {
         get: function () {
             return this.nameSuffix === DataSeriesSuffix.DATE;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DataSeries.prototype, "firstValue", {
         get: function () {
             return this._values[0];
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DataSeries.prototype, "lastValue", {
@@ -93,7 +93,7 @@ var DataSeries = (function () {
             var values = this._values;
             return values[values.length - 1];
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     DataSeries.fromField = function (field, startIndex) {

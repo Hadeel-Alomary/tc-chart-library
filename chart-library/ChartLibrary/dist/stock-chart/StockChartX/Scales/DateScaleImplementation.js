@@ -2,12 +2,10 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    };
+    }
     return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -58,14 +56,14 @@ var DateScaleImplementation = (function (_super) {
         get: function () {
             return this._topPanel;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "bottomPanel", {
         get: function () {
             return this._bottomPanel;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "zoomed", {
@@ -75,49 +73,49 @@ var DateScaleImplementation = (function (_super) {
         set: function (zoomed) {
             this._zoomed = zoomed;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "topPanelCssClass", {
         get: function () {
             return Class.TOP_SCALE;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "bottomPanelCssClass", {
         get: function () {
             return Class.BOTTOM_SCALE;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "topPanelVisible", {
         get: function () {
             return this._topPanel.visible;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "bottomPanelVisible", {
         get: function () {
             return this._bottomPanel.visible;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "projection", {
         get: function () {
             return this._projection;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "projectionFrame", {
         get: function () {
             return this._projectionFrame;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "calibrator", {
@@ -127,21 +125,21 @@ var DateScaleImplementation = (function (_super) {
         set: function (value) {
             this._calibrator = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "firstVisibleIndex", {
         get: function () {
             return this._firstVisibleIndex;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "lastVisibleIndex", {
         get: function () {
             return this._lastVisibleIndex;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "firstVisibleRecord", {
@@ -158,7 +156,7 @@ var DateScaleImplementation = (function (_super) {
                 this.chart.fireValueChanged(ChartEvent.FIRST_VISIBLE_RECORD_CHANGED, oldValue, record);
             }
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "lastVisibleRecord", {
@@ -175,7 +173,7 @@ var DateScaleImplementation = (function (_super) {
                 this.chart.fireValueChanged(ChartEvent.LAST_VISIBLE_RECORD_CHANGED, oldValue, value);
             }
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "visibleDateRange", {
@@ -186,7 +184,7 @@ var DateScaleImplementation = (function (_super) {
                 max: this.projection.dateByX(frame.right)
             };
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "useManualHeight", {
@@ -196,7 +194,7 @@ var DateScaleImplementation = (function (_super) {
         set: function (value) {
             this._options.useManualHeight = !!value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "manualHeight", {
@@ -208,7 +206,7 @@ var DateScaleImplementation = (function (_super) {
                 throw new Error("Height must be a positive number.");
             this._options.height = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "minVisibleRecords", {
@@ -220,7 +218,7 @@ var DateScaleImplementation = (function (_super) {
                 throw new Error("Records must be a finite number greater than 0.");
             this._options.minVisibleRecords = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "rightAdditionalSpaceRatio", {
@@ -232,7 +230,7 @@ var DateScaleImplementation = (function (_super) {
                 throw new TypeError("Ratio must be a positive number.");
             this._options.rightAdditionalSpaceRatio = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "scrollKind", {
@@ -242,7 +240,7 @@ var DateScaleImplementation = (function (_super) {
         set: function (value) {
             this._options.scrollKind = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "zoomKind", {
@@ -252,7 +250,7 @@ var DateScaleImplementation = (function (_super) {
         set: function (value) {
             this._options.zoomKind = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "zoomMode", {
@@ -262,14 +260,14 @@ var DateScaleImplementation = (function (_super) {
         set: function (value) {
             this._options.zoomMode = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "actualTheme", {
         get: function () {
             return this.chart.theme.dateScale;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "columnsCount", {
@@ -278,14 +276,14 @@ var DateScaleImplementation = (function (_super) {
                 return 0;
             return this._options.lastVisibleRecord - this._options.firstVisibleRecord + 1;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "columnWidth", {
         get: function () {
             return this._columnWidth;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "maxAllowedRecord", {
@@ -293,7 +291,7 @@ var DateScaleImplementation = (function (_super) {
             var additionalColumns = (this._projectionFrame.width * this.rightAdditionalSpaceRatio) / this._columnWidth;
             return this.getDateDataSeries().length - 1 + additionalColumns;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "majorTickMarkLength", {
@@ -303,7 +301,7 @@ var DateScaleImplementation = (function (_super) {
         set: function (value) {
             this._options.majorTickMarkLength = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "minorTickMarkLength", {
@@ -313,7 +311,7 @@ var DateScaleImplementation = (function (_super) {
         set: function (value) {
             this._options.minorTickMarkLength = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "textPadding", {
@@ -323,7 +321,7 @@ var DateScaleImplementation = (function (_super) {
         set: function (value) {
             this._options.textPadding = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "allowPartialRecords", {
@@ -337,7 +335,7 @@ var DateScaleImplementation = (function (_super) {
                 this.lastVisibleRecord = this.lastVisibleRecord;
             }
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "showGridSessionLines", {
@@ -347,14 +345,14 @@ var DateScaleImplementation = (function (_super) {
         set: function (value) {
             this._options.showGridSessionLines = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleImplementation.prototype, "gridSessionLinesColor", {
         get: function () {
             return "#888";
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     DateScaleImplementation.prototype._subscribeEvents = function () {

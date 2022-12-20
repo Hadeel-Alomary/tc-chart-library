@@ -21,14 +21,14 @@ var Animation = (function () {
                 throw new TypeError("Callback must be a function.");
             this._callback = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Animation.prototype, "started", {
         get: function () {
             return this._isStarted;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Animation.prototype, "recurring", {
@@ -38,7 +38,7 @@ var Animation = (function () {
         set: function (value) {
             this._recurring = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Animation.prototype.start = function () {

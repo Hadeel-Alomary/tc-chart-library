@@ -49,7 +49,7 @@ var TcErrorHandler = (function () {
         this.logLines.push(line);
     };
     TcErrorHandler.prototype._extractMessage = function (error) {
-        return error.message ? "ERROR MESSAGE:  ".concat(error.message) : "ERROR:  ".concat(error.toString());
+        return error.message ? "ERROR MESSAGE:  " + error.message : "ERROR:  " + error.toString();
     };
     TcErrorHandler.prototype._findContext = function (error) {
         if (error) {

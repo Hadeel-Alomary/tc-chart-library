@@ -52,7 +52,7 @@ var Interval = (function () {
         return result;
     };
     Interval.getNewCustomInterval = function (intervalBase, repeat) {
-        return new Interval(IntervalType.Custom, "".concat(repeat).concat(this.getCustomServerInterval(intervalBase)), this.getCustomIntervalArabicName(intervalBase, repeat), intervalBase, repeat);
+        return new Interval(IntervalType.Custom, "" + repeat + this.getCustomServerInterval(intervalBase), this.getCustomIntervalArabicName(intervalBase, repeat), intervalBase, repeat);
     };
     Interval.getIntervalByServerFormat = function (serverInterval) {
         var result = Interval.getIntervals().find(function (interval) { return interval.serverInterval == serverInterval; });
@@ -273,23 +273,23 @@ var Interval = (function () {
             default:
                 if (timespan >= TimeSpan.MILLISECONDS_IN_MONTH && (timespan % TimeSpan.MILLISECONDS_IN_MONTH) == 0) {
                     var repeat = timespan / TimeSpan.MILLISECONDS_IN_MONTH;
-                    return new Interval(IntervalType.Custom, "".concat(repeat).concat(this.getCustomServerInterval(BaseIntervalType.Month)), "", BaseIntervalType.Month, repeat);
+                    return new Interval(IntervalType.Custom, "" + repeat + this.getCustomServerInterval(BaseIntervalType.Month), "", BaseIntervalType.Month, repeat);
                 }
                 else if (timespan >= TimeSpan.MILLISECONDS_IN_WEEK && (timespan % TimeSpan.MILLISECONDS_IN_WEEK) == 0) {
                     var repeat = timespan / TimeSpan.MILLISECONDS_IN_WEEK;
-                    return new Interval(IntervalType.Custom, "".concat(repeat).concat(this.getCustomServerInterval(BaseIntervalType.Week)), "", BaseIntervalType.Week, repeat);
+                    return new Interval(IntervalType.Custom, "" + repeat + this.getCustomServerInterval(BaseIntervalType.Week), "", BaseIntervalType.Week, repeat);
                 }
                 else if (timespan >= TimeSpan.MILLISECONDS_IN_DAY && (timespan % TimeSpan.MILLISECONDS_IN_DAY) == 0) {
                     var repeat = timespan / TimeSpan.MILLISECONDS_IN_DAY;
-                    return new Interval(IntervalType.Custom, "".concat(repeat).concat(this.getCustomServerInterval(BaseIntervalType.Day)), "", BaseIntervalType.Day, repeat);
+                    return new Interval(IntervalType.Custom, "" + repeat + this.getCustomServerInterval(BaseIntervalType.Day), "", BaseIntervalType.Day, repeat);
                 }
                 else if (timespan >= TimeSpan.MILLISECONDS_IN_HOUR && (timespan % TimeSpan.MILLISECONDS_IN_HOUR) == 0) {
                     var repeat = timespan / TimeSpan.MILLISECONDS_IN_HOUR;
-                    return new Interval(IntervalType.Custom, "".concat(repeat).concat(this.getCustomServerInterval(BaseIntervalType.Hour)), "", BaseIntervalType.Hour, repeat);
+                    return new Interval(IntervalType.Custom, "" + repeat + this.getCustomServerInterval(BaseIntervalType.Hour), "", BaseIntervalType.Hour, repeat);
                 }
                 else if (timespan >= TimeSpan.MILLISECONDS_IN_MINUTE && (timespan % TimeSpan.MILLISECONDS_IN_MINUTE) == 0) {
                     var repeat = timespan / TimeSpan.MILLISECONDS_IN_MINUTE;
-                    return new Interval(IntervalType.Custom, "".concat(repeat).concat(this.getCustomServerInterval(BaseIntervalType.Minute)), "", BaseIntervalType.Minute, repeat);
+                    return new Interval(IntervalType.Custom, "" + repeat + this.getCustomServerInterval(BaseIntervalType.Minute), "", BaseIntervalType.Minute, repeat);
                 }
         }
         Tc.error("fromChartInterval invalid timespan " + timespan);
@@ -355,15 +355,15 @@ var Interval = (function () {
                 return languageService.translate('سنة');
             case '3month':
                 return languageService.translate('ربع سنة');
-            case "".concat(intervalRepeat, "minute"):
+            case intervalRepeat + "minute":
                 if (+intervalRepeat % 60 == 0)
                     return languageService.arabic ? this.getCustomIntervalArabicName(BaseIntervalType.Hour, +intervalRepeat / 60) : this.getCustomIntervalEnglishName(BaseIntervalType.Hour, +intervalRepeat / 60);
-                return languageService.arabic ? " \u062F\u0642\u064A\u0642\u0629  ( ".concat(intervalRepeat, " )") : "( ".concat(intervalRepeat, " ) Minute");
-            case "".concat(intervalRepeat, "day"):
+                return languageService.arabic ? " \u062F\u0642\u064A\u0642\u0629  ( " + intervalRepeat + " )" : "( " + intervalRepeat + " ) Minute";
+            case intervalRepeat + "day":
                 return languageService.arabic ? this.getCustomIntervalArabicName(BaseIntervalType.Day, +intervalRepeat) : this.getCustomIntervalEnglishName(BaseIntervalType.Day, +intervalRepeat);
-            case "".concat(intervalRepeat, "week"):
+            case intervalRepeat + "week":
                 return languageService.arabic ? this.getCustomIntervalArabicName(BaseIntervalType.Week, +intervalRepeat) : this.getCustomIntervalEnglishName(BaseIntervalType.Week, +intervalRepeat);
-            case "".concat(intervalRepeat, "month"):
+            case intervalRepeat + "month":
                 return languageService.arabic ? this.getCustomIntervalArabicName(BaseIntervalType.Month, +intervalRepeat) : this.getCustomIntervalEnglishName(BaseIntervalType.Month, +intervalRepeat);
             default:
                 return null;
@@ -447,10 +447,10 @@ var Interval = (function () {
                 return IntervalType.Year;
             case '1quarter':
                 return IntervalType.Quarter;
-            case "".concat(intervalRepeat, "minute"):
-            case "".concat(intervalRepeat, "day"):
-            case "".concat(intervalRepeat, "week"):
-            case "".concat(intervalRepeat, "month"):
+            case intervalRepeat + "minute":
+            case intervalRepeat + "day":
+            case intervalRepeat + "week":
+            case intervalRepeat + "month":
                 return IntervalType.Custom;
             default:
                 return null;

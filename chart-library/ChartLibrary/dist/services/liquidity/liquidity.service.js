@@ -36,7 +36,7 @@ var LiquidityService = (function () {
         var _this = this;
         var updateStreamValues = [];
         messages.forEach(function (message) {
-            var key = "".concat(message.symbol, ".").concat(message.interval);
+            var key = message.symbol + "." + message.interval;
             if (key in _this.symbolLiquidityPoints) {
                 var liquidityPoint = LiquidityPoint.fromLiquidityMessage(message);
                 if (_this.isWaitingForHistoryToLoad(key)) {
@@ -58,7 +58,7 @@ var LiquidityService = (function () {
     LiquidityService.prototype.getSymbolHistoryLoadState = function (symbol, interval) {
         var baseInterval = LiquidityIntervalUtils.getBaseInterval(interval);
         var baseIntervalString = LiquidityIntervalUtils.toIntervalString(baseInterval);
-        var baseKey = "".concat(symbol, ".").concat(baseIntervalString);
+        var baseKey = symbol + "." + baseIntervalString;
         if (!(baseKey in this.symbolLiquidityPoints)) {
             return LiquidityHistoryLoadingState.NOT_LOADED;
         }
@@ -74,7 +74,7 @@ var LiquidityService = (function () {
         Tc.assert(this.getSymbolHistoryLoadState(symbol, interval) == LiquidityHistoryLoadingState.NOT_LOADED, "request to load history while it is already loading/loaded");
         var baseInterval = LiquidityIntervalUtils.getBaseInterval(interval);
         var baseIntervalString = LiquidityIntervalUtils.toIntervalString(baseInterval);
-        var baseKey = "".concat(symbol, ".").concat(baseIntervalString);
+        var baseKey = symbol + "." + baseIntervalString;
         var market = null;
         this.prepareCaching(baseKey);
         this.streamer.getTechnicalReportsStreamer().subscribeLiquidity(baseIntervalString, market);
@@ -88,13 +88,13 @@ var LiquidityService = (function () {
     };
     LiquidityService.prototype.getSymbolLiquidityPoints = function (symbol, interval) {
         var intervalString = LiquidityIntervalUtils.toIntervalString(interval);
-        var key = "".concat(symbol, ".").concat(intervalString);
+        var key = symbol + "." + intervalString;
         if (key in this.symbolCachedLiquidityPoints) {
             return this.symbolLiquidityPoints[key];
         }
         var baseInterval = LiquidityIntervalUtils.getBaseInterval(interval);
         var baseIntervalString = LiquidityIntervalUtils.toIntervalString(baseInterval);
-        var baseKey = "".concat(symbol, ".").concat(baseIntervalString);
+        var baseKey = symbol + "." + baseIntervalString;
         var market = null;
         if (this.liquidityPointsGrouper.needGrouping(interval) && (baseKey in this.symbolLiquidityPoints)) {
             return this.liquidityPointsGrouper.groupLiquidityPoints(market, symbol, this.symbolLiquidityPoints[baseKey], interval);
@@ -109,7 +109,7 @@ var LiquidityService = (function () {
         this.symbolCachedLiquidityPoints[key] = [];
     };
     LiquidityService.prototype.processCachedLiquidityPoints = function (symbol, intervalString) {
-        var key = "".concat(symbol, ".").concat(intervalString);
+        var key = symbol + "." + intervalString;
         for (var _i = 0, _a = this.symbolCachedLiquidityPoints[key]; _i < _a.length; _i++) {
             var point = _a[_i];
             this.processLiquidityUpdate(symbol, intervalString, point);
@@ -117,7 +117,7 @@ var LiquidityService = (function () {
         this.symbolCachedLiquidityPoints[key] = [];
     };
     LiquidityService.prototype.processLiquidityUpdate = function (symbol, intervalString, liquidityPoint) {
-        var key = "".concat(symbol, ".").concat(intervalString), interval = LiquidityIntervalUtils.fromIntervalString(intervalString);
+        var key = symbol + "." + intervalString, interval = LiquidityIntervalUtils.fromIntervalString(intervalString);
         this.applyRealTimeUpdate(key, liquidityPoint, interval);
     };
     LiquidityService.prototype.applyRealTimeUpdate = function (key, newPoint, interval) {

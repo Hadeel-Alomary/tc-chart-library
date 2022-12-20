@@ -18,10 +18,10 @@ var StreamerChannel = (function () {
         return url;
     };
     StreamerChannel.prototype.subscribeTopic = function (topic) {
-        this.sendingStream.next("subscribe=".concat(topic));
+        this.sendingStream.next("subscribe=" + topic);
     };
     StreamerChannel.prototype.unSubscribeTopic = function (topic) {
-        this.sendingStream.next("unsubscribe=".concat(topic));
+        this.sendingStream.next("unsubscribe=" + topic);
     };
     StreamerChannel.prototype.getMessageStream = function () {
         return this.receivingStream;
@@ -46,7 +46,7 @@ var StreamerChannel = (function () {
         console.log("getting onOpen event");
         if (this.websocket.readyState) {
             console.log("send websocket data");
-            this.websocket.send("uid=".concat(StringUtils.guid()));
+            this.websocket.send("uid=" + StringUtils.guid());
             this.sendingStream.subscribe(function (data) {
                 _this.websocket.send(data);
             });

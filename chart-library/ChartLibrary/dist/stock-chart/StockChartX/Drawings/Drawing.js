@@ -2,12 +2,10 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    };
+    }
     return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -65,7 +63,7 @@ var DrawingRegistrar = (function () {
         get: function () {
             return this._drawings.registeredItems;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     DrawingRegistrar.register = function (type) {
@@ -139,21 +137,21 @@ var Drawing = (function (_super) {
         get: function () {
             return 'abstract';
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Drawing, "className", {
         get: function () {
             return '';
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Drawing.prototype, "className", {
         get: function () {
             return this.constructor.className;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Drawing.prototype, "chartPoints", {
@@ -164,7 +162,7 @@ var Drawing = (function (_super) {
         set: function (value) {
             this.setChartPoints(value);
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Drawing.prototype, "locked", {
@@ -174,7 +172,7 @@ var Drawing = (function (_super) {
         set: function (value) {
             this._setOption('locked', !!value, DrawingEvent.LOCKED_CHANGED);
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Drawing.prototype, "resizable", {
@@ -184,7 +182,7 @@ var Drawing = (function (_super) {
         set: function (value) {
             this._setOption('resizable', !!value, DrawingEvent.RESIZABLE_CHANGED);
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Drawing.prototype, "selectable", {
@@ -194,7 +192,7 @@ var Drawing = (function (_super) {
         set: function (value) {
             this._setOption('selectable', !!value, DrawingEvent.SELECTABLE_CHANGED);
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Drawing.prototype, "theme", {
@@ -205,7 +203,7 @@ var Drawing = (function (_super) {
             this._options.theme = value;
             this.fire(DrawingEvent.THEME_CHANGED, value);
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Drawing.prototype, "createPointBehavior", {
@@ -215,7 +213,7 @@ var Drawing = (function (_super) {
         set: function (value) {
             this._options.createPointBehavior = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Drawing.prototype, "selected", {
@@ -241,35 +239,35 @@ var Drawing = (function (_super) {
                 }
             }
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Drawing.prototype, "canSelect", {
         get: function () {
             return this.selectable;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Drawing.prototype, "canMove", {
         get: function () {
             return this.selectable && !this.locked;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Drawing.prototype, "canResize", {
         get: function () {
             return this.selectable && this.resizable && !this.locked;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Drawing.prototype, "pointsNeeded", {
         get: function () {
             return 1;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Drawing.prototype, "magnetRadius", {
@@ -279,7 +277,7 @@ var Drawing = (function (_super) {
             }
             return this.chart.magnetRatio * 25;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Drawing.prototype, "id", {
@@ -289,21 +287,21 @@ var Drawing = (function (_super) {
         set: function (value) {
             this._options.id = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Drawing.prototype, "hasTooltip", {
         get: function () {
             return false;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Drawing.prototype, "levels", {
         get: function () {
             return [];
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Drawing.prototype._onDeleteDrawing = function () {

@@ -29,7 +29,7 @@ var HorizontalLine = (function () {
         set: function (value) {
             this.options.theme = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(HorizontalLine.prototype, "value", {
@@ -39,7 +39,7 @@ var HorizontalLine = (function () {
         set: function (value) {
             this.options.value = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     HorizontalLine.prototype.setColor = function (color) {

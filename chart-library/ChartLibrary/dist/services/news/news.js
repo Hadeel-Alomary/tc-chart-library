@@ -38,13 +38,13 @@ var News = (function () {
     };
     News.getNewsFromIdAndTitle = function (id, title) {
         return {
-            id: "".concat(id),
+            id: "" + id,
             name: null,
             market: null,
             symbol: null,
             date: null,
             header: title,
-            url: "https://www.tickerchart.com/tickerchart_live/AnnouncementDetails.php?announcementId=".concat(id),
+            url: "https://www.tickerchart.com/tickerchart_live/AnnouncementDetails.php?announcementId=" + id,
             deleted: false,
             viewed: false
         };

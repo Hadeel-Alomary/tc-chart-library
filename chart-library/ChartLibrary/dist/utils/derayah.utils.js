@@ -4,7 +4,7 @@ var DerayahUtils = (function () {
     }
     DerayahUtils.getSymbolWithMarketFromDerayah = function (derayahMarket, derayahSymbol) {
         var market = DerayahUtils.getMarketAbbreviationFromDerayahMarket(derayahMarket);
-        return "".concat(derayahSymbol, ".").concat(market);
+        return derayahSymbol + "." + market;
     };
     DerayahUtils.getAllowedMarketsAbbreviations = function () {
         return ["TAD"];

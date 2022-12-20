@@ -45,7 +45,7 @@ var NewsService = (function () {
     };
     NewsService.prototype.getCategoryNews = function (marketId, category) {
         var _this = this;
-        var key = "".concat(marketId, ".").concat(category);
+        var key = marketId + "." + category;
         if (Object.keys(this.marketCategoryNews).indexOf(key) > -1) {
             return of(this.marketCategoryNews[key]);
         }

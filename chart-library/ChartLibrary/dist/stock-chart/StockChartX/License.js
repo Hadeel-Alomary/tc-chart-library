@@ -23,7 +23,7 @@ function checkLicense() {
             handleInvalidLicense();
         }
     };
-    img.src = "https://modulusglobal.com/licenseping/ping.ashx?&cid=".concat(client, "&asm=").concat(domain, "&vr=").concat(vrcode, "&img=1&t=").concat(Math.random());
+    img.src = "https://modulusglobal.com/licenseping/ping.ashx?&cid=" + client + "&asm=" + domain + "&vr=" + vrcode + "&img=1&t=" + Math.random();
 }
 function handleInvalidLicense() {
     window.StockChartX = undefined;

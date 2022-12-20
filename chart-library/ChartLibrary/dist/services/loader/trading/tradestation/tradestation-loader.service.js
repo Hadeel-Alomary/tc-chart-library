@@ -33,7 +33,7 @@ var TradestationLoaderService = (function () {
         return document.location.protocol + "//" + document.location.host + '/m/tradestation/oauth/redirect';
     };
     TradestationLoaderService.prototype.getLogInPageLink = function () {
-        return "".concat(this.getBaseUrl(), "/authorize/?redirect_uri=").concat(this.getRedirectUrl(), "&client_id=").concat(this.tradestationClient.getClientId(), "&response_type=code");
+        return this.getBaseUrl() + "/authorize/?redirect_uri=" + this.getRedirectUrl() + "&client_id=" + this.tradestationClient.getClientId() + "&response_type=code";
     };
     TradestationLoaderService.prototype.getAccessToken = function (oauthCode) {
         var headers = {
@@ -41,34 +41,34 @@ var TradestationLoaderService = (function () {
                 'Content-Type': 'application/x-www-form-urlencoded',
             })
         };
-        var url = "".concat(this.getBaseUrl(), "/security/authorize");
-        var data = "code=".concat(oauthCode, "&redirect_uri=").concat(this.getRedirectUrl(), "&client_id=").concat(this.tradestationClient.getClientId(), "&client_secret=").concat(this.tradestationClient.getClientSecret(), "&grant_type=authorization_code");
+        var url = this.getBaseUrl() + "/security/authorize";
+        var data = "code=" + oauthCode + "&redirect_uri=" + this.getRedirectUrl() + "&client_id=" + this.tradestationClient.getClientId() + "&client_secret=" + this.tradestationClient.getClientSecret() + "&grant_type=authorization_code";
         return this.http.post(url, data, headers);
     };
     TradestationLoaderService.prototype.callTradestationIntegrationLink = function (basicUrl, numberOfAccounts) {
         var username = null;
         var version = null;
-        return this.http.post(TcUrlUtils.url(basicUrl + "?version=web_".concat(version)), { user_name: username, p1: numberOfAccounts }).pipe(map(function () { }));
+        return this.http.post(TcUrlUtils.url(basicUrl + ("?version=web_" + version)), { user_name: username, p1: numberOfAccounts }).pipe(map(function () { }));
     };
     TradestationLoaderService.prototype.getAccounts = function (user_id) {
-        var url = "".concat(this.getBaseUrl(), "/users/").concat(user_id, "/accounts");
+        var url = this.getBaseUrl() + "/users/" + user_id + "/accounts";
         return this.tradestationHttpClientService.getWithAuth(url).pipe(map(function (response) { return response; }));
     };
     TradestationLoaderService.prototype.getOrders = function () {
         var oneMonth = moment(new Date(), 'YYYY-MM-DD').subtract(1, 'months').format('MM-DD-YYYY');
-        var url = "".concat(this.getBaseUrl(), "/accounts/").concat(this.getAccountKey(), "/orders?since=").concat(oneMonth);
+        var url = this.getBaseUrl() + "/accounts/" + this.getAccountKey() + "/orders?since=" + oneMonth;
         return this.tradestationHttpClientService.getWithAuth(url).pipe(map(function (response) { return response; }));
     };
     TradestationLoaderService.prototype.getPositions = function () {
-        var url = "".concat(this.getBaseUrl(), "/accounts/").concat(this.getAccountKey(), "/positions");
+        var url = this.getBaseUrl() + "/accounts/" + this.getAccountKey() + "/positions";
         return this.tradestationHttpClientService.getWithAuth(url).pipe(map(function (response) { return response; }));
     };
     TradestationLoaderService.prototype.getBalances = function () {
-        var url = "".concat(this.getBaseUrl(), "/accounts/").concat(this.getAccountKey(), "/balances");
+        var url = this.getBaseUrl() + "/accounts/" + this.getAccountKey() + "/balances";
         return this.tradestationHttpClientService.getWithAuth(url).pipe(map(function (response) { return response; }));
     };
     TradestationLoaderService.prototype.getOrderConfirmation = function (order, osoOrders, accountKey) {
-        var url = "".concat(this.getBaseUrl(), "/orders/confirm");
+        var url = this.getBaseUrl() + "/orders/confirm";
         var body = this.getOrderHttpBody(order, accountKey);
         if (osoOrders.length > 0) {
             body.OSOs = this.getOsoOrders(osoOrders, accountKey);
@@ -76,7 +76,7 @@ var TradestationLoaderService = (function () {
         return this.tradestationHttpClientService.postWithAuth(url, body).pipe(map(function (response) { return response; }));
     };
     TradestationLoaderService.prototype.postOrder = function (order, osoOrders, accountKey) {
-        var url = "".concat(this.getBaseUrl(), "/orders");
+        var url = this.getBaseUrl() + "/orders";
         var body = this.getOrderHttpBody(order, accountKey);
         if (osoOrders.length > 0) {
             body.OSOs = this.getOsoOrders(osoOrders, accountKey);
@@ -84,7 +84,7 @@ var TradestationLoaderService = (function () {
         return this.tradestationHttpClientService.postWithAuth(url, body).pipe(map(function (response) { return response; }));
     };
     TradestationLoaderService.prototype.updateOrder = function (order) {
-        var url = "".concat(this.getBaseUrl(), "/orders/").concat(order.id);
+        var url = this.getBaseUrl() + "/orders/" + order.id;
         var body = {
             OrderType: order.type,
             Quantity: order.quantity,
@@ -155,7 +155,7 @@ var TradestationLoaderService = (function () {
         return oso;
     };
     TradestationLoaderService.prototype.deleteOrder = function (orderId) {
-        var url = "".concat(this.getBaseUrl(), "/orders/").concat(orderId);
+        var url = this.getBaseUrl() + "/orders/" + orderId;
         return this.tradestationHttpClientService.deleteWithAuth(url).pipe(map(function (response) { return response; }));
     };
     TradestationLoaderService = __decorate([

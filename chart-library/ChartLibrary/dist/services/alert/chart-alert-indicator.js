@@ -13,15 +13,15 @@ var ChartAlertIndicator = (function () {
             }
             return IndicatorHelper.indicatorToString(this.indicatorType) + ' ' + this.indicatorParametersString;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartAlertIndicator.prototype, "indicatorParametersString", {
         get: function () {
             var parameters = this.indicatorParameters;
-            return parameters.length > 0 ? "(".concat(parameters.join(', '), ")").replace(new RegExp('\\$', 'g'), '') : '';
+            return parameters.length > 0 ? ("(" + parameters.join(', ') + ")").replace(new RegExp('\\$', 'g'), '') : '';
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     ChartAlertIndicator.CLOSE_INDICATOR_TYPE = -1;

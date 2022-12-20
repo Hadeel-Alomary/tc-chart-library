@@ -32,7 +32,7 @@ var DerayahLoaderService = (function () {
         return null;
     };
     DerayahLoaderService.prototype.getLoginPageLink = function () {
-        return "".concat(this.getDerayahAuthUrl(), "?prompt=login&response_type=code&scope=TradingAPI.All%20offline_access&redirect_uri=").concat(this.getRedirectUrl(), "&client_id=").concat(this.derayahClientService.getClientId(), "&_State=").concat(this.getState(), "&code_challenge=").concat(this.getCodeChallenge(), "&code_challenge_method=S256&response_mode=query");
+        return this.getDerayahAuthUrl() + "?prompt=login&response_type=code&scope=TradingAPI.All%20offline_access&redirect_uri=" + this.getRedirectUrl() + "&client_id=" + this.derayahClientService.getClientId() + "&_State=" + this.getState() + "&code_challenge=" + this.getCodeChallenge() + "&code_challenge_method=S256&response_mode=query";
     };
     DerayahLoaderService.prototype.getRedirectUrl = function () {
         var redirectUrl = 'https://www.tickerchart.net/m/derayah/oauth/redirect';
@@ -45,11 +45,11 @@ var DerayahLoaderService = (function () {
         return "slu0OpvNMEKBQF4ezN2TOZTJdm93j-dxenzpedCJgSk";
     };
     DerayahLoaderService.prototype.getAccessToken = function (oauthCode) {
-        var data = "code=".concat(oauthCode, "&redirect_uri=").concat(this.getRedirectUrl(), "&client_id=").concat(this.derayahClientService.getClientId(), "&code_verifier=").concat(this.getCodeVerifier(), "&client_secret=").concat(this.derayahClientService.getClientSecretId(), "&grant_type=authorization_code");
+        var data = "code=" + oauthCode + "&redirect_uri=" + this.getRedirectUrl() + "&client_id=" + this.derayahClientService.getClientId() + "&code_verifier=" + this.getCodeVerifier() + "&client_secret=" + this.derayahClientService.getClientSecretId() + "&grant_type=authorization_code";
         return this.http.post(this.getDerayahTokenUrl(), data, this.getTokenHeaders());
     };
     DerayahLoaderService.prototype.getRefreshToken = function (refreshToken) {
-        var data = "client_id=".concat(this.derayahClientService.getClientId(), "&client_secret=").concat(this.derayahClientService.getClientSecretId(), "&grant_type=refresh_token&refresh_token=").concat(refreshToken);
+        var data = "client_id=" + this.derayahClientService.getClientId() + "&client_secret=" + this.derayahClientService.getClientSecretId() + "&grant_type=refresh_token&refresh_token=" + refreshToken;
         return this.http.post(this.getDerayahTokenUrl(), data, this.getTokenHeaders());
     };
     DerayahLoaderService.prototype.getTokenHeaders = function () {
@@ -69,7 +69,7 @@ var DerayahLoaderService = (function () {
         return this.http.post(url, { user_name: userName, p1: portfolioNum });
     };
     DerayahLoaderService.prototype.addPreConfirm = function (order) {
-        var url = "".concat(this.getDerayahOauthUrl(), "/Order/preconfirmPlace");
+        var url = this.getDerayahOauthUrl() + "/Order/preconfirmPlace";
         this.logUrl('Derayah add pre confirm url : ', url);
         this.logRequestData('add pre confirm', {
             "portfolio": order.portfolio,
@@ -88,7 +88,7 @@ var DerayahLoaderService = (function () {
         return this.derayahHttpClientService.postWithAuth(url, this.getPreAddOrUpdateOrder(order, true)).pipe(map(function (response) { return response; }));
     };
     DerayahLoaderService.prototype.addOrder = function (order) {
-        var url = "".concat(this.getDerayahOauthUrl(), "/Order/Place");
+        var url = this.getDerayahOauthUrl() + "/Order/Place";
         this.logUrl('Derayah new order url : ', url);
         this.logRequestData('add order', {
             'portfolio': order.portfolio,
@@ -105,7 +105,7 @@ var DerayahLoaderService = (function () {
         return this.derayahHttpClientService.postWithAuth(url, this.getPreAddOrUpdateOrder(order, true)).pipe(map(function (response) { return response; }));
     };
     DerayahLoaderService.prototype.updatePreConfirm = function (order) {
-        var url = "".concat(this.getDerayahOauthUrl(), "/Order/preconfirmUpdate");
+        var url = this.getDerayahOauthUrl() + "/Order/preconfirmUpdate";
         this.logUrl('Derayah pre update order url : ', url);
         this.logRequestData('update pre confirm', {
             "order-id": order.id,
@@ -126,7 +126,7 @@ var DerayahLoaderService = (function () {
         return this.derayahHttpClientService.postWithAuth(url, body).pipe(map(function (response) { return response; }));
     };
     DerayahLoaderService.prototype.updateOrder = function (order) {
-        var url = "".concat(this.getDerayahOauthUrl(), "/Order/Update");
+        var url = this.getDerayahOauthUrl() + "/Order/Update";
         this.logRequestData('update order', {
             "order-id": order.id,
             "portfolio": order.portfolio,
@@ -167,14 +167,14 @@ var DerayahLoaderService = (function () {
         return body;
     };
     DerayahLoaderService.prototype.deleteOrder = function (order) {
-        var url = "".concat(this.getDerayahOauthUrl(), "/Order/Cancel");
+        var url = this.getDerayahOauthUrl() + "/Order/Cancel";
         this.logUrl('Derayah delete order url : ', url);
         this.logRequestData('delete order', { 'portfolio': order.portfolio, 'order-id': order.id, 'exchange-code': order.derayahMarket });
         var body = { orderId: +order.id, portfolio: +order.portfolio, exchangeCode: order.derayahMarket };
         return this.derayahHttpClientService.postWithAuth(url, body).pipe(map(function (response) { return response; }));
     };
     DerayahLoaderService.prototype.revertUpdate = function (order, actionFlag) {
-        var url = "".concat(this.getDerayahOauthUrl(), "/Order/Revert");
+        var url = this.getDerayahOauthUrl() + "/Order/Revert";
         this.logUrl('Derayah revert update url : ', url);
         this.logRequestData('revert order', {
             "order-id": order.id,
@@ -185,7 +185,7 @@ var DerayahLoaderService = (function () {
         return this.derayahHttpClientService.postWithAuth(url, this.getOrderDetailsAndRevertBody(order)).pipe(map(function (response) { return response; }));
     };
     DerayahLoaderService.prototype.getOrderDetails = function (order) {
-        var url = "".concat(this.getDerayahOauthUrl(), "/Order/Details");
+        var url = this.getDerayahOauthUrl() + "/Order/Details";
         this.logUrl('Derayah order details url : ', url);
         this.logRequestData('order details', {
             "order-id": order.id,
@@ -198,7 +198,7 @@ var DerayahLoaderService = (function () {
         return { orderID: +order.id, portfolio: +order.portfolio, exchangeCode: order.derayahMarket };
     };
     DerayahLoaderService.prototype.calculateOrderQuantity = function (order, power) {
-        var url = "".concat(this.getDerayahOauthUrl(), "/order/Calculate");
+        var url = this.getDerayahOauthUrl() + "/order/Calculate";
         this.logUrl('Derayah quantity calculator url : ', url);
         this.logRequestData('Derayah quantity calculator ', {
             'order-symbol': order.derayahSymbol,
@@ -221,18 +221,18 @@ var DerayahLoaderService = (function () {
         return this.derayahHttpClientService.postWithAuth(url, body).pipe(map(function (response) { return response; }));
     };
     DerayahLoaderService.prototype.getPortfolios = function () {
-        var url = "".concat(this.getDerayahOauthUrl(), "/Portfolio/List");
+        var url = this.getDerayahOauthUrl() + "/Portfolio/List";
         this.logUrl('Derayah get portfolios url: ', url);
         return this.derayahHttpClientService.getWithAuth(url).pipe(map(function (response) { return response; }));
     };
     DerayahLoaderService.prototype.getOrders = function (portfolio, orderStatusGroup) {
-        var url = "".concat(this.getDerayahOauthUrl(), "/Order/List");
+        var url = this.getDerayahOauthUrl() + "/Order/List";
         this.logUrl('Derayah orders url : ', url);
         var body = { portfolio: +portfolio, orderStatusGroup: orderStatusGroup, isIntraDay: true, exchanges: [98, 99] };
         return this.derayahHttpClientService.postWithAuth(url, body).pipe(map(function (response) { return response; }));
     };
     DerayahLoaderService.prototype.getDerayahPurchasePower = function (portfolio, exchangeCode, symbol) {
-        var url = "".concat(this.getDerayahOauthUrl(), "/UserPosition/BuyingPower");
+        var url = this.getDerayahOauthUrl() + "/UserPosition/BuyingPower";
         this.logUrl('Derayah purchase power url: ', url);
         this.logRequestData('purchase power', {
             'portfolio': portfolio,
@@ -243,14 +243,14 @@ var DerayahLoaderService = (function () {
         return this.derayahHttpClientService.postWithAuth(url, body).pipe(map(function (response) { return response; }));
     };
     DerayahLoaderService.prototype.getPositions = function (portfolio) {
-        var url = "".concat(this.getDerayahOauthUrl(), "/UserPosition/ListPositions");
+        var url = this.getDerayahOauthUrl() + "/UserPosition/ListPositions";
         this.logUrl('Derayah get positions url : ', url);
         this.logRequestData('positions', { 'portfolio': portfolio, 'currency-code': "1" });
         var body = { currencyCode: 1, exchangeCodes: [98, 99], portfolio: +portfolio };
         return this.derayahHttpClientService.postWithAuth(url, body).pipe(map(function (response) { return response; }));
     };
     DerayahLoaderService.prototype.getPortfolioQueue = function (portfolio) {
-        var url = "".concat(this.getDerayahOauthUrl(), "/Queue/Create");
+        var url = this.getDerayahOauthUrl() + "/Queue/Create";
         this.logUrl('Derayah get Portfolio Queue url : ', url);
         this.logRequestData('Portfolio Queue', { 'portfolioId': +portfolio, 'transactionType': "0" });
         var body = { portfolioId: +portfolio, transactionType: 0 };

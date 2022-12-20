@@ -26,7 +26,7 @@ var TimeFrame = (function () {
         this.interval = JsUtil.isFiniteNumber(interval) ? interval : 1;
     }
     TimeFrame.prototype.toString = function () {
-        return "".concat(this.interval, " ").concat(TimeFrame.periodicityToString);
+        return this.interval + " " + TimeFrame.periodicityToString;
     };
     TimeFrame.periodicityToString = function (periodicity) {
         switch (periodicity) {

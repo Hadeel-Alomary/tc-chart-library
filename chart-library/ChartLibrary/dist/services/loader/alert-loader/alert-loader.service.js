@@ -31,18 +31,18 @@ var AlertLoader = (function () {
     }
     AlertLoader.prototype.loadAlerts = function () {
         var _this = this;
-        var url = "".concat(this.baseUrl, "/web/index");
+        var url = this.baseUrl + "/web/index";
         return this.tcHttpClient.getWithAuth(Tc.url(url)).pipe(map(function (response) { return _this.processHistoricalAlerts(response); }));
     };
     AlertLoader.prototype.createAlert = function (alert) {
         var _this = this;
-        var url = "".concat(this.baseUrl, "/add");
+        var url = this.baseUrl + "/add";
         var alertAsJson = {
             "alert_type": EnumUtils.enumValueToString(AlertType, alert.alertType),
             "data_interval": Interval.toAlertServerInterval(alert.interval),
             "equation": alert.getEquation(),
             "equation_description": alert.getEquationDescription(),
-            "expiry_time": "".concat(alert.expiryDate, " 00:00:00"),
+            "expiry_time": alert.expiryDate + " 00:00:00",
             "market": null,
             "message": alert.message,
             "language": this.languageService.arabic ? "arabic" : "english",
@@ -58,14 +58,14 @@ var AlertLoader = (function () {
         return this.tcHttpClient.postWithAuth(Tc.url(url), alertAsJson).pipe(map(function (response) { return _this.processSavedAlertOnServer(response); }));
     };
     AlertLoader.prototype.updateAlert = function (alert) {
-        var url = "".concat(this.baseUrl, "/{0}/update");
+        var url = this.baseUrl + "/{0}/update";
         url = url.replace('{0}', alert.id);
         return this.tcHttpClient.postWithAuth(url, {
             "alert_type": EnumUtils.enumValueToString(AlertType, alert.alertType),
             "data_interval": Interval.toAlertServerInterval(alert.interval),
             "equation": alert.getEquation(),
             "equation_description": alert.getEquationDescription(),
-            "expiry_time": "".concat(alert.expiryDate, " 00:00:00"),
+            "expiry_time": alert.expiryDate + " 00:00:00",
             "market": null,
             "message": alert.message,
             "language": this.languageService.arabic ? "arabic" : "english",
@@ -77,7 +77,7 @@ var AlertLoader = (function () {
         }).pipe(map(function (response) { return null; }));
     };
     AlertLoader.prototype.deleteAlert = function (alert) {
-        var url = "".concat(this.baseUrl, "/{0}/delete");
+        var url = this.baseUrl + "/{0}/delete";
         url = url.replace('{0}', alert.id);
         return this.tcHttpClient.postWithAuth(url, {}).pipe(map(function (response) { return null; }));
     };
@@ -97,7 +97,7 @@ var AlertLoader = (function () {
                 continue;
             }
             if (this.isSupportedAlert(responseObject.alert_type)) {
-                var symbol = "".concat(responseObject.symbols[0].symbol, ".").concat(responseObject.symbols[0].market);
+                var symbol = responseObject.symbols[0].symbol + "." + responseObject.symbols[0].market;
                 if (responseObject.alert_type == 'NORMAL') {
                     result.push(this.constructNormalAlert(responseObject));
                 }
@@ -119,12 +119,12 @@ var AlertLoader = (function () {
     };
     AlertLoader.prototype.constructNormalAlert = function (responseObject) {
         var equationDescription = JSON.parse(responseObject.equation_description);
-        return new NormalAlert(responseObject.id, Interval.fromAlertServerInterval(responseObject.data_interval), responseObject.paused == "1", responseObject.reactivate_minutes == "1", EnumUtils.enumStringToValue(AlertTriggerType, responseObject.trigger_type), responseObject.fire_on_change == "1", "".concat(responseObject.expiry_time).substr(0, 10), responseObject.message, responseObject.language, responseObject.expired == "1", responseObject.created_at, responseObject.updated_at, null, responseObject.last_trigger_time, this.extractAlertHistory(responseObject.history), NotificationMethods.fromResponseData(responseObject.methods), AlertType.NORMAL, false, equationDescription['Operands'][0], AlertOperator.fromOperationSymbol(equationDescription['Operation']).id, equationDescription['Operands'][1]);
+        return new NormalAlert(responseObject.id, Interval.fromAlertServerInterval(responseObject.data_interval), responseObject.paused == "1", responseObject.reactivate_minutes == "1", EnumUtils.enumStringToValue(AlertTriggerType, responseObject.trigger_type), responseObject.fire_on_change == "1", ("" + responseObject.expiry_time).substr(0, 10), responseObject.message, responseObject.language, responseObject.expired == "1", responseObject.created_at, responseObject.updated_at, null, responseObject.last_trigger_time, this.extractAlertHistory(responseObject.history), NotificationMethods.fromResponseData(responseObject.methods), AlertType.NORMAL, false, equationDescription['Operands'][0], AlertOperator.fromOperationSymbol(equationDescription['Operation']).id, equationDescription['Operands'][1]);
     };
     AlertLoader.prototype.constructTrendLineAlert = function (responseObject) {
         var equation = JSON.parse(responseObject.equation);
         var equationDescription = JSON.parse(responseObject.equation_description);
-        var symbol = "".concat(responseObject.symbols[0].symbol, ".").concat(responseObject.symbols[0].market);
+        var symbol = responseObject.symbols[0].symbol + "." + responseObject.symbols[0].market;
         var trendLineDefinition = {
             date1: equation['date1'],
             date2: equation['date2'],
@@ -134,7 +134,7 @@ var AlertLoader = (function () {
             extendRight: equation['extend-right'],
             logarithmic: equation['logarithmic'],
         };
-        return new TrendLineAlert(responseObject.id, Interval.fromAlertServerInterval(responseObject['data_interval']), responseObject.paused == "1", responseObject.reactivate_minutes == "1", EnumUtils.enumStringToValue(AlertTriggerType, responseObject.trigger_type), responseObject.fire_on_change == "1", "".concat(responseObject.expiry_time).substr(0, 10), responseObject.message, responseObject.language, responseObject.expired == "1", responseObject.created_at, responseObject.updated_at, null, responseObject.last_trigger_time, this.extractAlertHistory(responseObject.history), NotificationMethods.fromResponseData(responseObject.methods), AlertType.TREND, false, equationDescription['hostId'], TrendLineAlertOperation.fromType(TrendLineAlertOperationType[equation['operation']]), trendLineDefinition, equationDescription['drawingId']);
+        return new TrendLineAlert(responseObject.id, Interval.fromAlertServerInterval(responseObject['data_interval']), responseObject.paused == "1", responseObject.reactivate_minutes == "1", EnumUtils.enumStringToValue(AlertTriggerType, responseObject.trigger_type), responseObject.fire_on_change == "1", ("" + responseObject.expiry_time).substr(0, 10), responseObject.message, responseObject.language, responseObject.expired == "1", responseObject.created_at, responseObject.updated_at, null, responseObject.last_trigger_time, this.extractAlertHistory(responseObject.history), NotificationMethods.fromResponseData(responseObject.methods), AlertType.TREND, false, equationDescription['hostId'], TrendLineAlertOperation.fromType(TrendLineAlertOperationType[equation['operation']]), trendLineDefinition, equationDescription['drawingId']);
     };
     AlertLoader.prototype.constructChartAlert = function (responseObject) {
         var equationDescription = JSON.parse(responseObject.equation_description);
@@ -147,7 +147,7 @@ var AlertLoader = (function () {
         var hostId = equationDescription['hostId'];
         var indicatorId = equationDescription['indicatorId'];
         var secondValue = equationDescription['secondValue'];
-        return new ChartAlert(responseObject.id, Interval.fromAlertServerInterval(responseObject.data_interval), responseObject.paused == "1", responseObject.reactivate_minutes == "1", EnumUtils.enumStringToValue(AlertTriggerType, responseObject.trigger_type), responseObject.fire_on_change == "1", "".concat(responseObject.expiry_time).substr(0, 10), responseObject.message, responseObject.language, responseObject.expired == "1", responseObject.created_at, responseObject.updated_at, null, responseObject.last_trigger_time, this.extractAlertHistory(responseObject.history), NotificationMethods.fromResponseData(responseObject.methods), AlertType.TECHNICAL, false, hostId, {
+        return new ChartAlert(responseObject.id, Interval.fromAlertServerInterval(responseObject.data_interval), responseObject.paused == "1", responseObject.reactivate_minutes == "1", EnumUtils.enumStringToValue(AlertTriggerType, responseObject.trigger_type), responseObject.fire_on_change == "1", ("" + responseObject.expiry_time).substr(0, 10), responseObject.message, responseObject.language, responseObject.expired == "1", responseObject.created_at, responseObject.updated_at, null, responseObject.last_trigger_time, this.extractAlertHistory(responseObject.history), NotificationMethods.fromResponseData(responseObject.methods), AlertType.TECHNICAL, false, hostId, {
             indicator: new ChartAlertIndicator(indicatorType, selectedIndicatorField, indicatorParameters, indicatorId),
             alertFunctionType: ChartAlertFunctionType[alertFunctionTypeEnumString],
             value1: value,

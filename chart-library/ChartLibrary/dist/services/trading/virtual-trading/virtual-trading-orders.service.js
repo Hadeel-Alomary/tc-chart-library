@@ -51,10 +51,10 @@ var VirtualTradingOrdersService = (function () {
             return this.languageService.arabic ? 'سهمين' : 'two shares';
         }
         else if (quantity <= 10) {
-            return this.languageService.arabic ? "".concat(quantity, " \u0623\u0633\u0647\u0645") : "".concat(quantity, " shares");
+            return this.languageService.arabic ? quantity + " \u0623\u0633\u0647\u0645" : quantity + " shares";
         }
         else {
-            return this.languageService.arabic ? "".concat(quantity, " \u0633\u0647\u0645") : "".concat(quantity, " shares");
+            return this.languageService.arabic ? quantity + " \u0633\u0647\u0645" : quantity + " shares";
         }
     };
     VirtualTradingOrdersService.prototype.showMessageBox = function (message, message2) {
@@ -95,7 +95,7 @@ var VirtualTradingOrdersService = (function () {
         get: function () {
             return this.virtualTradingService.getAccount();
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     VirtualTradingOrdersService = __decorate([

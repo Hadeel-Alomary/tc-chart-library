@@ -2,12 +2,10 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    };
+    }
     return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -51,21 +49,21 @@ var ChartAlertDrawing = (function (_super) {
         get: function () {
             return 'chartAlert';
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartAlertDrawing.prototype, "className", {
         get: function () {
             return this.constructor.className;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartAlertDrawing.prototype, "actualTheme", {
         get: function () {
             return this.chart ? this._theme : null;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartAlertDrawing.prototype, "visible", {
@@ -75,7 +73,7 @@ var ChartAlertDrawing = (function (_super) {
         set: function (value) {
             this._visible = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     ChartAlertDrawing.prototype.getAlert = function () {
@@ -325,7 +323,7 @@ var ChartAlertDrawing = (function (_super) {
     ChartAlertDrawing.prototype._drawValueMarker = function (point, value) {
         if (!this.visible)
             return;
-        var context = this.chartPanel.context, text = "".concat(this.chartPanel.formatValue(MathUtils.roundAccordingMarket(value, this.chart.instrument.symbol))), theme = this.actualTheme, textSize = theme.valueMarketText.fontSize, padding = 2, frame = this.chartPanel.contentFrame, width = Math.round(this.chartPanel.valueScale.rightFrame.width), height = Math.round(textSize + (2 * padding)), halfHeight = Math.round(height / 2), x = Math.round(frame.left + frame.width), y = Math.round(point.y - halfHeight);
+        var context = this.chartPanel.context, text = "" + this.chartPanel.formatValue(MathUtils.roundAccordingMarket(value, this.chart.instrument.symbol)), theme = this.actualTheme, textSize = theme.valueMarketText.fontSize, padding = 2, frame = this.chartPanel.contentFrame, width = Math.round(this.chartPanel.valueScale.rightFrame.width), height = Math.round(textSize + (2 * padding)), halfHeight = Math.round(height / 2), x = Math.round(frame.left + frame.width), y = Math.round(point.y - halfHeight);
         context.beginPath();
         context.rect(x, y, width, height);
         context.scxFillStroke(theme.valueMarkerFill, theme.line);

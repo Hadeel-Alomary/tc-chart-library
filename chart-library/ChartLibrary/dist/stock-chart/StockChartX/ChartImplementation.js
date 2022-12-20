@@ -2,12 +2,10 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    };
+    }
     return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -153,56 +151,56 @@ var ChartImplementation = (function (_super) {
         get: function () {
             return "2.14.19";
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "container", {
         get: function () {
             return this._container;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "rootDiv", {
         get: function () {
             return this._rootDiv;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "dateScale", {
         get: function () {
             return this._dateScale;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "valueScales", {
         get: function () {
             return this._valueScales;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "valueScale", {
         get: function () {
             return this._valueScales[0];
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "chartPanelsContainer", {
         get: function () {
             return this._chartPanelsContainer;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "dataManager", {
         get: function () {
             return this._dataManager;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "timeInterval", {
@@ -218,7 +216,7 @@ var ChartImplementation = (function (_super) {
                 this.fireValueChanged(ChartEvent.TIME_INTERVAL_CHANGED, interval, oldInterval);
             }
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "marketTradingMinutesCount", {
@@ -228,14 +226,14 @@ var ChartImplementation = (function (_super) {
         set: function (value) {
             this._marketTradingMinutesCountInDays = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "chartPanelsFrame", {
         get: function () {
             return this._chartPanelsFrame;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "instrument", {
@@ -247,28 +245,28 @@ var ChartImplementation = (function (_super) {
             this._instrument = value;
             this.fireValueChanged(ChartEvent.INSTRUMENT_CHANGED, value, oldInstrument);
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "indicators", {
         get: function () {
             return this._indicators;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "valueMarker", {
         get: function () {
             return this._valueMarker;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "movingAverageOptions", {
         get: function () {
             return this._movingAverageOptions;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "locale", {
@@ -282,7 +280,7 @@ var ChartImplementation = (function (_super) {
                 this.fireValueChanged(ChartEvent.LOCALE_CHANGED, value, oldLocale);
             }
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "keyboardEventsEnabled", {
@@ -292,7 +290,7 @@ var ChartImplementation = (function (_super) {
         set: function (value) {
             this._options.enableKeyboardEvents = !!value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "numberOfDigitFormat", {
@@ -305,7 +303,7 @@ var ChartImplementation = (function (_super) {
                 this._numberOfDigitFormat = value;
             }
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "theme", {
@@ -319,7 +317,7 @@ var ChartImplementation = (function (_super) {
             this.updateIndicators();
             this.fireValueChanged(ChartEvent.THEME_CHANGED);
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "showBarInfoInTitle", {
@@ -329,7 +327,7 @@ var ChartImplementation = (function (_super) {
         set: function (value) {
             this._options.showBarInfoInTitle = !!value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "showPanelOptions", {
@@ -339,7 +337,7 @@ var ChartImplementation = (function (_super) {
         set: function (value) {
             this._options.showPanelOptions = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "priceStyle", {
@@ -369,7 +367,7 @@ var ChartImplementation = (function (_super) {
                 this.fireValueChanged(ChartEvent.PRICE_STYLE_CHANGED, value, oldPriceStyle);
             }
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "priceStyleKind", {
@@ -380,21 +378,21 @@ var ChartImplementation = (function (_super) {
         set: function (value) {
             this.priceStyle = PriceStyle.create(value);
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "hoveredRecord", {
         get: function () {
             return this._hoverRecord;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "crossHair", {
         get: function () {
             return this._crossHair;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "selectedObject", {
@@ -404,14 +402,14 @@ var ChartImplementation = (function (_super) {
         set: function (value) {
             this._selectedObject = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "selectionMarker", {
         get: function () {
             return this._selectionMarker;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "showDrawings", {
@@ -421,7 +419,7 @@ var ChartImplementation = (function (_super) {
         set: function (value) {
             this._showDrawings = !!value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "state", {
@@ -435,7 +433,7 @@ var ChartImplementation = (function (_super) {
                 this.fireValueChanged(ChartEvent.STATE_CHANGED, value, oldState);
             }
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "size", {
@@ -450,21 +448,21 @@ var ChartImplementation = (function (_super) {
             this._rootDiv.width(value.width).height(value.height);
             this._rootDiv.find('.' + Class.BACKGROUND).width(value.width).height(value.height);
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "mainPanel", {
         get: function () {
             return this._priceStyle.chartPanel || this._chartPanelsContainer.panels[0];
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "recordCount", {
         get: function () {
             return this.primaryDataSeries(DataSeriesSuffix.DATE).length;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "firstVisibleRecord", {
@@ -474,7 +472,7 @@ var ChartImplementation = (function (_super) {
         set: function (value) {
             this._dateScale.firstVisibleRecord = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "lastVisibleRecord", {
@@ -484,28 +482,28 @@ var ChartImplementation = (function (_super) {
         set: function (value) {
             this._dateScale.lastVisibleRecord = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "firstVisibleIndex", {
         get: function () {
             return this._dateScale.firstVisibleIndex;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "lastVisibleIndex", {
         get: function () {
             return this._dateScale.lastVisibleIndex;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "chartPanels", {
         get: function () {
             return this._chartPanelsContainer.panels;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "crossHairType", {
@@ -515,7 +513,7 @@ var ChartImplementation = (function (_super) {
         set: function (value) {
             this._crossHair.crossHairType = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     ChartImplementation.prototype.getZoomedDateRange = function () {
@@ -534,21 +532,21 @@ var ChartImplementation = (function (_super) {
         get: function () {
             return this._readOnly;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "zoomTool", {
         get: function () {
             return this._zoomTool;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "measurementTool", {
         get: function () {
             return this._measurementTool;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "magnetRatio", {
@@ -558,21 +556,21 @@ var ChartImplementation = (function (_super) {
         set: function (ratio) {
             this._options.magnetRatio = ratio;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "isInteractive", {
         get: function () {
             return this._isInteractive;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartImplementation.prototype, "hostId", {
         get: function () {
             return this._hostId;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     ChartImplementation.prototype.isVisible = function () {
@@ -813,8 +811,8 @@ var ChartImplementation = (function (_super) {
                     panel.updateChartAlert(alert_1);
                 }
             };
-            for (var _b = 0, alertsBelongingToPanel_1 = alertsBelongingToPanel; _b < alertsBelongingToPanel_1.length; _b++) {
-                var alert_1 = alertsBelongingToPanel_1[_b];
+            for (var _i = 0, alertsBelongingToPanel_1 = alertsBelongingToPanel; _i < alertsBelongingToPanel_1.length; _i++) {
+                var alert_1 = alertsBelongingToPanel_1[_i];
                 _loop_4(alert_1);
             }
             var _loop_5 = function (alert_2) {
@@ -822,8 +820,8 @@ var ChartImplementation = (function (_super) {
                     panel.removeChartAlert(alert_2);
                 }
             };
-            for (var _c = 0, alertsInPanel_1 = alertsInPanel; _c < alertsInPanel_1.length; _c++) {
-                var alert_2 = alertsInPanel_1[_c];
+            for (var _a = 0, alertsInPanel_1 = alertsInPanel; _a < alertsInPanel_1.length; _a++) {
+                var alert_2 = alertsInPanel_1[_a];
                 _loop_5(alert_2);
             }
             panel.update();
@@ -971,7 +969,7 @@ var ChartImplementation = (function (_super) {
         get: function () {
             return !!this._preFullWindowSize;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     ChartImplementation.prototype.toggleFullWindow = function () {

@@ -18,7 +18,7 @@ var TechnicalScopeSignal = (function () {
         return new TechnicalScopeSignal(StringUtils.guid(), company.name, message.symbol, message.date.split(' ')[1], message.signal, message.topic, newState.arabic, newState.english, newState.state, newColor);
     };
     TechnicalScopeSignal.evalTechnicalSignalState = function (signal, value) {
-        var message = "".concat(signal, "(").concat(value, ")");
+        var message = signal + "(" + value + ")";
         switch (message) {
             case 'cross-ma-10-25(1.0)':
                 return {

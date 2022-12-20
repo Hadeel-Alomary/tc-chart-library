@@ -53,7 +53,7 @@ var SnbcapitalOrderDetails = (function () {
         if (date.isnull) {
             return null;
         }
-        return "".concat(date.year, "-").concat(date.month, "-").concat(date.day, "  ").concat(date.hour, ":").concat(date.minute, ":").concat(date.second);
+        return date.year + "-" + date.month + "-" + date.day + "  " + date.hour + ":" + date.minute + ":" + date.second;
     };
     return SnbcapitalOrderDetails;
 }());

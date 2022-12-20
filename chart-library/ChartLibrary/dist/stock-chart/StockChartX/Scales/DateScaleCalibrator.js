@@ -7,7 +7,7 @@ var DateScaleCalibratorRegistrar = (function () {
         get: function () {
             return this._calibrators.registeredItems;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     DateScaleCalibratorRegistrar.register = function (typeOrClassName, constructor) {
@@ -39,21 +39,21 @@ var DateScaleCalibrator = (function () {
         get: function () {
             return '';
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleCalibrator.prototype, "majorTicks", {
         get: function () {
             return this._majorTicks;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateScaleCalibrator.prototype, "minorTicks", {
         get: function () {
             return this._minorTicks;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     DateScaleCalibrator.prototype.calibrate = function (dateScale) {

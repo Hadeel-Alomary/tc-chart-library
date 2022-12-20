@@ -18,7 +18,7 @@ var VirtualTradingLoader = (function () {
         this.http = http;
     }
     VirtualTradingLoader.prototype.login = function (username, password) {
-        var url = "".concat(this.basicUrl, "/signin/");
+        var url = this.basicUrl + "/signin/";
         return this.http.post(url, {
             username: username,
             password: password
@@ -30,17 +30,13 @@ var VirtualTradingLoader = (function () {
         }));
     };
     VirtualTradingLoader.prototype.logout = function () {
-        var url = "".concat(this.basicUrl, "/signout/");
+        var url = this.basicUrl + "/signout/";
         return this.http.post(url, {}, this.RequestOptions).pipe(function () { return null; });
     };
     VirtualTradingLoader.prototype.createVirtualTradingAccount = function (capital, commission, currency, name, language) {
-        var url = "".concat(this.basicUrl, "/accounts/");
+        var url = this.basicUrl + "/accounts/";
         return this.http.post(url, {
-            capital: capital,
-            commission: commission,
-            currency: currency,
-            name: name,
-            language: language
+            capital: capital, commission: commission, currency: currency, name: name, language: language
         }, this.RequestOptions).pipe(map(function (response) {
             if (!response.success) {
                 throwError('create virtual trading account failed');
@@ -49,7 +45,7 @@ var VirtualTradingLoader = (function () {
         }));
     };
     VirtualTradingLoader.prototype.deleteVirtualTradingAccount = function (accountId) {
-        var url = "".concat(this.basicUrl, "/accounts/").concat(accountId, "/delete");
+        var url = this.basicUrl + "/accounts/" + accountId + "/delete";
         return this.http.post(url, {}, this.RequestOptions).pipe(map(function (response) {
             if (!response.success) {
                 throwError('delete virtual trading account failed');
@@ -58,7 +54,7 @@ var VirtualTradingLoader = (function () {
         }));
     };
     VirtualTradingLoader.prototype.getAccounts = function () {
-        var url = "".concat(this.basicUrl, "/accounts");
+        var url = this.basicUrl + "/accounts";
         return this.http.get(Tc.url(url), this.RequestOptions).pipe(map(function (response) {
             if (!response.success) {
                 return null;
@@ -71,31 +67,31 @@ var VirtualTradingLoader = (function () {
         }));
     };
     VirtualTradingLoader.prototype.updateAccountName = function (accountId, name) {
-        var url = "".concat(this.basicUrl, "/accounts/").concat(accountId, "/name");
+        var url = this.basicUrl + "/accounts/" + accountId + "/name";
         return this.http.post(url, { name: name }, this.RequestOptions).pipe(map(function () { return null; }));
     };
     VirtualTradingLoader.prototype.updateAccountCommission = function (accountId, commission) {
-        var url = "".concat(this.basicUrl, "/accounts/").concat(accountId, "/commission");
+        var url = this.basicUrl + "/accounts/" + accountId + "/commission";
         return this.http.post(url, { commission: commission }, this.RequestOptions).pipe(map(function () { return null; }));
     };
     VirtualTradingLoader.prototype.updateAccountCapital = function (accountId, action, amount, date) {
-        var url = "".concat(this.basicUrl, "/accounts/").concat(accountId, "/capital");
+        var url = this.basicUrl + "/accounts/" + accountId + "/capital";
         return this.http.post(url, { action: action, amount: amount, date: date }, this.RequestOptions).pipe(map(function () { return null; }));
     };
     VirtualTradingLoader.prototype.getAccountTransactions = function (accountId) {
-        var url = "".concat(this.basicUrl, "/accounts/").concat(accountId, "/transactions/");
+        var url = this.basicUrl + "/accounts/" + accountId + "/transactions/";
         return this.http.get(Tc.url(url), this.RequestOptions).pipe(map(function (response) {
             return VirtualTradingTransaction.mapResponseToVirtualTradingTransactions(response.response);
         }));
     };
     VirtualTradingLoader.prototype.setNotificationMethods = function (accountId, methods) {
-        var url = "".concat(this.basicUrl, "/accounts/").concat(accountId, "/notifications");
+        var url = this.basicUrl + "/accounts/" + accountId + "/notifications";
         return this.http.post(url, {
             notifications: methods.toRequestObject()
         }, this.RequestOptions).pipe(map(function () { return null; }));
     };
     VirtualTradingLoader.prototype.postOrder = function (accountId, order) {
-        var url = "".concat(this.basicUrl, "/accounts/").concat(accountId, "/orders");
+        var url = this.basicUrl + "/accounts/" + accountId + "/orders";
         return this.http.post(url, {
             symbol: MarketUtils.symbolWithoutMarket(order.symbol),
             price: order.price,
@@ -110,7 +106,7 @@ var VirtualTradingLoader = (function () {
         }, this.RequestOptions).pipe(map(function () { return null; }));
     };
     VirtualTradingLoader.prototype.updateOrder = function (accountId, order) {
-        var url = "".concat(this.basicUrl, "/accounts/").concat(accountId, "/orders/").concat(order.id);
+        var url = this.basicUrl + "/accounts/" + accountId + "/orders/" + order.id;
         return this.http.post(url, {
             price: order.price,
             quantity: order.quantity,
@@ -120,19 +116,19 @@ var VirtualTradingLoader = (function () {
         }, this.RequestOptions).pipe(map(function () { return null; }));
     };
     VirtualTradingLoader.prototype.getPositions = function (accountId) {
-        var url = "".concat(this.basicUrl, "/accounts/").concat(accountId, "/positions");
+        var url = this.basicUrl + "/accounts/" + accountId + "/positions";
         return this.http.get(Tc.url(url), this.RequestOptions).pipe(map(function (response) {
             return VirtualTradingPosition.mapResponseToVirtualTradingPositions(response.response);
         }));
     };
     VirtualTradingLoader.prototype.getOrders = function (accountId) {
-        var url = "".concat(this.basicUrl, "/accounts/").concat(accountId, "/orders/");
+        var url = this.basicUrl + "/accounts/" + accountId + "/orders/";
         return this.http.get(Tc.url(url), this.RequestOptions).pipe(map(function (response) {
             return VirtualTradingOrder.mapResponseToVirtualTradingOrders(response.response);
         }));
     };
     VirtualTradingLoader.prototype.getOrderDetails = function (accountId, order) {
-        var url = "".concat(this.basicUrl, "/accounts/").concat(accountId, "/orders/").concat(order.id, "/");
+        var url = this.basicUrl + "/accounts/" + accountId + "/orders/" + order.id + "/";
         return this.http.get(Tc.url(url), this.RequestOptions).pipe(map(function (response) {
             var detailsResponse = response.response;
             var order = VirtualTradingOrder.mapDetailsResponseToVirtualTradingOrder(detailsResponse.order);
@@ -141,7 +137,7 @@ var VirtualTradingLoader = (function () {
         }));
     };
     VirtualTradingLoader.prototype.deleteOrder = function (accountId, order) {
-        var url = "".concat(this.basicUrl, "/accounts/").concat(accountId, "/orders/").concat(order.id, "/delete");
+        var url = this.basicUrl + "/accounts/" + accountId + "/orders/" + order.id + "/delete";
         return this.http.post(url, {}, this.RequestOptions).pipe(map(function () { return null; }));
     };
     Object.defineProperty(VirtualTradingLoader.prototype, "RequestOptions", {
@@ -152,7 +148,7 @@ var VirtualTradingLoader = (function () {
                 })
             };
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     VirtualTradingLoader = __decorate([

@@ -13,7 +13,7 @@ var DebugModeService = (function () {
         this.debugStreamerUrl = url;
     };
     DebugModeService.prototype.getDebugStreamerUrl = function () {
-        return "http://".concat(this.debugStreamerUrl, ":9006/streamhub/");
+        return "http://" + this.debugStreamerUrl + ":9006/streamhub/";
     };
     DebugModeService.prototype.connectToDebugStreamer = function () {
         return this.debugStreamerUrl !== null;

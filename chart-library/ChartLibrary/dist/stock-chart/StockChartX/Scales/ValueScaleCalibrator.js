@@ -7,7 +7,7 @@ var ValueScaleCalibratorRegistrar = (function () {
         get: function () {
             return this._calibrators.registeredItems;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     ValueScaleCalibratorRegistrar.register = function (typeOrClassName, constructor) {
@@ -39,21 +39,21 @@ var ValueScaleCalibrator = (function () {
         get: function () {
             return '';
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ValueScaleCalibrator.prototype, "majorTicks", {
         get: function () {
             return this._majorTicks;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ValueScaleCalibrator.prototype, "minorTicks", {
         get: function () {
             return this._minorTicks;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     ValueScaleCalibrator.prototype.calibrate = function (valueScale) {

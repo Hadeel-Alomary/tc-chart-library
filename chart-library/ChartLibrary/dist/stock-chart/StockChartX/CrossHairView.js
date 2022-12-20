@@ -27,14 +27,14 @@ var CrossHairView = (function () {
         get: function () {
             return this._crossHair.chart;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(CrossHairView.prototype, "rootDiv", {
         get: function () {
             return this.chart.rootDiv;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     CrossHairView._applyMarkerTheme = function (control, theme, axisTextTheme) {

@@ -34,7 +34,7 @@ var HeartbeatManager = (function () {
                 Tc.warn("too much heartbeat disconnection, log out");
                 return false;
             }
-            Tc.warn("heartbeat disconnection detected for market ".concat(market, ", request restart"));
+            Tc.warn("heartbeat disconnection detected for market " + market + ", request restart");
             TcTracker.trackHeartbeatDisconnection(market);
             _this.streamer.onHeartbeatTimeout(market);
             _this.lastReceivedLog[market] = Date.now();

@@ -29,7 +29,7 @@ var LanguageService = (function () {
         get: function () {
             return this.language == LanguageType.Arabic;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     LanguageService.prototype.translate = function (arabic) {
@@ -83,19 +83,19 @@ var LanguageService = (function () {
     };
     LanguageService.prototype.translateElement = function (element) {
         var _this = this;
-        $(element).find(".".concat(TranslateType.Element)).text(function (index, oldText) {
+        $(element).find("." + TranslateType.Element).text(function (index, oldText) {
             return _this.translate(oldText);
         });
     };
     LanguageService.prototype.translateElementPlaceHolder = function (element) {
         var _this = this;
-        $(element).find(".".concat(TranslateType.PlaceHolder)).each(function (index, element) {
+        $(element).find("." + TranslateType.PlaceHolder).each(function (index, element) {
             $(element).attr("placeholder", _this.translate($(element).attr("placeholder")));
         });
     };
     LanguageService.prototype.translateElementTitle = function (element) {
         var _this = this;
-        $(element).find(".".concat(TranslateType.Title)).each(function (index, element) {
+        $(element).find("." + TranslateType.Title).each(function (index, element) {
             $(element).attr("title", _this.translate($(element).attr("title")));
         });
     };

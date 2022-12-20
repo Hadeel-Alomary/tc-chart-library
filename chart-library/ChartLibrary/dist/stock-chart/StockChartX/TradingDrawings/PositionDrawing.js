@@ -2,12 +2,10 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    };
+    }
     return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -37,7 +35,7 @@ var PositionDrawing = (function (_super) {
         get: function () {
             return 'tradingPosition';
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(PositionDrawing.prototype, "visible", {
@@ -53,7 +51,7 @@ var PositionDrawing = (function (_super) {
             }
             ChartAccessorService.instance.getTradingService().showPositionDrawings = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     PositionDrawing.prototype.bounds = function () {
@@ -83,7 +81,7 @@ var PositionDrawing = (function (_super) {
     PositionDrawing.prototype.drawValueMarkers = function () {
         if (!this.visible)
             return;
-        var context = this.chartPanel.context, value = this.chartPoint.value, text = "".concat(this.chartPanel.formatValue(Tc._2digits(value))), theme = this.actualTheme, textSize = DummyCanvasContext.measureText(text, theme.valueMarketText), padding = 2, bounds = this.bounds(), x = Math.round(bounds.left + bounds.width + 22), y = Math.round(bounds.top + (2 * padding)), width = Math.round(this.chartPanel.valueScale.rightFrame.width), height = Math.round(textSize.height + (2 * padding));
+        var context = this.chartPanel.context, value = this.chartPoint.value, text = "" + this.chartPanel.formatValue(Tc._2digits(value)), theme = this.actualTheme, textSize = DummyCanvasContext.measureText(text, theme.valueMarketText), padding = 2, bounds = this.bounds(), x = Math.round(bounds.left + bounds.width + 22), y = Math.round(bounds.top + (2 * padding)), width = Math.round(this.chartPanel.valueScale.rightFrame.width), height = Math.round(textSize.height + (2 * padding));
         if (BrowserUtils.isMobile()) {
             x = this.chartPanel.contentFrame.right + 2;
         }
@@ -260,7 +258,7 @@ var PositionDrawing = (function (_super) {
         return "X";
     };
     PositionDrawing.prototype.getQuantityText = function () {
-        return "".concat(this._position.quantity);
+        return "" + this._position.quantity;
     };
     PositionDrawing.prototype.getCostDiffText = function () {
         var value = null;
@@ -270,7 +268,7 @@ var PositionDrawing = (function (_super) {
         else {
             value = StringUtils.formatVariableDigitsNumber(Math.abs(this._position.totalCost - this._position.currentTotalCost));
         }
-        return "".concat(value);
+        return "" + value;
     };
     PositionDrawing.prototype.getCostDiffTextColor = function () {
         if (this._position.profitLoss) {

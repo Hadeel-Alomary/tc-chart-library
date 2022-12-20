@@ -2,12 +2,10 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    };
+    }
     return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -34,7 +32,7 @@ var IndicatorTooltip = (function (_super) {
             }
             return IndicatorTooltip._instance;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     IndicatorTooltip.prototype.show = function (config) {
@@ -105,7 +103,7 @@ var IndicatorTooltip = (function (_super) {
             var value = item.dataSeries.valueAtIndex(record), text = chartPanel.formatValue(value);
             var english = /^[A-Za-z0-9 ]*$/;
             var englishClass = english.test(field) ? 'english' : '';
-            var appendedString = "<tr class=\"scxIndicatorTooltip-row scxIndicatorTooltip-added-row\"><td class=\"".concat(englishClass, "\">").concat(field, "</td><td>").concat(text, "</td></tr>");
+            var appendedString = "<tr class=\"scxIndicatorTooltip-row scxIndicatorTooltip-added-row\"><td class=\"" + englishClass + "\">" + field + "</td><td>" + text + "</td></tr>";
             $(appendedString).appendTo(IDS.TOOLTIP_ID);
         }
     };

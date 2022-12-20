@@ -191,15 +191,15 @@ var InstrumentSearch = (function () {
             this._resultsDropDown.append($(html));
     };
     InstrumentSearch.prototype._generateListElement = function (text, symbol, company, exchange) {
-        return "<div class=\"scxInstrumentSearchItem\" ".concat(InstrumentSearch.DATA_SYMBOL, "=\"").concat(symbol, "\">") +
+        return "<div class=\"scxInstrumentSearchItem\" " + InstrumentSearch.DATA_SYMBOL + "=\"" + symbol + "\">" +
             '<div class="scxInstrumentSearchItem_SymbolContainer">' +
-            "<span class=\"scxInstrumentSearchItem_Symbol\">".concat(this._highlightHTMLText(text, symbol), "</span>") +
+            ("<span class=\"scxInstrumentSearchItem_Symbol\">" + this._highlightHTMLText(text, symbol) + "</span>") +
             '</div>' +
             '<div class="scxInstrumentSearchItem_NameContainer">' +
-            "<span class=\"scxInstrumentSearchItem_Name\">".concat(this._highlightHTMLText(text, company), "</span>") +
+            ("<span class=\"scxInstrumentSearchItem_Name\">" + this._highlightHTMLText(text, company) + "</span>") +
             '</div>' +
             '<div class="scxInstrumentSearchItem_ExchangeContainer">' +
-            "<span class=\"scxInstrumentSearchItem_Exchange\">".concat(exchange, "</span>") +
+            ("<span class=\"scxInstrumentSearchItem_Exchange\">" + exchange + "</span>") +
             '</div>' +
             '</div>';
     };

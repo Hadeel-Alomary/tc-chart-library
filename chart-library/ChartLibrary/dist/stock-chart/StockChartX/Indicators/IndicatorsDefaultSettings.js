@@ -38,7 +38,7 @@ var IndicatorsDefaultSettings = (function () {
             }
             return IndicatorsDefaultSettings.savedDefaultSettings;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     IndicatorsDefaultSettings.getIndicatorOriginalSettings = function (themeType, indicatorNumber) {

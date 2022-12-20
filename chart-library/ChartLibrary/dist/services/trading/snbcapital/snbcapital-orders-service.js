@@ -113,18 +113,18 @@ var SnbcapitalOrdersService = (function () {
         var minimumQta = '';
         var tipoPrezzo;
         if (order.discloseQuantity != null && order.discloseQuantity > 0) {
-            disclosedQta = "disclosedQty=".concat(order.discloseQuantity, "&");
+            disclosedQta = "disclosedQty=" + order.discloseQuantity + "&";
         }
         if (order.minimumQuantity != null && order.minimumQuantity > 0) {
-            minimumQta = "QtaMin=".concat(order.minimumQuantity, "&");
+            minimumQta = "QtaMin=" + order.minimumQuantity + "&";
         }
         if (order.execution.type == SnbcapitalOrderExecutionType.Limit) {
-            tipoPrezzo = "TipoPrezzo=2&PrezzoLimite=".concat(order.price);
+            tipoPrezzo = "TipoPrezzo=2&PrezzoLimite=" + order.price;
         }
         else {
             tipoPrezzo = 'TipoPrezzo=3';
         }
-        return "Combo_Security=".concat(symbolWithoutMarket, "&Operazione=").concat(operazione, "&Mercato=").concat(mercato, "&").concat(validityOrParameterQta, "&").concat(disclosedQta).concat(minimumQta).concat(tipoPrezzo);
+        return "Combo_Security=" + symbolWithoutMarket + "&Operazione=" + operazione + "&Mercato=" + mercato + "&" + validityOrParameterQta + "&" + disclosedQta + minimumQta + tipoPrezzo;
     };
     SnbcapitalOrdersService.prototype.getValidityOrParameterQta = function (order, isCalculateQuantity) {
         var validityOrParameterQta = '';
@@ -140,7 +140,7 @@ var SnbcapitalOrdersService = (function () {
                 break;
             case SnbcapitalOrderExpirationType.GoodTillDate:
                 var date = order.tillDate.split('-');
-                validityOrParameterQta = "Validita=VSD&giorno=".concat(date[2], "&mese=").concat(date[1], "&anno=").concat(date[0]);
+                validityOrParameterQta = "Validita=VSD&giorno=" + date[2] + "&mese=" + date[1] + "&anno=" + date[0];
                 break;
             case SnbcapitalOrderExpirationType.AtTheOpening:
                 validityOrParameterQta = "Validita=VSA";
@@ -189,23 +189,23 @@ var SnbcapitalOrdersService = (function () {
                 paramPrc = "paramPrc=0&";
             }
             else {
-                paramPrc = "paramPrc=".concat(order.price, "&");
+                paramPrc = "paramPrc=" + order.price + "&";
             }
             paramPrc += "tipoOp=prz&";
         }
         else if (isLimitOrder && order.price != originalOrder.price) {
-            paramPrc = "paramPrc=".concat(order.price, "&");
+            paramPrc = "paramPrc=" + order.price + "&";
             paramPrc += "tipoOp=prz&";
         }
         if (order.quantity != originalOrder.quantity) {
-            paramQty = "paramQty=".concat(order.quantity, "&");
+            paramQty = "paramQty=" + order.quantity + "&";
             paramQty += "tipoOp=qty&";
         }
         if (order.discloseQuantity != originalOrder.discloseQuantity) {
             if (order.discloseQuantity == null && originalOrder.discloseQuantity != null && originalOrder.discloseQuantity == 0) {
             }
             else {
-                paramDisclosedQty = "paramDisclosedQty=".concat(order.discloseQuantity, "&");
+                paramDisclosedQty = "paramDisclosedQty=" + order.discloseQuantity + "&";
                 paramDisclosedQty += 'tipoOp=disclosedQty&';
             }
         }
@@ -235,7 +235,7 @@ var SnbcapitalOrdersService = (function () {
                 case SnbcapitalOrderExpirationType.GoodTillDate:
                     newTimeInForceOrPrmQty = "newTimeInForce=2&tipoOp=expiry&";
                     var date = order.tillDate.split('-');
-                    paramExpiry = "paramExpiry=".concat(date[2]).concat(date[1]).concat(date[0], "&");
+                    paramExpiry = "paramExpiry=" + date[2] + date[1] + date[0] + "&";
                     break;
                 case SnbcapitalOrderExpirationType.GoodTillCancellation:
                     newTimeInForceOrPrmQty = "newTimeInForce=9&tipoOp=expiry&";
@@ -252,7 +252,7 @@ var SnbcapitalOrdersService = (function () {
         }
         else if (isGoodTillDate && order.tillDate != originalOrder.tillDate) {
             var date = order.tillDate.split('-');
-            paramExpiry = "paramExpiry=".concat(date[0]).concat(date[1]).concat(date[2], "&tipoOp=expiry&");
+            paramExpiry = "paramExpiry=" + date[0] + date[1] + date[2] + "&tipoOp=expiry&";
         }
         return {
             newTimeInForceOrPrmQty: newTimeInForceOrPrmQty,

@@ -14,14 +14,14 @@ var Rect = (function () {
         get: function () {
             return this.top + this.height;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Rect.prototype, "right", {
         get: function () {
             return this.left + this.width;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Rect.prototype.clone = function () {
@@ -31,7 +31,7 @@ var Rect = (function () {
         return rect && this.left === rect.left && this.top === rect.top && this.width === rect.width && this.height === rect.height;
     };
     Rect.prototype.toString = function () {
-        return "[left: ".concat(this.left, ", top: ").concat(this.top, ", width: ").concat(this.width, ", height: ").concat(this.height, "]");
+        return "[left: " + this.left + ", top: " + this.top + ", width: " + this.width + ", height: " + this.height + "]";
     };
     Rect.prototype.containsPoint = function (point) {
         return point.x >= this.left && point.x <= this.right && point.y >= this.top && point.y <= this.bottom;

@@ -15,7 +15,7 @@ var ValueMarker = (function () {
                 throw new Error('Text offset must be greater or equal to 0.');
             this._textOffset = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ValueMarker.prototype, "theme", {
@@ -25,7 +25,7 @@ var ValueMarker = (function () {
         set: function (value) {
             this._theme = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     ValueMarker.prototype.draw = function (value, panelValueScale, offset, plotType) {

@@ -2,12 +2,10 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    };
+    }
     return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -56,35 +54,35 @@ var ChartPanelValueScaleImplementation = (function (_super) {
         get: function () {
             return this._panel;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelValueScaleImplementation.prototype, "chart", {
         get: function () {
             return this._panel.chart;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelValueScaleImplementation.prototype, "projectionFrame", {
         get: function () {
             return this._projectionFrame;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelValueScaleImplementation.prototype, "leftFrame", {
         get: function () {
             return this._leftFrame;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelValueScaleImplementation.prototype, "rightFrame", {
         get: function () {
             return this._rightFrame;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelValueScaleImplementation.prototype, "formatter", {
@@ -96,7 +94,7 @@ var ChartPanelValueScaleImplementation = (function (_super) {
                 throw new TypeError("Invalid formatter.");
             this._formatter = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelValueScaleImplementation.prototype, "minVisibleValue", {
@@ -108,7 +106,7 @@ var ChartPanelValueScaleImplementation = (function (_super) {
                 throw new TypeError("Value must be a number.");
             this._setMinVisibleValue(value);
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelValueScaleImplementation.prototype, "maxVisibleValue", {
@@ -120,7 +118,7 @@ var ChartPanelValueScaleImplementation = (function (_super) {
                 throw new TypeError("Value must be a number.");
             this._setMaxVisibleValue(value);
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelValueScaleImplementation.prototype, "minAllowedValue", {
@@ -132,7 +130,7 @@ var ChartPanelValueScaleImplementation = (function (_super) {
                 throw new TypeError("Value must be a number.");
             this._options.minAllowedValue = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelValueScaleImplementation.prototype, "maxAllowedValue", {
@@ -144,7 +142,7 @@ var ChartPanelValueScaleImplementation = (function (_super) {
                 throw new TypeError("Value must be a number.");
             this._options.maxAllowedValue = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelValueScaleImplementation.prototype, "minAllowedValueRatio", {
@@ -156,7 +154,7 @@ var ChartPanelValueScaleImplementation = (function (_super) {
                 throw new Error("Ratio must be a positive number.");
             this._options.minAllowedValueRatio = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelValueScaleImplementation.prototype, "maxAllowedValueRatio", {
@@ -168,7 +166,7 @@ var ChartPanelValueScaleImplementation = (function (_super) {
                 throw new Error("Ratio must be a positive number or NaN.");
             this._options.maxAllowedValueRatio = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelValueScaleImplementation.prototype, "minValueRangeRatio", {
@@ -180,7 +178,7 @@ var ChartPanelValueScaleImplementation = (function (_super) {
                 throw new Error("Ratio must be in range (0..1]");
             this._options.minValueRangeRatio = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelValueScaleImplementation.prototype, "maxValueRangeRatio", {
@@ -192,7 +190,7 @@ var ChartPanelValueScaleImplementation = (function (_super) {
                 throw new Error("Ratio must be greater or equal to 1.");
             this._options.maxValueRangeRatio = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelValueScaleImplementation.prototype, "majorTickMarkLength", {
@@ -202,7 +200,7 @@ var ChartPanelValueScaleImplementation = (function (_super) {
         set: function (value) {
             this._options.majorTickMarkLength = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelValueScaleImplementation.prototype, "minorTickMarkLength", {
@@ -212,7 +210,7 @@ var ChartPanelValueScaleImplementation = (function (_super) {
         set: function (value) {
             this._options.minorTickMarkLength = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelValueScaleImplementation.prototype, "axisScale", {
@@ -222,21 +220,21 @@ var ChartPanelValueScaleImplementation = (function (_super) {
         set: function (value) {
             this._options.axisScaleType = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelValueScaleImplementation.prototype, "projection", {
         get: function () {
             return this._projection;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelValueScaleImplementation.prototype, "padding", {
         get: function () {
             return this._options.padding;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelValueScaleImplementation.prototype, "calibrator", {
@@ -246,14 +244,14 @@ var ChartPanelValueScaleImplementation = (function (_super) {
         set: function (value) {
             this._calibrator = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelValueScaleImplementation.prototype, "actualTheme", {
         get: function () {
             return this.chart.theme.valueScale;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelValueScaleImplementation.prototype, "chartValueScale", {
@@ -261,7 +259,7 @@ var ChartPanelValueScaleImplementation = (function (_super) {
             var index = this._index();
             return index >= 0 ? this.chart.valueScales[index] : null;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     ChartPanelValueScaleImplementation.prototype._initGestures = function () {

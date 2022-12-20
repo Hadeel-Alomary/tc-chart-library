@@ -2,12 +2,10 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    };
+    }
     return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -55,10 +53,10 @@ var AnalysisCenterLoaderService = (function (_super) {
     AnalysisCenterLoaderService.prototype.getAnalysesByAnalyst = function (marketId, nickName, sortType, pageNumber) {
         var _this = this;
         var basicUrl = '';
-        var url = basicUrl.replace('{0}', "".concat(marketId));
-        url = url.replace('{1}', "".concat(this.getSortTypeAsString(sortType)));
-        url = url.replace('{2}', "".concat(pageNumber));
-        url = url + "?analyst=".concat(nickName);
+        var url = basicUrl.replace('{0}', "" + marketId);
+        url = url.replace('{1}', "" + this.getSortTypeAsString(sortType));
+        url = url.replace('{2}', "" + pageNumber);
+        url = url + ("?analyst=" + nickName);
         Tc.info('analysis search url: ' + url);
         return this.http.get(url)
             .pipe(map(function (response) {
@@ -69,9 +67,9 @@ var AnalysisCenterLoaderService = (function (_super) {
     AnalysisCenterLoaderService.prototype.getAnalysesByMarket = function (marketId, sortType, pageNumber) {
         var _this = this;
         var basicUrl = '';
-        var url = basicUrl.replace('{0}', "".concat(marketId));
-        url = url.replace('{1}', "".concat(this.getSortTypeAsString(sortType)));
-        url = url.replace('{2}', "".concat(pageNumber));
+        var url = basicUrl.replace('{0}', "" + marketId);
+        url = url.replace('{1}', "" + this.getSortTypeAsString(sortType));
+        url = url.replace('{2}', "" + pageNumber);
         Tc.info('analysis search by market url: ' + url);
         return this.http.get(url)
             .pipe(map(function (response) {
@@ -152,19 +150,19 @@ var AnalysisCenterLoaderService = (function (_super) {
     };
     AnalysisCenterLoaderService.prototype.getCommunityIdeasUrl = function (ideaId) {
         var url = '';
-        return url.replace('{1}', "".concat(ideaId));
+        return url.replace('{1}', "" + ideaId);
     };
     AnalysisCenterLoaderService.prototype.getCommunityCompaniesUrl = function (companyId) {
         var url = '';
-        return url.replace('{1}', "".concat(companyId));
+        return url.replace('{1}', "" + companyId);
     };
     AnalysisCenterLoaderService.prototype.getCommunityUsersUrl = function (nickName) {
         var url = '';
-        return url.replace('{1}', "".concat(nickName));
+        return url.replace('{1}', "" + nickName);
     };
     AnalysisCenterLoaderService.prototype.getCommunityMarketIdeasUrl = function (marketId) {
         var url = '';
-        return url.replace('{1}', "".concat(marketId));
+        return url.replace('{1}', "" + marketId);
     };
     AnalysisCenterLoaderService.prototype.getAuthorType = function (authorType) {
         switch (authorType) {
@@ -173,7 +171,7 @@ var AnalysisCenterLoaderService = (function (_super) {
             case 'analyst':
                 return { type: AuthorType.ANALYST, arabicDescription: 'محترف', englishDescription: 'PRO', className: 'analyst' };
             default:
-                Tc.error("Invalid community author type ".concat(authorType));
+                Tc.error("Invalid community author type " + authorType);
         }
     };
     AnalysisCenterLoaderService.prototype.getSortTypeAsString = function (sortType) {

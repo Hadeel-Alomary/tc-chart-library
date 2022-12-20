@@ -15,7 +15,7 @@ var SelectionMarker = (function () {
         get: function () {
             return this._chart;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(SelectionMarker.prototype, "width", {
@@ -25,7 +25,7 @@ var SelectionMarker = (function () {
         set: function (value) {
             this._width = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     ;
@@ -33,7 +33,7 @@ var SelectionMarker = (function () {
         get: function () {
             return this._chart.getThemeType() == ThemeType.Light ? Theme.Light.pointerPoint.selectionMarker : Theme.Dark.pointerPoint.selectionMarker;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     SelectionMarker.prototype.draw = function (context, point, theme) {

@@ -32,8 +32,8 @@ var PriceLoader = (function () {
         if (applySplit === void 0) { applySplit = true; }
         var startTime = new Date().getTime();
         var url = baseUrl + '?' +
-            "user_name=".concat(userName, "&symbol=").concat(symbol) +
-            "&interval=".concat(Interval.mapIntervalToServerInterval(interval).serverInterval, "&period=").concat(period.serverPeriod);
+            ("user_name=" + userName + "&symbol=" + symbol) +
+            ("&interval=" + Interval.mapIntervalToServerInterval(interval).serverInterval + "&period=" + period.serverPeriod);
         Tc.info("request prices history: " + url);
         return this.http.get(Tc.url(url), { responseType: 'text' })
             .pipe(map(function (response) {
@@ -45,10 +45,10 @@ var PriceLoader = (function () {
         var _this = this;
         var startTime = new Date().getTime();
         var url = baseUrl + '?' +
-            "user_name=".concat(userName, "&symbol=").concat(symbol) +
-            "&interval=tick&period=".concat(period);
+            ("user_name=" + userName + "&symbol=" + symbol) +
+            ("&interval=tick&period=" + period);
         if (date != null) {
-            url += "&historical_trades_date=".concat(date);
+            url += "&historical_trades_date=" + date;
         }
         Tc.info("request time and sale : " + url);
         return this.http.get(Tc.url(url), { responseType: 'text' })

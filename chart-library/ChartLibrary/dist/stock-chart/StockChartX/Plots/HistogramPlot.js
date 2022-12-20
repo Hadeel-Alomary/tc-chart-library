@@ -2,12 +2,10 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    };
+    }
     return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -39,7 +37,7 @@ var HistogramPlot = (function (_super) {
                 throw new TypeError("Value must be a finite number.");
             this._setOption("baseValue", value, PlotEvent.BASE_VALUE_CHANGED);
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(HistogramPlot.prototype, "columnWidthRatio", {
@@ -52,7 +50,7 @@ var HistogramPlot = (function (_super) {
                 throw new Error("Ratio must be in range (0..1]");
             this._setOption("columnWidthRatio", value, PlotEvent.COLUMN_WIDTH_RATIO_CHANGED);
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(HistogramPlot.prototype, "minColumnWidth", {
@@ -65,7 +63,7 @@ var HistogramPlot = (function (_super) {
                 throw new Error("Min width must be a positive number.");
             this._setOption("minColumnWidth", value, PlotEvent.MIN_WIDTH_CHANGED);
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     HistogramPlot.prototype.draw = function () {

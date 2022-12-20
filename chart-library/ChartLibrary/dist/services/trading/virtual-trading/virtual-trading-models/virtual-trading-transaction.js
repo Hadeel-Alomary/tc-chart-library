@@ -19,7 +19,7 @@ var VirtualTradingTransaction = (function () {
             var symbol = null;
             var name_1 = null;
             if (responseObject.trading_order_id) {
-                symbol = "".concat(responseObject.symbol, ".").concat(responseObject.market);
+                symbol = responseObject.symbol + "." + responseObject.market;
                 name_1 = null;
             }
             result.push(new VirtualTradingTransaction(responseObject.id, responseObject.transaction_date, VirtualTradingTransactionActionType.fromValue(responseObject.transaction_action), responseObject.amount, responseObject.trading_account_id, responseObject.trading_order_id, symbol, name_1, responseObject.quantity, responseObject.market));

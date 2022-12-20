@@ -23,7 +23,7 @@ var Country = (function () {
     };
     Country.prototype.getCountryNameWithCode = function (arabic) {
         var countryName = arabic ? this.arabic : this.english;
-        return this.code == '' ? countryName : "".concat(countryName, " (").concat(this.code, ")");
+        return this.code == '' ? countryName : countryName + " (" + this.code + ")";
     };
     Country.countries = [];
     return Country;

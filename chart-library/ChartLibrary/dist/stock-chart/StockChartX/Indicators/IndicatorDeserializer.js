@@ -15,7 +15,7 @@ var IndicatorDeserializer = (function () {
             }
             return IndicatorDeserializer._instance;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     IndicatorDeserializer.prototype.deserialize = function (state) {

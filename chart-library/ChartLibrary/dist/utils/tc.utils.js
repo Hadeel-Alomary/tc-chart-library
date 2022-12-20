@@ -69,7 +69,7 @@ var Tc = (function () {
     };
     Tc.debug = function (message, color) {
         color = color || '#f00';
-        console.log("%c".concat(message), "color: ".concat(color));
+        console.log("%c" + message, "color: " + color);
     };
     return Tc;
 }());

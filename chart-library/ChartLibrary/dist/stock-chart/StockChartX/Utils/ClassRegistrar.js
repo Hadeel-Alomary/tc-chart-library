@@ -6,7 +6,7 @@ var ClassRegistrar = (function () {
         get: function () {
             return this._constructors;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     ClassRegistrar.prototype.register = function (className, constructor) {

@@ -2,12 +2,10 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    };
+    }
     return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -37,21 +35,21 @@ var TradingDrawing = (function (_super) {
         get: function () {
             return 'abstract';
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(TradingDrawing, "className", {
         get: function () {
             return '';
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(TradingDrawing.prototype, "className", {
         get: function () {
             return this.constructor.className;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(TradingDrawing.prototype, "chartPoint", {
@@ -61,7 +59,7 @@ var TradingDrawing = (function (_super) {
         set: function (value) {
             this._chartPoint = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(TradingDrawing.prototype, "createPointBehavior", {
@@ -71,7 +69,7 @@ var TradingDrawing = (function (_super) {
                 y: YPointBehavior.VALUE
             };
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     TradingDrawing.prototype.handleEvent = function (event) {

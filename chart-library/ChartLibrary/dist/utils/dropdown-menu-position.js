@@ -37,14 +37,14 @@ var DropdownMenuPosition = (function () {
         get: function () {
             return window;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DropdownMenuPosition.prototype, "document", {
         get: function () {
             return window.document;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     DropdownMenuPosition.prototype.getStyle = function (nativeEl, cssProp) {

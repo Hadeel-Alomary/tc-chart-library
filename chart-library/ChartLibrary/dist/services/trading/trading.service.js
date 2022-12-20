@@ -59,7 +59,7 @@ var TradingService = (function () {
         set: function (visible) {
             this.tradingStateService.setVirtualTradingFloatingToolbarVisibility(visible);
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(TradingService.prototype, "toolbarPosition", {
@@ -69,7 +69,7 @@ var TradingService = (function () {
         set: function (position) {
             this.tradingStateService.setVirtualTradingFloatingToolbarPosition(position);
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(TradingService.prototype, "useFastOrder", {
@@ -80,7 +80,7 @@ var TradingService = (function () {
             this.tradingStateService.setUseFastOrder(value);
             this.brokerRefreshStream.next();
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(TradingService.prototype, "showPositionDrawings", {
@@ -91,7 +91,7 @@ var TradingService = (function () {
             this.tradingStateService.setShowPositionDrawings(value);
             this.brokerRefreshStream.next();
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(TradingService.prototype, "showOrderDrawings", {
@@ -102,7 +102,7 @@ var TradingService = (function () {
             this.tradingStateService.setShowOrderDrawings(value);
             this.brokerRefreshStream.next();
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(TradingService.prototype, "showExecutedOrders", {
@@ -113,7 +113,7 @@ var TradingService = (function () {
             this.tradingStateService.setShowExecutedOrders(value);
             this.brokerRefreshStream.next();
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     TradingService.prototype.openBuyScreen = function (market, symbol, price) {

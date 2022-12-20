@@ -7,7 +7,7 @@ var DateTimeFormatRegistrar = (function () {
         get: function () {
             return this._formatters.registeredItems;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     DateTimeFormatRegistrar.register = function (typeOrClassName, constructor) {
@@ -33,7 +33,7 @@ var DateTimeFormat = (function () {
         get: function () {
             return '';
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(DateTimeFormat.prototype, "locale", {
@@ -46,7 +46,7 @@ var DateTimeFormat = (function () {
                 this._onLocaleChanged();
             }
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     DateTimeFormat.prototype._onLocaleChanged = function () {

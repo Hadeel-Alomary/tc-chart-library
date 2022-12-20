@@ -141,16 +141,16 @@ var TradestationPositionsService = (function () {
         if (this.languageService.arabic) {
             orderType1 = orderType.type1.arabic;
             orderType2 = orderType.type2.arabic;
-            line1 = "   1 - \u0625\u0627\u0644\u063A\u0627\u0621 ".concat(symbolWithoutMarket, ". \u062C\u0645\u064A\u0639 \u0627\u0644\u0623\u0648\u0627\u0645\u0631 \u0627\u0644\u0646\u0634\u0637\u0629.");
-            line2 = "   2 - \u0625\u0636\u0627\u0641\u0629 \u0627\u0645\u0631 \"".concat(orderType1, "\" - ").concat(symbolWithoutMarket, " ").concat(position.quantity, " @ \u0633\u0639\u0631 \u0627\u0644\u0633\u0648\u0642.");
-            line3 = "   3 - \u0625\u0636\u0627\u0641\u0629 \u0627\u0645\u0631 \"".concat(orderType2, "\" - ").concat(symbolWithoutMarket, " ").concat(position.quantity, " @ \u0633\u0639\u0631 \u0627\u0644\u0633\u0648\u0642.");
+            line1 = "   1 - \u0625\u0627\u0644\u063A\u0627\u0621 " + symbolWithoutMarket + ". \u062C\u0645\u064A\u0639 \u0627\u0644\u0623\u0648\u0627\u0645\u0631 \u0627\u0644\u0646\u0634\u0637\u0629.";
+            line2 = "   2 - \u0625\u0636\u0627\u0641\u0629 \u0627\u0645\u0631 \"" + orderType1 + "\" - " + symbolWithoutMarket + " " + position.quantity + " @ \u0633\u0639\u0631 \u0627\u0644\u0633\u0648\u0642.";
+            line3 = "   3 - \u0625\u0636\u0627\u0641\u0629 \u0627\u0645\u0631 \"" + orderType2 + "\" - " + symbolWithoutMarket + " " + position.quantity + " @ \u0633\u0639\u0631 \u0627\u0644\u0633\u0648\u0642.";
         }
         else {
             orderType1 = orderType.type1.english;
             orderType2 = orderType.type2.english;
-            line1 = "    1- Cancel \"".concat(symbolWithoutMarket, "\" all active orders.");
-            line2 = "    2- Add \"".concat(orderType1, "\" order - ").concat(position.quantity, " ").concat(symbolWithoutMarket, " @ market price.");
-            line3 = "    3- Add \"".concat(orderType2, "\" order - ").concat(position.quantity, " ").concat(symbolWithoutMarket, " @ market price.");
+            line1 = "    1- Cancel \"" + symbolWithoutMarket + "\" all active orders.";
+            line2 = "    2- Add \"" + orderType1 + "\" order - " + position.quantity + " " + symbolWithoutMarket + " @ market price.";
+            line3 = "    3- Add \"" + orderType2 + "\" order - " + position.quantity + " " + symbolWithoutMarket + " @ market price.";
         }
         return [messageHeader, line1, line2, line3];
     };

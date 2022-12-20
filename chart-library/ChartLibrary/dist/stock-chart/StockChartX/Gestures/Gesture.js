@@ -40,7 +40,7 @@ var Gesture = (function () {
         get: function () {
             return this._state;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Gesture.prototype.handleEvent = function (event) {

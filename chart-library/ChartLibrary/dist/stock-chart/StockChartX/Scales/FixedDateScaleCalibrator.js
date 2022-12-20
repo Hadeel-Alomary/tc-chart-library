@@ -2,12 +2,10 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    };
+    }
     return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -29,7 +27,7 @@ var FixedDateScaleCalibrator = (function (_super) {
         get: function () {
             return 'StockChartX.FixedDateScaleCalibrator';
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(FixedDateScaleCalibrator.prototype, "majorTicksCount", {
@@ -45,7 +43,7 @@ var FixedDateScaleCalibrator = (function (_super) {
             var options = this._options;
             (options.majorTicks || (options.majorTicks = {})).count = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(FixedDateScaleCalibrator.prototype, "minorTicksCount", {
@@ -61,7 +59,7 @@ var FixedDateScaleCalibrator = (function (_super) {
             var options = this._options;
             (options.minorTicks || (options.minorTicks = {})).count = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(FixedDateScaleCalibrator.prototype, "majorTicksFormat", {
@@ -73,7 +71,7 @@ var FixedDateScaleCalibrator = (function (_super) {
             var options = this._options;
             (options.majorTicks || (options.majorTicks = {})).format = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     FixedDateScaleCalibrator.prototype.calibrate = function (dateScale) {

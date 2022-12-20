@@ -27,12 +27,12 @@ var SnbcapitalLoaderService = (function () {
     };
     SnbcapitalLoaderService.prototype.callLogin = function (tickerchartUserId, password) {
         var xslcontext = this.languageService.arabic ? 'GTRADEGILARAB' : 'GTRADEGIL';
-        var body = "DEVICETYPE=PC&NameXsl=FirstStepLogin&SourceOnly=true&Password=".concat(password, "&Bank=NCBC&UserID=").concat(tickerchartUserId, "&XSLCONTEXT=").concat(xslcontext, "&JavaClient=JSON&minifyJSON=true");
+        var body = "DEVICETYPE=PC&NameXsl=FirstStepLogin&SourceOnly=true&Password=" + password + "&Bank=NCBC&UserID=" + tickerchartUserId + "&XSLCONTEXT=" + xslcontext + "&JavaClient=JSON&minifyJSON=true";
         return this.snbcapitalHttpClientService.post(body).pipe(map(function (response) { return response; }));
     };
     SnbcapitalLoaderService.prototype.verify = function (mobileCode, snbcapitalUserName, snbcapitalPassword) {
         var xslcontext = this.languageService.arabic ? 'GTRADEGILARAB' : 'GTRADEGIL';
-        var body = "DEVICETYPE=PC&NameXsl=LoginOTP&SourceOnly=true&CodiceABI=NCBC&JavaClient=JSON&minifyJSON=true&UserID=".concat(snbcapitalUserName, "&Password=").concat(snbcapitalPassword, "&otCode=").concat(mobileCode, "&SecStepLogin=doLogin&XSLCONTEXT=").concat(xslcontext);
+        var body = "DEVICETYPE=PC&NameXsl=LoginOTP&SourceOnly=true&CodiceABI=NCBC&JavaClient=JSON&minifyJSON=true&UserID=" + snbcapitalUserName + "&Password=" + snbcapitalPassword + "&otCode=" + mobileCode + "&SecStepLogin=doLogin&XSLCONTEXT=" + xslcontext;
         this.logRequestData('verify', {});
         return this.snbcapitalHttpClientService.post(body).pipe(map(function (response) { return response; }));
     };
@@ -49,41 +49,41 @@ var SnbcapitalLoaderService = (function () {
         return this.snbcapitalHttpClientService.post(body).pipe();
     };
     SnbcapitalLoaderService.prototype.addPreConfirm = function (order, preConfirmBody, portfolio) {
-        var portafoglio = "Portafoglio=".concat(portfolio.securityAccountBranchCode, "*").concat(portfolio.portfolioId, "*0*-**").concat(portfolio.cashAccountBranchCode, "*").concat(portfolio.cashAccountCode);
-        var body = "NameXsl=RiepilogoOrdine&".concat(preConfirmBody, "&").concat(portafoglio, "&Quantita=").concat(order.quantity, "&DeviceType=1&JavaClient=JSON&GUserTrace=").concat(portfolio.gBSCustomerCode, "&sliceType=0&stepQty=0&stepInterval=0&timeStamp=").concat(moment().valueOf(), "&SkipChecks=").concat(false);
+        var portafoglio = "Portafoglio=" + portfolio.securityAccountBranchCode + "*" + portfolio.portfolioId + "*0*-**" + portfolio.cashAccountBranchCode + "*" + portfolio.cashAccountCode;
+        var body = "NameXsl=RiepilogoOrdine&" + preConfirmBody + "&" + portafoglio + "&Quantita=" + order.quantity + "&DeviceType=1&JavaClient=JSON&GUserTrace=" + portfolio.gBSCustomerCode + "&sliceType=0&stepQty=0&stepInterval=0&timeStamp=" + moment().valueOf() + "&SkipChecks=" + false;
         return this.snbcapitalHttpClientService.post(body).pipe(map(function (response) { return response; }));
     };
     SnbcapitalLoaderService.prototype.addOrder = function (order, portfolio) {
-        var body = "NameXsl=ConfermaOrdine&referrer=".concat(order.referrer, "&checkPinMode=account&pinContainerCode=").concat(portfolio.securityAccountBranchCode, "/").concat(portfolio.portfolioId, "&pin=&checkPin=").concat(false, "&reloadPinData=").concat(true, "&timeStamp=").concat(moment().valueOf(), "&JavaClient=JSON&GUserTrace=").concat(portfolio.gBSCustomerCode);
+        var body = "NameXsl=ConfermaOrdine&referrer=" + order.referrer + "&checkPinMode=account&pinContainerCode=" + portfolio.securityAccountBranchCode + "/" + portfolio.portfolioId + "&pin=&checkPin=" + false + "&reloadPinData=" + true + "&timeStamp=" + moment().valueOf() + "&JavaClient=JSON&GUserTrace=" + portfolio.gBSCustomerCode;
         this.logRequestData('add Order', {});
         return this.snbcapitalHttpClientService.post(body).pipe(map(function (response) { return response; }));
     };
     SnbcapitalLoaderService.prototype.updatePreConfirm = function (order, portfolio) {
-        var body = "NameXsl=ModificaOrdine&Calendar=".concat(true, "&InfoSegmento=").concat(true, "&NroRifOrdine=").concat(order.gpsOrderNumber, "&Portafoglio=").concat(portfolio.securityAccountBranchCode, "*").concat(portfolio.portfolioId, "*0*NULL*NULL&DataOrdine=&JavaClient=JSON&GUserTrace=").concat(portfolio.gBSCustomerCode);
+        var body = "NameXsl=ModificaOrdine&Calendar=" + true + "&InfoSegmento=" + true + "&NroRifOrdine=" + order.gpsOrderNumber + "&Portafoglio=" + portfolio.securityAccountBranchCode + "*" + portfolio.portfolioId + "*0*NULL*NULL&DataOrdine=&JavaClient=JSON&GUserTrace=" + portfolio.gBSCustomerCode;
         this.logRequestData('update PreConfirm order', {});
         return this.snbcapitalHttpClientService.post(body).pipe(map(function (response) { return response; }));
     };
     SnbcapitalLoaderService.prototype.updateOrder = function (order, paramPrc, paramQty, paramDisclosedQty, paramExpiry, newTimeInForceOrPrmQty, portfolio) {
-        var body = "NameXsl=ConfermaModificaOrdine&".concat(paramPrc).concat(paramQty).concat(paramDisclosedQty).concat(newTimeInForceOrPrmQty).concat(paramExpiry, "NroRifOrdine=").concat(order.gpsOrderNumber, "&Portafoglio=").concat(portfolio.securityAccountBranchCode, "*").concat(portfolio.portfolioId, "*0*NULL*NULL&DataOrdine=&checkPin=false&reloadPinData=true&JavaClient=JSON&GUserTrace=").concat(portfolio.gBSCustomerCode);
+        var body = "NameXsl=ConfermaModificaOrdine&" + paramPrc + paramQty + paramDisclosedQty + newTimeInForceOrPrmQty + paramExpiry + "NroRifOrdine=" + order.gpsOrderNumber + "&Portafoglio=" + portfolio.securityAccountBranchCode + "*" + portfolio.portfolioId + "*0*NULL*NULL&DataOrdine=&checkPin=false&reloadPinData=true&JavaClient=JSON&GUserTrace=" + portfolio.gBSCustomerCode;
         this.logRequestData('update order', {});
         return this.snbcapitalHttpClientService.post(body).pipe(map(function (response) { return response; }));
     };
     SnbcapitalLoaderService.prototype.deleteOrder = function (order, portfolio) {
         var fullDate = moment(order.date).format('YYYYMMDDHHmmssSSS');
-        var body = "NameXsl=RispostaCancellaOrdine&NroRifOrdine=".concat(order.gpsOrderNumber, "&DataOrdine=").concat(fullDate, "&checkPinMode=account&pinContainerCode=").concat(portfolio.securityAccountBranchCode, "/").concat(portfolio.portfolioId, "&pin=&checkPin=false&reloadPinData=true&JavaClient=JSON&GUserTrace=").concat(portfolio.gBSCustomerCode);
+        var body = "NameXsl=RispostaCancellaOrdine&NroRifOrdine=" + order.gpsOrderNumber + "&DataOrdine=" + fullDate + "&checkPinMode=account&pinContainerCode=" + portfolio.securityAccountBranchCode + "/" + portfolio.portfolioId + "&pin=&checkPin=false&reloadPinData=true&JavaClient=JSON&GUserTrace=" + portfolio.gBSCustomerCode;
         this.logRequestData('delete order', {});
         return this.snbcapitalHttpClientService.post(body).pipe(map(function (response) { return response; }));
     };
     SnbcapitalLoaderService.prototype.getOrderDetails = function (order, portfolio) {
-        var portfolioValue = "".concat(portfolio.securityAccountBranchCode, "*").concat(portfolio.portfolioId, "*0*NULL*NULL");
+        var portfolioValue = portfolio.securityAccountBranchCode + "*" + portfolio.portfolioId + "*0*NULL*NULL";
         var fullDate = moment(order.date).format('YYYYMMDDHHmmssSSS');
-        var body = "NameXsl=ListaEseguiti&Portafoglio=".concat(portfolioValue, "&DataOrdine=").concat(fullDate, "&NroRifOrdine=").concat(order.id, "&JavaClient=JSON&GUserTrace=").concat(portfolio.gBSCustomerCode);
+        var body = "NameXsl=ListaEseguiti&Portafoglio=" + portfolioValue + "&DataOrdine=" + fullDate + "&NroRifOrdine=" + order.id + "&JavaClient=JSON&GUserTrace=" + portfolio.gBSCustomerCode;
         this.logRequestData('Snbcapital get order detailes ', {});
         return this.snbcapitalHttpClientService.post(body).pipe(map(function (response) { return response; }));
     };
     SnbcapitalLoaderService.prototype.calculateOrderQuantity = function (order, calculateQuantityBody, portfolio) {
-        var portafoglio = "Portafoglio=".concat(portfolio.securityAccountBranchCode, "*").concat(portfolio.portfolioId, "*0*-**").concat(portfolio.cashAccountBranchCode, "*").concat(portfolio.cashAccountCode);
-        var body = "NameXsl=MaxBuyQty&".concat(calculateQuantityBody, "&maxOrderQty=true&").concat(portafoglio, "&DeviceType=1&JavaClient=JSON&GUserTrace=").concat(portfolio.gBSCustomerCode, "&sliceType=0&stepQty=0&stepInterval=0&timeStamp=").concat(moment().valueOf());
+        var portafoglio = "Portafoglio=" + portfolio.securityAccountBranchCode + "*" + portfolio.portfolioId + "*0*-**" + portfolio.cashAccountBranchCode + "*" + portfolio.cashAccountCode;
+        var body = "NameXsl=MaxBuyQty&" + calculateQuantityBody + "&maxOrderQty=true&" + portafoglio + "&DeviceType=1&JavaClient=JSON&GUserTrace=" + portfolio.gBSCustomerCode + "&sliceType=0&stepQty=0&stepInterval=0&timeStamp=" + moment().valueOf();
         this.logRequestData('Snbcapital quantity calculator ', {});
         return this.snbcapitalHttpClientService.post(body).pipe(map(function (response) { return response; }));
     };
@@ -93,7 +93,7 @@ var SnbcapitalLoaderService = (function () {
         return this.snbcapitalHttpClientService.post(body).pipe(map(function (response) { return response; }));
     };
     SnbcapitalLoaderService.prototype.getOrders = function (customerCode) {
-        var body = "NameXsl=ListaOrdiniEx&revoche=".concat(true, "&ascendingOrderBy=").concat(true, "&TipoRicercaOrdine=TRO_APERTI&TipoRicercaOrdine=TRO_ODIERNI_CHIUSI&NO_PAGING=").concat(true, "&JavaClient=JSON&GUserTrace=").concat(customerCode);
+        var body = "NameXsl=ListaOrdiniEx&revoche=" + true + "&ascendingOrderBy=" + true + "&TipoRicercaOrdine=TRO_APERTI&TipoRicercaOrdine=TRO_ODIERNI_CHIUSI&NO_PAGING=" + true + "&JavaClient=JSON&GUserTrace=" + customerCode;
         this.logRequestData('get orders', {});
         return this.snbcapitalHttpClientService.post(body).pipe(map(function (response) { return response; }));
     };
@@ -104,7 +104,7 @@ var SnbcapitalLoaderService = (function () {
         var endYear = endDate.split('-')[0];
         var endMonth = endDate.split('-')[1];
         var endDay = endDate.split('-')[2];
-        var body = "NameXsl=ListaOrdiniEx&DepositoJS=[{filiale:".concat(portfolio.securityAccountBranchCode, ",codice:").concat(portfolio.portfolioId, "}]&GGDataDa=").concat(startDay, "&MMDataDa=").concat(startMonth, "&AADataDa=").concat(startYear, "&GGDataAl=").concat(endDay, "&MMDataAl=").concat(endMonth, "&AADataAl=").concat(endYear, "&revoche=true&orderSearch=1&Page=").concat(pageNumber, "&JavaClient=JSON&GUserTrace=").concat(portfolio.gBSCustomerCode);
+        var body = "NameXsl=ListaOrdiniEx&DepositoJS=[{filiale:" + portfolio.securityAccountBranchCode + ",codice:" + portfolio.portfolioId + "}]&GGDataDa=" + startDay + "&MMDataDa=" + startMonth + "&AADataDa=" + startYear + "&GGDataAl=" + endDay + "&MMDataAl=" + endMonth + "&AADataAl=" + endYear + "&revoche=true&orderSearch=1&Page=" + pageNumber + "&JavaClient=JSON&GUserTrace=" + portfolio.gBSCustomerCode;
         if (orderAction != 'all') {
             if (orderAction == 'buy') {
                 body += '&Sign=BS_COMPRA';
@@ -138,22 +138,22 @@ var SnbcapitalLoaderService = (function () {
             body += '&TipoRicercaOrdine=TRO_SCADUTI';
         }
         if (company) {
-            body += "&TipoCodice=BANCA&CodRicerca=".concat(company);
+            body += "&TipoCodice=BANCA&CodRicerca=" + company;
         }
         if (orderNumber) {
-            body += "&TipoCodice=TRANSACTION_NUM&CodRicerca=".concat(orderNumber);
+            body += "&TipoCodice=TRANSACTION_NUM&CodRicerca=" + orderNumber;
         }
         this.logRequestData('get orders search', {});
         return this.snbcapitalHttpClientService.post(body).pipe(map(function (response) { return response; }));
     };
     SnbcapitalLoaderService.prototype.getSnbcapitalPurchasePower = function (portfolio) {
-        var contoCorrente = "".concat(portfolio.securityAccountBranchCode, "*").concat(portfolio.portfolioId, "*").concat(portfolio.securitySubAccountCode, "*_*").concat(portfolio.cashAccountBranchCode, "*").concat(portfolio.cashAccountCode, "*").concat(portfolio.currency.CurrencyCode);
-        var body = "NameXsl=SaldoCC&ContoCorrente=".concat(contoCorrente, "&JavaClient=JSON&GUserTrace=").concat(portfolio.gBSCustomerCode);
+        var contoCorrente = portfolio.securityAccountBranchCode + "*" + portfolio.portfolioId + "*" + portfolio.securitySubAccountCode + "*_*" + portfolio.cashAccountBranchCode + "*" + portfolio.cashAccountCode + "*" + portfolio.currency.CurrencyCode;
+        var body = "NameXsl=SaldoCC&ContoCorrente=" + contoCorrente + "&JavaClient=JSON&GUserTrace=" + portfolio.gBSCustomerCode;
         this.logRequestData('purchase power', {});
         return this.snbcapitalHttpClientService.post(body).pipe(map(function (response) { return response; }));
     };
     SnbcapitalLoaderService.prototype.getPositions = function (portfolio) {
-        var body = "NameXsl=ListaPosizioniTD&saldi=".concat(true, "&Tipo=APERTE&abi=NCBC&JavaClient=JSON&ndg=").concat(portfolio.gBSCustomerCode, "&Portafoglio=").concat(portfolio.securityAccountBranchCode, "*").concat(portfolio.portfolioId, "*TUTTI*TUTTI*TUTTI&GUserTrace=").concat(portfolio.gBSCustomerCode);
+        var body = "NameXsl=ListaPosizioniTD&saldi=" + true + "&Tipo=APERTE&abi=NCBC&JavaClient=JSON&ndg=" + portfolio.gBSCustomerCode + "&Portafoglio=" + portfolio.securityAccountBranchCode + "*" + portfolio.portfolioId + "*TUTTI*TUTTI*TUTTI&GUserTrace=" + portfolio.gBSCustomerCode;
         this.logRequestData('Snbcapital get positions.', {});
         return this.snbcapitalHttpClientService.post(body).pipe(map(function (response) { return response; }));
     };

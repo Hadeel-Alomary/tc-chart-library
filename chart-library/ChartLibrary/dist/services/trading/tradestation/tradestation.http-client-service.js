@@ -146,8 +146,8 @@ var TradestationHttpClientService = (function () {
                 'Content-Type': 'application/x-www-form-urlencoded',
             })
         };
-        var data = "refresh_token=".concat(this.getRefreshToken(), "&client_id=").concat(this.tradestationClientService.getClientId(), "&client_secret=").concat(this.tradestationClientService.getClientSecret(), "&grant_type=refresh_token&response_type=token");
-        return this.post(Tc.url("".concat(this.tradestationClientService.getBaseUrl(), "/security/authorize")), data, headers).pipe(map(function (response) {
+        var data = "refresh_token=" + this.getRefreshToken() + "&client_id=" + this.tradestationClientService.getClientId() + "&client_secret=" + this.tradestationClientService.getClientSecret() + "&grant_type=refresh_token&response_type=token";
+        return this.post(Tc.url(this.tradestationClientService.getBaseUrl() + "/security/authorize"), data, headers).pipe(map(function (response) {
             if (response.access_token) {
                 _this.tradestationStateService.setTradestationToken(response.access_token);
                 _this.tradestationStateService.enableTradestationSession();

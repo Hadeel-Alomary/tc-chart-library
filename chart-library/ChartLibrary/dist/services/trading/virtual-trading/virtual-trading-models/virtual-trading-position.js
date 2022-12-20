@@ -10,7 +10,7 @@ var VirtualTradingPosition = (function () {
                 id: responseObject.id.toString(),
                 accountId: responseObject.trading_account_id,
                 market: null,
-                symbol: "".concat(responseObject.symbol, ".").concat(responseObject.market),
+                symbol: responseObject.symbol + "." + responseObject.market,
                 name: null,
                 averagePrice: +responseObject.average_price,
                 quantity: +responseObject.quantity,

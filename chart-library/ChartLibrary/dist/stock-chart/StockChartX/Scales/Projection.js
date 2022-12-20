@@ -11,28 +11,28 @@ var Projection = (function () {
         get: function () {
             return this._dateScale;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Projection.prototype, "valueScale", {
         get: function () {
             return this._valueScale;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Projection.prototype, "canResolveX", {
         get: function () {
             return !!this._dateScale;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Projection.prototype, "canResolveY", {
         get: function () {
             return !!this._valueScale;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Projection.prototype.columnByRecord = function (record, isIntegral) {

@@ -30,7 +30,7 @@ var Dialog = (function () {
         get: function () {
             return SETTING_OPTIONS;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Dialog.prototype._initDialogContentObj = function () {

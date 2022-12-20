@@ -2,7 +2,7 @@ var TradestationUtils = (function () {
     function TradestationUtils() {
     }
     TradestationUtils.getSymbolWithMarketFromTradestation = function (TradestationSymbol) {
-        return "".concat(TradestationSymbol, ".USA");
+        return TradestationSymbol + ".USA";
     };
     TradestationUtils.getAllowedMarketsAbbreviations = function () {
         return ["USA"];

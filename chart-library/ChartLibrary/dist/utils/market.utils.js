@@ -39,8 +39,8 @@ var MarketUtils = (function () {
     MarketUtils.getForexDaylightSavingTimeRange = function (year) {
         if (!this.forexDayLightSavingRangeCache[year]) {
             var timeRange = {
-                start: moment(this.nthDayOfMonth(moment("".concat(year, "-03-01")), 7, 2)),
-                end: moment(this.nthDayOfMonth(moment("".concat(year, "-11-01")), 7, 1))
+                start: moment(this.nthDayOfMonth(moment(year + "-03-01"), 7, 2)),
+                end: moment(this.nthDayOfMonth(moment(year + "-11-01"), 7, 1))
             };
             this.forexDayLightSavingRangeCache[year] = timeRange;
         }

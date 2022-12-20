@@ -2,12 +2,10 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    };
+    }
     return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -44,7 +42,7 @@ var NewsLoader = (function (_super) {
         var lastWeek = moment().subtract(1, 'weeks').format('YYYY-MM-DD');
         var baseUrl = null;
         baseUrl = baseUrl.replace('{0}', market);
-        var url = baseUrl + "?from_date=".concat(lastWeek, "&to_date=").concat(today, "&keyword=&symbol=");
+        var url = baseUrl + ("?from_date=" + lastWeek + "&to_date=" + today + "&keyword=&symbol=");
         Tc.info("market news url:" + url);
         return this.http.get(this.getProxyAppliedUrl(url))
             .pipe(map(function (response) { return _this.onData(response); }));
@@ -59,8 +57,8 @@ var NewsLoader = (function (_super) {
     };
     NewsLoader.prototype.loadCategoryNews = function (marketId, category) {
         var url = null;
-        url = url.replace('{0}', "".concat(marketId));
-        url = url.replace('{1}', "".concat(category));
+        url = url.replace('{0}', "" + marketId);
+        url = url.replace('{1}', "" + category);
         Tc.info("news url:" + url);
         return this.http.get(this.getProxyAppliedUrl(url)).pipe(map(function (response) {
             return CategoryNews.fromLoaderData(response);
@@ -68,7 +66,7 @@ var NewsLoader = (function (_super) {
     };
     NewsLoader.prototype.loadNewsTitle = function (newsId) {
         var url = null;
-        url = url.replace('{0}', "".concat(newsId));
+        url = url.replace('{0}', "" + newsId);
         Tc.info("news url:" + url);
         return this.http.get(this.getProxyAppliedUrl(url)).pipe(map(function (response) {
             return response.title;

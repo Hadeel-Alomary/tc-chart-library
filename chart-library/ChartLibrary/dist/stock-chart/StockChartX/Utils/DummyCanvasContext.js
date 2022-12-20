@@ -8,7 +8,7 @@ var DummyCanvasContext = (function () {
                 DummyCanvasContext._context = $('<canvas></canvas>')[0].getContext('2d');
             return DummyCanvasContext._context;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     DummyCanvasContext.applyTextTheme = function (theme) {

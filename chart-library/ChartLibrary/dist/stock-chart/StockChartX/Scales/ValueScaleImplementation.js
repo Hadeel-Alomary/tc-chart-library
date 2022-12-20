@@ -2,12 +2,10 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    };
+    }
     return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -40,28 +38,28 @@ var ValueScaleImplementation = (function (_super) {
         get: function () {
             return this._leftPanel;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ValueScaleImplementation.prototype, "rightPanel", {
         get: function () {
             return this._rightPanel;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ValueScaleImplementation.prototype, "leftPanelCssClass", {
         get: function () {
             return Class.LEFT_SCALE;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ValueScaleImplementation.prototype, "rightPanelCssClass", {
         get: function () {
             return Class.RIGHT_SCALE;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ValueScaleImplementation.prototype, "useManualWidth", {
@@ -71,7 +69,7 @@ var ValueScaleImplementation = (function (_super) {
         set: function (value) {
             this._options.useManualWidth = !!value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ValueScaleImplementation.prototype, "manualWidth", {
@@ -83,7 +81,7 @@ var ValueScaleImplementation = (function (_super) {
                 throw new Error("Width must be greater than 0.");
             this._options.width = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ValueScaleImplementation.prototype, "leftPanelVisible", {
@@ -93,7 +91,7 @@ var ValueScaleImplementation = (function (_super) {
         set: function (value) {
             this._leftPanel.visible = this._options.showLeftPanel = !!value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ValueScaleImplementation.prototype, "rightPanelVisible", {
@@ -103,14 +101,14 @@ var ValueScaleImplementation = (function (_super) {
         set: function (value) {
             this._rightPanel.visible = this._options.showRightPanel = !!value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ValueScaleImplementation.prototype, "index", {
         get: function () {
             return this.chart.valueScales.indexOf(this);
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     ValueScaleImplementation.prototype.saveState = function () {

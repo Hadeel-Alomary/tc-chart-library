@@ -12,7 +12,7 @@ var NumberFormatRegistrar = (function () {
         get: function () {
             return this._formatters.registeredItems;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     NumberFormatRegistrar.register = function (typeOrClassName, constructor) {
@@ -42,7 +42,7 @@ var NumberFormat = (function () {
         get: function () {
             return '';
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(NumberFormat.prototype, "locale", {
@@ -55,7 +55,7 @@ var NumberFormat = (function () {
                 this._onLocaleChanged();
             }
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     NumberFormat.prototype._onLocaleChanged = function () {

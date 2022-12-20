@@ -147,7 +147,7 @@ var TechnicalIndicator = (function () {
         Tc.enumValues(TechnicalIndicatorType).forEach(function (type) {
             if (type != TechnicalIndicatorType.Volume) {
                 var enumName = TechnicalIndicatorType[type];
-                Tc.assert(IndicatorHelper.isExistedIndicator(type), "fail to match ".concat(enumName, " with TASdk"));
+                Tc.assert(IndicatorHelper.isExistedIndicator(type), "fail to match " + enumName + " with TASdk");
             }
         });
     };

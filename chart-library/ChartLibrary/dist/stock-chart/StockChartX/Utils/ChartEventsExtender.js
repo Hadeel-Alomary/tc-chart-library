@@ -9,7 +9,7 @@ var ChartEventsExtender = (function () {
         get: function () {
             return this._chart;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     ChartEventsExtender.prototype.suppressEvents = function (suppress) {

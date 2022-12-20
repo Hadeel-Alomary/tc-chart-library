@@ -22,10 +22,10 @@ var TradingOrder = (function () {
         for (var _i = 0, virtualTradingOrders_1 = virtualTradingOrders; _i < virtualTradingOrders_1.length; _i++) {
             var order = virtualTradingOrders_1[_i];
             if (VirtualTradingOrder.isActiveOrder(order) && !VirtualTradingOrder.isMarketOrder(order)) {
-                tradingOrders.push(new TradingOrder("".concat(order.id), order.symbol, order.price, order.quantity, TradingOrderSide.fromVirtualTradingOrderSide(order.orderSide), TradingOrderTypeWrapper.fromVirtualTradingOrderType(order.orderType), TradingOrderStatus.fromVirtualTradingOrderStatus(order.orderStatus), order.takeProfit, order.stopPrice, null, null));
+                tradingOrders.push(new TradingOrder("" + order.id, order.symbol, order.price, order.quantity, TradingOrderSide.fromVirtualTradingOrderSide(order.orderSide), TradingOrderTypeWrapper.fromVirtualTradingOrderType(order.orderType), TradingOrderStatus.fromVirtualTradingOrderStatus(order.orderStatus), order.takeProfit, order.stopPrice, null, null));
             }
             else if (VirtualTradingOrder.isExecutedOrder(order)) {
-                tradingOrders.push(new TradingOrder("".concat(order.id), order.symbol, order.price, order.quantity, TradingOrderSide.fromVirtualTradingOrderSide(order.orderSide), TradingOrderTypeWrapper.fromVirtualTradingOrderType(order.orderType), TradingOrderStatus.fromVirtualTradingOrderStatus(order.orderStatus), order.takeProfit, order.stopPrice, order.executionPrice, order.executionTime));
+                tradingOrders.push(new TradingOrder("" + order.id, order.symbol, order.price, order.quantity, TradingOrderSide.fromVirtualTradingOrderSide(order.orderSide), TradingOrderTypeWrapper.fromVirtualTradingOrderType(order.orderType), TradingOrderStatus.fromVirtualTradingOrderStatus(order.orderStatus), order.takeProfit, order.stopPrice, order.executionPrice, order.executionTime));
             }
         }
         return tradingOrders;
@@ -35,10 +35,10 @@ var TradingOrder = (function () {
         for (var _i = 0, tradestationOrders_1 = tradestationOrders; _i < tradestationOrders_1.length; _i++) {
             var order = tradestationOrders_1[_i];
             if (TradestationOrder.isActiveOrder(order) && !TradestationOrder.isMarketOrder(order)) {
-                tradingOrders.push(new TradingOrder("".concat(order.id), order.symbol, order.stopPrice ? order.stopPrice : order.price, order.quantity, TradingOrderSide.fromTradestationOrderSide(order.side), TradingOrderTypeWrapper.fromTradestationOrderType(order.type), TradingOrderStatus.fromTradestationOrderStatus(order.status), order.takeProfitPrice, order.stopLossPrice, null, null));
+                tradingOrders.push(new TradingOrder("" + order.id, order.symbol, order.stopPrice ? order.stopPrice : order.price, order.quantity, TradingOrderSide.fromTradestationOrderSide(order.side), TradingOrderTypeWrapper.fromTradestationOrderType(order.type), TradingOrderStatus.fromTradestationOrderStatus(order.status), order.takeProfitPrice, order.stopLossPrice, null, null));
             }
             else if (TradestationOrder.isFilledOrder(order)) {
-                tradingOrders.push(new TradingOrder("".concat(order.id), order.symbol, order.price, order.quantity, TradingOrderSide.fromTradestationOrderSide(order.side), TradingOrderTypeWrapper.fromTradestationOrderType(order.type), TradingOrderStatus.fromTradestationOrderStatus(order.status), order.takeProfitPrice, order.stopLossPrice, order.executedPrice, order.timeExecuted));
+                tradingOrders.push(new TradingOrder("" + order.id, order.symbol, order.price, order.quantity, TradingOrderSide.fromTradestationOrderSide(order.side), TradingOrderTypeWrapper.fromTradestationOrderType(order.type), TradingOrderStatus.fromTradestationOrderStatus(order.status), order.takeProfitPrice, order.stopLossPrice, order.executedPrice, order.timeExecuted));
             }
         }
         return tradingOrders;

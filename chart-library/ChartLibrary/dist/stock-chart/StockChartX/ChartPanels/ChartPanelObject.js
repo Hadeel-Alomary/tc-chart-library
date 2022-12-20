@@ -2,12 +2,10 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    };
+    }
     return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -27,7 +25,7 @@ var ChartPanelObject = (function (_super) {
         get: function () {
             return this._options;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelObject.prototype, "chartPanel", {
@@ -46,14 +44,14 @@ var ChartPanelObject = (function (_super) {
                     this.valueScale = this.chart.valueScales[index];
             }
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelObject.prototype, "context", {
         get: function () {
             return this._panel.context;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelObject.prototype, "valueScale", {
@@ -67,21 +65,21 @@ var ChartPanelObject = (function (_super) {
                 this._onValueScaleChanged(oldValue);
             }
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelObject.prototype, "panelValueScale", {
         get: function () {
             return this._panel.getValueScale(this.valueScale);
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelObject.prototype, "projection", {
         get: function () {
             return this._panel && this._panel.getProjection(this.valueScale);
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(ChartPanelObject.prototype, "visible", {
@@ -95,7 +93,7 @@ var ChartPanelObject = (function (_super) {
                 this._onVisibleChanged(oldValue);
             }
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     ChartPanelObject.prototype._setOption = function (key, value, valueChangedEventName) {

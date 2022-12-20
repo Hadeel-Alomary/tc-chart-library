@@ -31,7 +31,7 @@ var WatchlistLoader = (function () {
     };
     WatchlistLoader.prototype.deleteWatchlist = function (watchlist) {
         TcTracker.trackDeleteCloudWatchlist();
-        this.http.get(Tc.url("https://www.tickerchart.com/m/watchlist/".concat(watchlist.id, "/delete")), this.getAuthorizationHeader())
+        this.http.get(Tc.url("https://www.tickerchart.com/m/watchlist/" + watchlist.id + "/delete"), this.getAuthorizationHeader())
             .pipe(map(function (jsonResponse) {
             Tc.assert(jsonResponse.success, "fail to delete watchlist");
             return null;

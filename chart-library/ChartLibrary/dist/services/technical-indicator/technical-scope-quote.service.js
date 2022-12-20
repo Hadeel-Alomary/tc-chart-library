@@ -33,7 +33,7 @@ var TechnicalScopeQuoteService = (function () {
             var topicSegments = MarketUtils.splitTopic(symbol);
             var symbolWithoutMarket = topicSegments[0];
             var marketAbbr = topicSegments[2];
-            var topic = "NA.".concat(symbolWithoutMarket, "_1day.").concat(marketAbbr);
+            var topic = "NA." + symbolWithoutMarket + "_1day." + marketAbbr;
             if (Object.keys(_this.subscribedTopics).includes(topic)) {
                 _this.subscribedTopics[topic]++;
             }
@@ -55,7 +55,7 @@ var TechnicalScopeQuoteService = (function () {
             var topicSegments = MarketUtils.splitTopic(symbol);
             var symbolWithoutMarket = topicSegments[0];
             var marketAbbr = topicSegments[2];
-            var topic = "NA.".concat(symbolWithoutMarket, "_1day.").concat(marketAbbr);
+            var topic = "NA." + symbolWithoutMarket + "_1day." + marketAbbr;
             if (Object.keys(_this.subscribedTopics).includes(topic)) {
                 _this.subscribedTopics[topic]--;
             }

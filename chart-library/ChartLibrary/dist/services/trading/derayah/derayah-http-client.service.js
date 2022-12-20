@@ -101,7 +101,7 @@ var DerayahHttpClientService = (function () {
                 'Content-Type': 'application/x-www-form-urlencoded',
             })
         };
-        var data = "client_id=".concat(this.derayahClientService.getClientId(), "&client_secret=").concat(this.derayahClientService.getClientSecretId(), "&grant_type=refresh_token&refresh_token=").concat(this.getRefreshToken());
+        var data = "client_id=" + this.derayahClientService.getClientId() + "&client_secret=" + this.derayahClientService.getClientSecretId() + "&grant_type=refresh_token&refresh_token=" + this.getRefreshToken();
         return this.post(null, data, headers).pipe(map(function (response) {
             if (response.access_token) {
                 _this.derayahStateService.setDerayahToken(response.access_token);

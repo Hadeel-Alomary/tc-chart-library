@@ -18,7 +18,7 @@ var StreamerLoader = (function () {
     StreamerLoader.prototype.loadStreamerUrl = function (market) {
         var _this = this;
         var baseUrl = null;
-        var url = "".concat(baseUrl, "?market_abbr=").concat(market, "&send_domain=1");
+        var url = baseUrl + "?market_abbr=" + market + "&send_domain=1";
         return this.http.get(Tc.url(url), { responseType: 'text' })
             .pipe(map(function (response) { return _this.processResponse(response); }));
     };
@@ -27,7 +27,7 @@ var StreamerLoader = (function () {
             response = '';
         }
         var segments = response.trim().split(':=:');
-        return "https://".concat(segments[3], "/streamhub/");
+        return "https://" + segments[3] + "/streamhub/";
     };
     StreamerLoader = __decorate([
         Injectable(),

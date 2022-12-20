@@ -2,12 +2,10 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    };
+    }
     return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -91,14 +89,14 @@ var Plot = (function (_super) {
         set: function (value) {
             this._valueMarkerOffset = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Plot.prototype, "top", {
         get: function () {
             return this.panelValueScale.projection.yByValue(this.lastVisibleValue);
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Plot.prototype, "lastVisibleValue", {
@@ -110,7 +108,7 @@ var Plot = (function (_super) {
             }
             return lastValue;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Plot.prototype, "dataSeries", {
@@ -120,7 +118,7 @@ var Plot = (function (_super) {
         set: function (value) {
             this.setDataSeries(value);
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Plot.prototype.setDataSeries = function (dataSeries) {
@@ -146,7 +144,7 @@ var Plot = (function (_super) {
             this._theme = value;
             this.fire(PlotEvent.THEME_CHANGED, value, oldValue);
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Plot.prototype, "actualTheme", {
@@ -155,7 +153,7 @@ var Plot = (function (_super) {
                 return this._theme;
             return this.chart.theme.plot[this._plotThemeKey][this.plotStyle];
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Plot.prototype, "plotStyle", {
@@ -169,7 +167,7 @@ var Plot = (function (_super) {
         set: function (value) {
             this._setOption("plotStyle", value, PlotEvent.STYLE_CHANGED);
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Plot.prototype, "showValueMarkers", {
@@ -179,7 +177,7 @@ var Plot = (function (_super) {
         set: function (value) {
             this._setOption("showValueMarkers", !!value, PlotEvent.SHOW_VALUE_MARKERS_CHANGED);
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Plot.prototype, "plotType", {
@@ -189,7 +187,7 @@ var Plot = (function (_super) {
         set: function (value) {
             this._plotType = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(Plot.prototype, "drawingOrder", {
@@ -202,7 +200,7 @@ var Plot = (function (_super) {
             }
             return PlotDrawingOrderType.IndicatorPlot;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Plot.prototype._onChartPanelChanged = function (oldValue) {

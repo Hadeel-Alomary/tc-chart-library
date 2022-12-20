@@ -2,12 +2,10 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    };
+    }
     return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -31,7 +29,7 @@ var HorizontalLineDrawing = (function (_super) {
         get: function () {
             return 'horizontalLine';
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(HorizontalLineDrawing.prototype, "text", {
@@ -43,7 +41,7 @@ var HorizontalLineDrawing = (function (_super) {
         set: function (value) {
             this._options.text = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(HorizontalLineDrawing.prototype, "textHorizontalPosition", {
@@ -53,7 +51,7 @@ var HorizontalLineDrawing = (function (_super) {
         set: function (value) {
             this.getDrawingTheme().text.textAlign = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     Object.defineProperty(HorizontalLineDrawing.prototype, "textVerticalPosition", {
@@ -63,7 +61,7 @@ var HorizontalLineDrawing = (function (_super) {
         set: function (value) {
             this.getDrawingTheme().text.textVerticalAlign = value;
         },
-        enumerable: false,
+        enumerable: true,
         configurable: true
     });
     HorizontalLineDrawing.prototype.bounds = function () {
