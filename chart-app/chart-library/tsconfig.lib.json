@@ -1,0 +1,49 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../out-tsc/lib",
+    "target": "es2015",
+    "declaration": true,
+    "declarationMap": true,
+    "inlineSources": true,
+    "lib": [
+      "dom",
+      "es2018"
+    ],
+    "typeRoots": [
+      "./src/typings"
+    ],
+    "types": [
+      "node",
+      "jquery",
+      "bootstrap",
+      "jqueryui",
+      "spectrum",
+      "Html2Canvas",
+      "bootstrap-select",
+      "eonasdan-bootstrap-datetimepicker",
+      "lodash",
+      "switchery",
+      "moment",
+      "detectizr",
+      "jquery.gwfselect",
+      "jquery.autocolumnlist",
+      "tinycolor",
+      "base64",
+      "prng4",
+      "rng",
+      "rsa",
+      "jsbn"
+    ]
+  },
+  "angularCompilerOptions": {
+    "skipTemplateCodegen": true,
+    "strictMetadataEmit": true,
+    "enableResourceInlining": true
+  },
+  "exclude": [
+    "src/test.ts",
+    "**/*.spec.ts"
+  ]
+}
