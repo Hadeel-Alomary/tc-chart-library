@@ -1,0 +1,22 @@
+{
+  "name": "chart-library",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "lodash": "^4.17.10",
+    "@types/lodash": "^4.14.108",
+    "typescript": "~3.1.6"
+  },
+  "main": "bundles/chart-library.umd.js",
+  "module": "fesm5/chart-library.js",
+  "es2015": "fesm2015/chart-library.js",
+  "esm5": "esm5/chart-library.js",
+  "esm2015": "esm2015/chart-library.js",
+  "fesm5": "fesm5/chart-library.js",
+  "fesm2015": "fesm2015/chart-library.js",
+  "typings": "chart-library.d.ts",
+  "metadata": "chart-library.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

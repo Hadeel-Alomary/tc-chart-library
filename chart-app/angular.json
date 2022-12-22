@@ -126,7 +126,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
             "tsConfig": "chart-library/tsconfig.lib.json",
             "project": "chart-library/ng-package.json"
