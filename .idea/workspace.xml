@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="473ece33-e321-4047-bd2b-141f4add5f82" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-app/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/chart-app/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-app/chart-library/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/chart-app/chart-library/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-app/chart-library/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-app/chart-library/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-app/chart-library/tsconfig.lib.json" beforeDir="false" afterPath="$PROJECT_DIR$/chart-app/chart-library/tsconfig.lib.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/chart-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/chart-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-app/chart-library/src/client/chart-client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-app/chart-library/src/client/chart-client.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart-app/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chart-app/src/app/app.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,36 +27,36 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="1" />
-          <entry key="html" value="2" />
+          <entry key="html" value="3" />
           <entry key="js" value="9" />
-          <entry key="json" value="27" />
+          <entry key="json" value="28" />
           <entry key="map" value="1" />
           <entry key="md" value="1" />
-          <entry key="ts" value="872" />
+          <entry key="ts" value="875" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="1" />
-          <entry key="HTML" value="2" />
-          <entry key="JSON" value="18" />
+          <entry key="HTML" value="3" />
+          <entry key="JSON" value="19" />
           <entry key="JavaScript" value="9" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="SourceMap" value="1" />
-          <entry key="TypeScript" value="872" />
+          <entry key="TypeScript" value="875" />
           <entry key="tsconfig" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="json" value="134" />
-          <entry key="ts" value="2547" />
+          <entry key="json" value="139" />
+          <entry key="ts" value="2637" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JSON" value="115" />
-          <entry key="TypeScript" value="2547" />
+          <entry key="JSON" value="120" />
+          <entry key="TypeScript" value="2637" />
           <entry key="tsconfig" value="19" />
         </counts>
       </usages-collector>
@@ -74,81 +70,52 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chart-app/chart-library/ng-package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chart-app/chart-library/src/index.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="373">
-              <caret line="224" column="14" selection-start-line="224" selection-start-column="14" selection-end-line="224" selection-end-column="14" />
+              <caret line="146" column="33" lean-forward="true" selection-start-line="146" selection-start-column="33" selection-end-line="146" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chart-app/src/app/app.module.ts">
+        <entry file="file://$PROJECT_DIR$/chart-app/chart-library/src/client/chart-client.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#58#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="153">
+              <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/chart-app/chart-library/package.json">
+        <entry file="file://$PROJECT_DIR$/chart-app/src/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+              <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chart-app/chart-library/package-lock.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="42" column="48" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chart-app/chart-library/README.md">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chart-app/chart-library/tsconfig.lib.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+            <state relative-caret-position="102">
+              <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chart-app/chart-library/tsconfig.lib.prod.json">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chart-app/chart-library/tsconfig.spec.json">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chart-app/chart-library/tslint.json">
+        <entry file="file://$PROJECT_DIR$/chart-app/chart-library/src/stock-chart/StockChartX/Drawings/GeometricDrawings/TriangleDrawing.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="179">
+              <caret line="121" column="28" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="28" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -202,8 +169,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/watchlist-loader/watchlist-loader.service.ts" />
-        <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/loader/index.ts" />
         <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/watchlist/watchlist.service.ts" />
         <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/services/watchlist/watchlist.ts" />
         <option value="$PROJECT_DIR$/chart-library/ChartLibrary/src/data-types/types.ts" />
@@ -251,8 +216,10 @@
         <option value="$PROJECT_DIR$/chart-app/package.json" />
         <option value="$PROJECT_DIR$/chart-app/chart-library/ng-package.json" />
         <option value="$PROJECT_DIR$/chart-app/chart-library/src/index.ts" />
-        <option value="$PROJECT_DIR$/chart-app/chart-library/tsconfig.lib.json" />
         <option value="$PROJECT_DIR$/chart-app/chart-library/package.json" />
+        <option value="$PROJECT_DIR$/chart-app/chart-library/tsconfig.lib.json" />
+        <option value="$PROJECT_DIR$/chart-app/chart-library/src/client/chart-client.ts" />
+        <option value="$PROJECT_DIR$/chart-app/src/app/app.component.ts" />
       </list>
     </option>
   </component>
@@ -317,7 +284,60 @@
               <item name="tc-chart-library" type="b2602c69:ProjectViewProjectNode" />
               <item name="tc-chart-library" type="462c0819:PsiDirectoryNode" />
               <item name="chart-app" type="462c0819:PsiDirectoryNode" />
+              <item name="chart-library" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tc-chart-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tc-chart-library" type="462c0819:PsiDirectoryNode" />
+              <item name="chart-app" type="462c0819:PsiDirectoryNode" />
+              <item name="chart-library" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="stock-chart" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tc-chart-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tc-chart-library" type="462c0819:PsiDirectoryNode" />
+              <item name="chart-app" type="462c0819:PsiDirectoryNode" />
+              <item name="chart-library" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="stock-chart" type="462c0819:PsiDirectoryNode" />
+              <item name="StockChartX" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tc-chart-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tc-chart-library" type="462c0819:PsiDirectoryNode" />
+              <item name="chart-app" type="462c0819:PsiDirectoryNode" />
+              <item name="chart-library" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="stock-chart" type="462c0819:PsiDirectoryNode" />
+              <item name="StockChartX" type="462c0819:PsiDirectoryNode" />
+              <item name="Drawings" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tc-chart-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tc-chart-library" type="462c0819:PsiDirectoryNode" />
+              <item name="chart-app" type="462c0819:PsiDirectoryNode" />
+              <item name="chart-library" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="stock-chart" type="462c0819:PsiDirectoryNode" />
+              <item name="StockChartX" type="462c0819:PsiDirectoryNode" />
+              <item name="Drawings" type="462c0819:PsiDirectoryNode" />
+              <item name="GeometricDrawings" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tc-chart-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tc-chart-library" type="462c0819:PsiDirectoryNode" />
+              <item name="chart-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tc-chart-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tc-chart-library" type="462c0819:PsiDirectoryNode" />
+              <item name="chart-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -444,7 +464,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53075000" />
+    <option name="totallyTimeSpent" value="58291000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="0" />
@@ -453,8 +473,6 @@
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17860906" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="TypeScript" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32925472" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.378198" />
@@ -463,8 +481,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.39933258" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.4115684" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TypeScript" order="11" weight="0.32925472" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -477,8 +497,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/typings/jquery/index.d.ts" />
-    <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/Graphics/AnimationController.ts" />
     <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/Indicators/Indicator.ts" />
     <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/Indicators/VolumeProfilerSessionVolumeIndicator.ts" />
     <entry file="file://$PROJECT_DIR$/chart-library/ChartLibrary/src/stock-chart/StockChartX/Indicators/VolumeProfilerVisibleRangeIndicator.ts" />
@@ -527,9 +545,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="474">
           <caret line="171" column="52" selection-start-line="171" selection-start-column="52" selection-end-line="171" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#60#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -539,9 +554,6 @@
           <caret line="168" column="45" selection-start-line="168" selection-start-column="45" selection-end-line="168" selection-end-column="45" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-app/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/chart-app/src/app/app.component.css">
       <provider selected="true" editor-type-id="text-editor" />
@@ -567,13 +579,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart-app/chart-library/src/client/chart-client.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -630,24 +635,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/chart-app/chart-library/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-app/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8610" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/chart-app/chart-library/src/index.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
-          <caret line="224" column="14" selection-start-line="224" selection-start-column="14" selection-end-line="224" selection-end-column="14" />
+          <caret line="146" column="33" lean-forward="true" selection-start-line="146" selection-start-column="33" selection-end-line="146" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/chart-app/chart-library/tsconfig.lib.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+        <state relative-caret-position="102">
+          <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart-app/chart-library/package.json">
+    <entry file="file://$PROJECT_DIR$/chart-app/chart-library/src/client/chart-client.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-app/chart-library/src/stock-chart/StockChartX/Drawings/GeometricDrawings/TriangleDrawing.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="121" column="28" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="28" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-app/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

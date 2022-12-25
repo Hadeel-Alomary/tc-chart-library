@@ -1,5 +1,10 @@
 
 export class ChartClient {
+
+  constructor() {
+    console.log("--------------- Library -----------------")
+  }
+
   //
   // chart:Chart = null;
   //

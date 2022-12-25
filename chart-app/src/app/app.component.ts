@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ChartClient} from "../../chart-library/src/client";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'chart-app';
+
+  constructor() {
+    new ChartClient();
+  }
 }
